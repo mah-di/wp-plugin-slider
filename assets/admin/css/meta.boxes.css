@@ -1,0 +1,22 @@
+.field-wrapper {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 20px !important;
+    margin: 10px auto;
+}
+
+.label {
+
+}
+
+.field {
+    width: 100% !important;
+}
+
+.field-small {
+    width: 90% !important;
+}
+
+.cat-query-field {
+    width: 100% !important;
+}

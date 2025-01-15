@@ -1,0 +1,157 @@
+.owl-stage-outer {
+    position: relative !important; /* For absolute positioning of buttons */
+}
+
+/* Base styling for the slider buttons */
+.owl-prev,
+.owl-next {
+    position: absolute !important; /* Positioning relative to the slider */
+    top: 45% !important; /* Vertically centered */
+    transform: translateY(-50%) !important; /* Adjust for perfect centering */
+    width: 50px !important; /* Button size */
+    height: 50px !important;
+    background-color: rgba(0, 0, 0, 0.5) !important; /* Semi-transparent background */
+    border: none !important;
+    border-radius: 50% !important; /* Make it circular */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important; /* Icon or text color */
+    font-size: 24px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important; /* Smooth hover effect */
+    z-index: 10 !important; /* Ensure buttons are above the slider */
+}
+
+.owl-prev span,
+.owl-next span {
+    margin-top: -5px !important;
+}
+
+.owl-prev {
+    left: 1vw;
+}
+
+.owl-next {
+    right: 1vw;
+}
+
+/* Hover effect */
+.owl-prev:hover,
+.owl-next:hover {
+    background-color: rgba(0, 0, 0, 0.8) !important; /* Reduce transparency */
+    transform: translateY(-50%) scale(1.2) !important; /* Grow generously */
+}
+
+.owl-dot {
+    background-color: transparent !important;
+}
+
+.owl-dot span {
+    background-color: azure !important;
+}
+
+.owl-dot span:hover,
+.owl-dot.active span {
+    background-color: darkslategrey !important;
+}
+
+.ms-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.ms-card-header img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.ms-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    min-height: 250px;
+}
+
+.ms-tag-heading,
+.ms-cat-heading {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.ms-tag-heading {
+    font-size: 12px;
+}
+
+.ms-cat-heading {
+    font-size: 18px;
+}
+
+
+.ms-cat {
+    background: #cccccc;
+    border-radius: 50px;
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 5px;
+    color: #fff;
+    padding: 3px 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none !important;
+    background-color: #5e76bf;
+}
+
+.ms-tag {
+    background: #e9e9e9;
+    border-radius: 50px;
+    font-size: 12px;
+    margin: 0;
+    color: #888;
+    padding: 1px 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 700;
+    font-style: italic;
+    text-decoration: none !important;
+}
+
+.ms-cat-pink {
+    background-color: #cd5b9f;
+}
+
+.ms-card-body p {
+    font-size: 13px;
+    margin: 0 0 40px;
+}
+
+.ms-author {
+    display: flex;
+    margin-top: auto;
+}
+
+.ms-author img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.ms-author-info h5 {
+    margin: 0;
+}
+
+.ms-author-info img {
+    height: 24px !important;
+    width: 24px !important;
+    border-radius: 50% !important;
+}
+
+.ms-author-info small {
+    color: #545d7a;
+}
