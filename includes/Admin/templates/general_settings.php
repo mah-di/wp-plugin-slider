@@ -6,10 +6,11 @@ $ms_categories = get_terms( [
     'hide_empty' => false
 ] );
 
+$ms_cat_query = get_post_meta( $ms_ID, 'ms_cat_query', true );
 $ms_feature_img_size = get_post_meta( $ms_ID, 'ms_feature_img_size', true );
 $ms_items_to_show = get_post_meta( $ms_ID, 'ms_items_to_show', true );
 $ms_items_to_display = get_post_meta( $ms_ID, 'ms_items_to_display', true );
-$ms_order_by = get_post_meta( $ms_ID, 'ms_order_by', true );
+$ms_order = get_post_meta( $ms_ID, 'ms_order', true );
 $ms_show_comments = get_post_meta( $ms_ID, 'ms_show_comments', true );
 $ms_show_category = get_post_meta( $ms_ID, 'ms_show_category', true );
 $ms_show_tags = get_post_meta( $ms_ID, 'ms_show_tags', true );
@@ -30,7 +31,12 @@ $ms_show_date = get_post_meta( $ms_ID, 'ms_show_date', true );
                 foreach ( $ms_categories as $category ):
         
             ?>
-                    <option value="<?php echo $category->term_id ?>"><?php echo $category->name ?></option>
+                    <option
+                        value="<?php echo $category->term_id ?>"
+                        <?php if ( in_array( $category->term_id, explode( ',',  $ms_cat_query ) ) ) { echo "selected"; } ?>
+                    >
+                        <?php echo $category->name ?>
+                    </option>
         
             <?php
         
@@ -63,21 +69,7 @@ $ms_show_date = get_post_meta( $ms_ID, 'ms_show_date', true );
             id="display_items"
             min="1"
             max="20"
-            value="1"
-            step="1"
-            name="ms_items_to_display"
-        />
-    </div>
-
-    <div class="form-field field-wrapper">
-        <label for="display_items">Display Items</label>
-        <input
-            class="field"
-            type="number"
-            id="display_items"
-            min="1"
-            max="20"
-            value="1"
+            value="<?php echo empty( $ms_items_to_display ) ? '2' : $ms_items_to_display ?>"
             step="1"
             name="ms_items_to_display"
         />
@@ -140,17 +132,17 @@ $ms_show_date = get_post_meta( $ms_ID, 'ms_show_date', true );
 
     <div class="form-field field-wrapper">
         <span>Sort By</span>
-        <select class="field" name="sps_orderby">
+        <select class="field" name="ms_order">
             <option
                 value="ASC"
-                <?php ( empty( $ms_order_by ) || $ms_order_by == 'ASC' ) ? 'selected' : '' ?>
+                <?php echo ( empty( $ms_order ) || $ms_order == 'ASC' ) ? 'selected' : '' ?>
             >
                 Ascending Order
             </option>
 
             <option
                 value="DESC"
-                <?php ( ! empty( $ms_order_by ) && $ms_order_by == 'DESC' ) ? 'selected' : '' ?>
+                <?php echo ( ! empty( $ms_order ) && $ms_order == 'DESC' ) ? 'selected' : '' ?>
             >
                 Descending Order
             </option>
@@ -159,91 +151,115 @@ $ms_show_date = get_post_meta( $ms_ID, 'ms_show_date', true );
 
     <div class="form-field field-wrapper">
         <span>Comments</span>
-        <label class="switch">
-            <input
-                type="checkbox"
-                id="show-comments"
-                <?php echo ( empty( $ms_show_comments ) || $ms_show_comments ) ? 'checked' : '' ?>
-            >
-            <div class="slider round">
-                <span class="on">ON</span>
-                <span class="off">OFF</span>
-            </div>
-        </label>
+        <div>
+            <span class="switch radio-switch fixed-width-lg">
+                <input name="ms_show_comments" id="ms_show_comments_on" type="radio"
+                    value="show"
+                    <?php if ( empty( $ms_show_comments ) || $ms_show_comments == 'show' ) { echo 'checked'; } ?>
+                />
+                <label for="ms_show_comments_on" class="radioCheck">Show</label>
+                <input name="ms_show_comments" id="ms_show_comments_off" type="radio"
+                    value="hide"
+                    <?php if ( $ms_show_comments == 'hide' ) { echo 'checked'; } ?>
+                />
+                <label for="ms_show_comments_off" class="radioCheck">Hide</label>
+                <a class="slide-button btn"></a>
+            </span>
+        </div>
     </div>
 
     <div class="form-field field-wrapper">
         <span>Category</span>
-        <label class="switch">
-            <input
-                type="checkbox"
-                id="show-category"
-                <?php echo ( empty( $ms_show_category ) || $ms_show_category ) ? 'checked' : '' ?>
-            >
-            <div class="slider round">
-                <span class="on">ON</span>
-                <span class="off">OFF</span>
-            </div>
-        </label>
+        <div>
+            <span class="switch radio-switch fixed-width-lg">
+                <input name="ms_show_category" id="ms_show_category_on" type="radio"
+                    value="show"
+                    <?php if ( empty( $ms_show_category ) || $ms_show_category == 'show' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_category_on" class="radioCheck">Show</label>
+                <input name="ms_show_category" id="ms_show_category_off" type="radio"
+                    value="hide"
+                    <?php if ( $ms_show_category == 'hide' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_category_off" class="radioCheck">Hide</label>
+                <a class="slide-button btn"></a>
+            </span>
+        </div>
     </div>
     
     <div class="form-field field-wrapper">
         <span>Tags</span>
-        <label class="switch">
-            <input
-                type="checkbox"
-                id="show-tags"
-                <?php echo ( empty( $ms_show_tags ) || $ms_show_tags ) ? 'checked' : '' ?>
-            >
-            <div class="slider round">
-                <span class="on">ON</span>
-                <span class="off">OFF</span>
-            </div>
-        </label>
+        <div>
+            <span class="switch radio-switch fixed-width-lg">
+                <input name="ms_show_tags" id="ms_show_tags_on" type="radio"
+                    value="show"
+                    <?php if ( empty( $ms_show_tags ) || $ms_show_tags == 'show' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_tags_on" class="radioCheck">Show</label>
+                <input name="ms_show_tags" id="ms_show_tags_off" type="radio"
+                    value="hide"
+                    <?php if ( $ms_show_tags == 'hide' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_tags_off" class="radioCheck">Hide</label>
+                <a class="slide-button btn"></a>
+            </span>
+        </div>
     </div>
 
     <div class="form-field field-wrapper">
         <span>Author</span>
-        <label class="switch">
-            <input
-                type="checkbox"
-                id="show-author"
-                <?php echo ( empty( $ms_show_author ) || $ms_show_author ) ? 'checked' : '' ?>
-            >
-            <div class="slider round">
-                <span class="on">ON</span>
-                <span class="off">OFF</span>
-            </div>
-        </label>
+        <div>
+            <span class="switch radio-switch fixed-width-lg">
+                <input name="ms_show_author" id="ms_show_author_on" type="radio"
+                    value="show"
+                    <?php if ( empty( $ms_show_author ) || $ms_show_author == 'show' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_author_on" class="radioCheck">Show</label>
+                <input name="ms_show_author" id="ms_show_author_off" type="radio"
+                    value="hide"
+                    <?php if ( $ms_show_author == 'hide' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_author_off" class="radioCheck">Hide</label>
+                <a class="slide-button btn"></a>
+            </span>
+        </div>
     </div>
 
     <div class="form-field field-wrapper">
         <span>Author Avatar</span>
-        <label class="switch">
-            <input
-                type="checkbox"
-                id="show-avatar"
-                <?php echo ( empty( $ms_show_avatar ) || $ms_show_avatar ) ? 'checked' : '' ?>
-            >
-            <div class="slider round">
-                <span class="on">ON</span>
-                <span class="off">OFF</span>
-            </div>
-        </label>
+        <div>
+            <span class="switch radio-switch fixed-width-lg">
+                <input name="ms_show_avatar" id="ms_show_avatar_on" type="radio"
+                    value="show"
+                    <?php if ( empty( $ms_show_avatar ) || $ms_show_avatar == 'show' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_avatar_on" class="radioCheck">Show</label>
+                <input name="ms_show_avatar" id="ms_show_avatar_off" type="radio"
+                    value="hide"
+                    <?php if ( $ms_show_avatar == 'hide' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_avatar_off" class="radioCheck">Hide</label>
+                <a class="slide-button btn"></a>
+            </span>
+        </div>
     </div>
 
     <div class="form-field field-wrapper">
         <span>Date</span>
-        <label class="switch">
-            <input
-                type="checkbox"
-                id="show-date"
-                <?php echo ( empty( $ms_show_date ) || $ms_show_date ) ? 'checked' : '' ?>
-            >
-            <div class="slider round">
-                <span class="on">ON</span>
-                <span class="off">OFF</span>
-            </div>
-        </label>
+        <div>
+            <span class="switch radio-switch fixed-width-lg">
+                <input name="ms_show_date" id="ms_show_date_on" type="radio"
+                    value="show"
+                    <?php if ( empty( $ms_show_date ) || $ms_show_date == 'show' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_date_on" class="radioCheck">Show</label>
+                <input name="ms_show_date" id="ms_show_date_off" type="radio"
+                    value="hide"
+                    <?php if ( $ms_show_date == 'hide' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_date_off" class="radioCheck">Hide</label>
+                <a class="slide-button btn"></a>
+            </span>
+        </div>
     </div>
 </div>

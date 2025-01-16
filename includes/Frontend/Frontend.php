@@ -8,8 +8,26 @@ final class Frontend
         add_action( 'wp_enqueue_scripts', [ $this, 'load_assets' ] );
     }
 
-    public function load_content() {
+    public function load_content( $id ) {
         ob_start();
+
+        $ms_post_ID = isset( $id[ 'id' ] ) ? $id[ 'id' ] : $id;
+
+        $ms_cat_query = get_post_meta( $ms_post_ID, 'ms_cat_query', true );
+        $ms_items_to_display = get_post_meta( $ms_post_ID, 'ms_items_to_display', true );
+        $ms_order = get_post_meta( $ms_post_ID, 'ms_order', true );
+
+        $args = [
+            'post_type'      => 'post',
+            'posts_per_page' => $ms_items_to_display,
+            'orderby'        => 'date',
+            'order'          => $ms_order
+        ];
+
+        if ( ! empty( $ms_cat_query ) )
+            $args[ 'category__in' ] = $ms_cat_query;
+
+        
 
         include 'views/slider.php';
 

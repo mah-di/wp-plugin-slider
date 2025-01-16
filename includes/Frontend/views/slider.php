@@ -1,12 +1,5 @@
 <?php 
 
-$args = [
-    'post_type'      => 'post',
-    'posts_per_page' => 4,
-    'orderby'        => 'date',
-    'order'          => 'DESC'
-];
-
 $posts = new WP_Query( $args );
 
 if ( $posts->have_posts() ):
