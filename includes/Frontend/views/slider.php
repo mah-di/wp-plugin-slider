@@ -18,7 +18,7 @@ if ( $posts->have_posts() ):
 
     <div class="ms-card">
         <div class="ms-card-header">
-            <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+            <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'full', [ 'class' => 'img-fluid' ] ); } ?>
         </div>
         <div class="ms-card-body">
             
@@ -38,17 +38,28 @@ if ( $posts->have_posts() ):
             </div>
 
             <div class="ms-tag-wrapper">
-                <span class="ms-tag-heading">Tags : </span>
+
                 <?php
 
                 $tags = get_the_tags( $post_ID );
-                foreach ( $tags as $tag ): ?>
+
+                if ( $tags ) :
+                ?>
+
+                    <span class="ms-tag-heading">Tags : </span>
+
+                    <?php
+
+                    foreach ( $tags as $tag ): ?>
+                    
+                        <a href="<?php echo esc_url( get_category_link( $tag ) ); ?>" class="ms-tag">
+                            <?php echo $tag->name; ?>
+                        </a>
                 
-                    <a href="<?php echo esc_url( get_category_link( $tag ) ); ?>" class="ms-tag">
-                        <?php echo $tag->name; ?>
-                    </a>
-                
-                <?php endforeach; ?>
+                    <?php
+                    endforeach;
+                endif;
+                ?>
             </div>
 
             <h4>
