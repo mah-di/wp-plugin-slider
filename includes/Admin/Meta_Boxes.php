@@ -46,50 +46,42 @@ final class Meta_Boxes
     {
         // return if doing autosave
         if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
-            // return;
-            wp_die( 'DOING_AUTOSAVE' );
+            return;
 
         // return if doing ajax save
         if ( defined( 'DOING_AJAX' ) && DOING_AJAX )
-            // return;
-            wp_die( 'DOING_AJAX' );
+            return;
 
         // return if doing bulk edit
         if ( isset( $_REQUEST[ 'bulk_edit' ] ) )
-            // return;
-            wp_die( 'bulk_edit' );
+            return;
 
         // return if nonce is not set
         if ( ! isset( $_POST[ 'ms_nonce' ] ) )
-            // return;
-            wp_die( 'ms_nonce' );
+            return;
 
         $ms_nonce = sanitize_text_field( wp_unslash( $_POST[ 'ms_nonce' ] ) );
 
         // return if nonce is invalid
         if ( ! wp_verify_nonce( $ms_nonce, 'ms_meta_save_nonce' ) )
-            // return;
-            wp_die( 'ms_meta_save_nonce' );
+            return;
 
         // return if user does not have edit permissions
         if ( ! current_user_can( 'edit_page', $post_id ) )
-            // return;
-            wp_die( 'edit_page' );
+            return;
 
         $post_ID = $this->post_ID;
 
         // return if post id is not set
-        if ( ! isset( $this->post_ID ) )
-            // return;
-            wp_die( 'no post id' );
+        if ( ! isset( $post_ID ) )
+            return;
 
-        $post_type = get_post_type( $this->post_ID );
+        $post_type = get_post_type( $post_ID );
 
         // return if post type is not my_slider
         if ( $post_type != 'my_slider' )
-            // return;
-            wp_die( 'not my_slider' );
-    
+            return;
+
         // Saving Meta Values
         if ( isset( $_POST[ 'ms_cat_query' ] ) ) {
             if ( empty( $_POST[ 'ms_cat_query' ] ) ) {
@@ -146,6 +138,36 @@ final class Meta_Boxes
 
         if ( isset( $_POST[ 'ms_show_date' ] ) )
             $this->save_text_meta( 'ms_show_date', $_POST[ 'ms_show_date' ] );
+        
+        if ( isset( $_POST[ 'ms_margin_right' ] ) )
+        $this->save_int_meta( 'ms_margin_right', $_POST[ 'ms_margin_right' ] );
+
+        if ( isset( $_POST[ 'ms_loop' ] ) )
+            $this->save_text_meta( 'ms_loop', $_POST[ 'ms_loop' ] );
+
+        if ( isset( $_POST[ 'ms_center' ] ) )
+            $this->save_text_meta( 'ms_center', $_POST[ 'ms_center' ] );
+
+        if ( isset( $_POST[ 'ms_show_nav' ] ) )
+            $this->save_text_meta( 'ms_show_nav', $_POST[ 'ms_show_nav' ] );
+
+        if ( isset( $_POST[ 'ms_show_dots' ] ) )
+            $this->save_text_meta( 'ms_show_dots', $_POST[ 'ms_show_dots' ] );
+
+        if ( isset( $_POST[ 'ms_show_dots_foreach' ] ) )
+            $this->save_text_meta( 'ms_show_dots_foreach', $_POST[ 'ms_show_dots_foreach' ] );
+
+        if ( isset( $_POST[ 'ms_autoplay' ] ) )
+            $this->save_text_meta( 'ms_autoplay', $_POST[ 'ms_autoplay' ] );
+
+        if ( isset( $_POST[ 'ms_autoplay_timeout' ] ) )
+            $this->save_text_meta( 'ms_autoplay_timeout', $_POST[ 'ms_autoplay_timeout' ] );
+
+        if ( isset( $_POST[ 'ms_autoplay_hover_pause' ] ) )
+            $this->save_text_meta( 'ms_autoplay_hover_pause', $_POST[ 'ms_autoplay_hover_pause' ] );
+
+        if ( isset( $_POST[ 'ms_autoplay_speed' ] ) )
+            $this->save_text_meta( 'ms_autoplay_speed', $_POST[ 'ms_autoplay_speed' ] );
     }
 
     private function save_text_meta( $meta_key, $meta_value )

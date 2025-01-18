@@ -19,6 +19,12 @@
     box-shadow: #ddd 0px 0px 5px 0px !important;
 }
 
+.selectize-input div.item {
+    background-image: none !important;
+    background-color: #00c62b !important;
+    border: #00b62e !important;
+}
+
 .cat-query-field {
     width: 100% !important;
 }

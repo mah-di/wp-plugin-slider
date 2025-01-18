@@ -14,12 +14,12 @@ final class Frontend
         $ms_post_ID = isset( $id[ 'id' ] ) ? $id[ 'id' ] : $id;
 
         $ms_cat_query = get_post_meta( $ms_post_ID, 'ms_cat_query', true );
-        $ms_items_to_display = get_post_meta( $ms_post_ID, 'ms_items_to_display', true );
+        $ms_items_to_show = get_post_meta( $ms_post_ID, 'ms_items_to_show', true );
         $ms_order = get_post_meta( $ms_post_ID, 'ms_order', true );
 
         $args = [
             'post_type'      => 'post',
-            'posts_per_page' => $ms_items_to_display,
+            'posts_per_page' => $ms_items_to_show,
             'orderby'        => 'date',
             'order'          => $ms_order
         ];
@@ -27,9 +27,8 @@ final class Frontend
         if ( ! empty( $ms_cat_query ) )
             $args[ 'category__in' ] = $ms_cat_query;
 
-        
-
         include 'views/slider.php';
+        include 'views/slider-settings.php';
 
         return ob_get_clean();
     }
@@ -47,7 +46,7 @@ final class Frontend
 
     private function enqueue_scripts() {
         wp_enqueue_script( 'ms-owl-script', MS_URL . 'assets/frontend/js/owl.carousel.min.js', [ 'jquery' ], MS_VERSION, true );
-        wp_enqueue_script( 'ms-main-script', MS_URL . 'assets/frontend/js/main.js', [ 'jquery', 'ms-owl-script' ], MS_VERSION, true );
+        // wp_enqueue_script( 'ms-main-script', MS_URL . 'assets/frontend/js/main.js', [ 'jquery', 'ms-owl-script' ], MS_VERSION, true );
     }
 
 }

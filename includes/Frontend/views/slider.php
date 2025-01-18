@@ -1,20 +1,32 @@
 <?php 
 
+$ms_feature_img_size = get_post_meta( $ms_post_ID, 'ms_feature_img_size', true );
+$ms_show_comments = get_post_meta( $ms_post_ID, 'ms_show_comments', true );
+$ms_show_category = get_post_meta( $ms_post_ID, 'ms_show_category', true );
+$ms_show_tags = get_post_meta( $ms_post_ID, 'ms_show_tags', true );
+$ms_show_author = get_post_meta( $ms_post_ID, 'ms_show_author', true );
+$ms_show_avatar = get_post_meta( $ms_post_ID, 'ms_show_avatar', true );
+$ms_show_date = get_post_meta( $ms_post_ID, 'ms_show_date', true );
+
 $posts = new WP_Query( $args );
 
 if ( $posts->have_posts() ):
 
 ?>
-<div class="owl-carousel owl-theme">
+<div
+    id="my-slider-<?php echo $ms_post_ID ?>"
+    class="owl-carousel owl-theme"
+>
 
     <?php while ( $posts->have_posts() ): $posts->the_post() ?>
 
     <div class="ms-card">
         <div class="ms-card-header">
-            <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'full', [ 'class' => 'img-fluid' ] ); } ?>
+            <?php if ( has_post_thumbnail() ) { the_post_thumbnail( $ms_feature_img_size ); } ?>
         </div>
         <div class="ms-card-body">
             
+            <?php if ( $ms_show_category == 'show' ): ?>
             <div class="ms-cat-wrapper">
                 <span class="ms-cat-heading">Category : </span>
                 <?php
@@ -29,7 +41,9 @@ if ( $posts->have_posts() ):
                 
                 <?php endforeach; ?>
             </div>
+            <?php endif; ?>
 
+            <?php if ( $ms_show_tags == 'show' ): ?>
             <div class="ms-tag-wrapper">
 
                 <?php
@@ -54,21 +68,25 @@ if ( $posts->have_posts() ):
                 endif;
                 ?>
             </div>
+            <?php endif; ?>
 
             <h4>
                 <?php the_title() ?>
             </h4>
             
+            <?php the_excerpt() ?>
 
-                <?php the_excerpt() ?>
-
-            
             <div class="ms-author">
                 <div class="ms-author-info">
                     <?php 
                         $author_ID = get_the_author_meta( 'ID' );
+                    ?>
+                    
+                    <?php if ( $ms_show_avatar == 'show' )
                         echo get_avatar( $author_ID, 24 );    
                     ?>
+
+                    <?php if ( $ms_show_author == 'show' ): ?>
                     <h5>
                         <?php 
                             $first_name = get_the_author_meta( 'first_name', $author_ID );
@@ -81,9 +99,14 @@ if ( $posts->have_posts() ):
                             endif;
                         ?>
                     </h5>
-                    <small><?php echo get_the_date( 'F j, Y' ) ?></small>
+                    <?php endif ?>
+
+                    <?php if ( $ms_show_date == 'show' ): ?>
+                        <small><?php echo get_the_date( 'F j, Y' ) ?></small>
+                    <?php endif ?>
                 </div>
             </div>
+
         </div>
     </div>
 

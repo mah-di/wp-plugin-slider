@@ -18,6 +18,18 @@ $ms_show_author = get_post_meta( $ms_ID, 'ms_show_author', true );
 $ms_show_avatar = get_post_meta( $ms_ID, 'ms_show_avatar', true );
 $ms_show_date = get_post_meta( $ms_ID, 'ms_show_date', true );
 
+$ms_margin_right = get_post_meta( $ms_ID, 'ms_margin_right', true );
+$ms_loop = get_post_meta( $ms_ID, 'ms_loop', true );
+$ms_center = get_post_meta( $ms_ID, 'ms_center', true );
+$ms_show_nav = get_post_meta( $ms_ID, 'ms_show_nav', true );
+$ms_show_dots = get_post_meta( $ms_ID, 'ms_show_dots', true );
+$ms_show_dots_foreach = get_post_meta( $ms_ID, 'ms_show_dots_foreach', true );
+$ms_autoplay = get_post_meta( $ms_ID, 'ms_autoplay', true );
+$ms_autoplay_timeout = get_post_meta( $ms_ID, 'ms_autoplay_timeout', true );
+$ms_autoplay_hover_pause = get_post_meta( $ms_ID, 'ms_autoplay_hover_pause', true );
+$ms_autoplay_speed = get_post_meta( $ms_ID, 'ms_autoplay_speed', true );
+
+$ms_title_color = get_post_meta( $ms_ID, 'ms_title_color', true );
 
 ?>
 
@@ -48,11 +60,10 @@ $ms_show_date = get_post_meta( $ms_ID, 'ms_show_date', true );
     </div>
 
     <div class="form-field field-wrapper">
-        <label for="items">Items to show</label>
+        <span>Items to show</span>
         <input
             class="field"
             type="number"
-            id="items"
             min="0"
             max="20"
             value="<?php echo empty( $ms_items_to_show ) ? '4' : $ms_items_to_show ?>"
@@ -62,11 +73,10 @@ $ms_show_date = get_post_meta( $ms_ID, 'ms_show_date', true );
     </div>
 
     <div class="form-field field-wrapper">
-        <label for="display_items">Display Items</label>
+        <span>Display Items</span>
         <input
             class="field"
             type="number"
-            id="display_items"
             min="1"
             max="20"
             value="<?php echo empty( $ms_items_to_display ) ? '2' : $ms_items_to_display ?>"
@@ -76,7 +86,18 @@ $ms_show_date = get_post_meta( $ms_ID, 'ms_show_date', true );
     </div>
 
     <div class="form-field field-wrapper">
-        <span for="ms_feature_img_size">Feature Image Size</span>
+        <span>Margin Between Items</span>
+        <input
+            class="field"
+            type="number"
+            value="<?php echo empty( $ms_margin_right ) ? '10' : $ms_margin_right ?>"
+            step="1"
+            name="ms_margin_right"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Feature Image Size</span>
         <select class="field" id="ms_feature_img_size" name="ms_feature_img_size">
             <option
                 value="thumbnail"
@@ -261,5 +282,170 @@ $ms_show_date = get_post_meta( $ms_ID, 'ms_show_date', true );
                 <a class="slide-button btn"></a>
             </span>
         </div>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Loop</span>
+        <div>
+            <span class="switch radio-switch fixed-width-lg">
+                <input name="ms_loop" id="ms_loop_on" type="radio"
+                    value="true"
+                    <?php if ( empty( $ms_loop ) || $ms_loop == 'true' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_loop_on" class="radioCheck">Yes</label>
+                <input name="ms_loop" id="ms_loop_off" type="radio"
+                    value="false"
+                    <?php if ( $ms_loop == 'false' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_loop_off" class="radioCheck">No</label>
+                <a class="slide-button btn"></a>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Centerize Items</span>
+        <div>
+            <span class="switch radio-switch fixed-width-lg">
+                <input name="ms_center" id="ms_center_on" type="radio"
+                    value="true"
+                    <?php if ( empty( $ms_center ) || $ms_center == 'true' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_center_on" class="radioCheck">Yes</label>
+                <input name="ms_center" id="ms_center_off" type="radio"
+                    value="false"
+                    <?php if ( $ms_center == 'false' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_center_off" class="radioCheck">No</label>
+                <a class="slide-button btn"></a>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Show Navigation</span>
+        <div>
+            <span class="switch radio-switch fixed-width-lg">
+                <input name="ms_show_nav" id="ms_show_nav_on" type="radio"
+                    value="true"
+                    <?php if ( empty( $ms_show_nav ) || $ms_show_nav == 'true' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_nav_on" class="radioCheck">Yes</label>
+                <input name="ms_show_nav" id="ms_show_nav_off" type="radio"
+                    value="false"
+                    <?php if ( $ms_show_nav == 'false' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_nav_off" class="radioCheck">No</label>
+                <a class="slide-button btn"></a>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Show Dots</span>
+        <div>
+            <span class="switch radio-switch fixed-width-lg">
+                <input name="ms_show_dots" id="ms_show_dots_on" type="radio"
+                    value="true"
+                    <?php if ( empty( $ms_show_dots ) || $ms_show_dots == 'true' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_dots_on" class="radioCheck">Yes</label>
+                <input name="ms_show_dots" id="ms_show_dots_off" type="radio"
+                    value="false"
+                    <?php if ( $ms_show_dots == 'false' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_dots_off" class="radioCheck">No</label>
+                <a class="slide-button btn"></a>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Show Dots For Each Item</span>
+        <div>
+            <span class="switch radio-switch fixed-width-lg">
+                <input name="ms_show_dots_foreach" id="ms_show_dots_foreach_on" type="radio"
+                    value="true"
+                    <?php if ( empty( $ms_show_dots_foreach ) || $ms_show_dots_foreach == 'true' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_dots_foreach_on" class="radioCheck">Yes</label>
+                <input name="ms_show_dots_foreach" id="ms_show_dots_foreach_off" type="radio"
+                    value="false"
+                    <?php if ( $ms_show_dots_foreach == 'false' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_dots_foreach_off" class="radioCheck">No</label>
+                <a class="slide-button btn"></a>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Autoplay Slides</span>
+        <div>
+            <span class="switch radio-switch fixed-width-lg">
+                <input name="ms_autoplay" id="ms_autoplay_on" type="radio"
+                    value="true"
+                    <?php if ( empty( $ms_autoplay ) || $ms_autoplay == 'true' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_autoplay_on" class="radioCheck">Yes</label>
+                <input name="ms_autoplay" id="ms_autoplay_off" type="radio"
+                    value="false"
+                    <?php if ( $ms_autoplay == 'false' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_autoplay_off" class="radioCheck">No</label>
+                <a class="slide-button btn"></a>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Autoplay Timeout</span>
+        <input
+            class="field"
+            type="number"
+            value="<?php echo empty( $ms_autoplay_timeout ) ? '5000' : $ms_autoplay_timeout ?>"
+            step="1"
+            name="ms_autoplay_timeout"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Autoplay Speed</span>
+        <input
+            class="field"
+            type="number"
+            value="<?php echo empty( $ms_autoplay_speed ) ? '700' : $ms_autoplay_speed ?>"
+            step="1"
+            name="ms_autoplay_speed"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Pause Autoplay On Mouse Over</span>
+        <div>
+            <span class="switch radio-switch fixed-width-lg">
+                <input name="ms_autoplay_hover_pause" id="ms_autoplay_hover_pause_on" type="radio"
+                    value="true"
+                    <?php if ( empty( $ms_autoplay_hover_pause ) || $ms_autoplay_hover_pause == 'true' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_autoplay_hover_pause_on" class="radioCheck">Yes</label>
+                <input name="ms_autoplay_hover_pause" id="ms_autoplay_hover_pause_off" type="radio"
+                    value="false"
+                    <?php if ( $ms_autoplay_hover_pause == 'false' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_autoplay_hover_pause_off" class="radioCheck">No</label>
+                <a class="slide-button btn"></a>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Title Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_title_color ) ? '#000000' : $ms_title_color ?>"
+            name="ms_title_color"
+        />
     </div>
 </div>

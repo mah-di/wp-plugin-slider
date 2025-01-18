@@ -48,7 +48,7 @@ jQuery(document).ready(function(){
             // Type: Boolean
             // Default: false
             // Set non grid content. Try using width style on divs.
-        startPosition: 5,
+        startPosition: 0,
             // Type: Number/String
             // Default: 0
             // Start position or URL Hash string like '#id'.
@@ -64,7 +64,7 @@ jQuery(document).ready(function(){
             // Type: Boolean
             // Default: true
             // Go backwards when the boundary has reached.
-        // navText: ['&#x27;next&#x27;', '&#x27;prev&#x27;'],
+        navText: ['‹', '›'],
             // Type: Array
             // Default: [&#x27;next&#x27;,&#x27;prev&#x27;]
             // HTML allowed.

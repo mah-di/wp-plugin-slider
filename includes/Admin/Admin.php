@@ -26,6 +26,7 @@ final class Admin
     {
         wp_enqueue_script( 'ms-selectize-script', MS_URL . '/assets/admin/js/selectize.min.js', [ 'jquery' ] );
         wp_enqueue_script( 'ms-trigger-selectize-script', MS_URL . '/assets/admin/js/trigger.selectize.js', [ 'jquery', 'ms-selectize-script' ] );
+        wp_enqueue_script( 'ms-color-palette-script', MS_URL . '/assets/admin/js/color.palette.js', [ 'jquery', 'ms-selectize-script' ] );
     }
 }
 
