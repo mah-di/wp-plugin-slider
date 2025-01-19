@@ -130,6 +130,9 @@ final class Meta_Boxes
         if ( isset( $_POST[ 'ms_show_tags' ] ) )
             $this->save_text_meta( 'ms_show_tags', $_POST[ 'ms_show_tags' ] );
 
+        if ( isset( $_POST[ 'ms_show_excerpt' ] ) )
+            $this->save_text_meta( 'ms_show_excerpt', $_POST[ 'ms_show_excerpt' ] );
+
         if ( isset( $_POST[ 'ms_show_author' ] ) )
             $this->save_text_meta( 'ms_show_author', $_POST[ 'ms_show_author' ] );
 
@@ -168,6 +171,72 @@ final class Meta_Boxes
 
         if ( isset( $_POST[ 'ms_autoplay_speed' ] ) )
             $this->save_text_meta( 'ms_autoplay_speed', $_POST[ 'ms_autoplay_speed' ] );
+
+        if ( isset( $_POST[ 'ms_bg_color' ] ) )
+            $this->save_text_meta( 'ms_bg_color', $_POST[ 'ms_bg_color' ] );
+
+        if ( isset( $_POST[ 'ms_bg_color' ] ) )
+            $this->save_text_meta( 'ms_bg_color', $_POST[ 'ms_bg_color' ] );
+
+        if ( isset( $_POST[ 'ms_comment_icon_color' ] ) )
+            $this->save_text_meta( 'ms_comment_icon_color', $_POST[ 'ms_comment_icon_color' ] );
+
+        if ( isset( $_POST[ 'ms_comment_color' ] ) )
+            $this->save_text_meta( 'ms_comment_color', $_POST[ 'ms_comment_color' ] );
+
+        if ( isset( $_POST[ 'ms_category_icon_color' ] ) )
+            $this->save_text_meta( 'ms_category_icon_color', $_POST[ 'ms_category_icon_color' ] );
+
+        if ( isset( $_POST[ 'ms_category_color' ] ) )
+            $this->save_text_meta( 'ms_category_color', $_POST[ 'ms_category_color' ] );
+
+        if ( isset( $_POST[ 'ms_category_bg_color' ] ) )
+            $this->save_text_meta( 'ms_category_bg_color', $_POST[ 'ms_category_bg_color' ] );
+
+        if ( isset( $_POST[ 'ms_tag_icon_color' ] ) )
+            $this->save_text_meta( 'ms_tag_icon_color', $_POST[ 'ms_tag_icon_color' ] );
+
+        if ( isset( $_POST[ 'ms_tag_color' ] ) )
+            $this->save_text_meta( 'ms_tag_color', $_POST[ 'ms_tag_color' ] );
+
+        if ( isset( $_POST[ 'ms_tag_bg_color' ] ) )
+            $this->save_text_meta( 'ms_tag_bg_color', $_POST[ 'ms_tag_bg_color' ] );
+
+        if ( isset( $_POST[ 'ms_title_color' ] ) )
+            $this->save_text_meta( 'ms_title_color', $_POST[ 'ms_title_color' ] );
+
+        if ( isset( $_POST[ 'ms_excerpt_color' ] ) )
+            $this->save_text_meta( 'ms_excerpt_color', $_POST[ 'ms_excerpt_color' ] );
+
+        if ( isset( $_POST[ 'ms_author_color' ] ) )
+            $this->save_text_meta( 'ms_author_color', $_POST[ 'ms_author_color' ] );
+
+        if ( isset( $_POST[ 'ms_date_color' ] ) )
+            $this->save_text_meta( 'ms_date_color', $_POST[ 'ms_date_color' ] );
+
+        if ( isset( $_POST[ 'ms_nav_bg_color' ] ) )
+            $this->save_text_meta( 'ms_nav_bg_color', $_POST[ 'ms_nav_bg_color' ] );
+
+        if ( isset( $_POST[ 'ms_nav_bg_hover_color' ] ) )
+            $this->save_text_meta( 'ms_nav_bg_hover_color', $_POST[ 'ms_nav_bg_hover_color' ] );
+
+        if ( isset( $_POST[ 'ms_nav_color' ] ) )
+            $this->save_text_meta( 'ms_nav_color', $_POST[ 'ms_nav_color' ] );
+
+        if ( isset( $_POST[ 'ms_nav_font_size' ] ) )
+            $this->save_text_meta( 'ms_nav_font_size', $_POST[ 'ms_nav_font_size' ] );
+
+        if ( isset( $_POST[ 'ms_nav_font_weight' ] ) )
+            $this->save_text_meta( 'ms_nav_font_weight', $_POST[ 'ms_nav_font_weight' ] );
+
+        if ( isset( $_POST[ 'ms_dot_shape' ] ) )
+            $this->save_text_meta( 'ms_dot_shape', $_POST[ 'ms_dot_shape' ] );
+
+        if ( isset( $_POST[ 'ms_dot_color' ] ) )
+            $this->save_text_meta( 'ms_dot_color', $_POST[ 'ms_dot_color' ] );
+
+        if ( isset( $_POST[ 'ms_dot_active_color' ] ) )
+            $this->save_text_meta( 'ms_dot_active_color', $_POST[ 'ms_dot_active_color' ] );
     }
 
     private function save_text_meta( $meta_key, $meta_value )

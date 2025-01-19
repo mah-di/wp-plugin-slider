@@ -4,6 +4,7 @@ $ms_feature_img_size = get_post_meta( $ms_post_ID, 'ms_feature_img_size', true )
 $ms_show_comments = get_post_meta( $ms_post_ID, 'ms_show_comments', true );
 $ms_show_category = get_post_meta( $ms_post_ID, 'ms_show_category', true );
 $ms_show_tags = get_post_meta( $ms_post_ID, 'ms_show_tags', true );
+$ms_show_excerpt = get_post_meta( $ms_post_ID, 'ms_show_excerpt', true );
 $ms_show_author = get_post_meta( $ms_post_ID, 'ms_show_author', true );
 $ms_show_avatar = get_post_meta( $ms_post_ID, 'ms_show_avatar', true );
 $ms_show_date = get_post_meta( $ms_post_ID, 'ms_show_date', true );
@@ -28,7 +29,7 @@ if ( $posts->have_posts() ):
             
             <?php if ( $ms_show_category == 'show' ): ?>
             <div class="ms-cat-wrapper">
-                <span class="ms-cat-heading">Category : </span>
+                <span class="ms-cat-heading ms-cat-icon">Category : </span>
                 <?php
                 $post_ID = get_the_ID();
 
@@ -53,7 +54,7 @@ if ( $posts->have_posts() ):
                 if ( $tags ) :
                 ?>
 
-                    <span class="ms-tag-heading">Tags : </span>
+                    <span class="ms-tag-heading ms-tag-icon">Tags : </span>
 
                     <?php
 
@@ -70,11 +71,29 @@ if ( $posts->have_posts() ):
             </div>
             <?php endif; ?>
 
-            <h4>
+            <?php if ( $ms_show_comments == 'show' ): ?>
+            <div class="ms-comments">
+
+                <span class="ms-comment-icon">Comments : </span>
+
+                <span class="ms-comment">
+
+                    <?php echo get_comments_number(); ?>
+
+                </span>
+
+            </div>
+            <?php endif; ?>
+
+            <h4 class="ms-title">
                 <?php the_title() ?>
             </h4>
-            
-            <?php the_excerpt() ?>
+
+            <?php if ( $ms_show_excerpt == 'show' ): ?>
+            <p class="ms-excerpt">
+                <?php echo get_the_excerpt() ?>
+            </p>
+            <?php endif; ?>
 
             <div class="ms-author">
                 <div class="ms-author-info">
@@ -87,7 +106,7 @@ if ( $posts->have_posts() ):
                     ?>
 
                     <?php if ( $ms_show_author == 'show' ): ?>
-                    <h5>
+                    <h5 class="ms-author">
                         <?php 
                             $first_name = get_the_author_meta( 'first_name', $author_ID );
                             $last_name = get_the_author_meta( 'last_name', $author_ID );
@@ -102,7 +121,7 @@ if ( $posts->have_posts() ):
                     <?php endif ?>
 
                     <?php if ( $ms_show_date == 'show' ): ?>
-                        <small><?php echo get_the_date( 'F j, Y' ) ?></small>
+                        <small class="ms-date"><?php echo get_the_date( 'F j, Y' ) ?></small>
                     <?php endif ?>
                 </div>
             </div>

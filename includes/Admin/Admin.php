@@ -14,6 +14,7 @@ final class Admin
     {
         $this->enqueue_styles();
         $this->enqueue_scripts();
+        $this->enqueue_color_picker_alpha();
     }
 
     private function enqueue_styles()
@@ -26,7 +27,17 @@ final class Admin
     {
         wp_enqueue_script( 'ms-selectize-script', MS_URL . '/assets/admin/js/selectize.min.js', [ 'jquery' ] );
         wp_enqueue_script( 'ms-trigger-selectize-script', MS_URL . '/assets/admin/js/trigger.selectize.js', [ 'jquery', 'ms-selectize-script' ] );
-        wp_enqueue_script( 'ms-color-palette-script', MS_URL . '/assets/admin/js/color.palette.js', [ 'jquery', 'ms-selectize-script' ] );
+    }
+
+    private function enqueue_color_picker_alpha()
+    {
+        wp_enqueue_style( 'wp-color-picker' );
+        wp_register_script( 'wp-color-picker-alpha', MS_URL . '/assets/admin/js/color-picker-alpha.min.js', [ 'wp-color-picker' ], MS_VERSION, true );
+        wp_add_inline_script(
+            'wp-color-picker-alpha',
+            'jQuery( function() { jQuery( ".ms-color-picker" ).wpColorPicker(); } );'
+        );
+        wp_enqueue_script( 'wp-color-picker-alpha' );
     }
 }
 

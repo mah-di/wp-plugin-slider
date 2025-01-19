@@ -14,6 +14,7 @@ $ms_order = get_post_meta( $ms_ID, 'ms_order', true );
 $ms_show_comments = get_post_meta( $ms_ID, 'ms_show_comments', true );
 $ms_show_category = get_post_meta( $ms_ID, 'ms_show_category', true );
 $ms_show_tags = get_post_meta( $ms_ID, 'ms_show_tags', true );
+$ms_show_excerpt = get_post_meta( $ms_ID, 'ms_show_excerpt', true );
 $ms_show_author = get_post_meta( $ms_ID, 'ms_show_author', true );
 $ms_show_avatar = get_post_meta( $ms_ID, 'ms_show_avatar', true );
 $ms_show_date = get_post_meta( $ms_ID, 'ms_show_date', true );
@@ -29,7 +30,29 @@ $ms_autoplay_timeout = get_post_meta( $ms_ID, 'ms_autoplay_timeout', true );
 $ms_autoplay_hover_pause = get_post_meta( $ms_ID, 'ms_autoplay_hover_pause', true );
 $ms_autoplay_speed = get_post_meta( $ms_ID, 'ms_autoplay_speed', true );
 
+$ms_bg_color = get_post_meta( $ms_ID, 'ms_bg_color', true );
+$ms_comment_icon_color = get_post_meta( $ms_ID, 'ms_comment_icon_color', true );
+$ms_comment_color = get_post_meta( $ms_ID, 'ms_comment_color', true );
+$ms_category_icon_color = get_post_meta( $ms_ID, 'ms_category_icon_color', true );
+$ms_category_color = get_post_meta( $ms_ID, 'ms_category_color', true );
+$ms_category_bg_color = get_post_meta( $ms_ID, 'ms_category_bg_color', true );
+$ms_tag_icon_color = get_post_meta( $ms_ID, 'ms_tag_icon_color', true );
+$ms_tag_color = get_post_meta( $ms_ID, 'ms_tag_color', true );
+$ms_tag_bg_color = get_post_meta( $ms_ID, 'ms_tag_bg_color', true );
 $ms_title_color = get_post_meta( $ms_ID, 'ms_title_color', true );
+$ms_excerpt_color = get_post_meta( $ms_ID, 'ms_excerpt_color', true );
+$ms_author_color = get_post_meta( $ms_ID, 'ms_author_color', true );
+$ms_date_color = get_post_meta( $ms_ID, 'ms_date_color', true );
+
+$ms_nav_bg_color = get_post_meta( $ms_ID, 'ms_nav_bg_color', true );
+$ms_nav_bg_hover_color = get_post_meta( $ms_ID, 'ms_nav_bg_hover_color', true );
+$ms_nav_color = get_post_meta( $ms_ID, 'ms_nav_color', true );
+$ms_nav_font_size = get_post_meta( $ms_ID, 'ms_nav_font_size', true );
+$ms_nav_font_weight = get_post_meta( $ms_ID, 'ms_nav_font_weight', true );
+
+$ms_dot_shape = get_post_meta( $ms_ID, 'ms_dot_shape', true );
+$ms_dot_color = get_post_meta( $ms_ID, 'ms_dot_color', true );
+$ms_dot_active_color = get_post_meta( $ms_ID, 'ms_dot_active_color', true );
 
 ?>
 
@@ -207,7 +230,7 @@ $ms_title_color = get_post_meta( $ms_ID, 'ms_title_color', true );
             </span>
         </div>
     </div>
-    
+
     <div class="form-field field-wrapper">
         <span>Tags</span>
         <div>
@@ -222,6 +245,25 @@ $ms_title_color = get_post_meta( $ms_ID, 'ms_title_color', true );
                     <?php if ( $ms_show_tags == 'hide' ) { echo 'checked'; } ?>
                 >
                 <label for="ms_show_tags_off" class="radioCheck">Hide</label>
+                <a class="slide-button btn"></a>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Excerpt</span>
+        <div>
+            <span class="switch radio-switch fixed-width-lg">
+                <input name="ms_show_excerpt" id="ms_show_excerpt_on" type="radio"
+                    value="show"
+                    <?php if ( empty( $ms_show_excerpt ) || $ms_show_excerpt == 'show' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_excerpt_on" class="radioCheck">Show</label>
+                <input name="ms_show_excerpt" id="ms_show_excerpt_off" type="radio"
+                    value="hide"
+                    <?php if ( $ms_show_excerpt == 'hide' ) { echo 'checked'; } ?>
+                >
+                <label for="ms_show_excerpt_off" class="radioCheck">Hide</label>
                 <a class="slide-button btn"></a>
             </span>
         </div>
@@ -440,12 +482,261 @@ $ms_title_color = get_post_meta( $ms_ID, 'ms_title_color', true );
     </div>
 
     <div class="form-field field-wrapper">
+        <span>Slides Background Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_bg_color ) ? '#ffffff' : $ms_bg_color ?>"
+            name="ms_bg_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Comments Icon Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_comment_icon_color ) ? '#000000' : $ms_comment_icon_color ?>"
+            name="ms_comment_icon_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Comments Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_comment_color ) ? '#000000' : $ms_comment_color ?>"
+            name="ms_comment_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Category Icon Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_category_icon_color ) ? '#000000' : $ms_category_icon_color ?>"
+            name="ms_category_icon_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Category Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_category_color ) ? '#ffffff' : $ms_category_color ?>"
+            name="ms_category_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Category Background Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_category_bg_color ) ? '#5E76BF' : $ms_category_bg_color ?>"
+            name="ms_category_bg_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Tag Icon Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_tag_icon_color ) ? '#000000' : $ms_tag_icon_color ?>"
+            name="ms_tag_icon_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Tag Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_tag_color ) ? '#888888' : $ms_tag_color ?>"
+            name="ms_tag_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Tag Background Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_tag_bg_color ) ? '#e9e9e9' : $ms_tag_bg_color ?>"
+            name="ms_tag_bg_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
         <span>Title Color</span>
         <input
             class="ms-color-picker"
             type="text"
             value="<?php echo empty( $ms_title_color ) ? '#000000' : $ms_title_color ?>"
             name="ms_title_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Excerpt Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_excerpt_color ) ? '#000000' : $ms_excerpt_color ?>"
+            name="ms_excerpt_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Author Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_author_color ) ? '#000000' : $ms_author_color ?>"
+            name="ms_author_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Date Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_date_color ) ? '#545d7a' : $ms_date_color ?>"
+            name="ms_date_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Navigation Button Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_nav_color ) ? '#eeeeee' : $ms_nav_color ?>"
+            name="ms_nav_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Navigation Button Font Size</span>
+        <input
+            class="field"
+            type="number"
+            min="8"
+            step="1"
+            value="<?php echo empty( $ms_nav_font_size ) ? '24' : $ms_nav_font_size ?>"
+            name="ms_nav_font_size"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Navigation Button Font Weight</span>
+        <select
+            class="field"
+            name="ms_nav_font_weight"
+        >
+            <option
+                value="200"
+                <?php if ( ! empty( $ms_nav_font_weight ) && $ms_nav_font_weight == '200' ) { echo 'selected'; } ?>
+            >
+                Thin
+            </option>
+
+            <option
+                value="500"
+                <?php if ( empty( $ms_nav_font_weight ) || $ms_nav_font_weight == '500' ) { echo 'selected'; } ?>
+            >
+                Medium
+            </option>
+
+            <option
+                value="700"
+                <?php if ( ! empty( $ms_nav_font_weight ) && $ms_nav_font_weight == '700' ) { echo 'selected'; } ?>
+            >
+                Bold
+            </option>
+
+            <option
+                value="1000"
+                <?php if ( ! empty( $ms_nav_font_weight ) && $ms_nav_font_weight == '1000' ) { echo 'selected'; } ?>
+            >
+                Bolder
+            </option>
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Navigation Button Background Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_nav_bg_color ) ? 'rgba(0, 0, 0, 0.5)' : $ms_nav_bg_color ?>"
+            name="ms_nav_bg_color"
+            data-alpha-enabled="true"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Navigation Button Background Hover Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_nav_bg_hover_color ) ? 'rgba(0, 0, 0, 0.8)' : $ms_nav_bg_hover_color ?>"
+            name="ms_nav_bg_hover_color"
+            data-alpha-enabled="true"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Navigation Dots Shape</span>
+        <select
+            class="field"
+            name="ms_dot_shape"
+        >
+            <option
+                value="round"
+                <?php if ( empty( $ms_dot_shape ) || $ms_dot_shape == 'round' ) { echo 'selected'; } ?>
+            >
+                Round
+            </option>
+
+            <option
+                value="bar"
+                <?php if ( ! empty( $ms_dot_shape ) && $ms_dot_shape == 'bar' ) { echo 'selected'; } ?>
+            >
+                Bar
+            </option>
+
+            <option
+                value="pill"
+                <?php if ( ! empty( $ms_dot_shape ) && $ms_dot_shape == 'pill' ) { echo 'selected'; } ?>
+            >
+                Pill
+            </option>
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Navigation Dots Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_dot_color ) ? 'rgba(0, 0, 0, 0.5)' : $ms_dot_color ?>"
+            name="ms_dot_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Navigation Dots Active Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_dot_active_color ) ? 'rgba(0, 0, 0, 0.5)' : $ms_dot_active_color ?>"
+            name="ms_dot_active_color"
         />
     </div>
 </div>

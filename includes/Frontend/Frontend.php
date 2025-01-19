@@ -28,6 +28,7 @@ final class Frontend
             $args[ 'category__in' ] = $ms_cat_query;
 
         include 'views/slider.php';
+        include 'views/slider-style.php';
         include 'views/slider-settings.php';
 
         return ob_get_clean();
