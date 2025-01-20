@@ -1,3 +1,3 @@
 jQuery(document).ready(function() {
-    jQuery('#cat_query').selectize()
+    jQuery('#tag_query').selectize()
 })

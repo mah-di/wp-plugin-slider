@@ -1,86 +1,116 @@
 <?php
 
-$ms_ID = get_the_ID();
-$ms_categories = get_terms( [
-    'taxonomy' => 'category',
-    'hide_empty' => false
-] );
+$ms_ID                      = get_the_ID();
 
-$ms_cat_query = get_post_meta( $ms_ID, 'ms_cat_query', true );
-$ms_feature_img_size = get_post_meta( $ms_ID, 'ms_feature_img_size', true );
-$ms_items_to_show = get_post_meta( $ms_ID, 'ms_items_to_show', true );
-$ms_items_to_display = get_post_meta( $ms_ID, 'ms_items_to_display', true );
-$ms_order = get_post_meta( $ms_ID, 'ms_order', true );
-$ms_show_comments = get_post_meta( $ms_ID, 'ms_show_comments', true );
-$ms_show_category = get_post_meta( $ms_ID, 'ms_show_category', true );
-$ms_show_tags = get_post_meta( $ms_ID, 'ms_show_tags', true );
-$ms_show_excerpt = get_post_meta( $ms_ID, 'ms_show_excerpt', true );
-$ms_excerpt_length = get_post_meta( $ms_ID, 'ms_excerpt_length', true );
-$ms_read_more_text = get_post_meta( $ms_ID, 'ms_read_more_text', true );
-$ms_show_author = get_post_meta( $ms_ID, 'ms_show_author', true );
-$ms_show_avatar = get_post_meta( $ms_ID, 'ms_show_avatar', true );
-$ms_show_date = get_post_meta( $ms_ID, 'ms_show_date', true );
+$ms_tags                    = ms_get_all_tags();
 
-$ms_margin_right = get_post_meta( $ms_ID, 'ms_margin_right', true );
-$ms_loop = get_post_meta( $ms_ID, 'ms_loop', true );
-$ms_center = get_post_meta( $ms_ID, 'ms_center', true );
-$ms_show_nav = get_post_meta( $ms_ID, 'ms_show_nav', true );
-$ms_show_dots = get_post_meta( $ms_ID, 'ms_show_dots', true );
-$ms_show_dots_foreach = get_post_meta( $ms_ID, 'ms_show_dots_foreach', true );
-$ms_autoplay = get_post_meta( $ms_ID, 'ms_autoplay', true );
-$ms_autoplay_timeout = get_post_meta( $ms_ID, 'ms_autoplay_timeout', true );
-$ms_autoplay_hover_pause = get_post_meta( $ms_ID, 'ms_autoplay_hover_pause', true );
-$ms_autoplay_speed = get_post_meta( $ms_ID, 'ms_autoplay_speed', true );
+$ms_post_type               = get_post_meta( $ms_ID, 'ms_post_type', true );
+$ms_tag_query               = get_post_meta( $ms_ID, 'ms_tag_query', true );
+$ms_feature_img_size        = get_post_meta( $ms_ID, 'ms_feature_img_size', true );
+$ms_items_to_show           = get_post_meta( $ms_ID, 'ms_items_to_show', true );
+$ms_items_to_display        = get_post_meta( $ms_ID, 'ms_items_to_display', true );
+$ms_order                   = get_post_meta( $ms_ID, 'ms_order', true );
+$ms_show_comments           = get_post_meta( $ms_ID, 'ms_show_comments', true );
+$ms_show_category           = get_post_meta( $ms_ID, 'ms_show_category', true );
+$ms_show_tags               = get_post_meta( $ms_ID, 'ms_show_tags', true );
+$ms_show_excerpt            = get_post_meta( $ms_ID, 'ms_show_excerpt', true );
+$ms_excerpt_length          = get_post_meta( $ms_ID, 'ms_excerpt_length', true );
+$ms_read_more_text          = get_post_meta( $ms_ID, 'ms_read_more_text', true );
+$ms_show_author             = get_post_meta( $ms_ID, 'ms_show_author', true );
+$ms_show_avatar             = get_post_meta( $ms_ID, 'ms_show_avatar', true );
+$ms_show_date               = get_post_meta( $ms_ID, 'ms_show_date', true );
 
-$ms_bg_color = get_post_meta( $ms_ID, 'ms_bg_color', true );
-$ms_comment_icon_color = get_post_meta( $ms_ID, 'ms_comment_icon_color', true );
-$ms_comment_color = get_post_meta( $ms_ID, 'ms_comment_color', true );
-$ms_category_icon_color = get_post_meta( $ms_ID, 'ms_category_icon_color', true );
-$ms_category_color = get_post_meta( $ms_ID, 'ms_category_color', true );
-$ms_category_bg_color = get_post_meta( $ms_ID, 'ms_category_bg_color', true );
-$ms_tag_icon_color = get_post_meta( $ms_ID, 'ms_tag_icon_color', true );
-$ms_tag_color = get_post_meta( $ms_ID, 'ms_tag_color', true );
-$ms_tag_bg_color = get_post_meta( $ms_ID, 'ms_tag_bg_color', true );
-$ms_title_color = get_post_meta( $ms_ID, 'ms_title_color', true );
-$ms_excerpt_color = get_post_meta( $ms_ID, 'ms_excerpt_color', true );
-$ms_read_more_color = get_post_meta( $ms_ID, 'ms_read_more_color', true );
-$ms_author_color = get_post_meta( $ms_ID, 'ms_author_color', true );
-$ms_date_color = get_post_meta( $ms_ID, 'ms_date_color', true );
+$ms_margin_right            = get_post_meta( $ms_ID, 'ms_margin_right', true );
+$ms_loop                    = get_post_meta( $ms_ID, 'ms_loop', true );
+$ms_center                  = get_post_meta( $ms_ID, 'ms_center', true );
+$ms_show_nav                = get_post_meta( $ms_ID, 'ms_show_nav', true );
+$ms_show_dots               = get_post_meta( $ms_ID, 'ms_show_dots', true );
+$ms_show_dots_foreach       = get_post_meta( $ms_ID, 'ms_show_dots_foreach', true );
+$ms_autoplay                = get_post_meta( $ms_ID, 'ms_autoplay', true );
+$ms_autoplay_timeout        = get_post_meta( $ms_ID, 'ms_autoplay_timeout', true );
+$ms_autoplay_hover_pause    = get_post_meta( $ms_ID, 'ms_autoplay_hover_pause', true );
+$ms_autoplay_speed          = get_post_meta( $ms_ID, 'ms_autoplay_speed', true );
 
-$ms_nav_bg_color = get_post_meta( $ms_ID, 'ms_nav_bg_color', true );
-$ms_nav_bg_hover_color = get_post_meta( $ms_ID, 'ms_nav_bg_hover_color', true );
-$ms_nav_color = get_post_meta( $ms_ID, 'ms_nav_color', true );
-$ms_nav_font_size = get_post_meta( $ms_ID, 'ms_nav_font_size', true );
-$ms_nav_font_weight = get_post_meta( $ms_ID, 'ms_nav_font_weight', true );
+$ms_bg_color                = get_post_meta( $ms_ID, 'ms_bg_color', true );
+$ms_comment_icon_color      = get_post_meta( $ms_ID, 'ms_comment_icon_color', true );
+$ms_comment_color           = get_post_meta( $ms_ID, 'ms_comment_color', true );
+$ms_category_icon_color     = get_post_meta( $ms_ID, 'ms_category_icon_color', true );
+$ms_category_color          = get_post_meta( $ms_ID, 'ms_category_color', true );
+$ms_category_bg_color       = get_post_meta( $ms_ID, 'ms_category_bg_color', true );
+$ms_tag_icon_color          = get_post_meta( $ms_ID, 'ms_tag_icon_color', true );
+$ms_tag_color               = get_post_meta( $ms_ID, 'ms_tag_color', true );
+$ms_tag_bg_color            = get_post_meta( $ms_ID, 'ms_tag_bg_color', true );
+$ms_title_color             = get_post_meta( $ms_ID, 'ms_title_color', true );
+$ms_excerpt_color           = get_post_meta( $ms_ID, 'ms_excerpt_color', true );
+$ms_read_more_color         = get_post_meta( $ms_ID, 'ms_read_more_color', true );
+$ms_author_color            = get_post_meta( $ms_ID, 'ms_author_color', true );
+$ms_date_color              = get_post_meta( $ms_ID, 'ms_date_color', true );
 
-$ms_dot_shape = get_post_meta( $ms_ID, 'ms_dot_shape', true );
-$ms_dot_color = get_post_meta( $ms_ID, 'ms_dot_color', true );
-$ms_dot_active_color = get_post_meta( $ms_ID, 'ms_dot_active_color', true );
+$ms_nav_bg_color            = get_post_meta( $ms_ID, 'ms_nav_bg_color', true );
+$ms_nav_bg_hover_color      = get_post_meta( $ms_ID, 'ms_nav_bg_hover_color', true );
+$ms_nav_color               = get_post_meta( $ms_ID, 'ms_nav_color', true );
+$ms_nav_font_size           = get_post_meta( $ms_ID, 'ms_nav_font_size', true );
+$ms_nav_font_weight         = get_post_meta( $ms_ID, 'ms_nav_font_weight', true );
+
+$ms_dot_shape               = get_post_meta( $ms_ID, 'ms_dot_shape', true );
+$ms_dot_color               = get_post_meta( $ms_ID, 'ms_dot_color', true );
+$ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true );
 
 ?>
 
 <div class="form-wrapper">
+
     <div class="form-field field-wrapper">
-        <label class="label" for="cat_query">Select Category</label>
-        <select class="field_small" name="ms_cat_query[]" id="cat_query" multiple="multiple" placeholder="Select Category">
+        <span>Post Type</span>
+        <select class="field" id="ms_post_type" name="ms_post_type">
+            <option
+                value="post"
+                <?php echo ( empty( $ms_post_type ) || $ms_post_type == 'post' ) ? 'selected' : '' ?>
+            >
+                Blog Post
+            </option>
+
+            <option
+                value="product"
+                <?php echo ( ! empty( $ms_post_type ) && $ms_post_type == 'product' ) ? 'selected' : '' ?>
+            >
+                Woo Commerce Product
+            </option>
+
+            <option
+                value="my_slide"
+                <?php echo ( ! empty( $ms_post_type ) && $ms_post_type == 'my_slide' ) ? 'selected' : '' ?>
+            >
+                Slide
+            </option>
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <label class="label" for="tag_query">Select Tag</label>
+        <select class="field_small" name="ms_tag_query[]" id="tag_query" multiple="multiple" placeholder="Select Tag">
             <?php
-            
-            if ( ! empty( $ms_categories ) ):
-                foreach ( $ms_categories as $category ):
-        
+
+            foreach ( $ms_tags as $post_type => $tags ):
+
+                if ( ! empty( $tags ) ):
+                    foreach ( $tags as $tag ):
+
             ?>
-                    <option
-                        value="<?php echo $category->term_id ?>"
-                        <?php if ( in_array( $category->term_id, explode( ',',  $ms_cat_query ) ) ) { echo "selected"; } ?>
-                    >
-                        <?php echo $category->name ?>
-                    </option>
-        
+                        <option
+                            class="<?php echo $post_type . '_tag_option' ?> ms_tag_option"
+                            value="<?php echo $tag->term_id ?>"
+                            <?php if ( in_array( $tag->term_id, explode( ',',  $ms_tag_query ) ) ) { echo "selected"; } ?>
+                        >
+                            <?php echo $tag->name ?>
+                        </option>
+
             <?php
-        
-                endforeach;
-            endif;
-        
+
+                    endforeach;
+                endif;
+            endforeach;
+
             ?>
         </select>
     </div>

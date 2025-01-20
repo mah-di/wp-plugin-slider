@@ -13,7 +13,8 @@ final class Frontend
 
         $ms_post_ID = isset( $id[ 'id' ] ) ? $id[ 'id' ] : $id;
 
-        $ms_cat_query = get_post_meta( $ms_post_ID, 'ms_cat_query', true );
+        $ms_post_type = get_post_meta( $ms_post_ID, 'ms_post_type', true );
+        $ms_tag_query = get_post_meta( $ms_post_ID, 'ms_tag_query', true );
         $ms_items_to_show = get_post_meta( $ms_post_ID, 'ms_items_to_show', true );
         $ms_order = get_post_meta( $ms_post_ID, 'ms_order', true );
 
@@ -24,8 +25,15 @@ final class Frontend
             'order'          => $ms_order
         ];
 
-        if ( ! empty( $ms_cat_query ) )
-            $args[ 'category__in' ] = $ms_cat_query;
+        if ( ! empty( $ms_tag_query ) )
+            $args[ 'tax_query' ] = [
+                [
+                    'taxonomy' => $ms_post_type . '_tag',
+                    'field'    => 'id',
+                    'terms'    => explode( ',', $ms_tag_query ),
+                    'operator' => 'IN'
+                ]
+            ];
 
         include 'views/slider.php';
         include 'views/slider-style.php';

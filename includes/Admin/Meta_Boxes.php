@@ -83,22 +83,22 @@ final class Meta_Boxes
             return;
 
         // Saving Meta Values
-        if ( isset( $_POST[ 'ms_cat_query' ] ) ) {
-            if ( empty( $_POST[ 'ms_cat_query' ] ) ) {
-                $cat_query = '';
+        if ( isset( $_POST[ 'ms_tag_query' ] ) ) {
+            if ( empty( $_POST[ 'ms_tag_query' ] ) ) {
+                $tag_query = '';
 
             } else {
-                if ( is_array( $_POST[ 'ms_cat_query' ] ) ) {
-                    $sanitized_array = array_map( 'sanitize_text_field', $_POST[ 'ms_cat_query' ] );
+                if ( is_array( $_POST[ 'ms_tag_query' ] ) ) {
+                    $sanitized_array = array_map( 'sanitize_text_field', $_POST[ 'ms_tag_query' ] );
                     
-                    $cat_query = implode( ',', $sanitized_array );
+                    $tag_query = implode( ',', $sanitized_array );
                 }
 
-                if ( is_string( $_POST['ms_cat_query'] ) )
-                    $cat_query = $_POST[ 'ms_cat_query' ];
+                if ( is_string( $_POST['ms_tag_query'] ) )
+                    $tag_query = $_POST[ 'ms_tag_query' ];
             }
 
-            $this->save_text_meta( 'ms_cat_query', $cat_query );
+            $this->save_text_meta( 'ms_tag_query', $tag_query );
         }
 
 // echo '<pre>';
