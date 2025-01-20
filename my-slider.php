@@ -27,6 +27,8 @@ final class My_Slider
 
         $this->define_constants();
 
+        require_once MS_PATH . '/includes/Template_Tags.php';
+
         require_once MS_PATH . '/includes/Frontend/Frontend.php';
 
         require_once MS_PATH . '/includes/Admin/Admin.php';

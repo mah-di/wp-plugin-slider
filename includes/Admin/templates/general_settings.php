@@ -15,6 +15,8 @@ $ms_show_comments = get_post_meta( $ms_ID, 'ms_show_comments', true );
 $ms_show_category = get_post_meta( $ms_ID, 'ms_show_category', true );
 $ms_show_tags = get_post_meta( $ms_ID, 'ms_show_tags', true );
 $ms_show_excerpt = get_post_meta( $ms_ID, 'ms_show_excerpt', true );
+$ms_excerpt_length = get_post_meta( $ms_ID, 'ms_excerpt_length', true );
+$ms_read_more_text = get_post_meta( $ms_ID, 'ms_read_more_text', true );
 $ms_show_author = get_post_meta( $ms_ID, 'ms_show_author', true );
 $ms_show_avatar = get_post_meta( $ms_ID, 'ms_show_avatar', true );
 $ms_show_date = get_post_meta( $ms_ID, 'ms_show_date', true );
@@ -41,6 +43,7 @@ $ms_tag_color = get_post_meta( $ms_ID, 'ms_tag_color', true );
 $ms_tag_bg_color = get_post_meta( $ms_ID, 'ms_tag_bg_color', true );
 $ms_title_color = get_post_meta( $ms_ID, 'ms_title_color', true );
 $ms_excerpt_color = get_post_meta( $ms_ID, 'ms_excerpt_color', true );
+$ms_read_more_color = get_post_meta( $ms_ID, 'ms_read_more_color', true );
 $ms_author_color = get_post_meta( $ms_ID, 'ms_author_color', true );
 $ms_date_color = get_post_meta( $ms_ID, 'ms_date_color', true );
 
@@ -267,6 +270,28 @@ $ms_dot_active_color = get_post_meta( $ms_ID, 'ms_dot_active_color', true );
                 <a class="slide-button btn"></a>
             </span>
         </div>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Excerpt Length</span>
+        <input
+            class="field"
+            type="number"
+            min="1"
+            value="<?php echo empty( $ms_excerpt_length ) ? '55' : $ms_excerpt_length ?>"
+            step="1"
+            name="ms_excerpt_length"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Read More Text</span>
+        <input
+            class="field"
+            type="text"
+            value="<?php echo empty( $ms_read_more_text ) ? 'Read More' : $ms_read_more_text ?>"
+            name="ms_read_more_text"
+        />
     </div>
 
     <div class="form-field field-wrapper">
@@ -592,6 +617,16 @@ $ms_dot_active_color = get_post_meta( $ms_ID, 'ms_dot_active_color', true );
     </div>
 
     <div class="form-field field-wrapper">
+        <span>Read More Text Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_read_more_color ) ? '#4c4c4c' : $ms_read_more_color ?>"
+            name="ms_read_more_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
         <span>Author Color</span>
         <input
             class="ms-color-picker"
@@ -725,7 +760,7 @@ $ms_dot_active_color = get_post_meta( $ms_ID, 'ms_dot_active_color', true );
         <input
             class="ms-color-picker"
             type="text"
-            value="<?php echo empty( $ms_dot_color ) ? 'rgba(0, 0, 0, 0.5)' : $ms_dot_color ?>"
+            value="<?php echo empty( $ms_dot_color ) ? '#e9e9e9' : $ms_dot_color ?>"
             name="ms_dot_color"
         />
     </div>
@@ -735,7 +770,7 @@ $ms_dot_active_color = get_post_meta( $ms_ID, 'ms_dot_active_color', true );
         <input
             class="ms-color-picker"
             type="text"
-            value="<?php echo empty( $ms_dot_active_color ) ? 'rgba(0, 0, 0, 0.5)' : $ms_dot_active_color ?>"
+            value="<?php echo empty( $ms_dot_active_color ) ? '#cdcdcd' : $ms_dot_active_color ?>"
             name="ms_dot_active_color"
         />
     </div>

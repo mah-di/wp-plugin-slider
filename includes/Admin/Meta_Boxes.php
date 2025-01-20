@@ -133,6 +133,12 @@ final class Meta_Boxes
         if ( isset( $_POST[ 'ms_show_excerpt' ] ) )
             $this->save_text_meta( 'ms_show_excerpt', $_POST[ 'ms_show_excerpt' ] );
 
+        if ( isset( $_POST[ 'ms_excerpt_length' ] ) )
+            $this->save_text_meta( 'ms_excerpt_length', $_POST[ 'ms_excerpt_length' ] );
+
+        if ( isset( $_POST[ 'ms_read_more_text' ] ) )
+            $this->save_text_meta( 'ms_read_more_text', $_POST[ 'ms_read_more_text' ] );
+
         if ( isset( $_POST[ 'ms_show_author' ] ) )
             $this->save_text_meta( 'ms_show_author', $_POST[ 'ms_show_author' ] );
 
@@ -207,6 +213,9 @@ final class Meta_Boxes
 
         if ( isset( $_POST[ 'ms_excerpt_color' ] ) )
             $this->save_text_meta( 'ms_excerpt_color', $_POST[ 'ms_excerpt_color' ] );
+
+        if ( isset( $_POST[ 'ms_read_more_color' ] ) )
+            $this->save_text_meta( 'ms_read_more_color', $_POST[ 'ms_read_more_color' ] );
 
         if ( isset( $_POST[ 'ms_author_color' ] ) )
             $this->save_text_meta( 'ms_author_color', $_POST[ 'ms_author_color' ] );

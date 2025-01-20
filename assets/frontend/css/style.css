@@ -22,11 +22,6 @@
     z-index: 10 !important; /* Ensure buttons are above the slider */
 }
 
-.owl-prev span,
-.owl-next span {
-    margin-top: -5px !important;
-}
-
 .owl-prev {
     left: 1vw;
 }
@@ -87,6 +82,16 @@
 .ms-cat-heading {
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.ms-cat-wrapper,
+.ms-tag-wrapper,
+.ms-comment-wrapper {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .ms-tag-heading {
