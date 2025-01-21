@@ -21,12 +21,16 @@
     border: none !important;
     background-color: #f9f9f9 !important;
     box-shadow: #ddd 0px 0px 5px 0px !important;
+    background-image: none !important;
 }
 
 .selectize-input div.item {
+    padding: 2px 6px !important;
+    color: #ffffff !important;
     background-image: none !important;
     background-color: #00c62b !important;
     border: #00b62e !important;
+    border-radius: 3px !important;
 }
 
 .tag-query-field {

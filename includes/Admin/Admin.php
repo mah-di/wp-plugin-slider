@@ -6,8 +6,10 @@ final class Admin
     {
         add_action( 'admin_enqueue_scripts', [ $this, 'load_assets' ] );
 
-        require_once 'My_Slider_Post_Type.php';
-        require_once 'Meta_Boxes.php';
+        require_once 'Slider/My_Slider_Post_Type.php';
+        require_once 'Slider/Meta_Boxes.php';
+
+        require_once 'Slide/My_Slide_Post_Type.php';
     }
 
     public function load_assets()

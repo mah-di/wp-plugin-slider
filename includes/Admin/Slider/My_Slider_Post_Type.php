@@ -30,7 +30,7 @@ final class My_Slider_Post_Type
             'public'            => true,
             'menu_position'     => 5,
             'menu_icon'         => 'dashicons-slides',
-            'supports'          => array( 'title'),
+            'supports'          => [ 'title' ],
             'has_archive'       => false,
         ];
 

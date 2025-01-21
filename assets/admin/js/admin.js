@@ -6,7 +6,7 @@ jQuery(document).ready(function ($) {
     const selectedValue = $("#ms_post_type").val();
     $(`.ms_tag_option:not(.${selectedValue}_tag_option)`).addClass("d-none");
     
-    $("#ms_post_type").on("change", function () {
+    $("#ms_post_type").on("afterChange", function () {
         var $select = $('#tag_query').selectize();
         var selectizeInstance = $select[0].selectize;
         var selectedValue = $(this).val();
@@ -16,5 +16,20 @@ jQuery(document).ready(function ($) {
 
         $(".ms_tag_option").addClass("d-none");
         $("." + selectedValue + "_tag_option").removeClass("d-none");
+    });
+
+    var currentValue = $('#ms_post_type').val();
+
+    $('#ms_post_type').on('change', function () {
+        var newValue = $(this).val();
+
+        var isConfirmed = confirm("Are you sure you want to change the post type?");
+
+        if (!isConfirmed) {
+            $(this).val(currentValue);
+        } else {
+            $(this).trigger('afterChange');
+            currentValue = newValue;
+        }
     });
 });

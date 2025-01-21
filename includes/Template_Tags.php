@@ -40,3 +40,32 @@ function ms_get_tags( $post_type )
 
     return $tags;
 }
+
+function ms_get_the_category( $post_id = false, $post_type ) {
+    if ( $post_type == 'post' )
+        $tax = 'category';
+    else
+        $tax = "{$post_type}_cat";
+
+	$categories = get_the_terms( $post_id, $tax );
+
+    if ( ! $categories || is_wp_error( $categories ) ) {
+		$categories = [];
+	}
+
+	$categories = array_values( $categories );
+
+	foreach ( array_keys( $categories ) as $key ) {
+		_make_cat_compat( $categories[ $key ] );
+	}
+
+	return apply_filters( 'get_the_categories', $categories, $post_id );
+}
+
+function ms_get_the_tags( $post_ID = 0, $post_type ) {
+    $tax = "{$post_type}_tag";
+
+	$terms = get_the_terms( $post_ID, $tax );
+
+	return apply_filters( 'get_the_tags', $terms );
+}

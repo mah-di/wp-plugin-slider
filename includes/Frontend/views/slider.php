@@ -38,7 +38,7 @@ if ( $posts->have_posts() ):
                 <?php
                 $post_ID = get_the_ID();
 
-                $cats = get_the_category( $post_ID );
+                $cats = ms_get_the_category( $post_ID, $ms_post_type );
                 foreach ( $cats as $cat ): ?>
                 
                     <a href="<?php echo esc_url( get_category_link( $cat ) ); ?>" class="ms-cat">
@@ -54,7 +54,7 @@ if ( $posts->have_posts() ):
 
                 <?php
 
-                $tags = get_the_tags( $post_ID );
+                $tags = ms_get_the_tags( $post_ID, $ms_post_type );
 
                 if ( $tags ) :
                 ?>
