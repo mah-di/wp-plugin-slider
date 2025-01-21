@@ -1,17 +1,20 @@
 jQuery(document).ready(function ($) {
-    $(".ms_tag_option").hide();
+    var $select = $('#tag_query').selectize();
+    var selectizeInstance = $select[0].selectize;
+    selectizeInstance.refreshOptions(false);
 
+    const selectedValue = $("#ms_post_type").val();
+    $(`.ms_tag_option:not(.${selectedValue}_tag_option)`).addClass("d-none");
+    
     $("#ms_post_type").on("change", function () {
-        var selectedValue = $(this).val();
         var $select = $('#tag_query').selectize();
         var selectizeInstance = $select[0].selectize;
-
+        var selectedValue = $(this).val();
+        
         selectizeInstance.clear();
-        setTimeout(function() {
-            $(".ms_tag_option").hide();
-            $("." + selectedValue + "_tag_option").show();
-        }, 500)
-    });
+        selectizeInstance.refreshOptions(false);
 
-    $("#ms_post_type").trigger("change");
+        $(".ms_tag_option").addClass("d-none");
+        $("." + selectedValue + "_tag_option").removeClass("d-none");
+    });
 });

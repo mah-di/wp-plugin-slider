@@ -87,8 +87,8 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
     </div>
 
     <div class="form-field field-wrapper">
-        <label class="label" for="tag_query">Select Tag</label>
-        <select class="field_small" name="ms_tag_query[]" id="tag_query" multiple="multiple" placeholder="Select Tag">
+        <span>Select Tag</span>
+        <select name="ms_tag_query[]" id="tag_query" multiple="multiple" placeholder="Select Tag">
             <?php
 
             foreach ( $ms_tags as $post_type => $tags ):

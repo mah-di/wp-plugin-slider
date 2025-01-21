@@ -11,6 +11,10 @@
     margin: 40px auto;
 }
 
+.d-none {
+    display: none !important;
+}
+
 .selectize-input,
 .field {
     width: 80% !important;

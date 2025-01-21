@@ -19,7 +19,7 @@ final class Frontend
         $ms_order = get_post_meta( $ms_post_ID, 'ms_order', true );
 
         $args = [
-            'post_type'      => 'post',
+            'post_type'      => $ms_post_type,
             'posts_per_page' => $ms_items_to_show,
             'orderby'        => 'date',
             'order'          => $ms_order

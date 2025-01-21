@@ -109,6 +109,9 @@ final class Meta_Boxes
 
 
 
+        if ( isset( $_POST[ 'ms_post_type' ] ) )
+            $this->save_text_meta( 'ms_post_type', $_POST[ 'ms_post_type' ] );
+
         if ( isset( $_POST[ 'ms_items_to_show' ] ) )
             $this->save_int_meta( 'ms_items_to_show', $_POST[ 'ms_items_to_show' ] );
 
