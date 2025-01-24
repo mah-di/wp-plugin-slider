@@ -1,40 +1,35 @@
+.owl-carousel {
+    background-color: antiquewhite !important;
+    margin: 10px 0 !important;
+}
+
 .owl-stage-outer {
-    padding: 15px 0 !important;
-    position: relative !important; /* For absolute positioning of buttons */
+    padding: 80px 0 !important;
+}
+
+.owl-nav {
+    margin: 0 !important;
+    padding: 0 15px !important;
 }
 
 /* Base styling for the slider buttons */
 .owl-prev,
 .owl-next {
-    position: absolute !important; /* Positioning relative to the slider */
-    top: 45% !important; /* Vertically centered */
-    transform: translateY(-50%) !important; /* Adjust for perfect centering */
-    width: 50px !important; /* Button size */
+    margin: 0 !important;
+    width: 50px !important;
     height: 50px !important;
     border: none !important;
-    border-radius: 50% !important; /* Make it circular */
+    border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    color: white !important; /* Icon or text color */
     cursor: pointer !important;
-    transition: all 0.3s ease !important; /* Smooth hover effect */
-    z-index: 10 !important; /* Ensure buttons are above the slider */
+    transition: all 0.3s ease !important;
+    z-index: 10 !important;
 }
 
-.owl-prev {
-    left: 1vw;
-}
-
-.owl-next {
-    right: 1vw;
-}
-
-/* Hover effect */
-.owl-prev:hover,
-.owl-next:hover {
-    background-color: rgba(0, 0, 0, 0.8) !important; /* Reduce transparency */
-    transform: translateY(-50%) scale(1.2) !important; /* Grow generously */
+.owl-dots {
+    margin: 0 !important;
 }
 
 .owl-theme .owl-dot {
@@ -63,57 +58,42 @@
     overflow: hidden;
 }
 
-.ms-card-header img {
+.ms-card-header {
     width: 100%;
-    height: 200px;
+    position: relative;
+}
+
+.ms-card-header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
 .ms-card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
     padding: 20px;
-    min-height: 250px;
-}
-
-.ms-tag-heading,
-.ms-cat-heading {
-    font-weight: bold;
-    text-transform: uppercase;
+    min-height: 200px;
+    height: 100%;
 }
 
 .ms-cat-wrapper,
 .ms-tag-wrapper,
 .ms-comment-wrapper {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     gap: 10px;
 }
 
+.ms-cat-heading,
 .ms-tag-heading {
-    font-size: 12px;
+    font-size: 10px;
 }
 
-.ms-cat-heading {
-    font-size: 18px;
-}
-
-
-.ms-cat {
-    border-radius: 50px;
-    font-size: 18px;
-    margin: 0 3px;
-    margin-bottom: 5px;
-    padding: 3px 12px;
-    text-transform: uppercase;
-    cursor: pointer;
-    text-decoration: none !important;
-}
-
+.ms-cat,
 .ms-tag {
     border-radius: 50px;
     font-size: 12px;
@@ -129,6 +109,51 @@
 .ms-card-body p {
     font-size: 13px;
     margin: 0 0 40px;
+}
+
+.ms-title,
+.ms-title a {
+    margin: 0 0 15px !important;
+    text-decoration: none !important;
+}
+
+.ms-review {
+    display: flex;
+    gap: 10px;
+}
+
+.ms-review .star-rating {
+    margin: 0 !important;
+}
+
+.ms-pricing {
+    margin-top: 10px;
+}
+
+.ms-price-main {
+    color: orangered;
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.ms-price-strike {
+    font-size: 16px;
+}
+
+.ms-add-to-cart a {
+    margin-top: 10px !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    border-radius: 3px !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    padding: 10px 0 !important;
+}
+
+.ms-add-to-cart a.added {
+    display: none !important;
 }
 
 .ms-author {

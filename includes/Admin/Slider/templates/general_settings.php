@@ -7,6 +7,7 @@ $ms_tags                    = ms_get_all_tags();
 $ms_post_type               = get_post_meta( $ms_ID, 'ms_post_type', true );
 $ms_tag_query               = get_post_meta( $ms_ID, 'ms_tag_query', true );
 $ms_feature_img_size        = get_post_meta( $ms_ID, 'ms_feature_img_size', true );
+$ms_feature_img_ratio       = get_post_meta( $ms_ID, 'ms_feature_img_ratio', true );
 $ms_items_to_show           = get_post_meta( $ms_ID, 'ms_items_to_show', true );
 $ms_items_to_display        = get_post_meta( $ms_ID, 'ms_items_to_display', true );
 $ms_order                   = get_post_meta( $ms_ID, 'ms_order', true );
@@ -24,6 +25,8 @@ $ms_margin_right            = get_post_meta( $ms_ID, 'ms_margin_right', true );
 $ms_loop                    = get_post_meta( $ms_ID, 'ms_loop', true );
 $ms_center                  = get_post_meta( $ms_ID, 'ms_center', true );
 $ms_show_nav                = get_post_meta( $ms_ID, 'ms_show_nav', true );
+$ms_nav_position            = get_post_meta( $ms_ID, 'ms_nav_position', true );
+$ms_nav_radius              = get_post_meta( $ms_ID, 'ms_nav_radius', true );
 $ms_show_dots               = get_post_meta( $ms_ID, 'ms_show_dots', true );
 $ms_show_dots_foreach       = get_post_meta( $ms_ID, 'ms_show_dots_foreach', true );
 $ms_autoplay                = get_post_meta( $ms_ID, 'ms_autoplay', true );
@@ -33,24 +36,52 @@ $ms_autoplay_speed          = get_post_meta( $ms_ID, 'ms_autoplay_speed', true )
 
 $ms_bg_color                = get_post_meta( $ms_ID, 'ms_bg_color', true );
 $ms_comment_icon_color      = get_post_meta( $ms_ID, 'ms_comment_icon_color', true );
+$ms_comment_fs              = get_post_meta( $ms_ID, 'ms_comment_fs', true );
+$ms_comment_fw              = get_post_meta( $ms_ID, 'ms_comment_fw', true );
 $ms_comment_color           = get_post_meta( $ms_ID, 'ms_comment_color', true );
 $ms_category_icon_color     = get_post_meta( $ms_ID, 'ms_category_icon_color', true );
+$ms_category_fs             = get_post_meta( $ms_ID, 'ms_category_fs', true );
+$ms_category_fw             = get_post_meta( $ms_ID, 'ms_category_fw', true );
 $ms_category_color          = get_post_meta( $ms_ID, 'ms_category_color', true );
 $ms_category_bg_color       = get_post_meta( $ms_ID, 'ms_category_bg_color', true );
 $ms_tag_icon_color          = get_post_meta( $ms_ID, 'ms_tag_icon_color', true );
+$ms_tag_fs                  = get_post_meta( $ms_ID, 'ms_tag_fs', true );
+$ms_tag_fw                  = get_post_meta( $ms_ID, 'ms_tag_fw', true );
 $ms_tag_color               = get_post_meta( $ms_ID, 'ms_tag_color', true );
 $ms_tag_bg_color            = get_post_meta( $ms_ID, 'ms_tag_bg_color', true );
+$ms_title_fs                = get_post_meta( $ms_ID, 'ms_title_fs', true );
+$ms_title_fw                = get_post_meta( $ms_ID, 'ms_title_fw', true );
 $ms_title_color             = get_post_meta( $ms_ID, 'ms_title_color', true );
+$ms_excerpt_fs              = get_post_meta( $ms_ID, 'ms_excerpt_fs', true );
+$ms_excerpt_fw              = get_post_meta( $ms_ID, 'ms_excerpt_fw', true );
 $ms_excerpt_color           = get_post_meta( $ms_ID, 'ms_excerpt_color', true );
 $ms_read_more_color         = get_post_meta( $ms_ID, 'ms_read_more_color', true );
+$ms_author_fs               = get_post_meta( $ms_ID, 'ms_author_fs', true );
+$ms_author_fw               = get_post_meta( $ms_ID, 'ms_author_fw', true );
 $ms_author_color            = get_post_meta( $ms_ID, 'ms_author_color', true );
+$ms_date_fs                 = get_post_meta( $ms_ID, 'ms_date_fs', true );
+$ms_date_fw                 = get_post_meta( $ms_ID, 'ms_date_fw', true );
 $ms_date_color              = get_post_meta( $ms_ID, 'ms_date_color', true );
+
+$ms_sales_fs                = get_post_meta( $ms_ID, 'ms_sales_fs', true );
+$ms_sales_fw                = get_post_meta( $ms_ID, 'ms_sales_fw', true );
+$ms_sales_color             = get_post_meta( $ms_ID, 'ms_sales_color', true );
+$ms_active_price_fs         = get_post_meta( $ms_ID, 'ms_active_price_fs', true );
+$ms_active_price_fw         = get_post_meta( $ms_ID, 'ms_active_price_fw', true );
+$ms_active_price_color      = get_post_meta( $ms_ID, 'ms_active_price_color', true );
+$ms_prev_price_fs           = get_post_meta( $ms_ID, 'ms_prev_price_fs', true );
+$ms_prev_price_fw           = get_post_meta( $ms_ID, 'ms_prev_price_fw', true );
+$ms_prev_price_color        = get_post_meta( $ms_ID, 'ms_prev_price_color', true );
+$ms_woo_button_fs           = get_post_meta( $ms_ID, 'ms_woo_button_fs', true );
+$ms_woo_button_fw           = get_post_meta( $ms_ID, 'ms_woo_button_fw', true );
+$ms_woo_button_color        = get_post_meta( $ms_ID, 'ms_woo_button_color', true );
+$ms_woo_button_bg_color     = get_post_meta( $ms_ID, 'ms_woo_button_bg_color', true );
 
 $ms_nav_bg_color            = get_post_meta( $ms_ID, 'ms_nav_bg_color', true );
 $ms_nav_bg_hover_color      = get_post_meta( $ms_ID, 'ms_nav_bg_hover_color', true );
 $ms_nav_color               = get_post_meta( $ms_ID, 'ms_nav_color', true );
-$ms_nav_font_size           = get_post_meta( $ms_ID, 'ms_nav_font_size', true );
-$ms_nav_font_weight         = get_post_meta( $ms_ID, 'ms_nav_font_weight', true );
+$ms_nav_fs                  = get_post_meta( $ms_ID, 'ms_nav_fs', true );
+$ms_nav_fw                  = get_post_meta( $ms_ID, 'ms_nav_fw', true );
 
 $ms_dot_shape               = get_post_meta( $ms_ID, 'ms_dot_shape', true );
 $ms_dot_color               = get_post_meta( $ms_ID, 'ms_dot_color', true );
@@ -159,49 +190,104 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 value="thumbnail"
                 <?php if($ms_feature_img_size == "thumbnail") { echo "selected"; } ?> 
             >
-                <?php echo esc_html__('Thumbnail - 150 x 150','spice-post-slider');?>
+                <?php echo esc_html__('Thumbnail - 150 x 150','my-slider');?>
             </option>
 
             <option
                 value="medium"
                 <?php if($ms_feature_img_size == "medium") { echo "selected"; } ?>
             >
-                <?php echo esc_html__('Medium - 300 x 300','spice-post-slider');?>
+                <?php echo esc_html__('Medium - 300 x 300','my-slider');?>
             </option>
 
             <option
                 value="medium_large"
                 <?php if($ms_feature_img_size == "medium_large") { echo "selected"; } if(empty($ms_feature_img_size)) { echo "selected"; } ?> 
             >
-                <?php echo esc_html__('Medium Large - 768 x 0','spice-post-slider');?>
+                <?php echo esc_html__('Medium Large - 768 x 768','my-slider');?>
             </option>
 
             <option
                 value="large"
                 <?php if($ms_feature_img_size == "large") { echo "selected"; } ?>
             >
-                <?php echo esc_html__('Large - 1024 x 1024','spice-post-slider');?>
+                <?php echo esc_html__('Large - 1024 x 1024','my-slider');?>
             </option>
 
             <option
                 value="1536x1536"
                 <?php if($ms_feature_img_size == "1536x1536") { echo "selected"; } ?>
             >
-                <?php echo esc_html__('1536x1536 - 1536 x 1536','spice-post-slider');?>
+                <?php echo esc_html__('1536x1536 - 1536 x 1536','my-slider');?>
             </option>
 
             <option
                 value="2048x2048"
                 <?php if($ms_feature_img_size == "2048x2048") { echo "selected"; } ?>
             >
-                <?php echo esc_html__('2048x2048 - 2048 x 2048','spice-post-slider');?>
+                <?php echo esc_html__('2048x2048 - 2048 x 2048','my-slider');?>
             </option>
 
             <option
                 value="full"
                 <?php if($ms_feature_img_size == "full") { echo "selected"; } ?>
             >
-                <?php echo esc_html__('Full','spice-post-slider');?>
+                <?php echo esc_html__('Full','my-slider');?>
+            </option>
+
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Feature Image Aspect Ratio</span>
+        <select class="field" id="ms_feature_img_ratio" name="ms_feature_img_ratio">
+            <option
+                value="1:1"
+                <?php if($ms_feature_img_ratio == "1:1") { echo "selected"; } ?> 
+            >
+                <?php echo esc_html__('1:1 - Sqaure','my-slider');?>
+            </option>
+
+            <option
+                value="4:3"
+                <?php if($ms_feature_img_ratio == "4:3") { echo "selected"; } ?>
+            >
+                <?php echo esc_html__('4:3 - Standard Landscape','my-slider');?>
+            </option>
+
+            <option
+                value="3:2"
+                <?php if($ms_feature_img_ratio == "3:2") { echo "selected"; } if(empty($ms_feature_img_ratio)) { echo "selected"; } ?> 
+            >
+                <?php echo esc_html__('3:2 - Photography','my-slider');?>
+            </option>
+
+            <option
+                value="16:9"
+                <?php if($ms_feature_img_ratio == "16:9") { echo "selected"; } ?>
+            >
+                <?php echo esc_html__('16:9 - Widescreen','my-slider');?>
+            </option>
+
+            <option
+                value="2:1"
+                <?php if($ms_feature_img_ratio == "2:1") { echo "selected"; } ?>
+            >
+                <?php echo esc_html__('2:1 - Panorama','my-slider');?>
+            </option>
+            
+            <option
+                value="3:4"
+                <?php if($ms_feature_img_ratio == "3:4") { echo "selected"; } ?>
+            >
+                <?php echo esc_html__('3:4 - Portrait','my-slider');?>
+            </option>
+
+            <option
+                value="4:5"
+                <?php if($ms_feature_img_ratio == "4:5") { echo "selected"; } ?>
+            >
+                <?php echo esc_html__('4:5 - Social Portrait','my-slider');?>
             </option>
 
         </select>
@@ -438,6 +524,89 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
     </div>
 
+
+    <div class="form-field field-wrapper">
+        <span>Navigation Position</span>
+        <select class="field" id="ms_nav_position" name="ms_nav_position">
+            <option
+                value="top-wide"
+                <?php if($ms_nav_position == "top-wide") { echo "selected"; } ?> 
+            >
+                <?php echo esc_html__('Top','my-slider');?>
+            </option>
+
+            <option
+                value="top-left"
+                <?php if($ms_nav_position == "top-left") { echo "selected"; } ?> 
+            >
+                <?php echo esc_html__('Top Left','my-slider');?>
+            </option>
+
+            <option
+                value="top-right"
+                <?php if($ms_nav_position == "top-right") { echo "selected"; } ?> 
+            >
+                <?php echo esc_html__('Top Right','my-slider');?>
+            </option>
+
+            <option
+                value="top-center"
+                <?php if($ms_nav_position == "top-center") { echo "selected"; } ?> 
+            >
+                <?php echo esc_html__('Top Center','my-slider');?>
+            </option>
+
+            <option
+                value="middle-wide"
+                <?php if($ms_nav_position == "middle-wide") { echo "selected"; } if(empty($ms_nav_position)) { echo "selected"; } ?> 
+            >
+                <?php echo esc_html__('Middle','my-slider');?>
+            </option>
+
+            <option
+                value="bottom-wide"
+                <?php if($ms_nav_position == "bottom-wide") { echo "selected"; } ?> 
+            >
+                <?php echo esc_html__('Bottom','my-slider');?>
+            </option>
+
+            <option
+                value="bottom-left"
+                <?php if($ms_nav_position == "bottom-left") { echo "selected"; } ?> 
+            >
+                <?php echo esc_html__('Bottom Left','my-slider');?>
+            </option>
+
+            <option
+                value="bottom-right"
+                <?php if($ms_nav_position == "bottom-right") { echo "selected"; } ?> 
+            >
+                <?php echo esc_html__('Bottom Right','my-slider');?>
+            </option>
+
+            <option
+                value="bottom-center"
+                <?php if($ms_nav_position == "bottom-center") { echo "selected"; } ?> 
+            >
+                <?php echo esc_html__('Bottom Center','my-slider');?>
+            </option>
+
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Navigation button border radius</span>
+        <input
+            class="field"
+            type="number"
+            min="0"
+            max="50"
+            value="<?php echo empty( $ms_nav_radius ) ? '2' : $ms_nav_radius ?>"
+            step="1"
+            name="ms_nav_radius"
+        />
+    </div>
+
     <div class="form-field field-wrapper">
         <span>Show Dots</span>
         <div>
@@ -557,6 +726,54 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
     </div>
 
     <div class="form-field field-wrapper">
+        <span>Comment Font Size</span>
+        <input
+            class="field"
+            type="number"
+            min="6"
+            value="<?php echo empty( $ms_comment_fs ) ? '12' : $ms_comment_fs ?>"
+            step="1"
+            name="ms_comment_fs"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Comment Font Weight</span>
+        <select
+            class="field"
+            name="ms_comment_fw"
+        >
+            <option
+                value="200"
+                <?php if ( ! empty( $ms_comment_fw ) && $ms_comment_fw == '200' ) { echo 'selected'; } ?>
+            >
+                Thin
+            </option>
+
+            <option
+                value="500"
+                <?php if ( empty( $ms_comment_fw ) || $ms_comment_fw == '500' ) { echo 'selected'; } ?>
+            >
+                Medium
+            </option>
+
+            <option
+                value="700"
+                <?php if ( ! empty( $ms_comment_fw ) && $ms_comment_fw == '700' ) { echo 'selected'; } ?>
+            >
+                Bold
+            </option>
+
+            <option
+                value="1000"
+                <?php if ( ! empty( $ms_comment_fw ) && $ms_comment_fw == '1000' ) { echo 'selected'; } ?>
+            >
+                Bolder
+            </option>
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
         <span>Comments Color</span>
         <input
             class="ms-color-picker"
@@ -577,6 +794,54 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
     </div>
 
     <div class="form-field field-wrapper">
+        <span>Category Font Size</span>
+        <input
+            class="field"
+            type="number"
+            min="6"
+            value="<?php echo empty( $ms_category_fs ) ? '12' : $ms_category_fs ?>"
+            step="1"
+            name="ms_category_fs"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Category Font Weight</span>
+        <select
+            class="field"
+            name="ms_category_fw"
+        >
+            <option
+                value="200"
+                <?php if ( ! empty( $ms_category_fw ) && $ms_category_fw == '200' ) { echo 'selected'; } ?>
+            >
+                Thin
+            </option>
+
+            <option
+                value="500"
+                <?php if ( empty( $ms_category_fw ) || $ms_category_fw == '500' ) { echo 'selected'; } ?>
+            >
+                Medium
+            </option>
+
+            <option
+                value="700"
+                <?php if ( ! empty( $ms_category_fw ) && $ms_category_fw == '700' ) { echo 'selected'; } ?>
+            >
+                Bold
+            </option>
+
+            <option
+                value="1000"
+                <?php if ( ! empty( $ms_category_fw ) && $ms_category_fw == '1000' ) { echo 'selected'; } ?>
+            >
+                Bolder
+            </option>
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
         <span>Category Color</span>
         <input
             class="ms-color-picker"
@@ -594,6 +859,54 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             value="<?php echo empty( $ms_category_bg_color ) ? '#5E76BF' : $ms_category_bg_color ?>"
             name="ms_category_bg_color"
         />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Tag Font Size</span>
+        <input
+            class="field"
+            type="number"
+            min="6"
+            value="<?php echo empty( $ms_tag_fs ) ? '12' : $ms_tag_fs ?>"
+            step="1"
+            name="ms_tag_fs"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Tag Font Weight</span>
+        <select
+            class="field"
+            name="ms_tag_fw"
+        >
+            <option
+                value="200"
+                <?php if ( ! empty( $ms_tag_fw ) && $ms_tag_fw == '200' ) { echo 'selected'; } ?>
+            >
+                Thin
+            </option>
+
+            <option
+                value="500"
+                <?php if ( empty( $ms_tag_fw ) || $ms_tag_fw == '500' ) { echo 'selected'; } ?>
+            >
+                Medium
+            </option>
+
+            <option
+                value="700"
+                <?php if ( ! empty( $ms_tag_fw ) && $ms_tag_fw == '700' ) { echo 'selected'; } ?>
+            >
+                Bold
+            </option>
+
+            <option
+                value="1000"
+                <?php if ( ! empty( $ms_tag_fw ) && $ms_tag_fw == '1000' ) { echo 'selected'; } ?>
+            >
+                Bolder
+            </option>
+        </select>
     </div>
 
     <div class="form-field field-wrapper">
@@ -627,6 +940,54 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
     </div>
 
     <div class="form-field field-wrapper">
+        <span>Title Font Size</span>
+        <input
+            class="field"
+            type="number"
+            min="6"
+            value="<?php echo empty( $ms_title_fs ) ? '18' : $ms_title_fs ?>"
+            step="1"
+            name="ms_title_fs"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Title Font Weight</span>
+        <select
+            class="field"
+            name="ms_title_fw"
+        >
+            <option
+                value="200"
+                <?php if ( ! empty( $ms_title_fw ) && $ms_title_fw == '200' ) { echo 'selected'; } ?>
+            >
+                Thin
+            </option>
+
+            <option
+                value="500"
+                <?php if ( ! empty( $ms_title_fw ) && $ms_title_fw == '500' ) { echo 'selected'; } ?>
+            >
+                Medium
+            </option>
+
+            <option
+                value="700"
+                <?php if ( empty( $ms_title_fw ) || $ms_title_fw == '700' ) { echo 'selected'; } ?>
+            >
+                Bold
+            </option>
+
+            <option
+                value="1000"
+                <?php if ( ! empty( $ms_title_fw ) && $ms_title_fw == '1000' ) { echo 'selected'; } ?>
+            >
+                Bolder
+            </option>
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
         <span>Title Color</span>
         <input
             class="ms-color-picker"
@@ -634,6 +995,54 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             value="<?php echo empty( $ms_title_color ) ? '#000000' : $ms_title_color ?>"
             name="ms_title_color"
         />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Excerpt Font Size</span>
+        <input
+            class="field"
+            type="number"
+            min="6"
+            value="<?php echo empty( $ms_excerpt_fs ) ? '12' : $ms_excerpt_fs ?>"
+            step="1"
+            name="ms_excerpt_fs"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Excerpt Font Weight</span>
+        <select
+            class="field"
+            name="ms_excerpt_fw"
+        >
+            <option
+                value="200"
+                <?php if ( ! empty( $ms_excerpt_fw ) && $ms_excerpt_fw == '200' ) { echo 'selected'; } ?>
+            >
+                Thin
+            </option>
+
+            <option
+                value="500"
+                <?php if ( empty( $ms_excerpt_fw ) || $ms_excerpt_fw == '500' ) { echo 'selected'; } ?>
+            >
+                Medium
+            </option>
+
+            <option
+                value="700"
+                <?php if ( ! empty( $ms_excerpt_fw ) && $ms_excerpt_fw == '700' ) { echo 'selected'; } ?>
+            >
+                Bold
+            </option>
+
+            <option
+                value="1000"
+                <?php if ( ! empty( $ms_excerpt_fw ) && $ms_excerpt_fw == '1000' ) { echo 'selected'; } ?>
+            >
+                Bolder
+            </option>
+        </select>
     </div>
 
     <div class="form-field field-wrapper">
@@ -657,6 +1066,54 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
     </div>
 
     <div class="form-field field-wrapper">
+        <span>Author Font Size</span>
+        <input
+            class="field"
+            type="number"
+            min="6"
+            value="<?php echo empty( $ms_author_fs ) ? '12' : $ms_author_fs ?>"
+            step="1"
+            name="ms_author_fs"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Author Font Weight</span>
+        <select
+            class="field"
+            name="ms_author_fw"
+        >
+            <option
+                value="200"
+                <?php if ( ! empty( $ms_author_fw ) && $ms_author_fw == '200' ) { echo 'selected'; } ?>
+            >
+                Thin
+            </option>
+
+            <option
+                value="500"
+                <?php if ( empty( $ms_author_fw ) || $ms_author_fw == '500' ) { echo 'selected'; } ?>
+            >
+                Medium
+            </option>
+
+            <option
+                value="700"
+                <?php if ( ! empty( $ms_author_fw ) && $ms_author_fw == '700' ) { echo 'selected'; } ?>
+            >
+                Bold
+            </option>
+
+            <option
+                value="1000"
+                <?php if ( ! empty( $ms_author_fw ) && $ms_author_fw == '1000' ) { echo 'selected'; } ?>
+            >
+                Bolder
+            </option>
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
         <span>Author Color</span>
         <input
             class="ms-color-picker"
@@ -667,12 +1124,302 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
     </div>
 
     <div class="form-field field-wrapper">
+        <span>Date Font Size</span>
+        <input
+            class="field"
+            type="number"
+            min="6"
+            value="<?php echo empty( $ms_date_fs ) ? '12' : $ms_date_fs ?>"
+            step="1"
+            name="ms_date_fs"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Date Font Weight</span>
+        <select
+            class="field"
+            name="ms_date_fw"
+        >
+            <option
+                value="200"
+                <?php if ( ! empty( $ms_date_fw ) && $ms_date_fw == '200' ) { echo 'selected'; } ?>
+            >
+                Thin
+            </option>
+
+            <option
+                value="500"
+                <?php if ( empty( $ms_date_fw ) || $ms_date_fw == '500' ) { echo 'selected'; } ?>
+            >
+                Medium
+            </option>
+
+            <option
+                value="700"
+                <?php if ( ! empty( $ms_date_fw ) && $ms_date_fw == '700' ) { echo 'selected'; } ?>
+            >
+                Bold
+            </option>
+
+            <option
+                value="1000"
+                <?php if ( ! empty( $ms_date_fw ) && $ms_date_fw == '1000' ) { echo 'selected'; } ?>
+            >
+                Bolder
+            </option>
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
         <span>Date Color</span>
         <input
             class="ms-color-picker"
             type="text"
             value="<?php echo empty( $ms_date_color ) ? '#545d7a' : $ms_date_color ?>"
             name="ms_date_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Sales Count Font Size</span>
+        <input
+            class="field"
+            type="number"
+            min="6"
+            value="<?php echo empty( $ms_sales_fs ) ? '12' : $ms_sales_fs ?>"
+            step="1"
+            name="ms_sales_fs"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Sales Count Font Weight</span>
+        <select
+            class="field"
+            name="ms_sales_fw"
+        >
+            <option
+                value="200"
+                <?php if ( ! empty( $ms_sales_fw ) && $ms_sales_fw == '200' ) { echo 'selected'; } ?>
+            >
+                Thin
+            </option>
+
+            <option
+                value="500"
+                <?php if ( empty( $ms_sales_fw ) || $ms_sales_fw == '500' ) { echo 'selected'; } ?>
+            >
+                Medium
+            </option>
+
+            <option
+                value="700"
+                <?php if ( ! empty( $ms_sales_fw ) && $ms_sales_fw == '700' ) { echo 'selected'; } ?>
+            >
+                Bold
+            </option>
+
+            <option
+                value="1000"
+                <?php if ( ! empty( $ms_sales_fw ) && $ms_sales_fw == '1000' ) { echo 'selected'; } ?>
+            >
+                Bolder
+            </option>
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Sales Count Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_sales_color ) ? '#545d7a' : $ms_sales_color ?>"
+            name="ms_sales_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Active Price Font Size</span>
+        <input
+            class="field"
+            type="number"
+            min="6"
+            value="<?php echo empty( $ms_active_price_fs ) ? '12' : $ms_active_price_fs ?>"
+            step="1"
+            name="ms_active_price_fs"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Active Price Font Weight</span>
+        <select
+            class="field"
+            name="ms_active_price_fw"
+        >
+            <option
+                value="200"
+                <?php if ( ! empty( $ms_active_price_fw ) && $ms_active_price_fw == '200' ) { echo 'selected'; } ?>
+            >
+                Thin
+            </option>
+
+            <option
+                value="500"
+                <?php if ( empty( $ms_active_price_fw ) || $ms_active_price_fw == '500' ) { echo 'selected'; } ?>
+            >
+                Medium
+            </option>
+
+            <option
+                value="700"
+                <?php if ( ! empty( $ms_active_price_fw ) && $ms_active_price_fw == '700' ) { echo 'selected'; } ?>
+            >
+                Bold
+            </option>
+
+            <option
+                value="1000"
+                <?php if ( ! empty( $ms_active_price_fw ) && $ms_active_price_fw == '1000' ) { echo 'selected'; } ?>
+            >
+                Bolder
+            </option>
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Active Price Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_active_price_color ) ? '#545d7a' : $ms_active_price_color ?>"
+            name="ms_active_price_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Previous Price Font Size</span>
+        <input
+            class="field"
+            type="number"
+            min="6"
+            value="<?php echo empty( $ms_prev_price_fs ) ? '12' : $ms_prev_price_fs ?>"
+            step="1"
+            name="ms_prev_price_fs"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Previous Price Font Weight</span>
+        <select
+            class="field"
+            name="ms_prev_price_fw"
+        >
+            <option
+                value="200"
+                <?php if ( ! empty( $ms_prev_price_fw ) && $ms_prev_price_fw == '200' ) { echo 'selected'; } ?>
+            >
+                Thin
+            </option>
+
+            <option
+                value="500"
+                <?php if ( empty( $ms_prev_price_fw ) || $ms_prev_price_fw == '500' ) { echo 'selected'; } ?>
+            >
+                Medium
+            </option>
+
+            <option
+                value="700"
+                <?php if ( ! empty( $ms_prev_price_fw ) && $ms_prev_price_fw == '700' ) { echo 'selected'; } ?>
+            >
+                Bold
+            </option>
+
+            <option
+                value="1000"
+                <?php if ( ! empty( $ms_prev_price_fw ) && $ms_prev_price_fw == '1000' ) { echo 'selected'; } ?>
+            >
+                Bolder
+            </option>
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Previous Price Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_prev_price_color ) ? '#545d7a' : $ms_prev_price_color ?>"
+            name="ms_prev_price_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Button Font Size</span>
+        <input
+            class="field"
+            type="number"
+            min="6"
+            value="<?php echo empty( $ms_woo_button_fs ) ? '12' : $ms_woo_button_fs ?>"
+            step="1"
+            name="ms_woo_button_fs"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Button Font Weight</span>
+        <select
+            class="field"
+            name="ms_woo_button_fw"
+        >
+            <option
+                value="200"
+                <?php if ( ! empty( $ms_woo_button_fw ) && $ms_woo_button_fw == '200' ) { echo 'selected'; } ?>
+            >
+                Thin
+            </option>
+
+            <option
+                value="500"
+                <?php if ( empty( $ms_woo_button_fw ) || $ms_woo_button_fw == '500' ) { echo 'selected'; } ?>
+            >
+                Medium
+            </option>
+
+            <option
+                value="700"
+                <?php if ( ! empty( $ms_woo_button_fw ) && $ms_woo_button_fw == '700' ) { echo 'selected'; } ?>
+            >
+                Bold
+            </option>
+
+            <option
+                value="1000"
+                <?php if ( ! empty( $ms_woo_button_fw ) && $ms_woo_button_fw == '1000' ) { echo 'selected'; } ?>
+            >
+                Bolder
+            </option>
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Button Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_woo_button_color ) ? '#545d7a' : $ms_woo_button_color ?>"
+            name="ms_woo_button_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Button Background Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_woo_button_bg_color ) ? '#545d7a' : $ms_woo_button_bg_color ?>"
+            name="ms_woo_button_bg_color"
         />
     </div>
 
@@ -693,8 +1440,8 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             type="number"
             min="8"
             step="1"
-            value="<?php echo empty( $ms_nav_font_size ) ? '24' : $ms_nav_font_size ?>"
-            name="ms_nav_font_size"
+            value="<?php echo empty( $ms_nav_fs ) ? '24' : $ms_nav_fs ?>"
+            name="ms_nav_fs"
         />
     </div>
 
@@ -702,32 +1449,32 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         <span>Navigation Button Font Weight</span>
         <select
             class="field"
-            name="ms_nav_font_weight"
+            name="ms_nav_fw"
         >
             <option
                 value="200"
-                <?php if ( ! empty( $ms_nav_font_weight ) && $ms_nav_font_weight == '200' ) { echo 'selected'; } ?>
+                <?php if ( ! empty( $ms_nav_fw ) && $ms_nav_fw == '200' ) { echo 'selected'; } ?>
             >
                 Thin
             </option>
 
             <option
                 value="500"
-                <?php if ( empty( $ms_nav_font_weight ) || $ms_nav_font_weight == '500' ) { echo 'selected'; } ?>
+                <?php if ( empty( $ms_nav_fw ) || $ms_nav_fw == '500' ) { echo 'selected'; } ?>
             >
                 Medium
             </option>
 
             <option
                 value="700"
-                <?php if ( ! empty( $ms_nav_font_weight ) && $ms_nav_font_weight == '700' ) { echo 'selected'; } ?>
+                <?php if ( ! empty( $ms_nav_fw ) && $ms_nav_fw == '700' ) { echo 'selected'; } ?>
             >
                 Bold
             </option>
 
             <option
                 value="1000"
-                <?php if ( ! empty( $ms_nav_font_weight ) && $ms_nav_font_weight == '1000' ) { echo 'selected'; } ?>
+                <?php if ( ! empty( $ms_nav_fw ) && $ms_nav_fw == '1000' ) { echo 'selected'; } ?>
             >
                 Bolder
             </option>

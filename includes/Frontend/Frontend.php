@@ -35,8 +35,22 @@ final class Frontend
                 ]
             ];
 
-        include 'views/slider.php';
-        include 'views/slider-style.php';
+
+        if ( $ms_post_type == 'post' ) {
+            include 'views/post-slider.php';
+            include 'views/styles/post-slider-style.php';
+        }
+
+        if ( $ms_post_type == 'product' ) {
+            include 'views/woo-slider.php';
+            include 'views/styles/woo-slider-style.php';
+        }
+
+        if ( $ms_post_type == 'my_slide' ) {
+            include 'views/custom-slider.php';
+        }
+
+        include 'views/styles/slider-style.php';
         include 'views/slider-settings.php';
 
         return ob_get_clean();
