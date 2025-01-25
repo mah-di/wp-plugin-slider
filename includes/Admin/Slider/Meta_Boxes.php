@@ -269,6 +269,15 @@ final class Meta_Boxes
         if ( isset( $_POST[ 'ms_date_color' ] ) )
             $this->save_text_meta( 'ms_date_color', $_POST[ 'ms_date_color' ] );
 
+        if ( isset( $_POST[ 'ms_stock_fs' ] ) )
+            $this->save_text_meta( 'ms_stock_fs', $_POST[ 'ms_stock_fs' ] );
+
+        if ( isset( $_POST[ 'ms_stock_fw' ] ) )
+            $this->save_text_meta( 'ms_stock_fw', $_POST[ 'ms_stock_fw' ] );
+
+        if ( isset( $_POST[ 'ms_stock_color' ] ) )
+            $this->save_text_meta( 'ms_stock_color', $_POST[ 'ms_stock_color' ] );
+
         if ( isset( $_POST[ 'ms_sales_fs' ] ) )
             $this->save_text_meta( 'ms_sales_fs', $_POST[ 'ms_sales_fs' ] );
 
@@ -277,6 +286,15 @@ final class Meta_Boxes
 
         if ( isset( $_POST[ 'ms_sales_color' ] ) )
             $this->save_text_meta( 'ms_sales_color', $_POST[ 'ms_sales_color' ] );
+
+        if ( isset( $_POST[ 'ms_review_fs' ] ) )
+            $this->save_text_meta( 'ms_review_fs', $_POST[ 'ms_review_fs' ] );
+
+        if ( isset( $_POST[ 'ms_review_fw' ] ) )
+            $this->save_text_meta( 'ms_review_fw', $_POST[ 'ms_review_fw' ] );
+
+        if ( isset( $_POST[ 'ms_review_color' ] ) )
+            $this->save_text_meta( 'ms_review_color', $_POST[ 'ms_review_color' ] );
 
         if ( isset( $_POST[ 'ms_active_price_fs' ] ) )
             $this->save_text_meta( 'ms_active_price_fs', $_POST[ 'ms_active_price_fs' ] );

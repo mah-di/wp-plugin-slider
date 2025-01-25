@@ -5,6 +5,7 @@ final class Admin
     public function __construct()
     {
         add_action( 'admin_enqueue_scripts', [ $this, 'load_assets' ] );
+        $this->safe_load_live_preview_assets();
 
         require_once 'Slider/My_Slider_Post_Type.php';
         require_once 'Slider/Meta_Boxes.php';
@@ -18,6 +19,23 @@ final class Admin
         $this->enqueue_scripts();
         $this->enqueue_color_picker_alpha();
     }
+
+    private function safe_load_live_preview_assets()
+    {
+        add_action( 'current_screen', [ $this, 'check_and_load_live_preview_assets' ] );
+    }
+
+    public function check_and_load_live_preview_assets( $screen )
+    {
+        if ( $screen->post_type == 'my_slide' )
+            add_action( 'enqueue_block_editor_assets', [ $this, 'load_live_preview_assets' ] );
+    }
+
+    public function load_live_preview_assets()
+    {
+        $this->enqueue_live_preview_styles();
+        $this->enqueue_live_preview_scripts();
+    } 
 
     private function enqueue_styles()
     {
@@ -41,6 +59,16 @@ final class Admin
             'jQuery( function() { jQuery( ".ms-color-picker" ).wpColorPicker(); } );'
         );
         wp_enqueue_script( 'wp-color-picker-alpha' );
+    }
+
+    private function enqueue_live_preview_styles()
+    {
+        wp_enqueue_style( 'ms-live-preview-style', MS_URL . '/assets/admin/css/live.preview.css', [], MS_VERSION );
+    }
+
+    private function enqueue_live_preview_scripts()
+    {
+        wp_enqueue_script( 'ms-live-preview-script', MS_URL . '/assets/admin/js/live.preview.js', [ 'wp-blocks', 'wp-dom' ], MS_VERSION );
     }
 }
 

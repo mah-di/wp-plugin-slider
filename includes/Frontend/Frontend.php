@@ -59,6 +59,7 @@ final class Frontend
     public function load_assets() {
         $this->enqueue_styles();
         $this->enqueue_scripts();
+        $this->enqueue_block_styles();
     }
 
     private function enqueue_styles() {
@@ -70,6 +71,12 @@ final class Frontend
     private function enqueue_scripts() {
         wp_enqueue_script( 'ms-owl-script', MS_URL . 'assets/frontend/js/owl.carousel.min.js', [ 'jquery' ], MS_VERSION, true );
         // wp_enqueue_script( 'ms-main-script', MS_URL . 'assets/frontend/js/main.js', [ 'jquery', 'ms-owl-script' ], MS_VERSION, true );
+    }
+
+    private function enqueue_block_styles()
+    {
+        wp_enqueue_style( 'wp-block-library' );
+        wp_enqueue_style( 'wp-block-library-theme' );
     }
 
 }

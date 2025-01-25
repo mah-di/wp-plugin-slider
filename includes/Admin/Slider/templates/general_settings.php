@@ -66,6 +66,12 @@ $ms_date_color              = get_post_meta( $ms_ID, 'ms_date_color', true );
 $ms_sales_fs                = get_post_meta( $ms_ID, 'ms_sales_fs', true );
 $ms_sales_fw                = get_post_meta( $ms_ID, 'ms_sales_fw', true );
 $ms_sales_color             = get_post_meta( $ms_ID, 'ms_sales_color', true );
+$ms_review_fs               = get_post_meta( $ms_ID, 'ms_review_fs', true );
+$ms_review_fw               = get_post_meta( $ms_ID, 'ms_review_fw', true );
+$ms_review_color            = get_post_meta( $ms_ID, 'ms_review_color', true );
+$ms_stock_fs                = get_post_meta( $ms_ID, 'ms_stock_fs', true );
+$ms_stock_fw                = get_post_meta( $ms_ID, 'ms_stock_fw', true );
+$ms_stock_color             = get_post_meta( $ms_ID, 'ms_stock_color', true );
 $ms_active_price_fs         = get_post_meta( $ms_ID, 'ms_active_price_fs', true );
 $ms_active_price_fw         = get_post_meta( $ms_ID, 'ms_active_price_fw', true );
 $ms_active_price_color      = get_post_meta( $ms_ID, 'ms_active_price_color', true );
@@ -1182,6 +1188,64 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
     </div>
 
     <div class="form-field field-wrapper">
+        <span>Stock Status Font Size</span>
+        <input
+            class="field"
+            type="number"
+            min="6"
+            value="<?php echo empty( $ms_stock_fs ) ? '12' : $ms_stock_fs ?>"
+            step="1"
+            name="ms_stock_fs"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Stock Status Font Weight</span>
+        <select
+            class="field"
+            name="ms_stock_fw"
+        >
+            <option
+                value="200"
+                <?php if ( ! empty( $ms_stock_fw ) && $ms_stock_fw == '200' ) { echo 'selected'; } ?>
+            >
+                Thin
+            </option>
+
+            <option
+                value="500"
+                <?php if ( empty( $ms_stock_fw ) || $ms_stock_fw == '500' ) { echo 'selected'; } ?>
+            >
+                Medium
+            </option>
+
+            <option
+                value="700"
+                <?php if ( ! empty( $ms_stock_fw ) && $ms_stock_fw == '700' ) { echo 'selected'; } ?>
+            >
+                Bold
+            </option>
+
+            <option
+                value="1000"
+                <?php if ( ! empty( $ms_stock_fw ) && $ms_stock_fw == '1000' ) { echo 'selected'; } ?>
+            >
+                Bolder
+            </option>
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Stock Status Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_stock_color ) ? '#545d7a' : $ms_stock_color ?>"
+            name="ms_stock_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
         <span>Sales Count Font Size</span>
         <input
             class="field"
@@ -1236,6 +1300,64 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             type="text"
             value="<?php echo empty( $ms_sales_color ) ? '#545d7a' : $ms_sales_color ?>"
             name="ms_sales_color"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Rating Star Font Size</span>
+        <input
+            class="field"
+            type="number"
+            min="6"
+            value="<?php echo empty( $ms_review_fs ) ? '12' : $ms_review_fs ?>"
+            step="1"
+            name="ms_review_fs"
+        />
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Rating Star Font Weight</span>
+        <select
+            class="field"
+            name="ms_review_fw"
+        >
+            <option
+                value="200"
+                <?php if ( ! empty( $ms_review_fw ) && $ms_review_fw == '200' ) { echo 'selected'; } ?>
+            >
+                Thin
+            </option>
+
+            <option
+                value="500"
+                <?php if ( empty( $ms_review_fw ) || $ms_review_fw == '500' ) { echo 'selected'; } ?>
+            >
+                Medium
+            </option>
+
+            <option
+                value="700"
+                <?php if ( ! empty( $ms_review_fw ) && $ms_review_fw == '700' ) { echo 'selected'; } ?>
+            >
+                Bold
+            </option>
+
+            <option
+                value="1000"
+                <?php if ( ! empty( $ms_review_fw ) && $ms_review_fw == '1000' ) { echo 'selected'; } ?>
+            >
+                Bolder
+            </option>
+        </select>
+    </div>
+
+    <div class="form-field field-wrapper">
+        <span>Rating Star Color</span>
+        <input
+            class="ms-color-picker"
+            type="text"
+            value="<?php echo empty( $ms_review_color ) ? '#545d7a' : $ms_review_color ?>"
+            name="ms_review_color"
         />
     </div>
 

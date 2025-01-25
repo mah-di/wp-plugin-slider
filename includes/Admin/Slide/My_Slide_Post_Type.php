@@ -32,7 +32,7 @@ class My_Slide_Post_Type
             'menu_position'     => 5,
             'show_in_rest'      => true,
             'menu_icon'         => 'dashicons-slides',
-            'supports'          => [ 'title', 'editor' ],
+            'supports'          => [ 'editor', 'thumbnail' ],
             'has_archive'       => false,
         ];
 

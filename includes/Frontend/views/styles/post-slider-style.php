@@ -81,13 +81,13 @@ $ms_date_color              = get_post_meta( $ms_post_ID, 'ms_date_color', true 
 
     .ms-title {
         color: <?php echo $ms_title_color; ?> !important;
-        font-size: <?php echo $ms_title_fs; ?> !important;
+        font-size: <?php echo "{$ms_title_fs}px"; ?> !important;
         font-weight: <?php echo $ms_title_fw; ?> !important;
     }
 
     .ms-excerpt {
         color: <?php echo $ms_excerpt_color; ?> !important;
-        font-size: <?php echo $ms_excerpt_fs; ?> !important;
+        font-size: <?php echo "{$ms_excerpt_fs}px"; ?> !important;
         font-weight: <?php echo $ms_excerpt_fw; ?> !important;
     }
 
@@ -97,13 +97,13 @@ $ms_date_color              = get_post_meta( $ms_post_ID, 'ms_date_color', true 
 
     .ms-author {
         color: <?php echo $ms_author_color; ?> !important;
-        font-size: <?php echo $ms_author_fs; ?> !important;
+        font-size: <?php echo "{$ms_author_fs}px"; ?> !important;
         font-weight: <?php echo $ms_author_fw; ?> !important;
     }
 
     .ms-date {
         color: <?php echo $ms_date_color; ?> !important;
-        font-size: <?php echo $ms_date_fs; ?> !important;
+        font-size: <?php echo "{$ms_date_fs}px"; ?> !important;
         font-weight: <?php echo $ms_date_fw; ?> !important;
     }
 }
