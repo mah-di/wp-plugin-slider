@@ -37,7 +37,7 @@ $ms_dot_active_color            = get_post_meta( $ms_post_ID, 'ms_dot_active_col
             top: 10px !important;
             transform: translateY(0%) !important;
         <?php elseif ( $ms_vrt_aln == 'bottom' ): ?>
-            bottom: <?php echo $ms_show_dots == 'true'? '25px' : '10px' ?> !important;
+            bottom: <?php echo $ms_show_dots == 'true' ? '25px' : '10px' ?> !important;
             transform: translateY(0%) !important;
         <?php endif; ?>
 
@@ -59,7 +59,7 @@ $ms_dot_active_color            = get_post_meta( $ms_post_ID, 'ms_dot_active_col
 
         <?php if ( $ms_vrt_aln == 'middle' ): ?>
             position: absolute !important;
-            top: 45% !important;
+            top: 50% !important;
             transform: translateY(-50%) !important;
         <?php endif; ?>
     }

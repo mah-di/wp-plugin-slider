@@ -326,6 +326,12 @@ final class Meta_Boxes
         if ( isset( $_POST[ 'ms_woo_button_bg_color' ] ) )
             $this->save_text_meta( 'ms_woo_button_bg_color', $_POST[ 'ms_woo_button_bg_color' ] );
 
+        if ( isset( $_POST[ 'ms_min_height' ] ) )
+            $this->save_text_meta( 'ms_min_height', $_POST[ 'ms_min_height' ] );
+
+        if ( isset( $_POST[ 'ms_verticle_align' ] ) )
+            $this->save_text_meta( 'ms_verticle_align', $_POST[ 'ms_verticle_align' ] );
+
         if ( isset( $_POST[ 'ms_nav_bg_color' ] ) )
             $this->save_text_meta( 'ms_nav_bg_color', $_POST[ 'ms_nav_bg_color' ] );
 

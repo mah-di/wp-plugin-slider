@@ -48,6 +48,7 @@ final class Frontend
 
         if ( $ms_post_type == 'my_slide' ) {
             include 'views/custom-slider.php';
+            include 'views/styles/custom-slider-style.php';
         }
 
         include 'views/styles/slider-style.php';

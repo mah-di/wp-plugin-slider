@@ -52,13 +52,15 @@
 
 .ms-card {
     margin: 0 !important;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
 
 .ms-slide-wrapper {
-    padding: 40px 20px !important;
+    padding: 40px !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .ms-slide-wrapper>div {
@@ -74,7 +76,7 @@
 }
 
 .ms-slide-wrapper blockquote::before {
-    left: 0;
+    left: -12px;
 }
 
 .ms-slide-wrapper .alignfull blockquote::before {
@@ -198,7 +200,6 @@
 
 .ms-author {
     display: flex;
-    margin-top: auto;
 }
 
 .ms-author img {

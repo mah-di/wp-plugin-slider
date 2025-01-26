@@ -2,6 +2,8 @@
 
 $ms_ID                      = get_the_ID();
 
+$ms_query_type               = get_post_meta( $ms_ID, 'ms_query_type', true );
+
 $ms_tags                    = ms_get_all_tags();
 
 $ms_post_type               = get_post_meta( $ms_ID, 'ms_post_type', true );
@@ -83,6 +85,9 @@ $ms_woo_button_fw           = get_post_meta( $ms_ID, 'ms_woo_button_fw', true );
 $ms_woo_button_color        = get_post_meta( $ms_ID, 'ms_woo_button_color', true );
 $ms_woo_button_bg_color     = get_post_meta( $ms_ID, 'ms_woo_button_bg_color', true );
 
+$ms_min_height              = get_post_meta( $ms_ID, 'ms_min_height', true );
+$ms_verticle_align          = get_post_meta( $ms_ID, 'ms_verticle_align', true );
+
 $ms_nav_bg_color            = get_post_meta( $ms_ID, 'ms_nav_bg_color', true );
 $ms_nav_bg_hover_color      = get_post_meta( $ms_ID, 'ms_nav_bg_hover_color', true );
 $ms_nav_color               = get_post_meta( $ms_ID, 'ms_nav_color', true );
@@ -97,7 +102,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
 <div class="form-wrapper">
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Post Type</span>
         <select class="field" id="ms_post_type" name="ms_post_type">
             <option
@@ -123,7 +128,87 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
+        <span>Category</span>
+        <div>
+            <div class="switch-field">
+                <div class="ms-scoped-field ms-post-field ms-product-field">
+                    <input name="ms_query_type" id="ms_query_type_cat" type="radio"
+                            value="cat"
+                            <?php if ( empty( $ms_query_type ) || $ms_query_type == 'cat' ) { echo 'checked'; } ?>
+                        >
+                        <label for="ms_query_type_cat">Category</label>
+                </div>    
+
+                <div class="">
+                    <input name="ms_query_type" id="ms_query_type_tag" type="radio"
+                        value="tag"
+                        <?php if ( $ms_query_type == 'tag' ) { echo 'checked'; } ?>
+                    >
+                    <label for="ms_query_type_tag">Tag</label>
+                </div>
+
+                <div class="">
+                    <input name="ms_query_type" id="ms_query_type_id" type="radio"
+                        value="id"
+                        <?php if ( $ms_query_type == 'id' ) { echo 'checked'; } ?>
+                    >
+                    <label for="ms_query_type_id">ID</label>
+                </div>
+
+                <div class="ms-scoped-field ms-product-field">
+                    <input name="ms_query_type" id="ms_query_type_sku" type="radio"
+                        value="sku"
+                        <?php if ( $ms_query_type == 'sku' ) { echo 'checked'; } ?>
+                    >
+                    <label for="ms_query_type_sku">SKU</label>
+                </div>
+
+                <div class="ms-scoped-field ms-product-field">
+                    <input name="ms_query_type" id="ms_query_type_latest" type="radio"
+                        value="latest"
+                        <?php if ( $ms_query_type == 'latest' ) { echo 'checked'; } ?>
+                    >
+                    <label for="ms_query_type_latest">Latest Products</label>
+                </div>
+
+                <div class="ms-scoped-field ms-product-field">
+                    <input name="ms_query_type" id="ms_query_type_featured" type="radio"
+                        value="featured"
+                        <?php if ( $ms_query_type == 'featured' ) { echo 'checked'; } ?>
+                    >
+                    <label for="ms_query_type_featured">Featured Products</label>
+                </div>
+
+                <div class="ms-scoped-field ms-product-field">
+                    <input name="ms_query_type" id="ms_query_type_onsale" type="radio"
+                        value="onsale"
+                        <?php if ( $ms_query_type == 'onsale' ) { echo 'checked'; } ?>
+                    >
+                    <label for="ms_query_type_onsale">On-Sale Products</label>
+                </div>
+
+                <div class="ms-scoped-field ms-product-field">
+                    <input name="ms_query_type" id="ms_query_type_top_rated" type="radio"
+                        value="top_rated"
+                        <?php if ( $ms_query_type == 'top_rated' ) { echo 'checked'; } ?>
+                    >
+                    <label for="ms_query_type_top_rated">Top-Rated Products</label>
+                </div>
+
+                <div class="ms-scoped-field ms-product-field">
+                    <input name="ms_query_type" id="ms_query_type_best_selling" type="radio"
+                        value="best_selling"
+                        <?php if ( $ms_query_type == 'best_selling' ) { echo 'checked'; } ?>
+                    >
+                    <label for="ms_query_type_best_selling">Best Selling Products</label>
+                </div>
+                <a class="slide-button btn"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="field-wrapper">
         <span>Select Tag</span>
         <select name="ms_tag_query[]" id="tag_query" multiple="multiple" placeholder="Select Tag">
             <?php
@@ -152,7 +237,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Items to show</span>
         <input
             class="field"
@@ -165,7 +250,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Display Items</span>
         <input
             class="field"
@@ -178,7 +263,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Margin Between Items</span>
         <input
             class="field"
@@ -189,7 +274,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Feature Image Size</span>
         <select class="field" id="ms_feature_img_size" name="ms_feature_img_size">
             <option
@@ -244,7 +329,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-post-field ms-scoped-field">
         <span>Feature Image Aspect Ratio</span>
         <select class="field" id="ms_feature_img_ratio" name="ms_feature_img_ratio">
             <option
@@ -299,7 +384,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Sort By</span>
         <select class="field" name="ms_order">
             <option
@@ -318,7 +403,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Comments</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
@@ -337,7 +422,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Category</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
@@ -356,7 +441,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Tags</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
@@ -375,7 +460,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Excerpt</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
@@ -394,7 +479,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Excerpt Length</span>
         <input
             class="field"
@@ -406,7 +491,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Read More Text</span>
         <input
             class="field"
@@ -416,7 +501,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Author</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
@@ -435,7 +520,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Author Avatar</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
@@ -454,7 +539,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Date</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
@@ -473,7 +558,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Loop</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
@@ -492,18 +577,18 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Centerize Items</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
                 <input name="ms_center" id="ms_center_on" type="radio"
                     value="true"
-                    <?php if ( empty( $ms_center ) || $ms_center == 'true' ) { echo 'checked'; } ?>
+                    <?php if ( $ms_center == 'true' ) { echo 'checked'; } ?>
                 >
                 <label for="ms_center_on" class="radioCheck">Yes</label>
                 <input name="ms_center" id="ms_center_off" type="radio"
                     value="false"
-                    <?php if ( $ms_center == 'false' ) { echo 'checked'; } ?>
+                    <?php if ( empty( $ms_center ) || $ms_center == 'false' ) { echo 'checked'; } ?>
                 >
                 <label for="ms_center_off" class="radioCheck">No</label>
                 <a class="slide-button btn"></a>
@@ -511,7 +596,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Show Navigation</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
@@ -531,7 +616,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
     </div>
 
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Navigation Position</span>
         <select class="field" id="ms_nav_position" name="ms_nav_position">
             <option
@@ -600,7 +685,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Navigation button border radius</span>
         <input
             class="field"
@@ -613,7 +698,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Show Dots</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
@@ -632,18 +717,18 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Show Dots For Each Item</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
                 <input name="ms_show_dots_foreach" id="ms_show_dots_foreach_on" type="radio"
                     value="true"
-                    <?php if ( empty( $ms_show_dots_foreach ) || $ms_show_dots_foreach == 'true' ) { echo 'checked'; } ?>
+                    <?php if ( $ms_show_dots_foreach == 'true' ) { echo 'checked'; } ?>
                 >
                 <label for="ms_show_dots_foreach_on" class="radioCheck">Yes</label>
                 <input name="ms_show_dots_foreach" id="ms_show_dots_foreach_off" type="radio"
                     value="false"
-                    <?php if ( $ms_show_dots_foreach == 'false' ) { echo 'checked'; } ?>
+                    <?php if ( empty( $ms_show_dots_foreach ) || $ms_show_dots_foreach == 'false' ) { echo 'checked'; } ?>
                 >
                 <label for="ms_show_dots_foreach_off" class="radioCheck">No</label>
                 <a class="slide-button btn"></a>
@@ -651,7 +736,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Autoplay Slides</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
@@ -670,7 +755,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Autoplay Timeout</span>
         <input
             class="field"
@@ -681,7 +766,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Autoplay Speed</span>
         <input
             class="field"
@@ -692,7 +777,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Pause Autoplay On Mouse Over</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
@@ -711,7 +796,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Slides Background Color</span>
         <input
             class="ms-color-picker"
@@ -721,7 +806,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Comments Icon Color</span>
         <input
             class="ms-color-picker"
@@ -731,7 +816,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Comment Font Size</span>
         <input
             class="field"
@@ -743,7 +828,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Comment Font Weight</span>
         <select
             class="field"
@@ -779,7 +864,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Comments Color</span>
         <input
             class="ms-color-picker"
@@ -789,7 +874,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Category Icon Color</span>
         <input
             class="ms-color-picker"
@@ -799,7 +884,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Category Font Size</span>
         <input
             class="field"
@@ -811,7 +896,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Category Font Weight</span>
         <select
             class="field"
@@ -847,7 +932,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Category Color</span>
         <input
             class="ms-color-picker"
@@ -857,7 +942,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Category Background Color</span>
         <input
             class="ms-color-picker"
@@ -867,7 +952,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Tag Font Size</span>
         <input
             class="field"
@@ -879,7 +964,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Tag Font Weight</span>
         <select
             class="field"
@@ -915,7 +1000,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Tag Icon Color</span>
         <input
             class="ms-color-picker"
@@ -925,7 +1010,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Tag Color</span>
         <input
             class="ms-color-picker"
@@ -935,7 +1020,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Tag Background Color</span>
         <input
             class="ms-color-picker"
@@ -945,7 +1030,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-post-field ms-scoped-field">
         <span>Title Font Size</span>
         <input
             class="field"
@@ -957,7 +1042,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-post-field ms-scoped-field">
         <span>Title Font Weight</span>
         <select
             class="field"
@@ -993,7 +1078,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-post-field ms-scoped-field">
         <span>Title Color</span>
         <input
             class="ms-color-picker"
@@ -1003,7 +1088,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Excerpt Font Size</span>
         <input
             class="field"
@@ -1015,7 +1100,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Excerpt Font Weight</span>
         <select
             class="field"
@@ -1051,7 +1136,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Excerpt Color</span>
         <input
             class="ms-color-picker"
@@ -1061,7 +1146,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Read More Text Color</span>
         <input
             class="ms-color-picker"
@@ -1071,7 +1156,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Author Font Size</span>
         <input
             class="field"
@@ -1083,7 +1168,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Author Font Weight</span>
         <select
             class="field"
@@ -1119,7 +1204,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Author Color</span>
         <input
             class="ms-color-picker"
@@ -1129,7 +1214,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Date Font Size</span>
         <input
             class="field"
@@ -1141,7 +1226,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Date Font Weight</span>
         <select
             class="field"
@@ -1177,7 +1262,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-post-field ms-scoped-field">
         <span>Date Color</span>
         <input
             class="ms-color-picker"
@@ -1187,7 +1272,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Stock Status Font Size</span>
         <input
             class="field"
@@ -1199,7 +1284,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Stock Status Font Weight</span>
         <select
             class="field"
@@ -1235,7 +1320,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Stock Status Color</span>
         <input
             class="ms-color-picker"
@@ -1245,7 +1330,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Sales Count Font Size</span>
         <input
             class="field"
@@ -1257,7 +1342,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Sales Count Font Weight</span>
         <select
             class="field"
@@ -1293,7 +1378,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Sales Count Color</span>
         <input
             class="ms-color-picker"
@@ -1303,7 +1388,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Rating Star Font Size</span>
         <input
             class="field"
@@ -1315,7 +1400,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Rating Star Font Weight</span>
         <select
             class="field"
@@ -1351,7 +1436,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Rating Star Color</span>
         <input
             class="ms-color-picker"
@@ -1361,7 +1446,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Active Price Font Size</span>
         <input
             class="field"
@@ -1373,7 +1458,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Active Price Font Weight</span>
         <select
             class="field"
@@ -1409,7 +1494,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Active Price Color</span>
         <input
             class="ms-color-picker"
@@ -1419,7 +1504,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Previous Price Font Size</span>
         <input
             class="field"
@@ -1431,7 +1516,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Previous Price Font Weight</span>
         <select
             class="field"
@@ -1467,7 +1552,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Previous Price Color</span>
         <input
             class="ms-color-picker"
@@ -1477,7 +1562,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Button Font Size</span>
         <input
             class="field"
@@ -1489,7 +1574,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Button Font Weight</span>
         <select
             class="field"
@@ -1525,7 +1610,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Button Color</span>
         <input
             class="ms-color-picker"
@@ -1535,7 +1620,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper ms-product-field ms-scoped-field">
         <span>Button Background Color</span>
         <input
             class="ms-color-picker"
@@ -1545,7 +1630,55 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
+        <span>Minimum Slide Height</span>
+        <input
+            class="field"
+            type="number"
+            min="0"
+            step="5"
+            value="<?php echo empty( $ms_min_height ) ? '500' : $ms_min_height ?>"
+            name="ms_min_height"
+        />
+    </div>
+
+    <div class="field-wrapper">
+        <span>Slide Content Verticle Alignment</span>
+        <select
+            class="field"
+            name="ms_verticle_align"
+        >
+            <option
+                value="start"
+                <?php if ( ! empty( $ms_verticle_align ) && $ms_verticle_align == 'start' ) { echo 'selected'; } ?>
+            >
+                Top
+            </option>
+
+            <option
+                value="center"
+                <?php if ( empty( $ms_verticle_align ) || $ms_verticle_align == 'center' ) { echo 'selected'; } ?>
+                >
+                Center
+            </option>
+
+            <option
+                value="end"
+                <?php if ( ! empty( $ms_verticle_align ) && $ms_verticle_align == 'end' ) { echo 'selected'; } ?>
+            >
+                Bottom
+            </option>
+
+            <option
+                value="space-between"
+                <?php if ( ! empty( $ms_verticle_align ) && $ms_verticle_align == 'space-between' ) { echo 'selected'; } ?>
+            >
+                Fit Container
+            </option>
+        </select>
+    </div>
+
+    <div class="field-wrapper">
         <span>Navigation Button Color</span>
         <input
             class="ms-color-picker"
@@ -1555,7 +1688,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Navigation Button Font Size</span>
         <input
             class="field"
@@ -1567,7 +1700,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Navigation Button Font Weight</span>
         <select
             class="field"
@@ -1603,7 +1736,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Navigation Button Background Color</span>
         <input
             class="ms-color-picker"
@@ -1614,7 +1747,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Navigation Button Background Hover Color</span>
         <input
             class="ms-color-picker"
@@ -1625,7 +1758,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Navigation Dots Shape</span>
         <select
             class="field"
@@ -1654,7 +1787,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Navigation Dots Color</span>
         <input
             class="ms-color-picker"
@@ -1664,7 +1797,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 
-    <div class="form-field field-wrapper">
+    <div class="field-wrapper">
         <span>Navigation Dots Active Color</span>
         <input
             class="ms-color-picker"
@@ -1674,3 +1807,30 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         />
     </div>
 </div>
+
+<script>
+    jQuery(document).ready(function ($) {
+
+        function manageFieldRendering() {
+            let postType = $('#ms_post_type').val()
+
+            $('.ms-scoped-field').hide()
+
+            if ( postType == 'post' ) {
+                $('.ms-post-field').show()
+            }
+
+            if ( postType == 'product' ) {
+                $('.ms-product-field').show()
+            }
+
+            if ( postType == 'my_slide' ) {
+                $('.ms-my-slide-field').show()
+            }
+        }
+
+        $('#ms_post_type').on('afterChange', manageFieldRendering)
+
+        manageFieldRendering()
+    })
+</script>

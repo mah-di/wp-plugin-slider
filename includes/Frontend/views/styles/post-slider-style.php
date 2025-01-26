@@ -32,6 +32,9 @@ $ms_date_fs                 = get_post_meta( $ms_post_ID, 'ms_date_fs', true );
 $ms_date_fw                 = get_post_meta( $ms_post_ID, 'ms_date_fw', true );
 $ms_date_color              = get_post_meta( $ms_post_ID, 'ms_date_color', true );
 
+$ms_min_height              = get_post_meta( $ms_post_ID, 'ms_min_height', true );
+$ms_verticle_align          = get_post_meta( $ms_post_ID, 'ms_verticle_align', true );
+
 ?>
 
 <style>
@@ -39,6 +42,18 @@ $ms_date_color              = get_post_meta( $ms_post_ID, 'ms_date_color', true 
 #my-slider-<?php echo $ms_post_ID ?> {
     .ms-card-header {
         padding-top: <?php echo "{$ms_aspect_ratio}%" ?> !important;
+    }
+    .ms-card {
+        min-height: <?php echo "{$ms_min_height}px" ?> !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .ms-card-body {
+        flex: 1;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: <?php echo $ms_verticle_align ?>;
     }
 
     .ms-comment-icon svg {

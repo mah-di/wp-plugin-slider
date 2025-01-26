@@ -28,12 +28,27 @@ $ms_woo_button_fw                   = get_post_meta( $ms_post_ID, 'ms_woo_button
 $ms_woo_button_color                = get_post_meta( $ms_post_ID, 'ms_woo_button_color', true );
 $ms_woo_button_bg_color             = get_post_meta( $ms_post_ID, 'ms_woo_button_bg_color', true );
 
+$ms_min_height                      = get_post_meta( $ms_post_ID, 'ms_min_height', true );
+$ms_verticle_align                  = get_post_meta( $ms_post_ID, 'ms_verticle_align', true );
+
 ?>
 
 <style>
 #my-slider-<?php echo $ms_post_ID ?> {
     .ms-title {
         text-align: center !important;
+    }
+    .ms-card {
+        min-height: <?php echo "{$ms_min_height}px" ?> !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .ms-card-body {
+        flex: 1;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: <?php echo $ms_verticle_align ?>;
     }
 
     .ms-title a {

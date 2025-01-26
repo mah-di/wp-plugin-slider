@@ -1,8 +1,12 @@
 .editor-styles-wrapper {
     background-size: cover;
     background-position: center;
-    padding: 20px; /* Optional for better readability */
-    min-height: 100vh; /* Ensure the background covers the viewport height */
-    color: #fff; /* Adjust text color for better contrast */
-    transition: background-image 0.3s ease-in-out;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wp-block-post-content {
+    padding: 40px !important;
 }

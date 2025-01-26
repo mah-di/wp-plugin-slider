@@ -29,6 +29,7 @@ final class Admin
     {
         if ( $screen->post_type == 'my_slide' )
             add_action( 'enqueue_block_editor_assets', [ $this, 'load_live_preview_assets' ] );
+            add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_alignwide_blocks_script' ] );
     }
 
     public function load_live_preview_assets()
@@ -69,6 +70,11 @@ final class Admin
     private function enqueue_live_preview_scripts()
     {
         wp_enqueue_script( 'ms-live-preview-script', MS_URL . '/assets/admin/js/live.preview.js', [ 'wp-blocks', 'wp-dom' ], MS_VERSION );
+    }
+
+    public function enqueue_alignwide_blocks_script()
+    {
+        wp_enqueue_script( 'ms-alignwide-blocks-script', MS_URL . '/assets/admin/js/alignwide.blocks.js', [ 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ], MS_VERSION, true );
     }
 }
 
