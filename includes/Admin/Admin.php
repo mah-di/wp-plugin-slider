@@ -9,6 +9,7 @@ final class Admin
 
         require_once 'Slider/My_Slider_Post_Type.php';
         require_once 'Slider/Meta_Boxes.php';
+        require_once 'Slider/Handle_Search.php';
 
         require_once 'Slide/My_Slide_Post_Type.php';
     }

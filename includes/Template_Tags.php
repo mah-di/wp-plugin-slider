@@ -41,6 +41,21 @@ function ms_get_tags( $post_type )
     return $tags;
 }
 
+function ms_get_cats( $post_type )
+{
+    $tax = $post_type == 'post' ? "category" : "{$post_type}_cat";
+
+    $cats = get_terms( [
+        'taxonomy'      => $tax,
+        'hide_empty'    => true
+    ] );
+    
+    if ( is_wp_error( $cats ) )
+        $cats = [];
+    
+    return $cats;
+}
+
 function ms_get_the_category( $post_id = false, $post_type ) {
     if ( $post_type == 'post' )
         $tax = 'category';
