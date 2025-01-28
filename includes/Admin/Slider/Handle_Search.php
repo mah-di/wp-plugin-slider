@@ -58,16 +58,18 @@ class Handle_Search
         } elseif ( $query_type == 'sku' ) {
             $args[ 'meta_query' ]   = [ [
                     'key'           => '_sku',
-                    'value'         => "{$search_query}%",
+                    'value'         => $search_query,
                     'compare'       => 'LIKE'
                 ] ];
 
             unset( $args[ 's' ] );
 
         } elseif ( $query_type == 'featured' ) {
-            $args[ 'meta_query' ]   = [ [
-                    'key'           => '_featured',
-                    'value'         => 'yes',
+            $args[ 'tax_query' ]   = [ [
+                    'taxonomy' => 'product_visibility',
+                    'field'    => 'name',
+                    'terms'    => 'featured',
+                    'operator' => 'IN'
                 ] ];
 
         } elseif ( $query_type == 'top_rated' ) {
@@ -98,7 +100,7 @@ class Handle_Search
 
                     $results[]  = [
                         'id'    => get_the_ID(),
-                        'name'  => get_the_title(),
+                        'name'  => ( $query_type == 'sku' ? get_post_meta( get_the_ID(), '_sku', true ) . ' | ': '' ) . get_the_title(),
                     ];
 
                 }
@@ -147,7 +149,7 @@ class Handle_Search
                 'include'   => $query_IDs
             ]);
 
-        } elseif ( $query_type == 'id' ) {
+        } elseif ( in_array( $query_type , [ 'id', 'sku' ]) ) {
             $rows = get_posts([
                 'post__in'          => $query_IDs,
                 'post_type'         => $post_type,
@@ -160,7 +162,7 @@ class Handle_Search
         foreach ( $rows as $row ) {
             $results[] = [
                 'id'    => isset( $row->ID ) ? $row->ID : $row->term_id,
-                'name'  => isset( $row->post_title ) ? $row->post_title : $row->name
+                'name'  => ( $query_type == 'sku' ? get_post_meta( $row->ID, '_sku', true ) . ' | ' : '' ) . ( isset( $row->post_title ) ? $row->post_title : $row->name )
             ];
         }
 

@@ -1881,7 +1881,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             let postType = $('#ms_post_type').val()
             let queryType = $('input[name=ms_query_type]:checked').val();
 
-            let restrictedTypes = ['category', 'product_cat', 'post_tag', 'product_tag', 'my_slide_tag', 'sku']
+            let restrictedTypes = ['category', 'product_cat', 'post_tag', 'product_tag', 'my_slide_tag']
 
             if ( restrictedTypes.includes(queryType) ) {
                 return callback()
@@ -1898,7 +1898,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             let postType = $('#ms_post_type').val()
             let queryType = $('input[name=ms_query_type]:checked').val();
 
-            let allowedTypes = ['category', 'product_cat', 'post_tag', 'product_tag', 'my_slide_tag']
+            let allowedTypes = ['category', 'product_cat', 'post_tag', 'product_tag', 'my_slide_tag', 'featured', 'top_rated']
 
             if (! allowedTypes.includes(queryType)) {
                 return
@@ -1968,8 +1968,8 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
             $('.ms-query-wrapper').addClass('d-none')
 
-            queryType == 'sku' ?
-                $('#ms_text_input_query_wrapper').removeClass('d-none') :
+            // queryType == 'sku' ?
+            //     $('#ms_text_input_query_wrapper').removeClass('d-none') :
                 $('#ms_select_query_wrapper').removeClass('d-none')
         })
 
@@ -1981,18 +1981,21 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             let postType = $('#ms_post_type').val()
             let query = '<?php echo $ms_query ?>'
 
-            makeAjax(postType, query, 'fetch_query', queryType, (res) => {
-                let selectizeElem = $('#ms_query')[0].selectize
-    
-                selectizeElem.addOption(res)
-                selectizeElem.refreshOptions(false)
+            if ( query && query.length ) {
 
-                let values = res.map(item => item.id)
-                values.forEach(val => selectizeElem.addItem(val))
-            })
+                makeAjax(postType, query, 'fetch_query', queryType, (res) => {
+                    let selectizeElem = $('#ms_query')[0].selectize
+        
+                    selectizeElem.addOption(res)
+                    selectizeElem.refreshOptions(false)
 
-            queryType == 'sku' ?
-                $('#ms_text_input_query_wrapper').removeClass('d-none') :
+                    let values = res.map(item => item.id)
+                    values.forEach(val => selectizeElem.addItem(val))
+                })
+            }
+
+            // queryType == 'sku' ?
+            //     $('#ms_text_input_query_wrapper').removeClass('d-none') :
                 $('#ms_select_query_wrapper').removeClass('d-none')
         }
 

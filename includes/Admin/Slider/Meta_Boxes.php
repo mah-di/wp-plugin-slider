@@ -81,7 +81,7 @@ final class Meta_Boxes
         // return if post type is not my_slider
         if ( $post_type != 'my_slider' )
             return;
-
+// echo '<pre>';print_r($_POST);echo '</pre>';die();
         if ( ! empty( $_POST[ 'ms_tag_query' ] ) ) {
             if ( empty( $_POST[ 'ms_tag_query' ] ) ) {
                 $tag_query = '';
@@ -100,7 +100,7 @@ final class Meta_Boxes
             $this->save_text_meta( 'ms_tag_query', $tag_query );
         }
 
-        if ( ! empty( $_POST[ 'ms_query' ] ) ) {
+        // if ( isset( $_POST[ 'ms_query' ] ) ) {
             if ( empty( $_POST[ 'ms_query' ] ) ) {
                 $query = '';
 
@@ -116,7 +116,7 @@ final class Meta_Boxes
             }
 
             $this->save_text_meta( 'ms_query', $query );
-        }
+        // }
 
         if ( ! empty( $_POST[ 'ms_sku_query' ] ) )
             $this->save_text_meta( 'ms_query', $_POST[ 'ms_sku_query' ] );
