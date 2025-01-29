@@ -72,11 +72,32 @@ class Handle_Search
                     'operator' => 'IN'
                 ] ];
 
+        } elseif ( $query_type == 'onsale' ) {
+            $args[ 'post__in' ] = wc_get_product_ids_on_sale();
+
         } elseif ( $query_type == 'top_rated' ) {
             $args[ 'meta_key' ] = '_wc_average_rating';
 
             $args[ 'orderby' ]  = 'meta_value_num';
 
+            $args[ 'meta_query' ] = [ [
+                'key' => '_wc_average_rating',
+                'value' => 0,
+                'compare' => '>',
+                'type' => 'NUMERIC'
+            ] ];
+
+        } elseif ( $query_type == 'best_selling' ) {
+            $args[ 'meta_key' ] = 'total_sales';
+
+            $args[ 'orderby' ]  = 'meta_value_num';
+
+            $args[ 'meta_query' ] = [ [
+                'key' => 'total_sales',
+                'value' => 0,
+                'compare' => '>',
+                'type' => 'NUMERIC'
+            ] ];
         }
 
         $results = [];
@@ -149,7 +170,7 @@ class Handle_Search
                 'include'   => $query_IDs
             ]);
 
-        } elseif ( in_array( $query_type , [ 'id', 'sku' ]) ) {
+        } elseif ( in_array( $query_type , [ 'id', 'sku', 'featured', 'onsale', 'top_rated', 'best_selling' ]) ) {
             $rows = get_posts([
                 'post__in'          => $query_IDs,
                 'post_type'         => $post_type,

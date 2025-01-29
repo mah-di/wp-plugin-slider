@@ -262,19 +262,9 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="field-wrapper d-none ms-query-wrapper" id="ms_select_query_wrapper">
+    <div class="field-wrapper d-none" id="ms_query_wrapper">
         <span></span>
         <select name="ms_query[]" id="ms_query" multiple="multiple"></select>
-    </div>
-
-    <div class="field-wrapper d-none ms-query-wrapper" id="ms_text_input_query_wrapper">
-        <span>Product SKU(s)</span>
-        <input
-            class="field"
-            type="text"
-            value="<?php if ( $ms_query_type == 'sku' ) { echo $ms_query; } ?>"
-            name="ms_sku_query"
-        />
     </div>
 
     <div class="field-wrapper">
@@ -1851,6 +1841,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 <script>
     jQuery(document).ready(function ($) {
 
+        // destroy the selectize object for re-initialization on query type selection
         function resetSelectizeData() {
             let selectizeElem = $('#ms_query')[0].selectize
 
@@ -1859,6 +1850,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             }
         }
 
+        // render fields according to the selected post type
         function manageFieldRendering() {
             let postType = $('#ms_post_type').val()
 
@@ -1877,8 +1869,8 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             }
         }
 
+        // function to run when key is pressed in the selectize search field
         function runOnLoad(query, callback) {
-            let postType = $('#ms_post_type').val()
             let queryType = $('input[name=ms_query_type]:checked').val();
 
             let restrictedTypes = ['category', 'product_cat', 'post_tag', 'product_tag', 'my_slide_tag']
@@ -1887,32 +1879,33 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 return callback()
             }
 
-            if (queryType == 'id' && query.length < 3) {
+            if (query.length < 3) {
                 return callback();
             }
 
-            makeAjax(postType, query, 'fetch_search', queryType, callback, true)
+            makeAjax(query, 'fetch_search', queryType, callback, true)
         }
 
+        // function to run on selectize initialization
         function runOnInitialize() {
-            let postType = $('#ms_post_type').val()
             let queryType = $('input[name=ms_query_type]:checked').val();
 
-            let allowedTypes = ['category', 'product_cat', 'post_tag', 'product_tag', 'my_slide_tag', 'featured', 'top_rated']
-
-            if (! allowedTypes.includes(queryType)) {
+            if (queryType == 'id') {
                 return
             }
 
             var selectizeElem = $('#ms_query')[0].selectize;
 
-            makeAjax(postType, '', 'fetch_search', queryType, (res) => {
+            makeAjax('', 'fetch_search', queryType, (res) => {
                 selectizeElem.addOption(res);
                 selectizeElem.refreshOptions(false);
             })
         }
 
-        function makeAjax( postType, query, type, queryType, callback, isLoad = false ) {
+        // making ajax request to fetch data
+        function makeAjax( query, type, queryType, callback, isLoad = false ) {
+            let postType = $('#ms_post_type').val()
+
             let data = {
                 action: 'custom_search',
                 postType: postType,
@@ -1939,51 +1932,51 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             });
         }
 
+        // selectize initialization data object
         const selectizeData = {
-            valueField: 'id',
-            labelField: 'name',
-            searchField: 'name',
-            placeholder: 'Search...',
-            maxOptions: 10,
-            load: (query, callback) => runOnLoad(query, callback),
-            onInitialize: () => runOnInitialize()
+            valueField:         'id',
+            labelField:         'name',
+            searchField:        'name',
+            placeholder:        'Search...',
+            plugins:            ['remove_button'],
+            maxOptions:         10,
+            load:               (query, callback) => runOnLoad(query, callback),
+            onInitialize:       () => runOnInitialize()
         }
 
+        // after changing the post type render only the selected post type related fields and destroy the query selectize object if previously initialized
         $('#ms_post_type').on('afterChange', () => {
             $('input[name="ms_query_type"]:checked').prop('checked', false);
             resetSelectizeData()
             manageFieldRendering()
 
-            $('.ms-query-wrapper').addClass('d-none')
+            $('#ms_query_wrapper').addClass('d-none')
         })
 
+        // render the post type related fields on page load
         manageFieldRendering()
 
+        // on query type change, re-initialize the selectize object and make it visible if it wasn't 
         $(document).on('change', 'input[name=ms_query_type]', () => {
             resetSelectizeData()
 
             $('#ms_query').selectize({...selectizeData});
 
-            let queryType = $('input[name=ms_query_type]:checked').val()
-
-            $('.ms-query-wrapper').addClass('d-none')
-
-            // queryType == 'sku' ?
-            //     $('#ms_text_input_query_wrapper').removeClass('d-none') :
-                $('#ms_select_query_wrapper').removeClass('d-none')
+            $('#ms_query_wrapper').removeClass('d-none')
         })
-
-        $('#ms_query').selectize({...selectizeData});
 
         let queryType = $('input[name=ms_query_type]:checked').val()
 
+        // strictly for post edit page, signalled by the existing query type value on page load.
+        // initialize the selectize object and fetch and populated it with the saved data on the database
         if (queryType && queryType.length) {
-            let postType = $('#ms_post_type').val()
+            $('#ms_query').selectize({...selectizeData});
+
             let query = '<?php echo $ms_query ?>'
 
             if ( query && query.length ) {
 
-                makeAjax(postType, query, 'fetch_query', queryType, (res) => {
+                makeAjax(query, 'fetch_query', queryType, (res) => {
                     let selectizeElem = $('#ms_query')[0].selectize
         
                     selectizeElem.addOption(res)
@@ -1994,9 +1987,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 })
             }
 
-            // queryType == 'sku' ?
-            //     $('#ms_text_input_query_wrapper').removeClass('d-none') :
-                $('#ms_select_query_wrapper').removeClass('d-none')
+            $('#ms_query_wrapper').removeClass('d-none')
         }
 
     })

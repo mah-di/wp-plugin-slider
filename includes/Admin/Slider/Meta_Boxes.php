@@ -118,9 +118,6 @@ final class Meta_Boxes
             $this->save_text_meta( 'ms_query', $query );
         // }
 
-        if ( ! empty( $_POST[ 'ms_sku_query' ] ) )
-            $this->save_text_meta( 'ms_query', $_POST[ 'ms_sku_query' ] );
-
         if ( ! empty( $_POST[ 'ms_post_type' ] ) )
             $this->save_text_meta( 'ms_post_type', $_POST[ 'ms_post_type' ] );
 
