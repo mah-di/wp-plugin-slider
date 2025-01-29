@@ -161,7 +161,7 @@ final class Meta_Boxes
             $this->save_text_meta( 'ms_nav_position', $_POST[ 'ms_nav_position' ] );
 
         if ( ! empty( $_POST[ 'ms_nav_radius' ] ) )
-            $this->save_text_meta( 'ms_nav_radius', $_POST[ 'ms_nav_radius' ] );
+            $this->save_int_meta( 'ms_nav_radius', $_POST[ 'ms_nav_radius' ] );
 
         if ( ! empty( $_POST[ 'ms_show_dots' ] ) )
             $this->save_text_meta( 'ms_show_dots', $_POST[ 'ms_show_dots' ] );
@@ -173,13 +173,13 @@ final class Meta_Boxes
             $this->save_text_meta( 'ms_autoplay', $_POST[ 'ms_autoplay' ] );
 
         if ( ! empty( $_POST[ 'ms_autoplay_timeout' ] ) )
-            $this->save_text_meta( 'ms_autoplay_timeout', $_POST[ 'ms_autoplay_timeout' ] );
+            $this->save_int_meta( 'ms_autoplay_timeout', $_POST[ 'ms_autoplay_timeout' ] );
 
         if ( ! empty( $_POST[ 'ms_autoplay_hover_pause' ] ) )
             $this->save_text_meta( 'ms_autoplay_hover_pause', $_POST[ 'ms_autoplay_hover_pause' ] );
 
         if ( ! empty( $_POST[ 'ms_autoplay_speed' ] ) )
-            $this->save_text_meta( 'ms_autoplay_speed', $_POST[ 'ms_autoplay_speed' ] );
+            $this->save_int_meta( 'ms_autoplay_speed', $_POST[ 'ms_autoplay_speed' ] );
 
         if ( ! empty( $_POST[ 'ms_bg_color' ] ) )
             $this->save_text_meta( 'ms_bg_color', $_POST[ 'ms_bg_color' ] );
@@ -191,10 +191,10 @@ final class Meta_Boxes
             $this->save_text_meta( 'ms_comment_icon_color', $_POST[ 'ms_comment_icon_color' ] );
 
         if ( ! empty( $_POST[ 'ms_comment_fs' ] ) )
-            $this->save_text_meta( 'ms_comment_fs', $_POST[ 'ms_comment_fs' ] );
+            $this->save_int_meta( 'ms_comment_fs', $_POST[ 'ms_comment_fs' ] );
 
         if ( ! empty( $_POST[ 'ms_comment_fw' ] ) )
-            $this->save_text_meta( 'ms_comment_fw', $_POST[ 'ms_comment_fw' ] );
+            $this->save_int_meta( 'ms_comment_fw', $_POST[ 'ms_comment_fw' ] );
 
         if ( ! empty( $_POST[ 'ms_comment_color' ] ) )
             $this->save_text_meta( 'ms_comment_color', $_POST[ 'ms_comment_color' ] );
@@ -203,10 +203,10 @@ final class Meta_Boxes
             $this->save_text_meta( 'ms_category_icon_color', $_POST[ 'ms_category_icon_color' ] );
 
         if ( ! empty( $_POST[ 'ms_category_fs' ] ) )
-            $this->save_text_meta( 'ms_category_fs', $_POST[ 'ms_category_fs' ] );
+            $this->save_int_meta( 'ms_category_fs', $_POST[ 'ms_category_fs' ] );
 
         if ( ! empty( $_POST[ 'ms_category_fw' ] ) )
-            $this->save_text_meta( 'ms_category_fw', $_POST[ 'ms_category_fw' ] );
+            $this->save_int_meta( 'ms_category_fw', $_POST[ 'ms_category_fw' ] );
 
         if ( ! empty( $_POST[ 'ms_category_color' ] ) )
             $this->save_text_meta( 'ms_category_color', $_POST[ 'ms_category_color' ] );
@@ -218,10 +218,10 @@ final class Meta_Boxes
             $this->save_text_meta( 'ms_tag_icon_color', $_POST[ 'ms_tag_icon_color' ] );
 
         if ( ! empty( $_POST[ 'ms_tag_fs' ] ) )
-            $this->save_text_meta( 'ms_tag_fs', $_POST[ 'ms_tag_fs' ] );
+            $this->save_int_meta( 'ms_tag_fs', $_POST[ 'ms_tag_fs' ] );
 
         if ( ! empty( $_POST[ 'ms_tag_fw' ] ) )
-            $this->save_text_meta( 'ms_tag_fw', $_POST[ 'ms_tag_fw' ] );
+            $this->save_int_meta( 'ms_tag_fw', $_POST[ 'ms_tag_fw' ] );
 
         if ( ! empty( $_POST[ 'ms_tag_color' ] ) )
             $this->save_text_meta( 'ms_tag_color', $_POST[ 'ms_tag_color' ] );
@@ -230,19 +230,19 @@ final class Meta_Boxes
             $this->save_text_meta( 'ms_tag_bg_color', $_POST[ 'ms_tag_bg_color' ] );
 
         if ( ! empty( $_POST[ 'ms_title_fs' ] ) )
-            $this->save_text_meta( 'ms_title_fs', $_POST[ 'ms_title_fs' ] );
+            $this->save_int_meta( 'ms_title_fs', $_POST[ 'ms_title_fs' ] );
 
         if ( ! empty( $_POST[ 'ms_title_fw' ] ) )
-            $this->save_text_meta( 'ms_title_fw', $_POST[ 'ms_title_fw' ] );
+            $this->save_int_meta( 'ms_title_fw', $_POST[ 'ms_title_fw' ] );
 
         if ( ! empty( $_POST[ 'ms_title_color' ] ) )
             $this->save_text_meta( 'ms_title_color', $_POST[ 'ms_title_color' ] );
 
         if ( ! empty( $_POST[ 'ms_excerpt_fs' ] ) )
-            $this->save_text_meta( 'ms_excerpt_fs', $_POST[ 'ms_excerpt_fs' ] );
+            $this->save_int_meta( 'ms_excerpt_fs', $_POST[ 'ms_excerpt_fs' ] );
 
         if ( ! empty( $_POST[ 'ms_excerpt_fw' ] ) )
-            $this->save_text_meta( 'ms_excerpt_fw', $_POST[ 'ms_excerpt_fw' ] );
+            $this->save_int_meta( 'ms_excerpt_fw', $_POST[ 'ms_excerpt_fw' ] );
 
         if ( ! empty( $_POST[ 'ms_excerpt_color' ] ) )
             $this->save_text_meta( 'ms_excerpt_color', $_POST[ 'ms_excerpt_color' ] );
@@ -251,73 +251,73 @@ final class Meta_Boxes
             $this->save_text_meta( 'ms_read_more_color', $_POST[ 'ms_read_more_color' ] );
 
         if ( ! empty( $_POST[ 'ms_author_fs' ] ) )
-            $this->save_text_meta( 'ms_author_fs', $_POST[ 'ms_author_fs' ] );
+            $this->save_int_meta( 'ms_author_fs', $_POST[ 'ms_author_fs' ] );
 
         if ( ! empty( $_POST[ 'ms_author_fw' ] ) )
-            $this->save_text_meta( 'ms_author_fw', $_POST[ 'ms_author_fw' ] );
+            $this->save_int_meta( 'ms_author_fw', $_POST[ 'ms_author_fw' ] );
 
         if ( ! empty( $_POST[ 'ms_author_color' ] ) )
             $this->save_text_meta( 'ms_author_color', $_POST[ 'ms_author_color' ] );
 
         if ( ! empty( $_POST[ 'ms_date_fs' ] ) )
-            $this->save_text_meta( 'ms_date_fs', $_POST[ 'ms_date_fs' ] );
+            $this->save_int_meta( 'ms_date_fs', $_POST[ 'ms_date_fs' ] );
 
         if ( ! empty( $_POST[ 'ms_date_fw' ] ) )
-            $this->save_text_meta( 'ms_date_fw', $_POST[ 'ms_date_fw' ] );
+            $this->save_int_meta( 'ms_date_fw', $_POST[ 'ms_date_fw' ] );
 
         if ( ! empty( $_POST[ 'ms_date_color' ] ) )
             $this->save_text_meta( 'ms_date_color', $_POST[ 'ms_date_color' ] );
 
         if ( ! empty( $_POST[ 'ms_stock_fs' ] ) )
-            $this->save_text_meta( 'ms_stock_fs', $_POST[ 'ms_stock_fs' ] );
+            $this->save_int_meta( 'ms_stock_fs', $_POST[ 'ms_stock_fs' ] );
 
         if ( ! empty( $_POST[ 'ms_stock_fw' ] ) )
-            $this->save_text_meta( 'ms_stock_fw', $_POST[ 'ms_stock_fw' ] );
+            $this->save_int_meta( 'ms_stock_fw', $_POST[ 'ms_stock_fw' ] );
 
         if ( ! empty( $_POST[ 'ms_stock_color' ] ) )
             $this->save_text_meta( 'ms_stock_color', $_POST[ 'ms_stock_color' ] );
 
         if ( ! empty( $_POST[ 'ms_sales_fs' ] ) )
-            $this->save_text_meta( 'ms_sales_fs', $_POST[ 'ms_sales_fs' ] );
+            $this->save_int_meta( 'ms_sales_fs', $_POST[ 'ms_sales_fs' ] );
 
         if ( ! empty( $_POST[ 'ms_sales_fw' ] ) )
-            $this->save_text_meta( 'ms_sales_fw', $_POST[ 'ms_sales_fw' ] );
+            $this->save_int_meta( 'ms_sales_fw', $_POST[ 'ms_sales_fw' ] );
 
         if ( ! empty( $_POST[ 'ms_sales_color' ] ) )
             $this->save_text_meta( 'ms_sales_color', $_POST[ 'ms_sales_color' ] );
 
         if ( ! empty( $_POST[ 'ms_review_fs' ] ) )
-            $this->save_text_meta( 'ms_review_fs', $_POST[ 'ms_review_fs' ] );
+            $this->save_int_meta( 'ms_review_fs', $_POST[ 'ms_review_fs' ] );
 
         if ( ! empty( $_POST[ 'ms_review_fw' ] ) )
-            $this->save_text_meta( 'ms_review_fw', $_POST[ 'ms_review_fw' ] );
+            $this->save_int_meta( 'ms_review_fw', $_POST[ 'ms_review_fw' ] );
 
         if ( ! empty( $_POST[ 'ms_review_color' ] ) )
             $this->save_text_meta( 'ms_review_color', $_POST[ 'ms_review_color' ] );
 
         if ( ! empty( $_POST[ 'ms_active_price_fs' ] ) )
-            $this->save_text_meta( 'ms_active_price_fs', $_POST[ 'ms_active_price_fs' ] );
+            $this->save_int_meta( 'ms_active_price_fs', $_POST[ 'ms_active_price_fs' ] );
 
         if ( ! empty( $_POST[ 'ms_active_price_fw' ] ) )
-            $this->save_text_meta( 'ms_active_price_fw', $_POST[ 'ms_active_price_fw' ] );
+            $this->save_int_meta( 'ms_active_price_fw', $_POST[ 'ms_active_price_fw' ] );
 
         if ( ! empty( $_POST[ 'ms_active_price_color' ] ) )
             $this->save_text_meta( 'ms_active_price_color', $_POST[ 'ms_active_price_color' ] );
 
         if ( ! empty( $_POST[ 'ms_prev_price_fs' ] ) )
-            $this->save_text_meta( 'ms_prev_price_fs', $_POST[ 'ms_prev_price_fs' ] );
+            $this->save_int_meta( 'ms_prev_price_fs', $_POST[ 'ms_prev_price_fs' ] );
 
         if ( ! empty( $_POST[ 'ms_prev_price_fw' ] ) )
-            $this->save_text_meta( 'ms_prev_price_fw', $_POST[ 'ms_prev_price_fw' ] );
+            $this->save_int_meta( 'ms_prev_price_fw', $_POST[ 'ms_prev_price_fw' ] );
 
         if ( ! empty( $_POST[ 'ms_prev_price_color' ] ) )
             $this->save_text_meta( 'ms_prev_price_color', $_POST[ 'ms_prev_price_color' ] );
 
         if ( ! empty( $_POST[ 'ms_woo_button_fs' ] ) )
-            $this->save_text_meta( 'ms_woo_button_fs', $_POST[ 'ms_woo_button_fs' ] );
+            $this->save_int_meta( 'ms_woo_button_fs', $_POST[ 'ms_woo_button_fs' ] );
 
         if ( ! empty( $_POST[ 'ms_woo_button_fw' ] ) )
-            $this->save_text_meta( 'ms_woo_button_fw', $_POST[ 'ms_woo_button_fw' ] );
+            $this->save_int_meta( 'ms_woo_button_fw', $_POST[ 'ms_woo_button_fw' ] );
 
         if ( ! empty( $_POST[ 'ms_woo_button_color' ] ) )
             $this->save_text_meta( 'ms_woo_button_color', $_POST[ 'ms_woo_button_color' ] );
@@ -326,7 +326,7 @@ final class Meta_Boxes
             $this->save_text_meta( 'ms_woo_button_bg_color', $_POST[ 'ms_woo_button_bg_color' ] );
 
         if ( ! empty( $_POST[ 'ms_min_height' ] ) )
-            $this->save_text_meta( 'ms_min_height', $_POST[ 'ms_min_height' ] );
+            $this->save_int_meta( 'ms_min_height', $_POST[ 'ms_min_height' ] );
 
         if ( ! empty( $_POST[ 'ms_verticle_align' ] ) )
             $this->save_text_meta( 'ms_verticle_align', $_POST[ 'ms_verticle_align' ] );
@@ -341,10 +341,10 @@ final class Meta_Boxes
             $this->save_text_meta( 'ms_nav_color', $_POST[ 'ms_nav_color' ] );
 
         if ( ! empty( $_POST[ 'ms_nav_fs' ] ) )
-            $this->save_text_meta( 'ms_nav_fs', $_POST[ 'ms_nav_fs' ] );
+            $this->save_int_meta( 'ms_nav_fs', $_POST[ 'ms_nav_fs' ] );
 
         if ( ! empty( $_POST[ 'ms_nav_fw' ] ) )
-            $this->save_text_meta( 'ms_nav_fw', $_POST[ 'ms_nav_fw' ] );
+            $this->save_int_meta( 'ms_nav_fw', $_POST[ 'ms_nav_fw' ] );
 
         if ( ! empty( $_POST[ 'ms_dot_shape' ] ) )
             $this->save_text_meta( 'ms_dot_shape', $_POST[ 'ms_dot_shape' ] );

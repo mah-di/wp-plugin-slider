@@ -67,24 +67,14 @@
     flex-direction: column !important;
 }
 
-.ms-slide-wrapper>div {
-    padding: 0 80px !important;
-}
-
+.ms-slide-wrapper .alignfull,
 .ms-slide-wrapper .alignwide {
-    padding: 0 20px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
-.ms-slide-wrapper .alignfull {
-    padding: 0 !important;
-}
-
-.ms-slide-wrapper blockquote::before {
-    left: -12px;
-}
-
-.ms-slide-wrapper .alignfull blockquote::before {
-    left: 8px;
+.ms-slide-wrapper > *:not(.alignwide):not(.alignfull) {
+    padding: 0 4%;
 }
 
 .ms-card-header {
