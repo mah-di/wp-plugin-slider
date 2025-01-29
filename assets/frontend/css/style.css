@@ -11,6 +11,10 @@
     padding: 0 !important;
 }
 
+.owl-nav.disabled {
+    display: none !important;
+}
+
 /* Base styling for the slider buttons */
 .owl-prev,
 .owl-next {

@@ -14,27 +14,71 @@ final class Frontend
         $ms_post_ID = isset( $id[ 'id' ] ) ? $id[ 'id' ] : $id;
 
         $ms_post_type = get_post_meta( $ms_post_ID, 'ms_post_type', true );
-        $ms_tag_query = get_post_meta( $ms_post_ID, 'ms_tag_query', true );
+        $ms_query_type = get_post_meta( $ms_post_ID, 'ms_query_type', true );
+        $ms_query = get_post_meta( $ms_post_ID, 'ms_query', true );
         $ms_items_to_show = get_post_meta( $ms_post_ID, 'ms_items_to_show', true );
         $ms_order = get_post_meta( $ms_post_ID, 'ms_order', true );
 
         $args = [
             'post_type'      => $ms_post_type,
-            'posts_per_page' => $ms_items_to_show,
+            'posts_per_page' => empty( $ms_query ) ? $ms_items_to_show : -1,
             'orderby'        => 'date',
             'order'          => $ms_order
         ];
 
-        if ( ! empty( $ms_tag_query ) )
+        if ( in_array( $ms_query_type, [ 'post_tag', 'product_tag', 'my_slide_tag', 'category', 'product_cat' ] ) ) {
             $args[ 'tax_query' ] = [
                 [
-                    'taxonomy' => $ms_post_type . '_tag',
+                    'taxonomy' => $ms_query_type,
                     'field'    => 'id',
-                    'terms'    => explode( ',', $ms_tag_query ),
+                    'terms'    => explode( ',', $ms_query ),
                     'operator' => 'IN'
                 ]
             ];
+        } elseif ( ! empty( $ms_query ) ) {
+            $args[ 'post__in' ] = explode( ',', $ms_query );
+        }
 
+        if ( $ms_query_type == 'featured' ) {
+            $args[ 'tax_query' ] = [ [
+                'taxonomy'     => 'product_visibility',
+                'field'   => 'name',
+                'terms'   => 'featured',
+                'operator' => 'IN'
+            ] ];
+
+        } elseif ( $ms_query_type == 'onsale' && empty( $ms_query ) ) {
+            $args[ 'post__in' ] = wc_get_product_ids_on_sale();
+
+        } elseif ( $ms_query_type == 'top_rated' ) {
+            $args[ 'meta_key' ] = '_wc_average_rating';
+
+            $args[ 'orderby' ]  = 'meta_value_num';
+
+            if ( empty( $ms_query ) ) {
+                $args[ 'meta_query' ] = [ [
+                    'key'     => '_wc_average_rating',
+                    'value'   => 0,
+                    'compare' => '>',
+                    'type'    => 'NUMERIC'
+                ] ];
+            }
+
+        } elseif ( $ms_query_type == 'best_selling' ) {
+            $args[ 'meta_key' ] = 'total_sales';
+
+            $args[ 'orderby' ]  = 'meta_value_num';
+
+            if ( empty( $ms_query ) ) {
+                $args[ 'meta_query' ] = [ [
+                    'key'     => 'total_sales',
+                    'value'   => 0,
+                    'compare' => '>',
+                    'type'    => 'NUMERIC'
+                ] ];
+            }
+
+        }
 
         if ( $ms_post_type == 'post' ) {
             include 'views/post-slider.php';

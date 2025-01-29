@@ -29,7 +29,7 @@ $ms_dot_active_color            = get_post_meta( $ms_post_ID, 'ms_dot_active_col
         <?php if ( $ms_vrt_aln != 'middle' ): ?>
             position: absolute !important;
             width: 100% !important;
-            display: flex !important;
+            display: flex;
             gap: 10px !important;
         <?php endif; ?>
 

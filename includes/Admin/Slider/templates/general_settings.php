@@ -8,7 +8,6 @@ $ms_query                   = get_post_meta( $ms_ID, 'ms_query', true );
 $ms_tags                    = ms_get_all_tags();
 
 $ms_post_type               = get_post_meta( $ms_ID, 'ms_post_type', true );
-$ms_tag_query               = get_post_meta( $ms_ID, 'ms_tag_query', true );
 $ms_feature_img_size        = get_post_meta( $ms_ID, 'ms_feature_img_size', true );
 $ms_feature_img_ratio       = get_post_meta( $ms_ID, 'ms_feature_img_ratio', true );
 $ms_items_to_show           = get_post_meta( $ms_ID, 'ms_items_to_show', true );
@@ -231,35 +230,6 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 <a class="slide-button btn"></a>
             </div>
         </div>
-    </div>
-
-    <div class="field-wrapper">
-        <span>Select Tag</span>
-        <select name="ms_tag_query[]" id="tag_query" multiple="multiple" placeholder="Select Tag">
-            <?php
-
-            foreach ( $ms_tags as $post_type => $tags ):
-
-                if ( ! empty( $tags ) ):
-                    foreach ( $tags as $tag ):
-
-            ?>
-                        <option
-                            class="<?php echo $post_type . '_tag_option' ?> ms_tag_option"
-                            value="<?php echo $tag->term_id ?>"
-                            <?php if ( in_array( $tag->term_id, explode( ',',  $ms_tag_query ) ) ) { echo "selected"; } ?>
-                        >
-                            <?php echo $tag->name ?>
-                        </option>
-
-            <?php
-
-                    endforeach;
-                endif;
-            endforeach;
-
-            ?>
-        </select>
     </div>
 
     <div class="field-wrapper d-none" id="ms_query_wrapper">
@@ -1890,7 +1860,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         function runOnInitialize() {
             let queryType = $('input[name=ms_query_type]:checked').val();
 
-            if (queryType == 'id') {
+            if (['id', 'sku'].includes(queryType)) {
                 return
             }
 
@@ -1944,7 +1914,8 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             onInitialize:       () => runOnInitialize()
         }
 
-        // after changing the post type render only the selected post type related fields and destroy the query selectize object if previously initialized
+        // after changing the post type render only the selected post type related fields
+        // as well as destroy the query selectize object if previously initialized
         $('#ms_post_type').on('afterChange', () => {
             $('input[name="ms_query_type"]:checked').prop('checked', false);
             resetSelectizeData()

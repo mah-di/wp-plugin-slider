@@ -81,42 +81,21 @@ final class Meta_Boxes
         // return if post type is not my_slider
         if ( $post_type != 'my_slider' )
             return;
-// echo '<pre>';print_r($_POST);echo '</pre>';die();
-        if ( ! empty( $_POST[ 'ms_tag_query' ] ) ) {
-            if ( empty( $_POST[ 'ms_tag_query' ] ) ) {
-                $tag_query = '';
 
-            } else {
-                if ( is_array( $_POST[ 'ms_tag_query' ] ) ) {
-                    $sanitized_array = array_map( 'sanitize_text_field', $_POST[ 'ms_tag_query' ] );
-                    
-                    $tag_query = implode( ',', $sanitized_array );
-                }
+        $query = '';
 
-                if ( is_string( $_POST[ 'ms_tag_query' ] ) )
-                    $tag_query = $_POST[ 'ms_tag_query' ];
+        if ( ! empty( $_POST[ 'ms_query' ] ) ) {
+            if ( is_array( $_POST[ 'ms_query' ] ) ) {
+                $sanitized_array = array_map( 'sanitize_text_field', $_POST[ 'ms_query' ] );
+
+                $query = implode( ',', $sanitized_array );
+
+            } elseif ( is_string( $_POST[ 'ms_query' ] ) ) {
+                $query = $_POST[ 'ms_query' ];
             }
-
-            $this->save_text_meta( 'ms_tag_query', $tag_query );
         }
 
-        // if ( isset( $_POST[ 'ms_query' ] ) ) {
-            if ( empty( $_POST[ 'ms_query' ] ) ) {
-                $query = '';
-
-            } else {
-                if ( is_array( $_POST[ 'ms_query' ] ) ) {
-                    $sanitized_array = array_map( 'sanitize_text_field', $_POST[ 'ms_query' ] );
-
-                    $query = implode( ',', $sanitized_array );
-                }
-
-                if ( is_string( $_POST[ 'ms_query' ] ) )
-                    $query = $_POST[ 'ms_query' ];
-            }
-
-            $this->save_text_meta( 'ms_query', $query );
-        // }
+        $this->save_text_meta( 'ms_query', $query );
 
         if ( ! empty( $_POST[ 'ms_post_type' ] ) )
             $this->save_text_meta( 'ms_post_type', $_POST[ 'ms_post_type' ] );
