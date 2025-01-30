@@ -104,36 +104,34 @@ if ( $posts->have_posts() ):
             </p>
             <?php endif; ?>
 
-            <div class="ms-author">
-                <div class="ms-author-info">
-                    <?php 
-                        $author_ID = get_the_author_meta( 'ID' );
-                    ?>
-                    
-                    <?php if ( $ms_show_avatar == 'show' )
-                        echo get_avatar( $author_ID, 24 );    
-                    ?>
-
-                    <?php if ( $ms_show_author == 'show' ): ?>
-                    <h5 class="ms-author">
-                        <?php 
-                            $first_name = get_the_author_meta( 'first_name', $author_ID );
-                            $last_name = get_the_author_meta( 'last_name', $author_ID );
-
-                            if ( ! empty( $first_name ) || ! empty( $last_name ) ):
-                                echo "{$first_name} {$last_name}";
-                            else:
-                                the_author();
-                            endif;
-                        ?>
-                    </h5>
-                    <?php endif ?>
-
-                    <?php if ( $ms_show_date == 'show' ): ?>
-                        <small class="ms-date"><?php echo get_the_date( 'F j, Y' ) ?></small>
-                    <?php endif ?>
-                </div>
+            <?php 
+                $author_ID = get_the_author_meta( 'ID' );
+            ?>
+            
+            <?php if ( $ms_show_avatar == 'show' ) : ?>
+            <div class="ms-author-img">
+                <?php echo get_avatar( $author_ID, 24 ); ?>    
             </div>
+            <?php endif ?>
+
+            <?php if ( $ms_show_author == 'show' ): ?>
+            <h5 class="ms-author">
+                <?php 
+                    $first_name = get_the_author_meta( 'first_name', $author_ID );
+                    $last_name = get_the_author_meta( 'last_name', $author_ID );
+
+                    if ( ! empty( $first_name ) || ! empty( $last_name ) ):
+                        echo "{$first_name} {$last_name}";
+                    else:
+                        the_author();
+                    endif;
+                ?>
+            </h5>
+            <?php endif ?>
+
+            <?php if ( $ms_show_date == 'show' ): ?>
+                <small class="ms-date"><?php echo get_the_date( 'F j, Y' ) ?></small>
+            <?php endif ?>
 
         </div>
     </div>

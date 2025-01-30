@@ -86,6 +86,7 @@ $ms_woo_button_color        = get_post_meta( $ms_ID, 'ms_woo_button_color', true
 $ms_woo_button_bg_color     = get_post_meta( $ms_ID, 'ms_woo_button_bg_color', true );
 
 $ms_min_height              = get_post_meta( $ms_ID, 'ms_min_height', true );
+$ms_horizontal_align        = get_post_meta( $ms_ID, 'ms_horizontal_align', true );
 $ms_verticle_align          = get_post_meta( $ms_ID, 'ms_verticle_align', true );
 
 $ms_nav_bg_color            = get_post_meta( $ms_ID, 'ms_nav_bg_color', true );
@@ -329,7 +330,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </select>
     </div>
 
-    <div class="field-wrapper ms-product-field ms-post-field ms-scoped-field d-none">
+    <div class="field-wrapper">
         <span>Feature Image Aspect Ratio</span>
         <select class="field" id="ms_feature_img_ratio" name="ms_feature_img_ratio">
             <option
@@ -1640,6 +1641,35 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             value="<?php echo empty( $ms_min_height ) ? '500' : $ms_min_height ?>"
             name="ms_min_height"
         />
+    </div>
+
+    <div class="field-wrapper">
+        <span>Slide Content Horizontal Alignment</span>
+        <select
+            class="field"
+            name="ms_horizontal_align"
+        >
+            <option
+                value="baseline"
+                <?php if ( ! empty( $ms_horizontal_align ) && $ms_horizontal_align == 'baseline' ) { echo 'selected'; } ?>
+            >
+                Left
+            </option>
+
+            <option
+                value="center"
+                <?php if ( empty( $ms_horizontal_align ) || $ms_horizontal_align == 'center' ) { echo 'selected'; } ?>
+                >
+                Center
+            </option>
+
+            <option
+                value="end"
+                <?php if ( ! empty( $ms_horizontal_align ) && $ms_horizontal_align == 'end' ) { echo 'selected'; } ?>
+            >
+                Right
+            </option>
+        </select>
     </div>
 
     <div class="field-wrapper">

@@ -1,20 +1,20 @@
 <?php
 
-$ms_bg_color                    = get_post_meta( $ms_post_ID, 'ms_bg_color', true );
+$ms_bg_color                            = get_post_meta( $ms_post_ID, 'ms_bg_color', true );
 
-$ms_nav_position                = get_post_meta( $ms_post_ID, 'ms_nav_position', true );
-[ $ms_vrt_aln, $ms_hrz_aln ]    = explode( '-', $ms_nav_position );
+$ms_nav_position                        = get_post_meta( $ms_post_ID, 'ms_nav_position', true );
+[ $ms_nav_vrt_aln, $ms_nav_hrz_aln ]    = explode( '-', $ms_nav_position );
 
-$ms_nav_color                   = get_post_meta( $ms_post_ID, 'ms_nav_color', true );
-$ms_nav_radius                  = get_post_meta( $ms_post_ID, 'ms_nav_radius', true );
-$ms_nav_fs                      = get_post_meta( $ms_post_ID, 'ms_nav_fs', true );
-$ms_nav_fw                      = get_post_meta( $ms_post_ID, 'ms_nav_fw', true );
-$ms_nav_bg_color                = get_post_meta( $ms_post_ID, 'ms_nav_bg_color', true );
-$ms_nav_bg_hover_color          = get_post_meta( $ms_post_ID, 'ms_nav_bg_hover_color', true );
-$ms_show_dots                   = get_post_meta( $ms_post_ID, 'ms_show_dots', true );
-$ms_dot_shape                   = get_post_meta( $ms_post_ID, 'ms_dot_shape', true );
-$ms_dot_color                   = get_post_meta( $ms_post_ID, 'ms_dot_color', true );
-$ms_dot_active_color            = get_post_meta( $ms_post_ID, 'ms_dot_active_color', true );
+$ms_nav_color                           = get_post_meta( $ms_post_ID, 'ms_nav_color', true );
+$ms_nav_radius                          = get_post_meta( $ms_post_ID, 'ms_nav_radius', true );
+$ms_nav_fs                              = get_post_meta( $ms_post_ID, 'ms_nav_fs', true );
+$ms_nav_fw                              = get_post_meta( $ms_post_ID, 'ms_nav_fw', true );
+$ms_nav_bg_color                        = get_post_meta( $ms_post_ID, 'ms_nav_bg_color', true );
+$ms_nav_bg_hover_color                  = get_post_meta( $ms_post_ID, 'ms_nav_bg_hover_color', true );
+$ms_show_dots                           = get_post_meta( $ms_post_ID, 'ms_show_dots', true );
+$ms_dot_shape                           = get_post_meta( $ms_post_ID, 'ms_dot_shape', true );
+$ms_dot_color                           = get_post_meta( $ms_post_ID, 'ms_dot_color', true );
+$ms_dot_active_color                    = get_post_meta( $ms_post_ID, 'ms_dot_active_color', true );
 
 ?>
 
@@ -26,28 +26,28 @@ $ms_dot_active_color            = get_post_meta( $ms_post_ID, 'ms_dot_active_col
     }
 
     .owl-nav {
-        <?php if ( $ms_vrt_aln != 'middle' ): ?>
+        <?php if ( $ms_nav_vrt_aln != 'middle' ): ?>
             position: absolute !important;
             width: 100% !important;
             display: flex;
             gap: 10px !important;
         <?php endif; ?>
 
-        <?php if ( $ms_vrt_aln == 'top' ): ?>
+        <?php if ( $ms_nav_vrt_aln == 'top' ): ?>
             top: 10px !important;
             transform: translateY(0%) !important;
-        <?php elseif ( $ms_vrt_aln == 'bottom' ): ?>
+        <?php elseif ( $ms_nav_vrt_aln == 'bottom' ): ?>
             bottom: <?php echo $ms_show_dots == 'true' ? '25px' : '10px' ?> !important;
             transform: translateY(0%) !important;
         <?php endif; ?>
 
-        <?php if ( $ms_hrz_aln == 'wide' ): ?>
+        <?php if ( $ms_nav_hrz_aln == 'wide' ): ?>
             justify-content: space-between !important;
-        <?php elseif ( $ms_hrz_aln == 'center' ): ?>
+        <?php elseif ( $ms_nav_hrz_aln == 'center' ): ?>
             justify-content: center !important;
-        <?php elseif ( $ms_hrz_aln == 'left' ): ?>
+        <?php elseif ( $ms_nav_hrz_aln == 'left' ): ?>
             justify-content: start !important;
-        <?php elseif ( $ms_hrz_aln == 'right' ): ?>
+        <?php elseif ( $ms_nav_hrz_aln == 'right' ): ?>
             justify-content: end !important;
         <?php endif; ?>
     }
@@ -57,7 +57,7 @@ $ms_dot_active_color            = get_post_meta( $ms_post_ID, 'ms_dot_active_col
         background-color: <?php echo $ms_nav_bg_color ?> !important;
         border-radius: <?php echo "{$ms_nav_radius}%" ?> !important;
 
-        <?php if ( $ms_vrt_aln == 'middle' ): ?>
+        <?php if ( $ms_nav_vrt_aln == 'middle' ): ?>
             position: absolute !important;
             top: 50% !important;
             transform: translateY(-50%) !important;
@@ -65,13 +65,13 @@ $ms_dot_active_color            = get_post_meta( $ms_post_ID, 'ms_dot_active_col
     }
 
     .owl-nav .owl-prev {
-        <?php if ($ms_vrt_aln == 'middle' ): ?>
+        <?php if ($ms_nav_vrt_aln == 'middle' ): ?>
             left: 20px !important;
         <?php endif; ?>
     }
     
     .owl-nav .owl-next {
-        <?php if ($ms_vrt_aln == 'middle' ): ?>
+        <?php if ($ms_nav_vrt_aln == 'middle' ): ?>
             right: 20px !important;
         <?php endif; ?>
     }

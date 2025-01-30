@@ -29,26 +29,28 @@ $ms_woo_button_color                = get_post_meta( $ms_post_ID, 'ms_woo_button
 $ms_woo_button_bg_color             = get_post_meta( $ms_post_ID, 'ms_woo_button_bg_color', true );
 
 $ms_min_height                      = get_post_meta( $ms_post_ID, 'ms_min_height', true );
+$ms_horizontal_align                = get_post_meta( $ms_post_ID, 'ms_horizontal_align', true );
 $ms_verticle_align                  = get_post_meta( $ms_post_ID, 'ms_verticle_align', true );
 
 ?>
 
 <style>
 #my-slider-<?php echo $ms_post_ID ?> {
-    .ms-title {
-        text-align: center !important;
-    }
     .ms-card {
         min-height: <?php echo "{$ms_min_height}px" ?> !important;
-        display: flex !important;
-        flex-direction: column !important;
+    }
+
+    .ms-card-header {
+        padding-top: <?php echo "{$ms_aspect_ratio}%" ?> !important;
     }
 
     .ms-card-body {
-        flex: 1;
-        display: flex !important;
-        flex-direction: column !important;
         justify-content: <?php echo $ms_verticle_align ?>;
+        align-items: <?php echo $ms_horizontal_align ?>;
+    }
+
+    .ms-card-body > * {
+        text-align: <?php echo $ms_horizontal_align == 'baseline' ? 'start' : $ms_horizontal_align ?>;
     }
 
     .ms-title a {
@@ -57,19 +59,13 @@ $ms_verticle_align                  = get_post_meta( $ms_post_ID, 'ms_verticle_a
         font-weight: <?php echo $ms_title_fw; ?> !important;
     }
 
-    .ms-card-header {
-        padding-top: <?php echo "{$ms_aspect_ratio}%" ?> !important;
-    }
-
     .ms-total-sales {
-        text-align: center !important;
         color: <?php echo $ms_sales_color; ?> !important;
         font-size: <?php echo "{$ms_sales_fs}px"; ?> !important;
         font-weight: <?php echo $ms_sales_fw; ?> !important;
     }
     
     .ms-review {
-        justify-content: center !important;
         color: <?php echo $ms_review_color; ?> !important;
         font-size: <?php echo "{$ms_review_fs}px"; ?> !important;
         font-weight: <?php echo $ms_review_fw; ?> !important;
@@ -79,10 +75,6 @@ $ms_verticle_align                  = get_post_meta( $ms_post_ID, 'ms_verticle_a
         font-size: <?php echo "{$ms_stock_fs}px" ?> !important;
         font-weight: <?php echo $ms_stock_fw ?> !important;
         color: <?php echo $ms_stock_color ?> !important;
-    }
-
-    .ms-pricing {
-        text-align: center !important;
     }
 
     .ms-price-main {
@@ -98,7 +90,6 @@ $ms_verticle_align                  = get_post_meta( $ms_post_ID, 'ms_verticle_a
     }
 
     .ms-add-to-cart a {
-        text-decoration: none !important;
         font-size: <?php echo "{$ms_woo_button_fs}px"; ?> !important;
         font-weight: <?php echo $ms_woo_button_fw; ?> !important;
         color: <?php echo $ms_woo_button_color; ?> !important;

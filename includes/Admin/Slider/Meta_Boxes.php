@@ -328,6 +328,9 @@ final class Meta_Boxes
         if ( ! empty( $_POST[ 'ms_min_height' ] ) )
             $this->save_int_meta( 'ms_min_height', $_POST[ 'ms_min_height' ] );
 
+        if ( ! empty( $_POST[ 'ms_horizontal_align' ] ) )
+            $this->save_text_meta( 'ms_horizontal_align', $_POST[ 'ms_horizontal_align' ] );
+
         if ( ! empty( $_POST[ 'ms_verticle_align' ] ) )
             $this->save_text_meta( 'ms_verticle_align', $_POST[ 'ms_verticle_align' ] );
 
