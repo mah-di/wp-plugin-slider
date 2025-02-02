@@ -13,4 +13,36 @@ jQuery(document).ready(function ($) {
             currentValue = newValue;
         }
     });
+
+    const optionsToggleMapper = [
+        {
+            name: "ms_show_nav",
+            target: "#ms_nav_settings"
+        },
+        {
+            name: "ms_show_dots",
+            target: "#ms_dots_settings"
+        },
+        {
+            name: "ms_autoplay",
+            target: "#ms_autoplay_settings"
+        }
+    ]
+
+    function toggleNavSettings(name, target) {
+        let isShowSettings = $(`input[name=${name}]:checked`).val()
+        let settings = $(target)
+
+        if (isShowSettings === 'true')
+            settings.removeClass('d-none')
+
+        if (isShowSettings === 'false')
+            settings.addClass('d-none')
+    }
+
+    window.onload = () => optionsToggleMapper.forEach(optionsToggler => toggleNavSettings(optionsToggler.name, optionsToggler.target))
+
+    optionsToggleMapper.forEach(optionsToggler => {
+        $(`input[name=${optionsToggler.name}]`).on('change', () => toggleNavSettings(optionsToggler.name, optionsToggler.target))
+    })
 });

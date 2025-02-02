@@ -41,7 +41,13 @@ if ( $posts->have_posts() ):
 </div>
 
 <script>
-    function applyMinHeight<?php echo $ms_post_ID ?>() {
+    try {
+        if ( typeof applyMinHeight === 'undefined' ) {
+            applyMinHeight = []
+        }
+    } catch (error) {console.log(error)}
+
+    applyMinHeight.push(function() {
         const wrappers = document.querySelectorAll('#my-slider-<?php echo $ms_post_ID ?> .ms-slide-wrapper');
     
         wrappers.forEach(wrapper => {
@@ -52,9 +58,9 @@ if ( $posts->have_posts() ):
 
             wrapper.style.minHeight = `${minHeight}px`;
         })
-    }
+    })
 
-    applyMinHeight<?php echo $ms_post_ID ?>()
+    window.onload = () => applyMinHeight.forEach(amh => amh())
 
     // Update on window resize
     window.addEventListener('resize', () => {

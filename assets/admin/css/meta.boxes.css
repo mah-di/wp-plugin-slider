@@ -6,9 +6,25 @@
 
 .field-wrapper {
     display: grid;
+    align-items: center;
     grid-template-columns: 30% 70%;
     gap: 20px !important;
     margin: 40px auto;
+}
+
+.field-group {
+    width: calc(100% - 20px);
+}
+
+.field-group .field-wrapper {
+    margin: 20px auto;
+    align-items: center;
+    width: 100%;
+}
+
+.field-group .field-wrapper .selectize-input,
+.field-group .field-wrapper .field {
+    width: calc(100% - 30px);
 }
 
 .d-none {
@@ -17,7 +33,7 @@
 
 .selectize-input,
 .field {
-    width: 80% !important;
+    width: calc(100% - 20px) !important;
     border: none !important;
     background-color: #f9f9f9 !important;
     box-shadow: #ddd 0px 0px 5px 0px !important;
@@ -58,14 +74,12 @@
     width: 160px !important;
 }
 
-
 input[type="radio"],
 input[type="checkbox"] {
     margin: 3px 0 0;
     margin-top: 1px;
     line-height: normal;
 }
-
 
 .radio-switch input:checked + label {
     color: #fff;
@@ -97,6 +111,11 @@ input[type="checkbox"] {
     vertical-align: middle;
 }
 
+.switch > label:nth-child(4) {
+    border-left: 1px solid #bbb;
+    margin-left: -1px;
+}
+
 .radio-switch * {
     outline: 0 !important;
 }
@@ -121,8 +140,11 @@ input[type="checkbox"] {
     width: 49%;
     height: 94%;
     color: #fff;
-    border: solid 1px #00b62e;
     border-radius: 3px;
+}
+
+.switch input:first-of-type:checked ~ a{
+    border: solid 1px #00b62e;
     background-color: #00c62b;
     left: 0;
     -webkit-box-shadow: "#1B7088" 0 -1px 0 inset;

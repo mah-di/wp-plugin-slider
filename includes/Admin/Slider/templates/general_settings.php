@@ -130,7 +130,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
     </div>
 
     <div class="field-wrapper">
-        <span>Category</span>
+        <span>Load Content Using</span>
         <div>
             <div class="switch-field">
                 <div class="ms-scoped-field d-none ms-post-field">
@@ -598,142 +598,281 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
     </div>
 
     <div class="field-wrapper">
-        <span>Show Navigation</span>
+        <span>Navigation</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
                 <input name="ms_show_nav" id="ms_show_nav_on" type="radio"
                     value="true"
                     <?php if ( empty( $ms_show_nav ) || $ms_show_nav == 'true' ) { echo 'checked'; } ?>
                 >
-                <label for="ms_show_nav_on" class="radioCheck">Yes</label>
+                <label for="ms_show_nav_on" class="radioCheck">Show</label>
                 <input name="ms_show_nav" id="ms_show_nav_off" type="radio"
                     value="false"
                     <?php if ( $ms_show_nav == 'false' ) { echo 'checked'; } ?>
                 >
-                <label for="ms_show_nav_off" class="radioCheck">No</label>
+                <label for="ms_show_nav_off" class="radioCheck">Hide</label>
                 <a class="slide-button btn"></a>
             </span>
         </div>
     </div>
 
+    <div class="field-wrapper" id="ms_nav_settings">
+        <span>Navigation Settings</span>
+        <div class="field-group">
+            <div class="field-wrapper">
+                <span>Position</span>
+                <select class="field" id="ms_nav_position" name="ms_nav_position">
+                    <option
+                        value="top-wide"
+                        <?php if($ms_nav_position == "top-wide") { echo "selected"; } ?> 
+                    >
+                        <?php echo esc_html__('Top','my-slider');?>
+                    </option>
+    
+                    <option
+                        value="top-left"
+                        <?php if($ms_nav_position == "top-left") { echo "selected"; } ?> 
+                    >
+                        <?php echo esc_html__('Top Left','my-slider');?>
+                    </option>
+    
+                    <option
+                        value="top-right"
+                        <?php if($ms_nav_position == "top-right") { echo "selected"; } ?> 
+                    >
+                        <?php echo esc_html__('Top Right','my-slider');?>
+                    </option>
+    
+                    <option
+                        value="top-center"
+                        <?php if($ms_nav_position == "top-center") { echo "selected"; } ?> 
+                    >
+                        <?php echo esc_html__('Top Center','my-slider');?>
+                    </option>
+    
+                    <option
+                        value="middle-wide"
+                        <?php if($ms_nav_position == "middle-wide") { echo "selected"; } if(empty($ms_nav_position)) { echo "selected"; } ?> 
+                    >
+                        <?php echo esc_html__('Middle','my-slider');?>
+                    </option>
+    
+                    <option
+                        value="bottom-wide"
+                        <?php if($ms_nav_position == "bottom-wide") { echo "selected"; } ?> 
+                    >
+                        <?php echo esc_html__('Bottom','my-slider');?>
+                    </option>
+    
+                    <option
+                        value="bottom-left"
+                        <?php if($ms_nav_position == "bottom-left") { echo "selected"; } ?> 
+                    >
+                        <?php echo esc_html__('Bottom Left','my-slider');?>
+                    </option>
+    
+                    <option
+                        value="bottom-right"
+                        <?php if($ms_nav_position == "bottom-right") { echo "selected"; } ?> 
+                    >
+                        <?php echo esc_html__('Bottom Right','my-slider');?>
+                    </option>
+    
+                    <option
+                        value="bottom-center"
+                        <?php if($ms_nav_position == "bottom-center") { echo "selected"; } ?> 
+                    >
+                        <?php echo esc_html__('Bottom Center','my-slider');?>
+                    </option>
+    
+                </select>
+            </div>
 
-    <div class="field-wrapper">
-        <span>Navigation Position</span>
-        <select class="field" id="ms_nav_position" name="ms_nav_position">
-            <option
-                value="top-wide"
-                <?php if($ms_nav_position == "top-wide") { echo "selected"; } ?> 
-            >
-                <?php echo esc_html__('Top','my-slider');?>
-            </option>
+            <div class="field-wrapper">
+                <span>Font Size</span>
+                <input
+                    class="field"
+                    type="number"
+                    min="8"
+                    step="1"
+                    value="<?php echo empty( $ms_nav_fs ) ? '24' : $ms_nav_fs ?>"
+                    name="ms_nav_fs"
+                />
+            </div>
 
-            <option
-                value="top-left"
-                <?php if($ms_nav_position == "top-left") { echo "selected"; } ?> 
-            >
-                <?php echo esc_html__('Top Left','my-slider');?>
-            </option>
+            <div class="field-wrapper">
+                <span>Font Weight</span>
+                <select
+                    class="field"
+                    name="ms_nav_fw"
+                >
+                    <option
+                        value="200"
+                        <?php if ( ! empty( $ms_nav_fw ) && $ms_nav_fw == '200' ) { echo 'selected'; } ?>
+                    >
+                        Thin
+                    </option>
 
-            <option
-                value="top-right"
-                <?php if($ms_nav_position == "top-right") { echo "selected"; } ?> 
-            >
-                <?php echo esc_html__('Top Right','my-slider');?>
-            </option>
+                    <option
+                        value="500"
+                        <?php if ( empty( $ms_nav_fw ) || $ms_nav_fw == '500' ) { echo 'selected'; } ?>
+                    >
+                        Medium
+                    </option>
 
-            <option
-                value="top-center"
-                <?php if($ms_nav_position == "top-center") { echo "selected"; } ?> 
-            >
-                <?php echo esc_html__('Top Center','my-slider');?>
-            </option>
+                    <option
+                        value="700"
+                        <?php if ( ! empty( $ms_nav_fw ) && $ms_nav_fw == '700' ) { echo 'selected'; } ?>
+                    >
+                        Bold
+                    </option>
 
-            <option
-                value="middle-wide"
-                <?php if($ms_nav_position == "middle-wide") { echo "selected"; } if(empty($ms_nav_position)) { echo "selected"; } ?> 
-            >
-                <?php echo esc_html__('Middle','my-slider');?>
-            </option>
+                    <option
+                        value="1000"
+                        <?php if ( ! empty( $ms_nav_fw ) && $ms_nav_fw == '1000' ) { echo 'selected'; } ?>
+                    >
+                        Bolder
+                    </option>
+                </select>
+            </div>
+    
+            <div class="field-wrapper">
+                <span>Border Radius</span>
+                <input
+                    class="field"
+                    type="number"
+                    min="0"
+                    max="50"
+                    value="<?php echo empty( $ms_nav_radius ) ? '2' : $ms_nav_radius ?>"
+                    step="1"
+                    name="ms_nav_radius"
+                />
+            </div>
 
-            <option
-                value="bottom-wide"
-                <?php if($ms_nav_position == "bottom-wide") { echo "selected"; } ?> 
-            >
-                <?php echo esc_html__('Bottom','my-slider');?>
-            </option>
+            <div class="field-wrapper">
+                <span>Color</span>
+                <input
+                    class="ms-color-picker"
+                    type="text"
+                    value="<?php echo empty( $ms_nav_color ) ? '#eeeeee' : $ms_nav_color ?>"
+                    name="ms_nav_color"
+                />
+            </div>
 
-            <option
-                value="bottom-left"
-                <?php if($ms_nav_position == "bottom-left") { echo "selected"; } ?> 
-            >
-                <?php echo esc_html__('Bottom Left','my-slider');?>
-            </option>
+            <div class="field-wrapper">
+                <span>Background Color</span>
+                <input
+                    class="ms-color-picker"
+                    type="text"
+                    value="<?php echo empty( $ms_nav_bg_color ) ? 'rgba(0, 0, 0, 0.5)' : $ms_nav_bg_color ?>"
+                    name="ms_nav_bg_color"
+                    data-alpha-enabled="true"
+                />
+            </div>
 
-            <option
-                value="bottom-right"
-                <?php if($ms_nav_position == "bottom-right") { echo "selected"; } ?> 
-            >
-                <?php echo esc_html__('Bottom Right','my-slider');?>
-            </option>
-
-            <option
-                value="bottom-center"
-                <?php if($ms_nav_position == "bottom-center") { echo "selected"; } ?> 
-            >
-                <?php echo esc_html__('Bottom Center','my-slider');?>
-            </option>
-
-        </select>
+            <div class="field-wrapper">
+                <span>Hover Background Color</span>
+                <input
+                    class="ms-color-picker"
+                    type="text"
+                    value="<?php echo empty( $ms_nav_bg_hover_color ) ? 'rgba(0, 0, 0, 0.8)' : $ms_nav_bg_hover_color ?>"
+                    name="ms_nav_bg_hover_color"
+                    data-alpha-enabled="true"
+                />
+            </div>
+        </div>
     </div>
 
     <div class="field-wrapper">
-        <span>Navigation button border radius</span>
-        <input
-            class="field"
-            type="number"
-            min="0"
-            max="50"
-            value="<?php echo empty( $ms_nav_radius ) ? '2' : $ms_nav_radius ?>"
-            step="1"
-            name="ms_nav_radius"
-        />
-    </div>
-
-    <div class="field-wrapper">
-        <span>Show Dots</span>
+        <span>Dots</span>
         <div>
             <span class="switch radio-switch fixed-width-lg">
                 <input name="ms_show_dots" id="ms_show_dots_on" type="radio"
                     value="true"
                     <?php if ( empty( $ms_show_dots ) || $ms_show_dots == 'true' ) { echo 'checked'; } ?>
                 >
-                <label for="ms_show_dots_on" class="radioCheck">Yes</label>
+                <label for="ms_show_dots_on" class="radioCheck">Show</label>
                 <input name="ms_show_dots" id="ms_show_dots_off" type="radio"
                     value="false"
                     <?php if ( $ms_show_dots == 'false' ) { echo 'checked'; } ?>
                 >
-                <label for="ms_show_dots_off" class="radioCheck">No</label>
+                <label for="ms_show_dots_off" class="radioCheck">Hide</label>
                 <a class="slide-button btn"></a>
             </span>
         </div>
     </div>
 
-    <div class="field-wrapper">
-        <span>Show Dots For Each Item</span>
-        <div>
-            <span class="switch radio-switch fixed-width-lg">
-                <input name="ms_show_dots_foreach" id="ms_show_dots_foreach_on" type="radio"
-                    value="true"
-                    <?php if ( $ms_show_dots_foreach == 'true' ) { echo 'checked'; } ?>
+    <div class="field-wrapper" id="ms_dots_settings">
+        <span>Dots Settings</span>
+        <div class="field-group">
+            <div class="field-wrapper">
+                <span>Show For Each Item</span>
+                <div>
+                    <span class="switch radio-switch fixed-width-lg">
+                        <input name="ms_show_dots_foreach" id="ms_show_dots_foreach_on" type="radio"
+                            value="true"
+                            <?php if ( $ms_show_dots_foreach == 'true' ) { echo 'checked'; } ?>
+                        >
+                        <label for="ms_show_dots_foreach_on" class="radioCheck">Yes</label>
+                        <input name="ms_show_dots_foreach" id="ms_show_dots_foreach_off" type="radio"
+                            value="false"
+                            <?php if ( empty( $ms_show_dots_foreach ) || $ms_show_dots_foreach == 'false' ) { echo 'checked'; } ?>
+                        >
+                        <label for="ms_show_dots_foreach_off" class="radioCheck">No</label>
+                        <a class="slide-button btn"></a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="field-wrapper">
+                <span>Shape</span>
+                <select
+                    class="field"
+                    name="ms_dot_shape"
                 >
-                <label for="ms_show_dots_foreach_on" class="radioCheck">Yes</label>
-                <input name="ms_show_dots_foreach" id="ms_show_dots_foreach_off" type="radio"
-                    value="false"
-                    <?php if ( empty( $ms_show_dots_foreach ) || $ms_show_dots_foreach == 'false' ) { echo 'checked'; } ?>
-                >
-                <label for="ms_show_dots_foreach_off" class="radioCheck">No</label>
-                <a class="slide-button btn"></a>
-            </span>
+                    <option
+                        value="round"
+                        <?php if ( empty( $ms_dot_shape ) || $ms_dot_shape == 'round' ) { echo 'selected'; } ?>
+                    >
+                        Round
+                    </option>
+
+                    <option
+                        value="bar"
+                        <?php if ( ! empty( $ms_dot_shape ) && $ms_dot_shape == 'bar' ) { echo 'selected'; } ?>
+                    >
+                        Bar
+                    </option>
+
+                    <option
+                        value="pill"
+                        <?php if ( ! empty( $ms_dot_shape ) && $ms_dot_shape == 'pill' ) { echo 'selected'; } ?>
+                    >
+                        Pill
+                    </option>
+                </select>
+            </div>
+
+            <div class="field-wrapper">
+                <span>Color</span>
+                <input
+                    class="ms-color-picker"
+                    type="text"
+                    value="<?php echo empty( $ms_dot_color ) ? '#e9e9e9' : $ms_dot_color ?>"
+                    name="ms_dot_color"
+                />
+            </div>
+
+            <div class="field-wrapper">
+                <span>Active Color</span>
+                <input
+                    class="ms-color-picker"
+                    type="text"
+                    value="<?php echo empty( $ms_dot_active_color ) ? '#cdcdcd' : $ms_dot_active_color ?>"
+                    name="ms_dot_active_color"
+                />
+            </div>
+
         </div>
     </div>
 
@@ -756,47 +895,52 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
     </div>
 
-    <div class="field-wrapper">
-        <span>Autoplay Timeout</span>
-        <input
-            class="field"
-            type="number"
-            value="<?php echo empty( $ms_autoplay_timeout ) ? '5000' : $ms_autoplay_timeout ?>"
-            step="1"
-            name="ms_autoplay_timeout"
-        />
-    </div>
-
-    <div class="field-wrapper">
-        <span>Autoplay Speed</span>
-        <input
-            class="field"
-            type="number"
-            value="<?php echo empty( $ms_autoplay_speed ) ? '700' : $ms_autoplay_speed ?>"
-            step="1"
-            name="ms_autoplay_speed"
-        />
-    </div>
-
-    <div class="field-wrapper">
-        <span>Pause Autoplay On Mouse Over</span>
-        <div>
-            <span class="switch radio-switch fixed-width-lg">
-                <input name="ms_autoplay_hover_pause" id="ms_autoplay_hover_pause_on" type="radio"
-                    value="true"
-                    <?php if ( empty( $ms_autoplay_hover_pause ) || $ms_autoplay_hover_pause == 'true' ) { echo 'checked'; } ?>
-                >
-                <label for="ms_autoplay_hover_pause_on" class="radioCheck">Yes</label>
-                <input name="ms_autoplay_hover_pause" id="ms_autoplay_hover_pause_off" type="radio"
-                    value="false"
-                    <?php if ( $ms_autoplay_hover_pause == 'false' ) { echo 'checked'; } ?>
-                >
-                <label for="ms_autoplay_hover_pause_off" class="radioCheck">No</label>
-                <a class="slide-button btn"></a>
-            </span>
+    <div class="field-wrapper" id="ms_autoplay_settings">
+        <span>Autoplay Settings</span>
+        <div class="field-group">
+            <div class="field-wrapper">
+                <span>Timeout</span>
+                <input
+                    class="field"
+                    type="number"
+                    value="<?php echo empty( $ms_autoplay_timeout ) ? '5000' : $ms_autoplay_timeout ?>"
+                    step="1"
+                    name="ms_autoplay_timeout"
+                />
+            </div>
+        
+            <div class="field-wrapper">
+                <span>Speed</span>
+                <input
+                    class="field"
+                    type="number"
+                    value="<?php echo empty( $ms_autoplay_speed ) ? '700' : $ms_autoplay_speed ?>"
+                    step="1"
+                    name="ms_autoplay_speed"
+                />
+            </div>
+        
+            <div class="field-wrapper">
+                <span>Pause On Mouse Over</span>
+                <div>
+                    <span class="switch radio-switch fixed-width-lg">
+                        <input name="ms_autoplay_hover_pause" id="ms_autoplay_hover_pause_on" type="radio"
+                            value="true"
+                            <?php if ( empty( $ms_autoplay_hover_pause ) || $ms_autoplay_hover_pause == 'true' ) { echo 'checked'; } ?>
+                        >
+                        <label for="ms_autoplay_hover_pause_on" class="radioCheck">Yes</label>
+                        <input name="ms_autoplay_hover_pause" id="ms_autoplay_hover_pause_off" type="radio"
+                            value="false"
+                            <?php if ( $ms_autoplay_hover_pause == 'false' ) { echo 'checked'; } ?>
+                        >
+                        <label for="ms_autoplay_hover_pause_off" class="radioCheck">No</label>
+                        <a class="slide-button btn"></a>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
-
+        
     <div class="field-wrapper">
         <span>Slides Background Color</span>
         <input
@@ -1706,135 +1850,6 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 Fit Container
             </option>
         </select>
-    </div>
-
-    <div class="field-wrapper">
-        <span>Navigation Button Color</span>
-        <input
-            class="ms-color-picker"
-            type="text"
-            value="<?php echo empty( $ms_nav_color ) ? '#eeeeee' : $ms_nav_color ?>"
-            name="ms_nav_color"
-        />
-    </div>
-
-    <div class="field-wrapper">
-        <span>Navigation Button Font Size</span>
-        <input
-            class="field"
-            type="number"
-            min="8"
-            step="1"
-            value="<?php echo empty( $ms_nav_fs ) ? '24' : $ms_nav_fs ?>"
-            name="ms_nav_fs"
-        />
-    </div>
-
-    <div class="field-wrapper">
-        <span>Navigation Button Font Weight</span>
-        <select
-            class="field"
-            name="ms_nav_fw"
-        >
-            <option
-                value="200"
-                <?php if ( ! empty( $ms_nav_fw ) && $ms_nav_fw == '200' ) { echo 'selected'; } ?>
-            >
-                Thin
-            </option>
-
-            <option
-                value="500"
-                <?php if ( empty( $ms_nav_fw ) || $ms_nav_fw == '500' ) { echo 'selected'; } ?>
-            >
-                Medium
-            </option>
-
-            <option
-                value="700"
-                <?php if ( ! empty( $ms_nav_fw ) && $ms_nav_fw == '700' ) { echo 'selected'; } ?>
-            >
-                Bold
-            </option>
-
-            <option
-                value="1000"
-                <?php if ( ! empty( $ms_nav_fw ) && $ms_nav_fw == '1000' ) { echo 'selected'; } ?>
-            >
-                Bolder
-            </option>
-        </select>
-    </div>
-
-    <div class="field-wrapper">
-        <span>Navigation Button Background Color</span>
-        <input
-            class="ms-color-picker"
-            type="text"
-            value="<?php echo empty( $ms_nav_bg_color ) ? 'rgba(0, 0, 0, 0.5)' : $ms_nav_bg_color ?>"
-            name="ms_nav_bg_color"
-            data-alpha-enabled="true"
-        />
-    </div>
-
-    <div class="field-wrapper">
-        <span>Navigation Button Background Hover Color</span>
-        <input
-            class="ms-color-picker"
-            type="text"
-            value="<?php echo empty( $ms_nav_bg_hover_color ) ? 'rgba(0, 0, 0, 0.8)' : $ms_nav_bg_hover_color ?>"
-            name="ms_nav_bg_hover_color"
-            data-alpha-enabled="true"
-        />
-    </div>
-
-    <div class="field-wrapper">
-        <span>Navigation Dots Shape</span>
-        <select
-            class="field"
-            name="ms_dot_shape"
-        >
-            <option
-                value="round"
-                <?php if ( empty( $ms_dot_shape ) || $ms_dot_shape == 'round' ) { echo 'selected'; } ?>
-            >
-                Round
-            </option>
-
-            <option
-                value="bar"
-                <?php if ( ! empty( $ms_dot_shape ) && $ms_dot_shape == 'bar' ) { echo 'selected'; } ?>
-            >
-                Bar
-            </option>
-
-            <option
-                value="pill"
-                <?php if ( ! empty( $ms_dot_shape ) && $ms_dot_shape == 'pill' ) { echo 'selected'; } ?>
-            >
-                Pill
-            </option>
-        </select>
-    </div>
-
-    <div class="field-wrapper">
-        <span>Navigation Dots Color</span>
-        <input
-            class="ms-color-picker"
-            type="text"
-            value="<?php echo empty( $ms_dot_color ) ? '#e9e9e9' : $ms_dot_color ?>"
-            name="ms_dot_color"
-        />
-    </div>
-
-    <div class="field-wrapper">
-        <span>Navigation Dots Active Color</span>
-        <input
-            class="ms-color-picker"
-            type="text"
-            value="<?php echo empty( $ms_dot_active_color ) ? '#cdcdcd' : $ms_dot_active_color ?>"
-            name="ms_dot_active_color"
-        />
     </div>
 </div>
 
