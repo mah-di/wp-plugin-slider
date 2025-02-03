@@ -64,7 +64,7 @@ if ( $posts->have_posts() ):
 
     // Update on window resize
     window.addEventListener('resize', () => {
-        applyMinHeight<?php echo $ms_post_ID ?>()
+        applyMinHeight.forEach(amh => amh())
     });
 </script>
 

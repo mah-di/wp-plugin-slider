@@ -1,10 +1,10 @@
 jQuery(document).ready(function ($) {
-    var currentValue = $('#ms_post_type').val();
+    let currentValue = $('#ms_post_type').val();
 
     $('#ms_post_type').on('change', function () {
-        var newValue = $(this).val();
+        let newValue = $(this).val();
 
-        var isConfirmed = confirm("Are you sure you want to change the post type?");
+        let isConfirmed = confirm("Are you sure you want to change the post type?");
 
         if (!isConfirmed) {
             $(this).val(currentValue);
@@ -26,18 +26,42 @@ jQuery(document).ready(function ($) {
         {
             name: "ms_autoplay",
             target: "#ms_autoplay_settings"
+        },
+        {
+            name: "ms_show_comments",
+            target: "#ms_comment_settings"
+        },
+        {
+            name: "ms_show_category",
+            target: "#ms_category_settings"
+        },
+        {
+            name: "ms_show_tags",
+            target: "#ms_tag_settings"
+        },
+        {
+            name: "ms_show_excerpt",
+            target: "#ms_excerpt_settings"
+        },
+        {
+            name: "ms_show_author",
+            target: "#ms_author_settings"
+        },
+        {
+            name: "ms_show_date",
+            target: "#ms_date_settings"
         }
     ]
 
     function toggleNavSettings(name, target) {
         let isShowSettings = $(`input[name=${name}]:checked`).val()
-        let settings = $(target)
+        let settings = $(target);console.log(isShowSettings)
 
-        if (isShowSettings === 'true')
-            settings.removeClass('d-none')
+        if (['true', 'show'].includes(isShowSettings))
+            settings.show()
 
-        if (isShowSettings === 'false')
-            settings.addClass('d-none')
+        if (['false', 'hide'].includes(isShowSettings))
+            settings.hide()
     }
 
     window.onload = () => optionsToggleMapper.forEach(optionsToggler => toggleNavSettings(optionsToggler.name, optionsToggler.target))

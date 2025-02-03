@@ -108,13 +108,14 @@ if ( $posts->have_posts() ):
                 $author_ID = get_the_author_meta( 'ID' );
             ?>
             
-            <?php if ( $ms_show_avatar == 'show' ) : ?>
-            <div class="ms-author-img">
-                <?php echo get_avatar( $author_ID, 24 ); ?>    
-            </div>
-            <?php endif ?>
-
             <?php if ( $ms_show_author == 'show' ): ?>
+
+                <?php if ( $ms_show_avatar == 'show' ) : ?>
+                <div class="ms-author-img">
+                    <?php echo get_avatar( $author_ID, 24 ); ?>    
+                </div>
+                <?php endif ?>
+
             <h5 class="ms-author">
                 <?php 
                     $first_name = get_the_author_meta( 'first_name', $author_ID );

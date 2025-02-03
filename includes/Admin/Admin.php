@@ -47,8 +47,8 @@ final class Admin
 
     private function enqueue_scripts()
     {
+        wp_enqueue_script( 'ms-toggle-tabs-script', MS_URL . '/assets/admin/js/toggle.tabs.js', [ 'jquery' ], MS_VERSION, true );
         wp_enqueue_script( 'ms-selectize-script', MS_URL . '/assets/admin/js/selectize.min.js', [ 'jquery' ], false, true );
-        wp_enqueue_script( 'ms-trigger-selectize-script', MS_URL . '/assets/admin/js/trigger.selectize.js', [ 'jquery', 'ms-selectize-script' ], MS_VERSION, true );
         wp_enqueue_script( 'ms-admin-script', MS_URL . '/assets/admin/js/admin.js', [ 'jquery', 'ms-selectize-script' ], MS_VERSION, true );
     }
 
