@@ -109,8 +109,17 @@ final class Meta_Boxes
         if ( ! empty( $_POST[ 'ms_items_to_show' ] ) )
             $this->save_int_meta( 'ms_items_to_show', $_POST[ 'ms_items_to_show' ] );
 
-        if ( ! empty( $_POST[ 'ms_items_to_display' ] ) )
-            $this->save_int_meta( 'ms_items_to_display', $_POST[ 'ms_items_to_display' ] );
+        if ( ! empty( $_POST[ 'ms_items_to_display_sm' ] ) )
+            $this->save_int_meta( 'ms_items_to_display_sm', $_POST[ 'ms_items_to_display_sm' ] );
+
+        if ( ! empty( $_POST[ 'ms_items_to_display_md' ] ) )
+            $this->save_int_meta( 'ms_items_to_display_md', $_POST[ 'ms_items_to_display_md' ] );
+
+        if ( ! empty( $_POST[ 'ms_items_to_display_lg' ] ) )
+            $this->save_int_meta( 'ms_items_to_display_lg', $_POST[ 'ms_items_to_display_lg' ] );
+
+        if ( ! empty( $_POST[ 'ms_items_to_display_xl' ] ) )
+            $this->save_int_meta( 'ms_items_to_display_xl', $_POST[ 'ms_items_to_display_xl' ] );
 
         if ( ! empty( $_POST[ 'ms_feature_img_size' ] ) )
             $this->save_text_meta( 'ms_feature_img_size', $_POST[ 'ms_feature_img_size' ] );
@@ -160,14 +169,23 @@ final class Meta_Boxes
         if ( ! empty( $_POST[ 'ms_show_nav' ] ) )
             $this->save_text_meta( 'ms_show_nav', $_POST[ 'ms_show_nav' ] );
 
+        if ( ! empty( $_POST[ 'ms_show_nav_sm' ] ) )
+            $this->save_text_meta( 'ms_show_nav_sm', $_POST[ 'ms_show_nav_sm' ] );
+
         if ( ! empty( $_POST[ 'ms_nav_position' ] ) )
             $this->save_text_meta( 'ms_nav_position', $_POST[ 'ms_nav_position' ] );
+
+        if ( ! empty( $_POST[ 'ms_nav_position_sm' ] ) )
+            $this->save_text_meta( 'ms_nav_position_sm', $_POST[ 'ms_nav_position_sm' ] );
 
         if ( ! empty( $_POST[ 'ms_nav_radius' ] ) )
             $this->save_int_meta( 'ms_nav_radius', $_POST[ 'ms_nav_radius' ] );
 
         if ( ! empty( $_POST[ 'ms_show_dots' ] ) )
             $this->save_text_meta( 'ms_show_dots', $_POST[ 'ms_show_dots' ] );
+
+        if ( ! empty( $_POST[ 'ms_show_dots_sm' ] ) )
+            $this->save_text_meta( 'ms_show_dots_sm', $_POST[ 'ms_show_dots_sm' ] );
 
         if ( ! empty( $_POST[ 'ms_show_dots_foreach' ] ) )
             $this->save_text_meta( 'ms_show_dots_foreach', $_POST[ 'ms_show_dots_foreach' ] );

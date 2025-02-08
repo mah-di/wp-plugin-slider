@@ -41,31 +41,42 @@ if ( $posts->have_posts() ):
 </div>
 
 <script>
-    try {
-        if ( typeof applyMinHeight === 'undefined' ) {
-            applyMinHeight = []
+
+    jQuery(document).ready(function($) {
+
+        async function waitForWidth(wrapper) {
+            const observer = new MutationObserver(() => {
+                if ( wrapper.outerWidth() > 0 ) {
+                    $(window).trigger('ms.slider.<?php echo $ms_post_ID ?>.width.set')
+                    observer.disconnect()
+                    return
+                }
+            })
+
+            await observer.observe(wrapper[0], { attributes: true })
+            return wrapper.outerWidth()
         }
-    } catch (error) {console.log(error)}
 
-    applyMinHeight.push(function() {
-        const wrappers = document.querySelectorAll('#my-slider-<?php echo $ms_post_ID ?> .ms-slide-wrapper');
-    
-        wrappers.forEach(wrapper => {
-            let msMinHeight = <?php echo $ms_min_height ? $ms_min_height : 0 ?>;
-            let aspectMinHeight = wrapper.offsetWidth * <?php echo $ms_aspect_ratio ?>;
+        async function applyMinHeight() {
+            const wrappers = $('#my-slider-<?php echo $ms_post_ID ?> .ms-slide-wrapper');
 
-            let minHeight = aspectMinHeight > msMinHeight ? aspectMinHeight : msMinHeight;
+            await waitForWidth(wrappers.last())
 
-            wrapper.style.minHeight = `${minHeight}px`;
-        })
+            wrappers.each(async function() {
+                const wrapper = $(this);
+                const msMinHeight = <?php echo $ms_min_height ? $ms_min_height : 0 ?>;
+                const aspectMinHeight = wrapper.outerWidth() * <?php echo $ms_aspect_ratio ?>;
+
+                const minHeight = aspectMinHeight > msMinHeight ? aspectMinHeight : msMinHeight;
+
+                wrapper.css('minHeight', `${minHeight}px`);
+            });
+        };
+
+        $(window).on('load resize', async () => await applyMinHeight());
+
     })
 
-    window.onload = () => applyMinHeight.forEach(amh => amh())
-
-    // Update on window resize
-    window.addEventListener('resize', () => {
-        applyMinHeight.forEach(amh => amh())
-    });
 </script>
 
 <?php endif;
