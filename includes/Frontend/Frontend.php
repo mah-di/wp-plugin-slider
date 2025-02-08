@@ -85,7 +85,7 @@ final class Frontend
             include 'views/styles/post-slider-style.php';
         }
 
-        if ( $ms_post_type == 'product' ) {
+        if ( $ms_post_type == 'product' && MS_WC_IS_ACTIVE ) {
             include 'views/woo-slider.php';
             include 'views/styles/woo-slider-style.php';
         }
@@ -115,7 +115,6 @@ final class Frontend
 
     private function enqueue_scripts() {
         wp_enqueue_script( 'ms-owl-script', MS_URL . 'assets/frontend/js/owl.carousel.min.js', [ 'jquery' ], MS_VERSION, true );
-        // wp_enqueue_script( 'ms-main-script', MS_URL . 'assets/frontend/js/main.js', [ 'jquery', 'ms-owl-script' ], MS_VERSION, true );
     }
 
     private function enqueue_block_styles()

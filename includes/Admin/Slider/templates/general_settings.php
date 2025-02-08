@@ -129,12 +129,14 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     Blog Post
                 </option>
 
+                <?php if ( MS_WC_IS_ACTIVE ) : ?>
                 <option
                     value="product"
                     <?php echo ( ! empty( $ms_post_type ) && $ms_post_type == 'product' ) ? 'selected' : '' ?>
                 >
                     Woo Commerce Product
                 </option>
+                <?php endif ?>
 
                 <option
                     value="my_slide"

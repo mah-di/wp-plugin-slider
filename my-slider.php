@@ -1,18 +1,18 @@
 <?php
 /*
-* Plugin Name:			My Slider
-* Plugin URI:  			https://github.com/mah-di/
-* Description: 			This plugin allows you to showcase your blog posts in a beautiful slider with multiple options, It is responsive ready so it will work perfectly on different devices like mobile and iPad.
-* Version:     			1.0.0
-* Requires at least: 	6.5
-* Requires PHP: 		7.2
-* Tested up to: 		6.7.1
-* Author:      			Iqbal Mahdi
-* Author URI:  			https://github.com/mah-di
-* License: 				GPLv2 or later
-* License URI: 			https://www.gnu.org/licenses/gpl-2.0.html
-* Text Domain: 			my-slider
-* Domain Path:  		/languages
+ * Plugin Name:			    My Slider
+ * Plugin URI:  			https://github.com/mah-di/
+ * Description: 			This plugin allows you to showcase your blog posts in a beautiful slider with multiple options, It is responsive ready so it will work perfectly on different devices like mobile and iPad.
+ * Version:     			1.0.0
+ * Requires at least: 	    6.5
+ * Requires PHP: 		    7.2
+ * Tested up to: 		    6.7.1
+ * Author:      			Iqbal Mahdi
+ * Author URI:  			https://github.com/mah-di
+ * License: 				GPLv2 or later
+ * License URI: 			https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: 			my-slider
+ * Domain Path:  		    /languages
 */
 
 final class My_Slider
@@ -26,6 +26,8 @@ final class My_Slider
         $this->plugin_path = plugin_dir_path(__FILE__);
 
         $this->define_constants();
+
+        require_once MS_PATH . '/includes/Dependencies/Dependencies.php';
 
         require_once MS_PATH . '/includes/Template_Tags.php';
 

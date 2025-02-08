@@ -82,6 +82,15 @@ final class Meta_Boxes
         if ( $post_type != 'my_slider' )
             return;
 
+        if ( ! empty( $_POST[ 'ms_post_type' ] ) && $_POST[ 'ms_post_type' ] == 'product' && ! MS_WC_IS_ACTIVE )
+            return;
+
+        if ( ! empty( $_POST[ 'ms_post_type' ] ) )
+            $this->save_text_meta( 'ms_post_type', $_POST[ 'ms_post_type' ] );
+
+        if ( ! empty( $_POST[ 'ms_query_type' ] ) )
+            $this->save_text_meta( 'ms_query_type', $_POST[ 'ms_query_type' ] );
+
         $query = '';
 
         if ( ! empty( $_POST[ 'ms_query' ] ) ) {
@@ -96,12 +105,6 @@ final class Meta_Boxes
         }
 
         $this->save_text_meta( 'ms_query', $query );
-
-        if ( ! empty( $_POST[ 'ms_post_type' ] ) )
-            $this->save_text_meta( 'ms_post_type', $_POST[ 'ms_post_type' ] );
-
-        if ( ! empty( $_POST[ 'ms_query_type' ] ) )
-            $this->save_text_meta( 'ms_query_type', $_POST[ 'ms_query_type' ] );
 
         if ( ! empty( $_POST[ 'ms_items_to_show' ] ) )
             $this->save_int_meta( 'ms_items_to_show', $_POST[ 'ms_items_to_show' ] );
