@@ -4,8 +4,6 @@ final class Dependencies
 {
 	public function __construct()
 	{
-		require_once 'class-tgm-plugin-activation.php';
-
 		add_action( 'plugins_loaded', [ $this, 'define_dependency_constants' ] );
 	}
 
