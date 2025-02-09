@@ -108,8 +108,9 @@ final class Frontend
     }
 
     private function enqueue_styles() {
-        wp_enqueue_style( 'ms-owl-style', MS_URL . 'assets/frontend/css/owl.carousel.min.css', [], MS_VERSION );
-        wp_enqueue_style( 'ms-owl-theme-style', MS_URL . 'assets/frontend/css/owl.theme.default.min.css', [ 'ms-owl-style' ], MS_VERSION );
+        wp_enqueue_style( 'ms-animate-style', MS_URL . 'assets/frontend/css/animate.min.css', [], '4.1.1' );
+        wp_enqueue_style( 'ms-owl-style', MS_URL . 'assets/frontend/css/owl.carousel.min.css', [ 'ms-animate-style' ], false );
+        wp_enqueue_style( 'ms-owl-theme-style', MS_URL . 'assets/frontend/css/owl.theme.default.min.css', [ 'ms-owl-style', 'ms-animate-style' ], false );
         wp_enqueue_style( 'ms-style', MS_URL . 'assets/frontend/css/style.css', [ 'ms-owl-style', 'ms-owl-theme-style' ], MS_VERSION );
     }
 

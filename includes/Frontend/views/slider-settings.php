@@ -39,46 +39,47 @@ $ms_autoplay_speed                      = get_post_meta( $ms_post_ID, 'ms_autopl
 jQuery(document).ready(function($) {
 
     function loadCarousel() {
-        const selector = '#my-slider-<?php echo $ms_post_ID ?>';
-
-        let screenWidth = $(window).width();
-        let itemsToDisplay = <?php echo absint( $ms_items_to_display_sm ) ?>;
-
-        let showNav = <?php echo $ms_show_nav ?>;
-        let showDots = <?php echo $ms_show_dots ?>;
-        
-        if (screenWidth < 640) {
-            showNav = <?php echo $ms_show_nav_sm ?>;
-            showDots = <?php echo $ms_show_dots_sm ?>;
-        }
-
-        if (screenWidth >= 640 && screenWidth < 1024)
-            itemsToDisplay = <?php echo absint( $ms_items_to_display_md ) ?>;
-
-        if (screenWidth >= 1024 && screenWidth < 1440)
-            itemsToDisplay = <?php echo absint( $ms_items_to_display_lg ) ?>;
-
-        if (screenWidth >= 1440)
-            itemsToDisplay = <?php echo absint( $ms_items_to_display_xl ) ?>;
-
         const options = {
-            items: itemsToDisplay,
+            responsive: {
+                0: {
+                    items: <?php echo absint( $ms_items_to_display_sm ) ?>,
+                    nav: <?php echo $ms_show_nav_sm ?>,
+                    dots: <?php echo $ms_show_dots_sm ?>,
+                },
+                640: {
+                    items: <?php echo absint( $ms_items_to_display_md ) ?>,
+                    nav: <?php echo $ms_show_nav ?>,
+                    dots: <?php echo $ms_show_dots ?>,
+                },
+                1024: {
+                    items: <?php echo absint( $ms_items_to_display_lg ) ?>,
+                    nav: <?php echo $ms_show_nav ?>,
+                    dots: <?php echo $ms_show_dots ?>,
+                },
+                1440: {
+                    items: <?php echo absint( $ms_items_to_display_xl ) ?>,
+                    nav: <?php echo $ms_show_nav ?>,
+                    dots: <?php echo $ms_show_dots ?>,
+                }
+            },
             margin: <?php echo absint( $ms_margin_right ) ?>,
             loop: <?php echo $ms_loop ?>,
             center: <?php echo $ms_center ?>,
-            nav: showNav,
+            animateOut: 'animate__slideOutDown',
+            animateIn: 'animate__slideInDown',
             navText: ['<span>‹</span>', '<span>›</span>'],
-            dots: showDots,
             dotsEach: <?php echo $ms_show_dots_foreach ?>,
             autoplay: <?php echo $ms_autoplay ?>,
             autoplayTimeout: <?php echo absint( $ms_autoplay_timeout ) ?>,
             autoplayHoverPause: <?php echo $ms_autoplay_hover_pause ?>,
-            autoplaySpeed: <?php echo absint( $ms_autoplay_speed ) == 0 ? 'false' : absint( $ms_autoplay_speed ) ?>
+            smartSpeed: <?php echo absint( $ms_autoplay_speed ) == 0 ? 'false' : absint( $ms_autoplay_speed ) ?>
         };
 
-        $(selector).owlCarousel('destroy');
+        const owl = $('#my-slider-<?php echo $ms_post_ID ?>');
 
-        $(selector).owlCarousel( options );
+        owl.owlCarousel('destroy');
+
+        owl.owlCarousel( options );
     }
 
     $(window).on('load resize ms.slider.<?php echo $ms_post_ID ?>.width.set', loadCarousel);
