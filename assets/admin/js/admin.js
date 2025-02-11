@@ -55,7 +55,7 @@ jQuery(document).ready(function ($) {
 
     function toggleNavSettings(name, target) {
         let isShowSettings = $(`input[name=${name}]:checked`).val()
-        let settings = $(target);console.log(isShowSettings)
+        let settings = $(target)
 
         if (['true', 'show'].includes(isShowSettings))
             settings.show()
@@ -64,9 +64,12 @@ jQuery(document).ready(function ($) {
             settings.hide()
     }
 
-    window.onload = () => optionsToggleMapper.forEach(optionsToggler => toggleNavSettings(optionsToggler.name, optionsToggler.target))
+    $(window).on('load', () => optionsToggleMapper.forEach(optionsToggler => toggleNavSettings(optionsToggler.name, optionsToggler.target)))
 
     optionsToggleMapper.forEach(optionsToggler => {
         $(`input[name=${optionsToggler.name}]`).on('change', () => toggleNavSettings(optionsToggler.name, optionsToggler.target))
     })
+
+    $('#ms_animation_entrance').selectize({ placeholder: "Select An Option" })
+    $('#ms_animation_exit').selectize({ placeholder: "Select An Option" })
 });

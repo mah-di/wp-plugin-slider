@@ -15,6 +15,8 @@ $ms_items_to_display_sm     = get_post_meta( $ms_ID, 'ms_items_to_display_sm', t
 $ms_items_to_display_md     = get_post_meta( $ms_ID, 'ms_items_to_display_md', true );
 $ms_items_to_display_lg     = get_post_meta( $ms_ID, 'ms_items_to_display_lg', true );
 $ms_items_to_display_xl     = get_post_meta( $ms_ID, 'ms_items_to_display_xl', true );
+$ms_animation_entrance      = get_post_meta( $ms_ID, 'ms_animation_entrance', true );
+$ms_animation_exit          = get_post_meta( $ms_ID, 'ms_animation_exit', true );
 $ms_order                   = get_post_meta( $ms_ID, 'ms_order', true );
 $ms_show_comments           = get_post_meta( $ms_ID, 'ms_show_comments', true );
 $ms_show_category           = get_post_meta( $ms_ID, 'ms_show_category', true );
@@ -921,6 +923,510 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 </div>
 
             </div>
+        </div>
+
+        <div class="field-wrapper">
+            <span>Slide Entrance Animation</span>
+            <select
+                id="ms_animation_entrance"
+                name="ms_animation_entrance"
+            >
+                <option
+                    value=""
+                >
+                    Select An Option
+                </option>
+
+                <option
+                    value="animate__slideInRight"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__slideInRight' ) { echo 'selected'; } ?>
+                >
+                    Slide Right
+                </option>
+
+                <option
+                    value="animate__slideInLeft"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__slideInLeft' ) { echo 'selected'; } ?>
+                >
+                    Slide Left
+                </option>
+
+                <option
+                    value="animate__slideInDown"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__slideInDown' ) { echo 'selected'; } ?>
+                >
+                    Slide Down
+                </option>
+
+                <option
+                    value="animate__slideInUp"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__slideInUp' ) { echo 'selected'; } ?>
+                >
+                    Slide Up
+                </option>
+
+                <option
+                    value="animate__fadeIn"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__fadeIn' ) { echo 'selected'; } ?>
+                    >
+                    Fade In
+                </option>
+
+                <option
+                    value="animate__fadeInLeft"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__fadeInLeft' ) { echo 'selected'; } ?>
+                    >
+                    Fade Left
+                </option>
+
+                <option
+                    value="animate__fadeInRight"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__fadeInRight' ) { echo 'selected'; } ?>
+                    >
+                    Fade Right
+                </option>
+
+                <option
+                    value="animate__fadeInUp"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__fadeInUp' ) { echo 'selected'; } ?>
+                    >
+                    Fade Up
+                </option>
+
+                <option
+                    value="animate__fadeInDown"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__fadeInDown' ) { echo 'selected'; } ?>
+                    >
+                    Fade Down
+                </option>
+
+                <option
+                    value="animate__zoomIn"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__zoomIn' ) { echo 'selected'; } ?>
+                >
+                    Zoom In
+                </option>
+
+                <option
+                    value="animate__zoomInLeft"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__zoomInLeft' ) { echo 'selected'; } ?>
+                >
+                    Zoom Left
+                </option>
+
+                <option
+                    value="animate__zoomInRight"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__zoomInRight' ) { echo 'selected'; } ?>
+                >
+                    Zoom Right
+                </option>
+
+                <option
+                    value="animate__zoomInUp"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__zoomInUp' ) { echo 'selected'; } ?>
+                >
+                    Zoom Up
+                </option>
+
+                <option
+                    value="animate__zoomInDown"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__zoomInDown' ) { echo 'selected'; } ?>
+                >
+                    Zoom Down
+                </option>
+
+                <option
+                    value="animate__bounceInLeft"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__bounceInLeft' ) { echo 'selected'; } ?>
+                >
+                    Bounce Left
+                </option>
+
+                <option
+                    value="animate__bounceInRight"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__bounceInRight' ) { echo 'selected'; } ?>
+                >
+                    Bounce Right
+                </option>
+
+                <option
+                    value="animate__bounceInUp"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__bounceInUp' ) { echo 'selected'; } ?>
+                >
+                    Bounce Up
+                </option>
+
+                <option
+                    value="animate__bounceInDown"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__bounceInDown' ) { echo 'selected'; } ?>
+                >
+                    Bounce Down
+                </option>
+
+                <option
+                    value="animate__backInLeft"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__backInLeft' ) { echo 'selected'; } ?>
+                >
+                    Back Left
+                </option>
+
+                <option
+                    value="animate__backInRight"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__backInRight' ) { echo 'selected'; } ?>
+                >
+                    Back Right
+                </option>
+
+                <option
+                    value="animate__backInUp"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__backInUp' ) { echo 'selected'; } ?>
+                >
+                    Back Up
+                </option>
+
+                <option
+                    value="animate__backInDown"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__backInDown' ) { echo 'selected'; } ?>
+                >
+                    Back Down
+                </option>
+
+                <option
+                    value="animate__rotateIn"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__rotateIn' ) { echo 'selected'; } ?>
+                >
+                    Rotate
+                </option>
+
+                <option
+                    value="animate__rotateInUpLeft"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__rotateInUpLeft' ) { echo 'selected'; } ?>
+                >
+                    Rotate Up From Left
+                </option>
+
+                <option
+                    value="animate__rotateInUpRight"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__rotateInUpRight' ) { echo 'selected'; } ?>
+                >
+                    Rotate Up From Right
+                </option>
+
+                <option
+                    value="animate__rotateInDownLeft"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__rotateInDownLeft' ) { echo 'selected'; } ?>
+                >
+                    Rotate Down From Left
+                </option>
+
+                <option
+                    value="animate__rotateInDownRight"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__rotateInDownRight' ) { echo 'selected'; } ?>
+                >
+                    Rotate Down From Right
+                </option>
+
+                <option
+                    value="animate__flipIn"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__flipIn' ) { echo 'selected'; } ?>
+                >
+                    Flip
+                </option>
+
+                <option
+                    value="animate__flipInX"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__flipInX' ) { echo 'selected'; } ?>
+                >
+                    Flip Horizontaly
+                </option>
+
+                <option
+                    value="animate__flipInY"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__flipInY' ) { echo 'selected'; } ?>
+                >
+                    Flip Verticaly
+                </option>
+
+                <option
+                    value="animate__lightSpeedInLeft"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__lightSpeedInLeft' ) { echo 'selected'; } ?>
+                >
+                    Lightspeed Left
+                </option>
+
+                <option
+                    value="animate__lightSpeedInRight"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__lightSpeedInRight' ) { echo 'selected'; } ?>
+                >
+                    Lightspeed Right
+                </option>
+
+                <option
+                    value="animate__rollIn"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__rollIn' ) { echo 'selected'; } ?>
+                >
+                    Roll In
+                </option>
+
+                <option
+                    value="animate__jackInTheBox"
+                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__jackInTheBox' ) { echo 'selected'; } ?>
+                >
+                Jack In The Box
+                </option>
+            </select>
+        </div>
+
+        <div class="field-wrapper">
+            <span>Slide Exit Animation</span>
+            <select
+                id="ms_animation_exit"
+                name="ms_animation_exit"
+            >
+                <option
+                    value=""
+                >
+                    Select An Option
+                </option>
+
+                <option
+                    value="animate__slideOutRight"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__slideOutRight' ) { echo 'selected'; } ?>
+                >
+                    Slide Right
+                </option>
+
+                <option
+                    value="animate__slideOutLeft"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__slideOutLeft' ) { echo 'selected'; } ?>
+                >
+                    Slide Left
+                </option>
+
+                <option
+                    value="animate__slideOutDown"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__slideOutDown' ) { echo 'selected'; } ?>
+                >
+                    Slide Down
+                </option>
+
+                <option
+                    value="animate__slideOutUp"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__slideOutUp' ) { echo 'selected'; } ?>
+                >
+                    Slide Up
+                </option>
+
+                <option
+                    value="animate__fadeOut"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__fadeOut' ) { echo 'selected'; } ?>
+                    >
+                    Fade Out
+                </option>
+
+                <option
+                    value="animate__fadeOutLeft"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__fadeOutLeft' ) { echo 'selected'; } ?>
+                    >
+                    Fade Left
+                </option>
+
+                <option
+                    value="animate__fadeOutRight"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__fadeOutRight' ) { echo 'selected'; } ?>
+                    >
+                    Fade Right
+                </option>
+
+                <option
+                    value="animate__fadeOutUp"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__fadeOutUp' ) { echo 'selected'; } ?>
+                    >
+                    Fade Up
+                </option>
+
+                <option
+                    value="animate__fadeOutDown"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__fadeOutDown' ) { echo 'selected'; } ?>
+                    >
+                    Fade Down
+                </option>
+
+                <option
+                    value="animate__zoomOut"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__zoomOut' ) { echo 'selected'; } ?>
+                >
+                    Zoom Out
+                </option>
+
+                <option
+                    value="animate__zoomOutLeft"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__zoomOutLeft' ) { echo 'selected'; } ?>
+                >
+                    Zoom Left
+                </option>
+
+                <option
+                    value="animate__zoomOutRight"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__zoomOutRight' ) { echo 'selected'; } ?>
+                >
+                    Zoom Right
+                </option>
+
+                <option
+                    value="animate__zoomOutUp"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__zoomOutUp' ) { echo 'selected'; } ?>
+                >
+                    Zoom Up
+                </option>
+
+                <option
+                    value="animate__zoomOutDown"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__zoomOutDown' ) { echo 'selected'; } ?>
+                >
+                    Zoom Down
+                </option>
+
+                <option
+                    value="animate__bounceOutLeft"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__bounceOutLeft' ) { echo 'selected'; } ?>
+                >
+                    Bounce Left
+                </option>
+
+                <option
+                    value="animate__bounceOutRight"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__bounceOutRight' ) { echo 'selected'; } ?>
+                >
+                    Bounce Right
+                </option>
+
+                <option
+                    value="animate__bounceOutUp"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__bounceOutUp' ) { echo 'selected'; } ?>
+                >
+                    Bounce Up
+                </option>
+
+                <option
+                    value="animate__bounceOutDown"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__bounceOutDown' ) { echo 'selected'; } ?>
+                >
+                    Bounce Down
+                </option>
+
+                <option
+                    value="animate__backOutLeft"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__backOutLeft' ) { echo 'selected'; } ?>
+                >
+                    Back Left
+                </option>
+
+                <option
+                    value="animate__backOutRight"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__backOutRight' ) { echo 'selected'; } ?>
+                >
+                    Back Right
+                </option>
+
+                <option
+                    value="animate__backOutUp"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__backOutUp' ) { echo 'selected'; } ?>
+                >
+                    Back Up
+                </option>
+
+                <option
+                    value="animate__backOutDown"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__backOutDown' ) { echo 'selected'; } ?>
+                >
+                    Back Down
+                </option>
+
+                <option
+                    value="animate__rotateOut"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__rotateOut' ) { echo 'selected'; } ?>
+                >
+                    Rotate
+                </option>
+
+                <option
+                    value="animate__rotateOutUpLeft"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__rotateOutUpLeft' ) { echo 'selected'; } ?>
+                >
+                    Rotate Up From Left
+                </option>
+
+                <option
+                    value="animate__rotateOutUpRight"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__rotateOutUpRight' ) { echo 'selected'; } ?>
+                >
+                    Rotate Up From Right
+                </option>
+
+                <option
+                    value="animate__rotateOutDownLeft"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__rotateOutDownLeft' ) { echo 'selected'; } ?>
+                >
+                    Rotate Down From Left
+                </option>
+
+                <option
+                    value="animate__rotateOutDownRight"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__rotateOutDownRight' ) { echo 'selected'; } ?>
+                >
+                    Rotate Down From Right
+                </option>
+
+                <option
+                    value="animate__flipOut"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__flipOut' ) { echo 'selected'; } ?>
+                >
+                    Flip
+                </option>
+
+                <option
+                    value="animate__flipOutX"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__flipOutX' ) { echo 'selected'; } ?>
+                >
+                    Flip Horizontaly
+                </option>
+
+                <option
+                    value="animate__flipOutY"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__flipOutY' ) { echo 'selected'; } ?>
+                >
+                    Flip Verticaly
+                </option>
+
+                <option
+                    value="animate__lightSpeedOutLeft"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__lightSpeedOutLeft' ) { echo 'selected'; } ?>
+                >
+                    Lightspeed Left
+                </option>
+
+                <option
+                    value="animate__lightSpeedOutRight"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__lightSpeedOutRight' ) { echo 'selected'; } ?>
+                >
+                    Lightspeed Right
+                </option>
+
+                <option
+                    value="animate__rollOut"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__rollOut' ) { echo 'selected'; } ?>
+                >
+                    Roll Out
+                </option>
+
+                <option
+                    value="animate__hinge"
+                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__hinge' ) { echo 'selected'; } ?>
+                >
+                    Hinge
+                </option>
+            </select>
         </div>
 
         <div class="field-wrapper">

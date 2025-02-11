@@ -91,6 +91,13 @@ final class Meta_Boxes
         if ( ! empty( $_POST[ 'ms_query_type' ] ) )
             $this->save_text_meta( 'ms_query_type', $_POST[ 'ms_query_type' ] );
 
+        $query_type = '';
+
+        if ( ! empty( $_POST[ 'ms_query_type' ] ) )
+            $query_type = $_POST[ 'ms_query_type' ];
+
+        $this->save_text_meta( 'ms_query_type', $query_type );
+
         $query = '';
 
         if ( ! empty( $_POST[ 'ms_query' ] ) ) {
@@ -120,6 +127,12 @@ final class Meta_Boxes
 
         if ( ! empty( $_POST[ 'ms_items_to_display_xl' ] ) )
             $this->save_int_meta( 'ms_items_to_display_xl', $_POST[ 'ms_items_to_display_xl' ] );
+
+        if ( ! empty( $_POST[ 'ms_animation_entrance' ] ) )
+            $this->save_text_meta( 'ms_animation_entrance', $_POST[ 'ms_animation_entrance' ] );
+
+        if ( ! empty( $_POST[ 'ms_animation_exit' ] ) )
+            $this->save_text_meta( 'ms_animation_exit', $_POST[ 'ms_animation_exit' ] );
 
         if ( ! empty( $_POST[ 'ms_feature_img_size' ] ) )
             $this->save_text_meta( 'ms_feature_img_size', $_POST[ 'ms_feature_img_size' ] );

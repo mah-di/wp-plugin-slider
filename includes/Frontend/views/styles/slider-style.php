@@ -2,6 +2,8 @@
 
 $ms_bg_color                                = ms_get_meta( $ms_post_ID, 'ms_bg_color', '#ffffff' );
 
+$ms_autoplay_speed                          = ms_get_meta( $ms_post_ID, 'ms_autoplay_speed', '1000' );
+
 $ms_nav_position                            = ms_get_meta( $ms_post_ID, 'ms_nav_position', 'middle-wide' );
 [ $ms_nav_vrt_aln, $ms_nav_hrz_aln ]        = explode( '-', $ms_nav_position );
 
@@ -27,6 +29,14 @@ $ms_dot_active_color                        = ms_get_meta( $ms_post_ID, 'ms_dot_
 #my-slider-<?php echo $ms_post_ID ?> {
     .ms-card {
         background-color: <?php echo $ms_bg_color; ?> !important;
+    }
+
+    .ms-animate {
+        animation-duration: <?php echo ( absint( $ms_autoplay_speed ) / 1.5 ) ?>ms !important;
+    }
+
+    .ms-animate-in {
+        animation-delay: <?php echo ( absint( $ms_autoplay_speed ) / 3 ) ?>ms;
     }
 
     .owl-nav {

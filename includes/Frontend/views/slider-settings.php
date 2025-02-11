@@ -20,6 +20,9 @@ $ms_items_to_display_sm                 = get_post_meta( $ms_post_ID, 'ms_items_
 if ( empty( $ms_items_to_display_sm ) )
     $ms_items_to_display_sm             = 1;
 
+$ms_animation_entrance                  = ms_get_meta( $ms_post_ID, 'ms_animation_entrance', null );
+$ms_animation_exit                      = ms_get_meta( $ms_post_ID, 'ms_animation_exit', null );
+
 $ms_margin_right                        = get_post_meta( $ms_post_ID, 'ms_margin_right', true );
 $ms_loop                                = get_post_meta( $ms_post_ID, 'ms_loop', true );
 $ms_center                              = get_post_meta( $ms_post_ID, 'ms_center', true );
@@ -65,8 +68,6 @@ jQuery(document).ready(function($) {
             margin: <?php echo absint( $ms_margin_right ) ?>,
             loop: <?php echo $ms_loop ?>,
             center: <?php echo $ms_center ?>,
-            animateOut: 'animate__slideOutDown',
-            animateIn: 'animate__slideInDown',
             navText: ['<span>‹</span>', '<span>›</span>'],
             dotsEach: <?php echo $ms_show_dots_foreach ?>,
             autoplay: <?php echo $ms_autoplay ?>,
@@ -74,6 +75,14 @@ jQuery(document).ready(function($) {
             autoplayHoverPause: <?php echo $ms_autoplay_hover_pause ?>,
             smartSpeed: <?php echo absint( $ms_autoplay_speed ) == 0 ? 'false' : absint( $ms_autoplay_speed ) ?>
         };
+
+        <?php if( $ms_animation_exit ): ?>
+        options.animateOut = '<?php echo $ms_animation_exit ?> ms-animate';
+        <?php endif ?>
+
+        <?php if( $ms_animation_entrance ): ?>
+        options.animateIn = '<?php echo $ms_animation_entrance ?> ms-animate ms-animate-in';
+        <?php endif ?>
 
         const owl = $('#my-slider-<?php echo $ms_post_ID ?>');
 
