@@ -20,6 +20,10 @@ jQuery(document).ready(function ($) {
             target: "#ms_nav_settings"
         },
         {
+            name: "ms_show_nav_sm",
+            target: "#ms_nav_position_sm"
+        },
+        {
             name: "ms_show_dots",
             target: "#ms_dots_settings"
         },

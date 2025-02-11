@@ -148,8 +148,8 @@
 
 .ms-stock-status {
     position: absolute;
-    top: 2%;
-    right: 5%;
+    top: 15px;
+    right: 15px;
     padding: 5px 10px;
     background-color: #f6f6f6 !important;
     cursor: pointer;

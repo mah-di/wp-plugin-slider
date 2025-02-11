@@ -1,11 +1,11 @@
 <?php
 
-$ms_feature_img_ratio       = trim( get_post_meta( $ms_post_ID, 'ms_feature_img_ratio', true ) );
+$ms_feature_img_ratio       = trim( ms_get_meta( $ms_post_ID, 'ms_feature_img_ratio', '16:9' ) );
 [ $ms_width, $ms_height ]   = explode( ':', $ms_feature_img_ratio );
 $ms_aspect_ratio            = ( absint( $ms_height ) / absint( $ms_width ) );
 
-$ms_min_height              = get_post_meta( $ms_post_ID, 'ms_min_height', true );
-$ms_feature_img_size        = get_post_meta( $ms_post_ID, 'ms_feature_img_size', true );
+$ms_min_height              = ms_get_meta( $ms_post_ID, 'ms_min_height', 'auto' );
+$ms_feature_img_size        = ms_get_meta( $ms_post_ID, 'ms_feature_img_size', 'medium_large' );
 
 $posts = new WP_Query( $args );
 
@@ -64,7 +64,7 @@ if ( $posts->have_posts() ):
 
             wrappers.each(async function() {
                 const wrapper = $(this);
-                const msMinHeight = <?php echo $ms_min_height ? $ms_min_height : 0 ?>;
+                const msMinHeight = <?php echo ( $ms_min_height && $ms_min_height != 'auto' ) ? $ms_min_height : 0 ?>;
                 const aspectMinHeight = wrapper.outerWidth() * <?php echo $ms_aspect_ratio ?>;
 
                 const minHeight = aspectMinHeight > msMinHeight ? aspectMinHeight : msMinHeight;

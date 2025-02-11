@@ -1,6 +1,6 @@
 <?php
 
-$ms_feature_img_size = get_post_meta( $ms_post_ID, 'ms_feature_img_size', true );
+$ms_feature_img_size = ms_get_meta( $ms_post_ID, 'ms_feature_img_size', 'medium_large' );
 
 $posts = new WP_Query( $args );
 

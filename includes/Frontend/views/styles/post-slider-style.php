@@ -1,40 +1,40 @@
 <?php
 
-$ms_feature_img_ratio       = trim( get_post_meta( $ms_post_ID, 'ms_feature_img_ratio', true ) );
+$ms_feature_img_ratio       = trim( ms_get_meta( $ms_post_ID, 'ms_feature_img_ratio', '16:9' ) );
 [ $ms_width, $ms_height ]   = explode( ':', $ms_feature_img_ratio );
 $ms_aspect_ratio            = ( absint( $ms_height ) / absint( $ms_width ) ) * 100;
 
-$ms_comment_fs              = get_post_meta( $ms_post_ID, 'ms_comment_fs', true );
-$ms_comment_fw              = get_post_meta( $ms_post_ID, 'ms_comment_fw', true );
-$ms_comment_icon_color      = get_post_meta( $ms_post_ID, 'ms_comment_icon_color', true );
-$ms_comment_color           = get_post_meta( $ms_post_ID, 'ms_comment_color', true );
-$ms_category_icon_color     = get_post_meta( $ms_post_ID, 'ms_category_icon_color', true );
-$ms_category_fs             = get_post_meta( $ms_post_ID, 'ms_category_fs', true );
-$ms_category_fw             = get_post_meta( $ms_post_ID, 'ms_category_fw', true );
-$ms_category_color          = get_post_meta( $ms_post_ID, 'ms_category_color', true );
-$ms_category_bg_color       = get_post_meta( $ms_post_ID, 'ms_category_bg_color', true );
-$ms_tag_icon_color          = get_post_meta( $ms_post_ID, 'ms_tag_icon_color', true );
-$ms_tag_fs                  = get_post_meta( $ms_post_ID, 'ms_tag_fs', true );
-$ms_tag_fw                  = get_post_meta( $ms_post_ID, 'ms_tag_fw', true );
-$ms_tag_color               = get_post_meta( $ms_post_ID, 'ms_tag_color', true );
-$ms_tag_bg_color            = get_post_meta( $ms_post_ID, 'ms_tag_bg_color', true );
-$ms_title_fs                = get_post_meta( $ms_post_ID, 'ms_title_fs', true );
-$ms_title_fw                = get_post_meta( $ms_post_ID, 'ms_title_fw', true );
-$ms_title_color             = get_post_meta( $ms_post_ID, 'ms_title_color', true );
-$ms_excerpt_fs              = get_post_meta( $ms_post_ID, 'ms_excerpt_fs', true );
-$ms_excerpt_fw              = get_post_meta( $ms_post_ID, 'ms_excerpt_fw', true );
-$ms_excerpt_color           = get_post_meta( $ms_post_ID, 'ms_excerpt_color', true );
-$ms_read_more_color         = get_post_meta( $ms_post_ID, 'ms_read_more_color', true );
-$ms_author_fs               = get_post_meta( $ms_post_ID, 'ms_author_fs', true );
-$ms_author_fw               = get_post_meta( $ms_post_ID, 'ms_author_fw', true );
-$ms_author_color            = get_post_meta( $ms_post_ID, 'ms_author_color', true );
-$ms_date_fs                 = get_post_meta( $ms_post_ID, 'ms_date_fs', true );
-$ms_date_fw                 = get_post_meta( $ms_post_ID, 'ms_date_fw', true );
-$ms_date_color              = get_post_meta( $ms_post_ID, 'ms_date_color', true );
+$ms_comment_fs              = ms_get_meta( $ms_post_ID, 'ms_comment_fs', 12 );
+$ms_comment_fw              = ms_get_meta( $ms_post_ID, 'ms_comment_fw', 500 );
+$ms_comment_icon_color      = ms_get_meta( $ms_post_ID, 'ms_comment_icon_color', '#333333' );
+$ms_comment_color           = ms_get_meta( $ms_post_ID, 'ms_comment_color', '#333333' );
+$ms_category_icon_color     = ms_get_meta( $ms_post_ID, 'ms_category_icon_color', '#333333' );
+$ms_category_fs             = ms_get_meta( $ms_post_ID, 'ms_category_fs', 12 );
+$ms_category_fw             = ms_get_meta( $ms_post_ID, 'ms_category_fw', 500 );
+$ms_category_color          = ms_get_meta( $ms_post_ID, 'ms_category_color', '#333333' );
+$ms_category_bg_color       = ms_get_meta( $ms_post_ID, 'ms_category_bg_color', '#eeeeee' );
+$ms_tag_icon_color          = ms_get_meta( $ms_post_ID, 'ms_tag_icon_color', '#333333' );
+$ms_tag_fs                  = ms_get_meta( $ms_post_ID, 'ms_tag_fs', 12 );
+$ms_tag_fw                  = ms_get_meta( $ms_post_ID, 'ms_tag_fw', 500 );
+$ms_tag_color               = ms_get_meta( $ms_post_ID, 'ms_tag_color', '#eeeeee' );
+$ms_tag_bg_color            = ms_get_meta( $ms_post_ID, 'ms_tag_bg_color', '#333333' );
+$ms_title_fs                = ms_get_meta( $ms_post_ID, 'ms_title_fs', 18 );
+$ms_title_fw                = ms_get_meta( $ms_post_ID, 'ms_title_fw', 700 );
+$ms_title_color             = ms_get_meta( $ms_post_ID, 'ms_title_color', '#000000' );
+$ms_excerpt_fs              = ms_get_meta( $ms_post_ID, 'ms_excerpt_fs', 12 );
+$ms_excerpt_fw              = ms_get_meta( $ms_post_ID, 'ms_excerpt_fw', 500 );
+$ms_excerpt_color           = ms_get_meta( $ms_post_ID, 'ms_excerpt_color', '#111111' );
+$ms_read_more_color         = ms_get_meta( $ms_post_ID, 'ms_read_more_color', '#333333' );
+$ms_author_fs               = ms_get_meta( $ms_post_ID, 'ms_author_fs', 12 );
+$ms_author_fw               = ms_get_meta( $ms_post_ID, 'ms_author_fw', 500 );
+$ms_author_color            = ms_get_meta( $ms_post_ID, 'ms_author_color', '#333333' );
+$ms_date_fs                 = ms_get_meta( $ms_post_ID, 'ms_date_fs', 12 );
+$ms_date_fw                 = ms_get_meta( $ms_post_ID, 'ms_date_fw', 500 );
+$ms_date_color              = ms_get_meta( $ms_post_ID, 'ms_date_color', '#333333' );
 
-$ms_min_height              = get_post_meta( $ms_post_ID, 'ms_min_height', true );
-$ms_horizontal_align        = get_post_meta( $ms_post_ID, 'ms_horizontal_align', true );
-$ms_verticle_align          = get_post_meta( $ms_post_ID, 'ms_verticle_align', true );
+$ms_min_height              = ms_get_meta( $ms_post_ID, 'ms_min_height', 'auto' );
+$ms_horizontal_align        = ms_get_meta( $ms_post_ID, 'ms_horizontal_align', 'baseline' );
+$ms_verticle_align          = ms_get_meta( $ms_post_ID, 'ms_verticle_align', 'start' );
 
 ?>
 
@@ -66,7 +66,7 @@ $ms_verticle_align          = get_post_meta( $ms_post_ID, 'ms_verticle_align', t
     .ms-comment {
         color: <?php echo $ms_comment_color; ?> !important;
         font-size: <?php echo "{$ms_comment_fs}px" ?> !important;
-        font-weight: <?php echo "{$ms_comment_fw}px" ?> !important;
+        font-weight: <?php echo $ms_comment_fw ?> !important;
     }
 
     .ms-cat-icon svg {
@@ -79,7 +79,7 @@ $ms_verticle_align          = get_post_meta( $ms_post_ID, 'ms_verticle_align', t
         color: <?php echo $ms_category_color; ?> !important;
         background-color: <?php echo $ms_category_bg_color; ?> !important;
         font-size: <?php echo "{$ms_category_fs}px" ?> !important;
-        font-weight: <?php echo "{$ms_category_fw}px" ?> !important;
+        font-weight: <?php echo $ms_category_fw ?> !important;
     }
 
     .ms-tag-icon svg {
@@ -92,19 +92,19 @@ $ms_verticle_align          = get_post_meta( $ms_post_ID, 'ms_verticle_align', t
         color: <?php echo $ms_tag_color; ?> !important;
         background-color: <?php echo $ms_tag_bg_color; ?> !important;
         font-size: <?php echo "{$ms_tag_fs}px" ?> !important;
-        font-weight: <?php echo "{$ms_tag_fw}px" ?> !important;
+        font-weight: <?php echo $ms_tag_fw ?> !important;
     }
 
     .ms-title {
         color: <?php echo $ms_title_color; ?> !important;
-        font-size: <?php echo "{$ms_title_fs}px"; ?> !important;
-        font-weight: <?php echo $ms_title_fw; ?> !important;
+        font-size: <?php echo "{$ms_title_fs}px" ?> !important;
+        font-weight: <?php echo $ms_title_fw ?> !important;
     }
 
     .ms-excerpt {
         color: <?php echo $ms_excerpt_color; ?> !important;
-        font-size: <?php echo "{$ms_excerpt_fs}px"; ?> !important;
-        font-weight: <?php echo $ms_excerpt_fw; ?> !important;
+        font-size: <?php echo "{$ms_excerpt_fs}px" ?> !important;
+        font-weight: <?php echo $ms_excerpt_fw ?> !important;
     }
 
     .ms-read-more {
@@ -113,14 +113,14 @@ $ms_verticle_align          = get_post_meta( $ms_post_ID, 'ms_verticle_align', t
 
     .ms-author {
         color: <?php echo $ms_author_color; ?> !important;
-        font-size: <?php echo "{$ms_author_fs}px"; ?> !important;
-        font-weight: <?php echo $ms_author_fw; ?> !important;
+        font-size: <?php echo "{$ms_author_fs}px" ?> !important;
+        font-weight: <?php echo $ms_author_fw ?> !important;
     }
 
     .ms-date {
         color: <?php echo $ms_date_color; ?> !important;
-        font-size: <?php echo "{$ms_date_fs}px"; ?> !important;
-        font-weight: <?php echo $ms_date_fw; ?> !important;
+        font-size: <?php echo "{$ms_date_fs}px" ?> !important;
+        font-weight: <?php echo $ms_date_fw ?> !important;
     }
 }
 

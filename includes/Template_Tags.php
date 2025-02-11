@@ -85,7 +85,7 @@ function ms_get_the_tags( $post_ID = 0, $post_type ) {
 	return apply_filters( 'get_the_tags', $terms );
 }
 
-function ms_get_meta( int $post_ID, string $meta_key, ?string $default_val = null )
+function ms_get_meta( int $post_ID, string $meta_key, int|string $default_val = '' )
 {
     $val = get_post_meta( $post_ID, $meta_key, true );
 

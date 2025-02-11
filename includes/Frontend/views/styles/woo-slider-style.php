@@ -1,36 +1,35 @@
 <?php
 
-$ms_title_color                     = get_post_meta( $ms_post_ID, 'ms_title_color' );
-$ms_feature_img_ratio               = trim( get_post_meta( $ms_post_ID, 'ms_feature_img_ratio', true ) );
+$ms_feature_img_ratio               = trim( ms_get_meta( $ms_post_ID, 'ms_feature_img_ratio', '16:9' ) );
 [ $ms_width, $ms_height ]           = explode( ':', $ms_feature_img_ratio );
 $ms_aspect_ratio                    = ( absint( $ms_height ) / absint( $ms_width ) ) * 100;
 
-$ms_title_fs                        = get_post_meta( $ms_post_ID, 'ms_title_fs', true );
-$ms_title_fw                        = get_post_meta( $ms_post_ID, 'ms_title_fw', true );
-$ms_title_color                     = get_post_meta( $ms_post_ID, 'ms_title_color', true );
-$ms_stock_fs                        = get_post_meta( $ms_post_ID, 'ms_stock_fs', true );
-$ms_stock_fw                        = get_post_meta( $ms_post_ID, 'ms_stock_fw', true );
-$ms_stock_color                     = get_post_meta( $ms_post_ID, 'ms_stock_color', true );
-$ms_sales_fs                        = get_post_meta( $ms_post_ID, 'ms_sales_fs', true );
-$ms_sales_fw                        = get_post_meta( $ms_post_ID, 'ms_sales_fw', true );
-$ms_sales_color                     = get_post_meta( $ms_post_ID, 'ms_sales_color', true );
-$ms_review_fs                       = get_post_meta( $ms_post_ID, 'ms_review_fs', true );
-$ms_review_fw                       = get_post_meta( $ms_post_ID, 'ms_review_fw', true );
-$ms_review_color                    = get_post_meta( $ms_post_ID, 'ms_review_color', true );
-$ms_active_price_fs                 = get_post_meta( $ms_post_ID, 'ms_active_price_fs', true );
-$ms_active_price_fw                 = get_post_meta( $ms_post_ID, 'ms_active_price_fw', true );
-$ms_active_price_color              = get_post_meta( $ms_post_ID, 'ms_active_price_color', true );
-$ms_prev_price_fs                   = get_post_meta( $ms_post_ID, 'ms_prev_price_fs', true );
-$ms_prev_price_fw                   = get_post_meta( $ms_post_ID, 'ms_prev_price_fw', true );
-$ms_prev_price_color                = get_post_meta( $ms_post_ID, 'ms_prev_price_color', true );
-$ms_woo_button_fs                   = get_post_meta( $ms_post_ID, 'ms_woo_button_fs', true );
-$ms_woo_button_fw                   = get_post_meta( $ms_post_ID, 'ms_woo_button_fw', true );
-$ms_woo_button_color                = get_post_meta( $ms_post_ID, 'ms_woo_button_color', true );
-$ms_woo_button_bg_color             = get_post_meta( $ms_post_ID, 'ms_woo_button_bg_color', true );
+$ms_title_fs                        = ms_get_meta( $ms_post_ID, 'ms_title_fs', 18 );
+$ms_title_fw                        = ms_get_meta( $ms_post_ID, 'ms_title_fw', 700 );
+$ms_title_color                     = ms_get_meta( $ms_post_ID, 'ms_title_color', '#000000' );
+$ms_stock_fs                        = ms_get_meta( $ms_post_ID, 'ms_stock_fs', 12 );
+$ms_stock_fw                        = ms_get_meta( $ms_post_ID, 'ms_stock_fw', 500 );
+$ms_stock_color                     = ms_get_meta( $ms_post_ID, 'ms_stock_color', '#EA8A35' );
+$ms_sales_fs                        = ms_get_meta( $ms_post_ID, 'ms_sales_fs', 12 );
+$ms_sales_fw                        = ms_get_meta( $ms_post_ID, 'ms_sales_fw', 500 );
+$ms_sales_color                     = ms_get_meta( $ms_post_ID, 'ms_sales_color', '#333333' );
+$ms_review_fs                       = ms_get_meta( $ms_post_ID, 'ms_review_fs', 12 );
+$ms_review_fw                       = ms_get_meta( $ms_post_ID, 'ms_review_fw', 500 );
+$ms_review_color                    = ms_get_meta( $ms_post_ID, 'ms_review_color', '#EA8A35' );
+$ms_active_price_fs                 = ms_get_meta( $ms_post_ID, 'ms_active_price_fs', 12 );
+$ms_active_price_fw                 = ms_get_meta( $ms_post_ID, 'ms_active_price_fw', 700 );
+$ms_active_price_color              = ms_get_meta( $ms_post_ID, 'ms_active_price_color', '#EA8A35' );
+$ms_prev_price_fs                   = ms_get_meta( $ms_post_ID, 'ms_prev_price_fs', 10 );
+$ms_prev_price_fw                   = ms_get_meta( $ms_post_ID, 'ms_prev_price_fw', 500 );
+$ms_prev_price_color                = ms_get_meta( $ms_post_ID, 'ms_prev_price_color', '#333333' );
+$ms_woo_button_fs                   = ms_get_meta( $ms_post_ID, 'ms_woo_button_fs', 12 );
+$ms_woo_button_fw                   = ms_get_meta( $ms_post_ID, 'ms_woo_button_fw', 500 );
+$ms_woo_button_color                = ms_get_meta( $ms_post_ID, 'ms_woo_button_color', '#EA8A35' );
+$ms_woo_button_bg_color             = ms_get_meta( $ms_post_ID, 'ms_woo_button_bg_color', '#ffffff' );
 
-$ms_min_height                      = get_post_meta( $ms_post_ID, 'ms_min_height', true );
-$ms_horizontal_align                = get_post_meta( $ms_post_ID, 'ms_horizontal_align', true );
-$ms_verticle_align                  = get_post_meta( $ms_post_ID, 'ms_verticle_align', true );
+$ms_min_height                      = ms_get_meta( $ms_post_ID, 'ms_min_height', 'auto' );
+$ms_horizontal_align                = ms_get_meta( $ms_post_ID, 'ms_horizontal_align', 'center' );
+$ms_verticle_align                  = ms_get_meta( $ms_post_ID, 'ms_verticle_align', 'start' );
 
 ?>
 

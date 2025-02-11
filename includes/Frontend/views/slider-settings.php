@@ -1,40 +1,30 @@
 <?php
 
-$ms_items_to_display_xl                 = get_post_meta( $ms_post_ID, 'ms_items_to_display_xl', true );
+$ms_items_to_display_xl                 = ms_get_meta( $ms_post_ID, 'ms_items_to_display_xl', 4 );
 
-if ( empty( $ms_items_to_display_xl ) )
-    $ms_items_to_display_xl             = 4;
+$ms_min_lg                              = $ms_items_to_display_xl < 3 ? $ms_items_to_display_xl : 3;
+$ms_items_to_display_lg                 = ms_get_meta( $ms_post_ID, 'ms_items_to_display_lg', $ms_min_lg );
 
-$ms_items_to_display_lg                 = get_post_meta( $ms_post_ID, 'ms_items_to_display_lg', true );
+$ms_min_md                              = $ms_items_to_display_lg < 2 ? $ms_items_to_display_lg : 2;
+$ms_items_to_display_md                 = ms_get_meta( $ms_post_ID, 'ms_items_to_display_md', $ms_min_md );
 
-if ( empty( $ms_items_to_display_lg ) )
-    $ms_items_to_display_lg             = ( ! empty( $ms_items_to_display_xl ) && $ms_items_to_display_xl < 3 ) ? $ms_items_to_display_xl : 3;
+$ms_items_to_display_sm                 = ms_get_meta( $ms_post_ID, 'ms_items_to_display_sm', 1 );
 
-$ms_items_to_display_md                 = get_post_meta( $ms_post_ID, 'ms_items_to_display_md', true );
+$ms_animation_entrance                  = ms_get_meta( $ms_post_ID, 'ms_animation_entrance', '' );
+$ms_animation_exit                      = ms_get_meta( $ms_post_ID, 'ms_animation_exit', '' );
 
-if ( empty( $ms_items_to_display_md ) )
-    $ms_items_to_display_md             = ( ! empty( $ms_items_to_display_lg ) && $ms_items_to_display_lg < 2 ) ? $ms_items_to_display_xl : 2;
-
-$ms_items_to_display_sm                 = get_post_meta( $ms_post_ID, 'ms_items_to_display_sm', true );
-
-if ( empty( $ms_items_to_display_sm ) )
-    $ms_items_to_display_sm             = 1;
-
-$ms_animation_entrance                  = ms_get_meta( $ms_post_ID, 'ms_animation_entrance', null );
-$ms_animation_exit                      = ms_get_meta( $ms_post_ID, 'ms_animation_exit', null );
-
-$ms_margin_right                        = get_post_meta( $ms_post_ID, 'ms_margin_right', true );
-$ms_loop                                = get_post_meta( $ms_post_ID, 'ms_loop', true );
-$ms_center                              = get_post_meta( $ms_post_ID, 'ms_center', true );
+$ms_margin_right                        = ms_get_meta( $ms_post_ID, 'ms_margin_right', 10 );
+$ms_loop                                = ms_get_meta( $ms_post_ID, 'ms_loop', 'false' );
+$ms_center                              = ms_get_meta( $ms_post_ID, 'ms_center', 'false' );
 $ms_show_nav                            = ms_get_meta( $ms_post_ID, 'ms_show_nav', 'true' );
-$ms_show_nav_sm                         = ms_get_meta( $ms_post_ID, 'ms_show_nav_sm', $ms_show_nav );
+$ms_show_nav_sm                         = ms_get_meta( $ms_post_ID, 'ms_show_nav_sm', 'false' );
 $ms_show_dots                           = ms_get_meta( $ms_post_ID, 'ms_show_dots', 'true' );
-$ms_show_dots_sm                        = ms_get_meta( $ms_post_ID, 'ms_show_dots_sm', $ms_show_dots );
+$ms_show_dots_sm                        = ms_get_meta( $ms_post_ID, 'ms_show_dots_sm', 'false' );
 $ms_show_dots_foreach                   = ms_get_meta( $ms_post_ID, 'ms_show_dots_foreach', 'false' );
-$ms_autoplay                            = get_post_meta( $ms_post_ID, 'ms_autoplay', true );
-$ms_autoplay_timeout                    = get_post_meta( $ms_post_ID, 'ms_autoplay_timeout', true );
-$ms_autoplay_hover_pause                = get_post_meta( $ms_post_ID, 'ms_autoplay_hover_pause', true );
-$ms_autoplay_speed                      = get_post_meta( $ms_post_ID, 'ms_autoplay_speed', true );
+$ms_autoplay                            = ms_get_meta( $ms_post_ID, 'ms_autoplay', 'false' );
+$ms_autoplay_timeout                    = ms_get_meta( $ms_post_ID, 'ms_autoplay_timeout', 5000 );
+$ms_autoplay_hover_pause                = ms_get_meta( $ms_post_ID, 'ms_autoplay_hover_pause', 'true' );
+$ms_autoplay_speed                      = ms_get_meta( $ms_post_ID, 'ms_autoplay_speed', 1000 );
 
 ?>
 

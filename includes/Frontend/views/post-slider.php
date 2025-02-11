@@ -1,15 +1,15 @@
 <?php 
 
-$ms_feature_img_size        = get_post_meta( $ms_post_ID, 'ms_feature_img_size', true );
-$ms_show_comments           = get_post_meta( $ms_post_ID, 'ms_show_comments', true );
-$ms_show_category           = get_post_meta( $ms_post_ID, 'ms_show_category', true );
-$ms_show_tags               = get_post_meta( $ms_post_ID, 'ms_show_tags', true );
-$ms_show_excerpt            = get_post_meta( $ms_post_ID, 'ms_show_excerpt', true );
-$ms_excerpt_length          = get_post_meta( $ms_post_ID, 'ms_excerpt_length', true );
-$ms_read_more_text          = get_post_meta( $ms_post_ID, 'ms_read_more_text', true );
-$ms_show_author             = get_post_meta( $ms_post_ID, 'ms_show_author', true );
-$ms_show_avatar             = get_post_meta( $ms_post_ID, 'ms_show_avatar', true );
-$ms_show_date               = get_post_meta( $ms_post_ID, 'ms_show_date', true );
+$ms_feature_img_size        = ms_get_meta( $ms_post_ID, 'ms_feature_img_size', 'medium_large' );
+$ms_show_comments           = ms_get_meta( $ms_post_ID, 'ms_show_comments', 'hide' );
+$ms_show_category           = ms_get_meta( $ms_post_ID, 'ms_show_category', 'show' );
+$ms_show_tags               = ms_get_meta( $ms_post_ID, 'ms_show_tags', 'hide' );
+$ms_show_excerpt            = ms_get_meta( $ms_post_ID, 'ms_show_excerpt', 'show' );
+$ms_excerpt_length          = ms_get_meta( $ms_post_ID, 'ms_excerpt_length', '25' );
+$ms_read_more_text          = ms_get_meta( $ms_post_ID, 'ms_read_more_text', 'Read More' );
+$ms_show_author             = ms_get_meta( $ms_post_ID, 'ms_show_author', 'show' );
+$ms_show_avatar             = ms_get_meta( $ms_post_ID, 'ms_show_avatar', 'show' );
+$ms_show_date               = ms_get_meta( $ms_post_ID, 'ms_show_date', 'show' );
 
 $posts = new WP_Query( $args );
 

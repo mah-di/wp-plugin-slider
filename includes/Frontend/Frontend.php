@@ -13,11 +13,11 @@ final class Frontend
 
         $ms_post_ID = isset( $id[ 'id' ] ) ? $id[ 'id' ] : $id;
 
-        $ms_post_type = get_post_meta( $ms_post_ID, 'ms_post_type', true );
-        $ms_query_type = get_post_meta( $ms_post_ID, 'ms_query_type', true );
-        $ms_query = get_post_meta( $ms_post_ID, 'ms_query', true );
-        $ms_items_to_show = get_post_meta( $ms_post_ID, 'ms_items_to_show', true );
-        $ms_order = get_post_meta( $ms_post_ID, 'ms_order', true );
+        $ms_post_type = ms_get_meta( $ms_post_ID, 'ms_post_type' );
+        $ms_query_type = ms_get_meta( $ms_post_ID, 'ms_query_type' );
+        $ms_query = ms_get_meta( $ms_post_ID, 'ms_query' );
+        $ms_items_to_show = ms_get_meta( $ms_post_ID, 'ms_items_to_show', 6 );
+        $ms_order = ms_get_meta( $ms_post_ID, 'ms_order', 'DESC' );
 
         $args = [
             'post_type'      => $ms_post_type,
