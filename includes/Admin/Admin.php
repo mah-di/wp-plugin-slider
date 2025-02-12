@@ -70,7 +70,7 @@ final class Admin
 
     private function enqueue_live_preview_scripts()
     {
-        wp_enqueue_script( 'ms-live-preview-script', MS_URL . '/assets/admin/js/live.preview.js', [ 'wp-blocks', 'wp-dom' ], MS_VERSION );
+        wp_enqueue_script( 'ms-live-preview-script', MS_URL . '/assets/admin/js/live.preview.js', [ 'jquery', 'wp-blocks', 'wp-dom' ], MS_VERSION );
     }
 
     public function enqueue_alignwide_blocks_script()
