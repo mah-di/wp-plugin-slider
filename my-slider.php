@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name:			    My Slider
- * Plugin URI:  			https://github.com/mah-di/
+ * Plugin URI:  			https://github.com/mah-di/wp-plugin-slider
  * Description: 			This plugin allows you to showcase your blog posts in a beautiful slider with multiple options, It is responsive ready so it will work perfectly on different devices like mobile and iPad.
  * Version:     			1.0.0
  * Requires at least: 	    6.5
@@ -31,9 +31,12 @@ final class My_Slider
 
         require_once MS_PATH . '/includes/Template_Tags.php';
 
-        require_once MS_PATH . '/includes/Frontend/Frontend.php';
+        if ( is_admin() )
+            require_once MS_PATH . '/includes/Admin/Admin.php';
 
-        require_once MS_PATH . '/includes/Admin/Admin.php';
+        else
+            require_once MS_PATH . '/includes/Frontend/Frontend.php';
+
     }
 
     private function define_constants() {

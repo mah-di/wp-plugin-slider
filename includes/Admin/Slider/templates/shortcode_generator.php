@@ -16,6 +16,6 @@ $ms_shortcode = "[{$ms_prefix} id={$ms_id}]";
         id="shortcode"
         type="text"
         readonly
-        value="<?php echo $ms_shortcode; ?>"
+        value="<?php echo esc_html( $ms_shortcode ); ?>"
     />
 </div>

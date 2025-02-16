@@ -4,10 +4,103 @@ final class Meta_Boxes
 {
     private $post_ID;
 
+    private $optional_post_meta = [
+        'ms_items_to_show'                          => 'int',
+        'ms_items_to_display_sm'                    => 'int',
+        'ms_items_to_display_md'                    => 'int',
+        'ms_items_to_display_lg'                    => 'int',
+        'ms_items_to_display_xl'                    => 'int',
+        'ms_animation_entrance'                     => 'text',
+        'ms_animation_exit'                         => 'text',
+        'ms_feature_img_size'                       => 'text',
+        'ms_feature_img_ratio'                      => 'text',
+        'ms_order'                                  => 'text',
+        'ms_show_comments'                          => 'text',
+        'ms_show_category'                          => 'text',
+        'ms_show_tags'                              => 'text',
+        'ms_show_excerpt'                           => 'text',
+        'ms_excerpt_length'                         => 'text',
+        'ms_read_more_text'                         => 'text',
+        'ms_show_author'                            => 'text',
+        'ms_show_avatar'                            => 'text',
+        'ms_show_date'                              => 'text',
+        'ms_margin_right'                           => 'int',
+        'ms_loop'                                   => 'text',
+        'ms_center'                                 => 'text',
+        'ms_show_nav'                               => 'text',
+        'ms_show_nav_sm'                            => 'text',
+        'ms_nav_position'                           => 'text',
+        'ms_nav_position_sm'                        => 'text',
+        'ms_nav_radius'                             => 'int',
+        'ms_show_dots'                              => 'text',
+        'ms_show_dots_sm'                           => 'text',
+        'ms_show_dots_foreach'                      => 'text',
+        'ms_autoplay'                               => 'text',
+        'ms_autoplay_timeout'                       => 'int',
+        'ms_autoplay_hover_pause'                   => 'text',
+        'ms_autoplay_speed'                         => 'int',
+        'ms_bg_color'                               => 'text',
+        'ms_comment_icon_color'                     => 'text',
+        'ms_comment_fs'                             => 'int',
+        'ms_comment_fw'                             => 'int',
+        'ms_comment_color'                          => 'text',
+        'ms_category_icon_color'                    => 'text',
+        'ms_category_fs'                            => 'int',
+        'ms_category_fw'                            => 'int',
+        'ms_category_color'                         => 'text',
+        'ms_category_bg_color'                      => 'text',
+        'ms_tag_icon_color'                         => 'text',
+        'ms_tag_fs'                                 => 'int',
+        'ms_tag_fw'                                 => 'int',
+        'ms_tag_color'                              => 'text',
+        'ms_tag_bg_color'                           => 'text',
+        'ms_title_fs'                               => 'int',
+        'ms_title_fw'                               => 'int',
+        'ms_title_color'                            => 'text',
+        'ms_excerpt_fs'                             => 'int',
+        'ms_excerpt_fw'                             => 'int',
+        'ms_excerpt_color'                          => 'text',
+        'ms_read_more_color'                        => 'text',
+        'ms_author_fs'                              => 'int',
+        'ms_author_fw'                              => 'int',
+        'ms_author_color'                           => 'text',
+        'ms_date_fs'                                => 'int',
+        'ms_date_fw'                                => 'int',
+        'ms_date_color'                             => 'text',
+        'ms_stock_fs'                               => 'int',
+        'ms_stock_fw'                               => 'int',
+        'ms_stock_color'                            => 'text',
+        'ms_sales_fs'                               => 'int',
+        'ms_sales_fw'                               => 'int',
+        'ms_sales_color'                            => 'text',
+        'ms_review_fs'                              => 'int',
+        'ms_review_fw'                              => 'int',
+        'ms_review_color'                           => 'text',
+        'ms_active_price_fs'                        => 'int',
+        'ms_active_price_fw'                        => 'int',
+        'ms_active_price_color'                     => 'text',
+        'ms_prev_price_fs'                          => 'int',
+        'ms_prev_price_fw'                          => 'int',
+        'ms_prev_price_color'                       => 'text',
+        'ms_woo_button_fs'                          => 'int',
+        'ms_woo_button_fw'                          => 'int',
+        'ms_woo_button_color'                       => 'text',
+        'ms_woo_button_bg_color'                    => 'text',
+        'ms_min_height'                             => 'int',
+        'ms_horizontal_align'                       => 'text',
+        'ms_verticle_align'                         => 'text',
+        'ms_nav_bg_color'                           => 'text',
+        'ms_nav_bg_hover_color'                     => 'text',
+        'ms_nav_color'                              => 'text',
+        'ms_nav_fs'                                 => 'int',
+        'ms_nav_fw'                                 => 'int',
+        'ms_dot_shape'                              => 'text',
+        'ms_dot_color'                              => 'text',
+        'ms_dot_active_color'                       => 'text'
+    ];
+
     public function __construct()
     {
-        $this->set_post_ID();
-
         add_action( 'add_meta_boxes', [ $this, 'add_meta_boxes' ] );
 
         add_action( 'edit_form_advanced', [ $this, 'add_nonce_field' ] );
@@ -70,6 +163,8 @@ final class Meta_Boxes
         if ( ! current_user_can( 'edit_page', $post_id ) )
             return;
 
+        $this->set_post_ID();
+
         $post_ID = $this->post_ID;
 
         // return if post id is not set
@@ -82,315 +177,53 @@ final class Meta_Boxes
         if ( $post_type != 'my_slider' )
             return;
 
-        if ( ! empty( $_POST[ 'ms_post_type' ] ) && $_POST[ 'ms_post_type' ] == 'product' && ! MS_WC_IS_ACTIVE )
+        // return if "ms_post_type" is empty or set to "product" when WooCommerce isn't active
+        if ( empty( $_POST[ 'ms_post_type' ] ) || ( $_POST[ 'ms_post_type' ] == 'product' && ! MS_WC_IS_ACTIVE ) )
             return;
 
-        if ( ! empty( $_POST[ 'ms_post_type' ] ) )
-            $this->save_text_meta( 'ms_post_type', $_POST[ 'ms_post_type' ] );
-
-        if ( ! empty( $_POST[ 'ms_query_type' ] ) )
-            $this->save_text_meta( 'ms_query_type', $_POST[ 'ms_query_type' ] );
+        $post_type = sanitize_text_field( wp_unslash( $_POST[ 'ms_post_type' ] ) );
+        $this->save_text_meta( 'ms_post_type', $post_type );
 
         $query_type = '';
 
-        if ( ! empty( $_POST[ 'ms_query_type' ] ) )
-            $query_type = $_POST[ 'ms_query_type' ];
+        if ( isset( $_POST[ 'ms_query_type' ] ) )
+            $query_type = sanitize_text_field( wp_unslash( $_POST[ 'ms_query_type' ] ) );
 
         $this->save_text_meta( 'ms_query_type', $query_type );
 
         $query = '';
 
-        if ( ! empty( $_POST[ 'ms_query' ] ) ) {
+        if ( isset( $_POST[ 'ms_query' ] ) ) {
             if ( is_array( $_POST[ 'ms_query' ] ) ) {
-                $sanitized_array = array_map( 'sanitize_text_field', $_POST[ 'ms_query' ] );
+                $unslashed_array = array_map( 'wp_unslash', $_POST[ 'ms_query' ] );
+                $sanitized_array = array_map( 'sanitize_text_field', $unslashed_array );
 
                 $query = implode( ',', $sanitized_array );
 
             } elseif ( is_string( $_POST[ 'ms_query' ] ) ) {
-                $query = $_POST[ 'ms_query' ];
+                $query = sanitize_text_field( wp_unslash( $_POST[ 'ms_query' ] ) );
             }
         }
 
         $this->save_text_meta( 'ms_query', $query );
 
-        if ( ! empty( $_POST[ 'ms_items_to_show' ] ) )
-            $this->save_int_meta( 'ms_items_to_show', $_POST[ 'ms_items_to_show' ] );
+        foreach( $this->optional_post_meta as $meta_key => $meta_value_type )
+            $this->save_meta( $meta_key, $meta_value_type );
 
-        if ( ! empty( $_POST[ 'ms_items_to_display_sm' ] ) )
-            $this->save_int_meta( 'ms_items_to_display_sm', $_POST[ 'ms_items_to_display_sm' ] );
+    }
 
-        if ( ! empty( $_POST[ 'ms_items_to_display_md' ] ) )
-            $this->save_int_meta( 'ms_items_to_display_md', $_POST[ 'ms_items_to_display_md' ] );
+    private function save_meta( $meta_key, $meta_value_type )
+    {
+        if ( ! isset( $_POST[ $meta_key ] ) || $_POST[ $meta_key ] === '' )
+            return;
 
-        if ( ! empty( $_POST[ 'ms_items_to_display_lg' ] ) )
-            $this->save_int_meta( 'ms_items_to_display_lg', $_POST[ 'ms_items_to_display_lg' ] );
+        $meta_value = sanitize_text_field( wp_unslash( $_POST[ $meta_key ] ) );
 
-        if ( ! empty( $_POST[ 'ms_items_to_display_xl' ] ) )
-            $this->save_int_meta( 'ms_items_to_display_xl', $_POST[ 'ms_items_to_display_xl' ] );
+        if ( $meta_value_type === 'text' )
+            $this->save_text_meta( $meta_key, $meta_value );
 
-        if ( ! empty( $_POST[ 'ms_animation_entrance' ] ) )
-            $this->save_text_meta( 'ms_animation_entrance', $_POST[ 'ms_animation_entrance' ] );
-
-        if ( ! empty( $_POST[ 'ms_animation_exit' ] ) )
-            $this->save_text_meta( 'ms_animation_exit', $_POST[ 'ms_animation_exit' ] );
-
-        if ( ! empty( $_POST[ 'ms_feature_img_size' ] ) )
-            $this->save_text_meta( 'ms_feature_img_size', $_POST[ 'ms_feature_img_size' ] );
-
-        if ( ! empty( $_POST[ 'ms_feature_img_ratio' ] ) )
-            $this->save_text_meta( 'ms_feature_img_ratio', $_POST[ 'ms_feature_img_ratio' ] );
-
-        if ( ! empty( $_POST[ 'ms_order' ] ) )
-            $this->save_text_meta( 'ms_order', $_POST[ 'ms_order' ] );
-
-        if ( ! empty( $_POST[ 'ms_show_comments' ] ) )
-            $this->save_text_meta( 'ms_show_comments', $_POST[ 'ms_show_comments' ] );
-
-        if ( ! empty( $_POST[ 'ms_show_category' ] ) )
-            $this->save_text_meta( 'ms_show_category', $_POST[ 'ms_show_category' ] );
-
-        if ( ! empty( $_POST[ 'ms_show_tags' ] ) )
-            $this->save_text_meta( 'ms_show_tags', $_POST[ 'ms_show_tags' ] );
-
-        if ( ! empty( $_POST[ 'ms_show_excerpt' ] ) )
-            $this->save_text_meta( 'ms_show_excerpt', $_POST[ 'ms_show_excerpt' ] );
-
-        if ( ! empty( $_POST[ 'ms_excerpt_length' ] ) )
-            $this->save_text_meta( 'ms_excerpt_length', $_POST[ 'ms_excerpt_length' ] );
-
-        if ( ! empty( $_POST[ 'ms_read_more_text' ] ) )
-            $this->save_text_meta( 'ms_read_more_text', $_POST[ 'ms_read_more_text' ] );
-
-        if ( ! empty( $_POST[ 'ms_show_author' ] ) )
-            $this->save_text_meta( 'ms_show_author', $_POST[ 'ms_show_author' ] );
-
-        if ( ! empty( $_POST[ 'ms_show_avatar' ] ) )
-            $this->save_text_meta( 'ms_show_avatar', $_POST[ 'ms_show_avatar' ] );
-
-        if ( ! empty( $_POST[ 'ms_show_date' ] ) )
-            $this->save_text_meta( 'ms_show_date', $_POST[ 'ms_show_date' ] );
-        
-        if ( ! empty( $_POST[ 'ms_margin_right' ] ) )
-            $this->save_int_meta( 'ms_margin_right', $_POST[ 'ms_margin_right' ] );
-
-        if ( ! empty( $_POST[ 'ms_loop' ] ) )
-            $this->save_text_meta( 'ms_loop', $_POST[ 'ms_loop' ] );
-
-        if ( ! empty( $_POST[ 'ms_center' ] ) )
-            $this->save_text_meta( 'ms_center', $_POST[ 'ms_center' ] );
-
-        if ( ! empty( $_POST[ 'ms_show_nav' ] ) )
-            $this->save_text_meta( 'ms_show_nav', $_POST[ 'ms_show_nav' ] );
-
-        if ( ! empty( $_POST[ 'ms_show_nav_sm' ] ) )
-            $this->save_text_meta( 'ms_show_nav_sm', $_POST[ 'ms_show_nav_sm' ] );
-
-        if ( ! empty( $_POST[ 'ms_nav_position' ] ) )
-            $this->save_text_meta( 'ms_nav_position', $_POST[ 'ms_nav_position' ] );
-
-        if ( ! empty( $_POST[ 'ms_nav_position_sm' ] ) )
-            $this->save_text_meta( 'ms_nav_position_sm', $_POST[ 'ms_nav_position_sm' ] );
-
-        if ( ! empty( $_POST[ 'ms_nav_radius' ] ) )
-            $this->save_int_meta( 'ms_nav_radius', $_POST[ 'ms_nav_radius' ] );
-
-        if ( ! empty( $_POST[ 'ms_show_dots' ] ) )
-            $this->save_text_meta( 'ms_show_dots', $_POST[ 'ms_show_dots' ] );
-
-        if ( ! empty( $_POST[ 'ms_show_dots_sm' ] ) )
-            $this->save_text_meta( 'ms_show_dots_sm', $_POST[ 'ms_show_dots_sm' ] );
-
-        if ( ! empty( $_POST[ 'ms_show_dots_foreach' ] ) )
-            $this->save_text_meta( 'ms_show_dots_foreach', $_POST[ 'ms_show_dots_foreach' ] );
-
-        if ( ! empty( $_POST[ 'ms_autoplay' ] ) )
-            $this->save_text_meta( 'ms_autoplay', $_POST[ 'ms_autoplay' ] );
-
-        if ( ! empty( $_POST[ 'ms_autoplay_timeout' ] ) )
-            $this->save_int_meta( 'ms_autoplay_timeout', $_POST[ 'ms_autoplay_timeout' ] );
-
-        if ( ! empty( $_POST[ 'ms_autoplay_hover_pause' ] ) )
-            $this->save_text_meta( 'ms_autoplay_hover_pause', $_POST[ 'ms_autoplay_hover_pause' ] );
-
-        if ( ! empty( $_POST[ 'ms_autoplay_speed' ] ) )
-            $this->save_int_meta( 'ms_autoplay_speed', $_POST[ 'ms_autoplay_speed' ] );
-
-        if ( ! empty( $_POST[ 'ms_bg_color' ] ) )
-            $this->save_text_meta( 'ms_bg_color', $_POST[ 'ms_bg_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_bg_color' ] ) )
-            $this->save_text_meta( 'ms_bg_color', $_POST[ 'ms_bg_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_comment_icon_color' ] ) )
-            $this->save_text_meta( 'ms_comment_icon_color', $_POST[ 'ms_comment_icon_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_comment_fs' ] ) )
-            $this->save_int_meta( 'ms_comment_fs', $_POST[ 'ms_comment_fs' ] );
-
-        if ( ! empty( $_POST[ 'ms_comment_fw' ] ) )
-            $this->save_int_meta( 'ms_comment_fw', $_POST[ 'ms_comment_fw' ] );
-
-        if ( ! empty( $_POST[ 'ms_comment_color' ] ) )
-            $this->save_text_meta( 'ms_comment_color', $_POST[ 'ms_comment_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_category_icon_color' ] ) )
-            $this->save_text_meta( 'ms_category_icon_color', $_POST[ 'ms_category_icon_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_category_fs' ] ) )
-            $this->save_int_meta( 'ms_category_fs', $_POST[ 'ms_category_fs' ] );
-
-        if ( ! empty( $_POST[ 'ms_category_fw' ] ) )
-            $this->save_int_meta( 'ms_category_fw', $_POST[ 'ms_category_fw' ] );
-
-        if ( ! empty( $_POST[ 'ms_category_color' ] ) )
-            $this->save_text_meta( 'ms_category_color', $_POST[ 'ms_category_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_category_bg_color' ] ) )
-            $this->save_text_meta( 'ms_category_bg_color', $_POST[ 'ms_category_bg_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_tag_icon_color' ] ) )
-            $this->save_text_meta( 'ms_tag_icon_color', $_POST[ 'ms_tag_icon_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_tag_fs' ] ) )
-            $this->save_int_meta( 'ms_tag_fs', $_POST[ 'ms_tag_fs' ] );
-
-        if ( ! empty( $_POST[ 'ms_tag_fw' ] ) )
-            $this->save_int_meta( 'ms_tag_fw', $_POST[ 'ms_tag_fw' ] );
-
-        if ( ! empty( $_POST[ 'ms_tag_color' ] ) )
-            $this->save_text_meta( 'ms_tag_color', $_POST[ 'ms_tag_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_tag_bg_color' ] ) )
-            $this->save_text_meta( 'ms_tag_bg_color', $_POST[ 'ms_tag_bg_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_title_fs' ] ) )
-            $this->save_int_meta( 'ms_title_fs', $_POST[ 'ms_title_fs' ] );
-
-        if ( ! empty( $_POST[ 'ms_title_fw' ] ) )
-            $this->save_int_meta( 'ms_title_fw', $_POST[ 'ms_title_fw' ] );
-
-        if ( ! empty( $_POST[ 'ms_title_color' ] ) )
-            $this->save_text_meta( 'ms_title_color', $_POST[ 'ms_title_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_excerpt_fs' ] ) )
-            $this->save_int_meta( 'ms_excerpt_fs', $_POST[ 'ms_excerpt_fs' ] );
-
-        if ( ! empty( $_POST[ 'ms_excerpt_fw' ] ) )
-            $this->save_int_meta( 'ms_excerpt_fw', $_POST[ 'ms_excerpt_fw' ] );
-
-        if ( ! empty( $_POST[ 'ms_excerpt_color' ] ) )
-            $this->save_text_meta( 'ms_excerpt_color', $_POST[ 'ms_excerpt_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_read_more_color' ] ) )
-            $this->save_text_meta( 'ms_read_more_color', $_POST[ 'ms_read_more_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_author_fs' ] ) )
-            $this->save_int_meta( 'ms_author_fs', $_POST[ 'ms_author_fs' ] );
-
-        if ( ! empty( $_POST[ 'ms_author_fw' ] ) )
-            $this->save_int_meta( 'ms_author_fw', $_POST[ 'ms_author_fw' ] );
-
-        if ( ! empty( $_POST[ 'ms_author_color' ] ) )
-            $this->save_text_meta( 'ms_author_color', $_POST[ 'ms_author_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_date_fs' ] ) )
-            $this->save_int_meta( 'ms_date_fs', $_POST[ 'ms_date_fs' ] );
-
-        if ( ! empty( $_POST[ 'ms_date_fw' ] ) )
-            $this->save_int_meta( 'ms_date_fw', $_POST[ 'ms_date_fw' ] );
-
-        if ( ! empty( $_POST[ 'ms_date_color' ] ) )
-            $this->save_text_meta( 'ms_date_color', $_POST[ 'ms_date_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_stock_fs' ] ) )
-            $this->save_int_meta( 'ms_stock_fs', $_POST[ 'ms_stock_fs' ] );
-
-        if ( ! empty( $_POST[ 'ms_stock_fw' ] ) )
-            $this->save_int_meta( 'ms_stock_fw', $_POST[ 'ms_stock_fw' ] );
-
-        if ( ! empty( $_POST[ 'ms_stock_color' ] ) )
-            $this->save_text_meta( 'ms_stock_color', $_POST[ 'ms_stock_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_sales_fs' ] ) )
-            $this->save_int_meta( 'ms_sales_fs', $_POST[ 'ms_sales_fs' ] );
-
-        if ( ! empty( $_POST[ 'ms_sales_fw' ] ) )
-            $this->save_int_meta( 'ms_sales_fw', $_POST[ 'ms_sales_fw' ] );
-
-        if ( ! empty( $_POST[ 'ms_sales_color' ] ) )
-            $this->save_text_meta( 'ms_sales_color', $_POST[ 'ms_sales_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_review_fs' ] ) )
-            $this->save_int_meta( 'ms_review_fs', $_POST[ 'ms_review_fs' ] );
-
-        if ( ! empty( $_POST[ 'ms_review_fw' ] ) )
-            $this->save_int_meta( 'ms_review_fw', $_POST[ 'ms_review_fw' ] );
-
-        if ( ! empty( $_POST[ 'ms_review_color' ] ) )
-            $this->save_text_meta( 'ms_review_color', $_POST[ 'ms_review_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_active_price_fs' ] ) )
-            $this->save_int_meta( 'ms_active_price_fs', $_POST[ 'ms_active_price_fs' ] );
-
-        if ( ! empty( $_POST[ 'ms_active_price_fw' ] ) )
-            $this->save_int_meta( 'ms_active_price_fw', $_POST[ 'ms_active_price_fw' ] );
-
-        if ( ! empty( $_POST[ 'ms_active_price_color' ] ) )
-            $this->save_text_meta( 'ms_active_price_color', $_POST[ 'ms_active_price_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_prev_price_fs' ] ) )
-            $this->save_int_meta( 'ms_prev_price_fs', $_POST[ 'ms_prev_price_fs' ] );
-
-        if ( ! empty( $_POST[ 'ms_prev_price_fw' ] ) )
-            $this->save_int_meta( 'ms_prev_price_fw', $_POST[ 'ms_prev_price_fw' ] );
-
-        if ( ! empty( $_POST[ 'ms_prev_price_color' ] ) )
-            $this->save_text_meta( 'ms_prev_price_color', $_POST[ 'ms_prev_price_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_woo_button_fs' ] ) )
-            $this->save_int_meta( 'ms_woo_button_fs', $_POST[ 'ms_woo_button_fs' ] );
-
-        if ( ! empty( $_POST[ 'ms_woo_button_fw' ] ) )
-            $this->save_int_meta( 'ms_woo_button_fw', $_POST[ 'ms_woo_button_fw' ] );
-
-        if ( ! empty( $_POST[ 'ms_woo_button_color' ] ) )
-            $this->save_text_meta( 'ms_woo_button_color', $_POST[ 'ms_woo_button_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_woo_button_bg_color' ] ) )
-            $this->save_text_meta( 'ms_woo_button_bg_color', $_POST[ 'ms_woo_button_bg_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_min_height' ] ) )
-            $this->save_int_meta( 'ms_min_height', $_POST[ 'ms_min_height' ] );
-
-        if ( ! empty( $_POST[ 'ms_horizontal_align' ] ) )
-            $this->save_text_meta( 'ms_horizontal_align', $_POST[ 'ms_horizontal_align' ] );
-
-        if ( ! empty( $_POST[ 'ms_verticle_align' ] ) )
-            $this->save_text_meta( 'ms_verticle_align', $_POST[ 'ms_verticle_align' ] );
-
-        if ( ! empty( $_POST[ 'ms_nav_bg_color' ] ) )
-            $this->save_text_meta( 'ms_nav_bg_color', $_POST[ 'ms_nav_bg_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_nav_bg_hover_color' ] ) )
-            $this->save_text_meta( 'ms_nav_bg_hover_color', $_POST[ 'ms_nav_bg_hover_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_nav_color' ] ) )
-            $this->save_text_meta( 'ms_nav_color', $_POST[ 'ms_nav_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_nav_fs' ] ) )
-            $this->save_int_meta( 'ms_nav_fs', $_POST[ 'ms_nav_fs' ] );
-
-        if ( ! empty( $_POST[ 'ms_nav_fw' ] ) )
-            $this->save_int_meta( 'ms_nav_fw', $_POST[ 'ms_nav_fw' ] );
-
-        if ( ! empty( $_POST[ 'ms_dot_shape' ] ) )
-            $this->save_text_meta( 'ms_dot_shape', $_POST[ 'ms_dot_shape' ] );
-
-        if ( ! empty( $_POST[ 'ms_dot_color' ] ) )
-            $this->save_text_meta( 'ms_dot_color', $_POST[ 'ms_dot_color' ] );
-
-        if ( ! empty( $_POST[ 'ms_dot_active_color' ] ) )
-            $this->save_text_meta( 'ms_dot_active_color', $_POST[ 'ms_dot_active_color' ] );
+        if ( $meta_value_type === 'int' )
+            $this->save_int_meta( $meta_key, $meta_value );
     }
 
     private function save_text_meta( $meta_key, $meta_value )

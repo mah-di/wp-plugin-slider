@@ -13,7 +13,7 @@ if ( $posts->have_posts() ):
 
 ?>
 <div
-    id="my-slider-<?php echo $ms_post_ID ?>"
+    id="my-slider-<?php echo esc_html( $ms_post_ID ) ?>"
     class="owl-carousel owl-theme"
 >
 
@@ -21,10 +21,19 @@ if ( $posts->have_posts() ):
 
     <div class="ms-card">
         <?php
-            $featured_image_url = get_the_post_thumbnail_url( get_the_ID(), $ms_feature_img_size );
+            $featured_image_url = null;
+
+            if ( has_post_thumbnail() )
+                $featured_image_url = get_the_post_thumbnail_url( get_the_ID(), $ms_feature_img_size );
+
         ?>
 
-        <div class="ms-slide-wrapper" style="background-image: url('<?php echo esc_url( $featured_image_url ); ?>')">
+        <div
+            class="ms-slide-wrapper"
+            <?php if( isset( $featured_image_url ) ): ?>
+            style="background-image: url('<?php echo esc_url( $featured_image_url ); ?>')"
+            <?php endif ?>
+        >
             <?php
                 $content = get_the_content();
                 echo do_blocks( $content );
@@ -47,7 +56,7 @@ if ( $posts->have_posts() ):
         async function waitForWidth(wrapper) {
             const observer = new MutationObserver(() => {
                 if ( wrapper.outerWidth() > 0 ) {
-                    $(window).trigger('ms.slider.<?php echo $ms_post_ID ?>.width.set')
+                    $(window).trigger('ms.slider.<?php echo esc_html( $ms_post_ID ) ?>.width.set')
                     observer.disconnect()
                     return
                 }
@@ -58,14 +67,14 @@ if ( $posts->have_posts() ):
         }
 
         async function applyMinHeight() {
-            const wrappers = $('#my-slider-<?php echo $ms_post_ID ?> .ms-slide-wrapper');
+            const wrappers = $('#my-slider-<?php echo esc_html( $ms_post_ID ) ?> .ms-slide-wrapper');
 
             await waitForWidth(wrappers.last())
 
             wrappers.each(async function() {
                 const wrapper = $(this);
-                const msMinHeight = <?php echo ( $ms_min_height && $ms_min_height != 'auto' ) ? $ms_min_height : 0 ?>;
-                const aspectMinHeight = wrapper.outerWidth() * <?php echo $ms_aspect_ratio ?>;
+                const msMinHeight = <?php echo ( $ms_min_height && $ms_min_height != 'auto' ) ? esc_html( $ms_min_height ) : 0 ?>;
+                const aspectMinHeight = wrapper.outerWidth() * <?php echo esc_html( $ms_aspect_ratio ) ?>;
 
                 const minHeight = aspectMinHeight > msMinHeight ? aspectMinHeight : msMinHeight;
 

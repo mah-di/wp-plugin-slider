@@ -13,11 +13,10 @@ final class Dependencies
 
     private function define_WooCommerce()
     {
+        $is_active = false;
+
         if ( class_exists( 'WooCommerce' ) )
             $is_active = true;
-
-		else
-            $is_active = false;
 
         define( 'MS_WC_IS_ACTIVE', $is_active );
     }

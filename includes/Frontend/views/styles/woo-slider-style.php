@@ -34,71 +34,71 @@ $ms_verticle_align                  = ms_get_meta( $ms_post_ID, 'ms_verticle_ali
 ?>
 
 <style>
-#my-slider-<?php echo $ms_post_ID ?> {
+#my-slider-<?php echo esc_html( $ms_post_ID ) ?> {
     .ms-card {
-        min-height: <?php echo "{$ms_min_height}px" ?> !important;
+        min-height: <?php echo esc_html( "{$ms_min_height}px" ) ?> !important;
     }
 
     .ms-card-header {
-        padding-top: <?php echo "{$ms_aspect_ratio}%" ?> !important;
+        padding-top: <?php echo esc_html( "{$ms_aspect_ratio}%" ) ?> !important;
     }
 
     .ms-card-body {
-        justify-content: <?php echo $ms_verticle_align ?>;
-        align-items: <?php echo $ms_horizontal_align ?>;
+        justify-content: <?php echo esc_html( $ms_verticle_align ) ?>;
+        align-items: <?php echo esc_html( $ms_horizontal_align ) ?>;
     }
 
     .ms-card-body > * {
-        text-align: <?php echo $ms_horizontal_align == 'baseline' ? 'start' : $ms_horizontal_align ?>;
+        text-align: <?php echo esc_html( $ms_horizontal_align == 'baseline' ? 'start' : $ms_horizontal_align ) ?>;
     }
 
     .ms-title a {
-        color: <?php echo $ms_title_color; ?> !important;
-        font-size: <?php echo "{$ms_title_fs}px"; ?> !important;
-        font-weight: <?php echo $ms_title_fw; ?> !important;
+        color: <?php echo esc_html( $ms_title_color ) ?> !important;
+        font-size: <?php echo esc_html( "{$ms_title_fs}px" ); ?> !important;
+        font-weight: <?php echo esc_html( $ms_title_fw ) ?> !important;
     }
 
     .ms-total-sales {
-        color: <?php echo $ms_sales_color; ?> !important;
-        font-size: <?php echo "{$ms_sales_fs}px"; ?> !important;
-        font-weight: <?php echo $ms_sales_fw; ?> !important;
+        color: <?php echo esc_html( $ms_sales_color ) ?> !important;
+        font-size: <?php echo esc_html( "{$ms_sales_fs}px" ); ?> !important;
+        font-weight: <?php echo esc_html( $ms_sales_fw ) ?> !important;
     }
     
     .ms-review {
-        color: <?php echo $ms_review_color; ?> !important;
-        font-size: <?php echo "{$ms_review_fs}px"; ?> !important;
-        font-weight: <?php echo $ms_review_fw; ?> !important;
+        color: <?php echo esc_html( $ms_review_color ) ?> !important;
+        font-size: <?php echo esc_html( "{$ms_review_fs}px" ); ?> !important;
+        font-weight: <?php echo esc_html( $ms_review_fw ) ?> !important;
     }
 
     .ms-stock-status {
-        font-size: <?php echo "{$ms_stock_fs}px" ?> !important;
-        font-weight: <?php echo $ms_stock_fw ?> !important;
-        color: <?php echo $ms_stock_color ?> !important;
+        font-size: <?php echo esc_html( "{$ms_stock_fs}px" ) ?> !important;
+        font-weight: <?php echo esc_html( $ms_stock_fw ) ?> !important;
+        color: <?php echo esc_html( $ms_stock_color ) ?> !important;
     }
 
     .ms-price-main {
-        font-size: <?php echo "{$ms_active_price_fs}px"; ?> !important;
-        font-weight: <?php echo $ms_active_price_fw; ?> !important;
-        color: <?php echo $ms_active_price_color; ?> !important;
+        font-size: <?php echo esc_html( "{$ms_active_price_fs}px" ); ?> !important;
+        font-weight: <?php echo esc_html( $ms_active_price_fw ) ?> !important;
+        color: <?php echo esc_html( $ms_active_price_color ) ?> !important;
     }
 
     .ms-price-strike {
-        font-size: <?php echo "{$ms_prev_price_fs}px"; ?> !important;
-        font-weight: <?php echo $ms_prev_price_fw; ?> !important;
-        color: <?php echo $ms_prev_price_color; ?> !important;
+        font-size: <?php echo esc_html( "{$ms_prev_price_fs}px" ); ?> !important;
+        font-weight: <?php echo esc_html( $ms_prev_price_fw ) ?> !important;
+        color: <?php echo esc_html( $ms_prev_price_color ) ?> !important;
     }
 
     .ms-add-to-cart a {
-        font-size: <?php echo "{$ms_woo_button_fs}px"; ?> !important;
-        font-weight: <?php echo $ms_woo_button_fw; ?> !important;
-        color: <?php echo $ms_woo_button_color; ?> !important;
-        border: 2px solid <?php echo $ms_woo_button_color; ?> !important;
-        background-color: <?php echo $ms_woo_button_bg_color; ?> !important;
+        font-size: <?php echo esc_html( "{$ms_woo_button_fs}px" ); ?> !important;
+        font-weight: <?php echo esc_html( $ms_woo_button_fw ) ?> !important;
+        color: <?php echo esc_html( $ms_woo_button_color ) ?> !important;
+        border: 2px solid <?php echo esc_html( $ms_woo_button_color ) ?> !important;
+        background-color: <?php echo esc_html( $ms_woo_button_bg_color ) ?> !important;
     }
 
     .ms-add-to-cart a:hover {
-        color: <?php echo $ms_woo_button_bg_color; ?> !important;
-        background-color: <?php echo $ms_woo_button_color; ?> !important;
+        color: <?php echo esc_html( $ms_woo_button_bg_color ) ?> !important;
+        background-color: <?php echo esc_html( $ms_woo_button_color ) ?> !important;
     }
 }
 </style>

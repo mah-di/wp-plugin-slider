@@ -26,9 +26,9 @@ $ms_dot_active_color                        = ms_get_meta( $ms_post_ID, 'ms_dot_
 
 <style>
 
-#my-slider-<?php echo $ms_post_ID ?> {
+#my-slider-<?php echo esc_html( $ms_post_ID ) ?> {
     .ms-card {
-        background-color: <?php echo $ms_bg_color; ?> !important;
+        background-color: <?php echo esc_html( $ms_bg_color ) ?> !important;
     }
 
     .ms-animate {
@@ -51,7 +51,7 @@ $ms_dot_active_color                        = ms_get_meta( $ms_post_ID, 'ms_dot_
         <?php if ( $ms_nav_vrt_aln == 'top' ): ?>
             top: 10px !important;
         <?php elseif ( $ms_nav_vrt_aln == 'bottom' ): ?>
-            bottom: <?php echo $ms_show_dots == 'true' ? '25px' : '10px' ?> !important;
+            bottom: <?php echo esc_html( $ms_show_dots == 'true' ? '25px' : '10px' ) ?> !important;
         <?php endif; ?>
 
         <?php if ( $ms_nav_hrz_aln == 'wide' ): ?>
@@ -67,8 +67,8 @@ $ms_dot_active_color                        = ms_get_meta( $ms_post_ID, 'ms_dot_
 
     .owl-nav .owl-prev,
     .owl-nav .owl-next {
-        background-color: <?php echo $ms_nav_bg_color ?> !important;
-        border-radius: <?php echo "{$ms_nav_radius}%" ?> !important;
+        background-color: <?php echo esc_html( $ms_nav_bg_color ) ?> !important;
+        border-radius: <?php echo esc_html( "{$ms_nav_radius}%" ) ?> !important;
 
         <?php if ( $ms_nav_vrt_aln == 'middle' ): ?>
             position: absolute !important;
@@ -89,25 +89,25 @@ $ms_dot_active_color                        = ms_get_meta( $ms_post_ID, 'ms_dot_
 
     .owl-nav .owl-prev:hover,
     .owl-nav .owl-next:hover {
-        background-color: <?php echo $ms_nav_bg_hover_color ?> !important;
+        background-color: <?php echo esc_html( $ms_nav_bg_hover_color ) ?> !important;
     }
 
     .owl-nav span {
-        color: <?php echo $ms_nav_color; ?> !important;
-        font-size: <?php echo $ms_nav_fs; ?>px !important;
-        font-weight: <?php echo $ms_nav_fw; ?> !important;
+        color: <?php echo esc_html( $ms_nav_color ) ?> !important;
+        font-size: <?php echo esc_html( $ms_nav_fs ) ?>px !important;
+        font-weight: <?php echo esc_html( $ms_nav_fw ) ?> !important;
         margin-top: <?php echo - ( ( absint( $ms_nav_fs ) * 3 ) / 10 ) ?>px !important;
     }
 
     .owl-dot span {
         height: <?php if ( $ms_dot_shape == 'bar' ) { echo '5px'; } else if ( $ms_dot_shape == 'pill' ) { echo '10px'; } else { echo '12px'; } ?> !important;
         width: <?php if ( $ms_dot_shape == 'bar' ) { echo '30px'; } else if ( $ms_dot_shape == 'pill' ) { echo '25px'; } else { echo '12px'; } ?> !important;
-        background-color: <?php echo $ms_dot_color; ?> !important;
+        background-color: <?php echo esc_html( $ms_dot_color ) ?> !important;
     }
 
     .owl-dot span:hover,
     .owl-dot.active span {
-        background-color: <?php echo $ms_dot_active_color; ?> !important;
+        background-color: <?php echo esc_html( $ms_dot_active_color ) ?> !important;
     }
 
     @media ( max-width: 639px ) {
@@ -128,7 +128,7 @@ $ms_dot_active_color                        = ms_get_meta( $ms_post_ID, 'ms_dot_
             <?php if ( $ms_nav_vrt_aln_sm == 'top' ): ?>
                 top: 10px !important;
             <?php elseif ( $ms_nav_vrt_aln_sm == 'bottom' ): ?>
-                bottom: <?php echo $ms_show_dots_sm == 'true' ? '25px' : '10px' ?> !important;
+                bottom: <?php echo esc_html( $ms_show_dots_sm == 'true' ? '25px' : '10px' ) ?> !important;
             <?php endif; ?>
 
             <?php if ( $ms_nav_hrz_aln_sm == 'wide' ): ?>

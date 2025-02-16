@@ -28,9 +28,10 @@ final class Admin
 
     public function check_and_load_live_preview_assets( $screen )
     {
-        if ( $screen->post_type == 'my_slide' )
+        if ( $screen->post_type == 'my_slide' ) {
             add_action( 'enqueue_block_editor_assets', [ $this, 'load_live_preview_assets' ] );
             add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_alignwide_blocks_script' ] );
+        }
     }
 
     public function load_live_preview_assets()
@@ -42,13 +43,13 @@ final class Admin
     private function enqueue_styles()
     {
         wp_enqueue_style( 'ms-meta-box-style', MS_URL . '/assets/admin/css/meta.boxes.css', [], MS_VERSION );
-        wp_enqueue_style( 'ms-selectize-style', MS_URL . '/assets/admin/css/selectize.min.css', [] );
+        wp_enqueue_style( 'ms-selectize-style', MS_URL . '/assets/admin/css/selectize.min.css', [], '0.15.2' );
     }
 
     private function enqueue_scripts()
     {
         wp_enqueue_script( 'ms-toggle-tabs-script', MS_URL . '/assets/admin/js/toggle.tabs.js', [ 'jquery' ], MS_VERSION, true );
-        wp_enqueue_script( 'ms-selectize-script', MS_URL . '/assets/admin/js/selectize.min.js', [ 'jquery' ], false, true );
+        wp_enqueue_script( 'ms-selectize-script', MS_URL . '/assets/admin/js/selectize.min.js', [ 'jquery' ], '0.15.2', true );
         wp_enqueue_script( 'ms-admin-script', MS_URL . '/assets/admin/js/admin.js', [ 'jquery', 'ms-selectize-script' ], MS_VERSION, true );
     }
 
@@ -70,7 +71,7 @@ final class Admin
 
     private function enqueue_live_preview_scripts()
     {
-        wp_enqueue_script( 'ms-live-preview-script', MS_URL . '/assets/admin/js/live.preview.js', [ 'jquery', 'wp-blocks', 'wp-dom' ], MS_VERSION );
+        wp_enqueue_script( 'ms-live-preview-script', MS_URL . '/assets/admin/js/live.preview.js', [ 'jquery', 'wp-blocks', 'wp-dom' ], MS_VERSION, true );
     }
 
     public function enqueue_alignwide_blocks_script()

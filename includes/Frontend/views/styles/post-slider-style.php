@@ -40,87 +40,87 @@ $ms_verticle_align          = ms_get_meta( $ms_post_ID, 'ms_verticle_align', 'st
 
 <style>
 
-#my-slider-<?php echo $ms_post_ID ?> {
+#my-slider-<?php echo esc_html( $ms_post_ID ) ?> {
     .ms-card-header {
-        padding-top: <?php echo "{$ms_aspect_ratio}%" ?> !important;
+        padding-top: <?php echo esc_html( "{$ms_aspect_ratio}%" ) ?> !important;
     }
     .ms-card {
-        min-height: <?php echo "{$ms_min_height}px" ?> !important;
+        min-height: <?php echo esc_html( "{$ms_min_height}px" ) ?> !important;
     }
 
     .ms-card-body {
-        justify-content: <?php echo $ms_verticle_align ?>;
-        align-items: <?php echo $ms_horizontal_align ?>;
+        justify-content: <?php echo esc_html( $ms_verticle_align ) ?>;
+        align-items: <?php echo esc_html( $ms_horizontal_align ) ?>;
     }
 
     .ms-card-body > * {
-        text-align: <?php echo $ms_horizontal_align == 'baseline' ? 'start' : $ms_horizontal_align ?>;
+        text-align: <?php echo esc_html( $ms_horizontal_align == 'baseline' ? 'start' : $ms_horizontal_align ) ?>;
     }
 
     .ms-comment-icon svg {
-        fill: <?php echo $ms_comment_icon_color; ?> !important;
+        fill: <?php echo esc_html( $ms_comment_icon_color ) ?> !important;
         height: <?php echo absint( $ms_comment_fs ) * 1.5 ?>px !important;
         width: <?php echo absint( $ms_comment_fs ) * 1.5 ?>px !important;
     }
 
     .ms-comment {
-        color: <?php echo $ms_comment_color; ?> !important;
-        font-size: <?php echo "{$ms_comment_fs}px" ?> !important;
-        font-weight: <?php echo $ms_comment_fw ?> !important;
+        color: <?php echo esc_html( $ms_comment_color ) ?> !important;
+        font-size: <?php echo esc_html( "{$ms_comment_fs}px" ) ?> !important;
+        font-weight: <?php echo esc_html( $ms_comment_fw ) ?> !important;
     }
 
     .ms-cat-icon svg {
-        fill: <?php echo $ms_category_icon_color; ?> !important;
+        fill: <?php echo esc_html( $ms_category_icon_color ) ?> !important;
         height: <?php echo absint( $ms_category_fs ) * 1.5 ?>px !important;
         width: <?php echo absint( $ms_category_fs ) * 1.5 ?>px !important;
     }
 
     .ms-cat {
-        color: <?php echo $ms_category_color; ?> !important;
-        background-color: <?php echo $ms_category_bg_color; ?> !important;
-        font-size: <?php echo "{$ms_category_fs}px" ?> !important;
-        font-weight: <?php echo $ms_category_fw ?> !important;
+        color: <?php echo esc_html( $ms_category_color ) ?> !important;
+        background-color: <?php echo esc_html( $ms_category_bg_color ) ?> !important;
+        font-size: <?php echo esc_html( "{$ms_category_fs}px" ) ?> !important;
+        font-weight: <?php echo esc_html( $ms_category_fw ) ?> !important;
     }
 
     .ms-tag-icon svg {
-        fill: <?php echo $ms_tag_icon_color; ?> !important;
+        fill: <?php echo esc_html( $ms_tag_icon_color ) ?> !important;
         height: <?php echo absint( $ms_tag_fs ) * 1.5 ?>px !important;
         width: <?php echo absint( $ms_tag_fs ) * 1.5 ?>px !important;
     }
 
     .ms-tag {
-        color: <?php echo $ms_tag_color; ?> !important;
-        background-color: <?php echo $ms_tag_bg_color; ?> !important;
-        font-size: <?php echo "{$ms_tag_fs}px" ?> !important;
-        font-weight: <?php echo $ms_tag_fw ?> !important;
+        color: <?php echo esc_html( $ms_tag_color ) ?> !important;
+        background-color: <?php echo esc_html( $ms_tag_bg_color ); ?> !important;
+        font-size: <?php echo esc_html( "{$ms_tag_fs}px" ) ?> !important;
+        font-weight: <?php echo esc_html( $ms_tag_fw ) ?> !important;
     }
 
     .ms-title {
-        color: <?php echo $ms_title_color; ?> !important;
-        font-size: <?php echo "{$ms_title_fs}px" ?> !important;
-        font-weight: <?php echo $ms_title_fw ?> !important;
+        color: <?php echo esc_html( $ms_title_color ) ?> !important;
+        font-size: <?php echo esc_html( "{$ms_title_fs}px" ) ?> !important;
+        font-weight: <?php echo esc_html( $ms_title_fw ) ?> !important;
     }
 
     .ms-excerpt {
-        color: <?php echo $ms_excerpt_color; ?> !important;
-        font-size: <?php echo "{$ms_excerpt_fs}px" ?> !important;
-        font-weight: <?php echo $ms_excerpt_fw ?> !important;
+        color: <?php echo esc_html( $ms_excerpt_color ) ?> !important;
+        font-size: <?php echo esc_html( "{$ms_excerpt_fs}px" ) ?> !important;
+        font-weight: <?php echo esc_html( $ms_excerpt_fw ) ?> !important;
     }
 
     .ms-read-more {
-        color: <?php echo $ms_read_more_color ?> !important;
+        color: <?php echo esc_html( $ms_read_more_color ) ?> !important;
     }
 
     .ms-author {
-        color: <?php echo $ms_author_color; ?> !important;
-        font-size: <?php echo "{$ms_author_fs}px" ?> !important;
-        font-weight: <?php echo $ms_author_fw ?> !important;
+        color: <?php echo esc_html( $ms_author_color ) ?> !important;
+        font-size: <?php echo esc_html( "{$ms_author_fs}px" ) ?> !important;
+        font-weight: <?php echo esc_html( $ms_author_fw ) ?> !important;
     }
 
     .ms-date {
-        color: <?php echo $ms_date_color; ?> !important;
-        font-size: <?php echo "{$ms_date_fs}px" ?> !important;
-        font-weight: <?php echo $ms_date_fw ?> !important;
+        color: <?php echo esc_html( $ms_date_color ) ?> !important;
+        font-size: <?php echo esc_html( "{$ms_date_fs}px" ) ?> !important;
+        font-weight: <?php echo esc_html( $ms_date_fw ) ?> !important;
     }
 }
 

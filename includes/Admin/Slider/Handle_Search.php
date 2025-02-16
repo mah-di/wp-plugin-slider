@@ -9,9 +9,17 @@ class Handle_Search
 
     public function request_handler()
     {
-        $type           = isset( $_POST[ 'type' ] ) ? sanitize_text_field( $_POST[ 'type' ] ) : '';
-        $post_type      = isset( $_POST[ 'postType' ] ) ? sanitize_text_field( $_POST[ 'postType' ] ) : '';
-        $query_type     = isset( $_POST[ 'queryType' ] ) ? sanitize_text_field( $_POST[ 'queryType' ] ) : '';
+        if ( ! isset( $_POST[ 'security' ] ) )
+            return;
+
+        $nonce          = sanitize_text_field( wp_unslash( $_POST[ 'security' ] ) );
+
+        if ( ! wp_verify_nonce( $nonce, 'ms-ajax-nonce' ) )
+            return;
+
+        $type           = isset( $_POST[ 'type' ] )             ? sanitize_text_field( wp_unslash( $_POST[ 'type' ] ) )           : '';
+        $post_type      = isset( $_POST[ 'postType' ] )         ? sanitize_text_field( wp_unslash( $_POST[ 'postType' ] ) )       : '';
+        $query_type     = isset( $_POST[ 'queryType' ] )        ? sanitize_text_field( wp_unslash( $_POST[ 'queryType' ] ) )      : '';
 
         if ( $type == 'fetch_search' )
             $this->search_handler( $post_type, $query_type );
@@ -22,7 +30,7 @@ class Handle_Search
 
     private function search_handler( $post_type, $query_type )
     {
-        $search_query = isset( $_POST[ 'query' ] ) ? sanitize_text_field( $_POST[ 'query' ] ) : '';
+        $search_query   = isset( $_POST[ 'query' ] )            ? sanitize_text_field( wp_unslash( $_POST[ 'query' ] ) )          : '';
 
         if ( $query_type == 'id' && ( empty( $search_query ) || strlen( $search_query ) < 3 ) ) {
             wp_send_json( [ 'results' => [] ] );
@@ -40,20 +48,8 @@ class Handle_Search
 
         $taxes = null;
 
-        if ( $query_type == 'post_tag' ) {
-            $taxes = ms_get_tags( 'post' );
-
-        } elseif ( $query_type == 'product_tag' ) {
-            $taxes = ms_get_tags( 'product' );
-
-        } elseif ( $query_type == 'my_slide_tag' ) {
-            $taxes = ms_get_tags( 'my_slide' );
-
-        } elseif ( $query_type == 'category' ) {
-            $taxes = ms_get_cats( 'post' );
-
-        } elseif ( $query_type == 'product_cat' ) {
-            $taxes = ms_get_cats( 'product' );
+        if ( in_array( $query_type, [ 'category', 'product_cat', 'post_tag', 'product_tag', 'my_slide_tag' ] ) ) {
+            $taxes = ms_get_terms( $query_type );
 
         } elseif ( $query_type == 'sku' ) {
             $args[ 'meta_query' ]   = [ [
@@ -75,39 +71,29 @@ class Handle_Search
         } elseif ( $query_type == 'onsale' ) {
             $args[ 'post__in' ] = wc_get_product_ids_on_sale();
 
-        } elseif ( $query_type == 'top_rated' ) {
-            $args[ 'meta_key' ] = '_wc_average_rating';
+        } elseif ( in_array( $query_type, [ 'top_rated', 'best_selling' ] ) ) {
+            $meta_key           = ( $query_type == 'top_rated' )            ? '_wc_average_rating'         : 'total_sales';
 
+            $args[ 'meta_key' ] = $meta_key;
             $args[ 'orderby' ]  = 'meta_value_num';
 
             $args[ 'meta_query' ] = [ [
-                'key' => '_wc_average_rating',
-                'value' => 0,
-                'compare' => '>',
-                'type' => 'NUMERIC'
+                'key'           => $meta_key,
+                'value'         => 0,
+                'compare'       => '>',
+                'type'          => 'NUMERIC'
             ] ];
 
-        } elseif ( $query_type == 'best_selling' ) {
-            $args[ 'meta_key' ] = 'total_sales';
-
-            $args[ 'orderby' ]  = 'meta_value_num';
-
-            $args[ 'meta_query' ] = [ [
-                'key' => 'total_sales',
-                'value' => 0,
-                'compare' => '>',
-                'type' => 'NUMERIC'
-            ] ];
         }
 
         $results = [];
 
-        if ( $taxes ) {
+        if ( isset( $taxes ) ) {
 
             foreach ( $taxes as $tax ) {
                 $results[]  = [
-                    'id'    => $tax->term_id,
-                    'name'  => $tax->name
+                    'id'        => $tax->term_id,
+                    'name'      => $tax->name
                 ];
             }
 
@@ -119,9 +105,16 @@ class Handle_Search
                 while ( $query->have_posts() ) {
                     $query->the_post();
 
+                    $name = get_the_title();
+
+                    if ( $query_type == 'sku' ) {
+                        $sku = get_post_meta( get_the_ID(), '_sku', true );
+                        $name = "{$sku} | {$name}";
+                    }
+
                     $results[]  = [
                         'id'    => get_the_ID(),
-                        'name'  => ( $query_type == 'sku' ? get_post_meta( get_the_ID(), '_sku', true ) . ' | ': '' ) . get_the_title(),
+                        'name'  => $name,
                     ];
 
                 }
@@ -132,45 +125,24 @@ class Handle_Search
 
         }
 
-        wp_send_json( [ 'results' => $results ] );
+        wp_send_json( [
+            'results'   => $results
+        ] );
     }
 
     private function query_handler( $post_type, $query_type )
     {
-        $query = isset( $_POST[ 'query' ] ) ? sanitize_text_field( $_POST[ 'query' ] ) : '';
+        $query          = isset( $_POST[ 'query' ] )             ? sanitize_text_field( wp_unslash( $_POST[ 'query' ] ) )          : '';
 
-        $query_IDs = explode( ',', $query );
+        $query_IDs      = explode( ',', $query );
 
-        if ( $query_type == 'category' ) {
-            $rows = get_categories([
-                'include' => $query_IDs,
-            ]);
-
-        } elseif ( $query_type == 'product_cat' ) {
+        if ( in_array( $query_type, [ 'category', 'product_cat', 'post_tag', 'product_tag', 'my_slide_tag' ] ) ) {
             $rows = get_terms([
                 'taxonomy'  => $query_type,
                 'include'   => $query_IDs
             ]);
 
-        } elseif ( $query_type == 'post_tag' ) {
-            $rows = get_terms([
-                'taxonomy'  => $query_type,
-                'include'   => $query_IDs
-            ]);
-
-        } elseif ( $query_type == 'product_tag' ) {
-            $rows = get_terms([
-                'taxonomy'  => $query_type,
-                'include'   => $query_IDs
-            ]);
-
-        } elseif ( $query_type == 'my_slide_tag' ) {
-            $rows = get_terms([
-                'taxonomy'  => $query_type,
-                'include'   => $query_IDs
-            ]);
-
-        } elseif ( in_array( $query_type , [ 'id', 'sku', 'featured', 'onsale', 'top_rated', 'best_selling' ]) ) {
+        } else {
             $rows = get_posts([
                 'post__in'          => $query_IDs,
                 'post_type'         => $post_type,
@@ -178,18 +150,26 @@ class Handle_Search
             ]);
         }
 
-        $results = [];
+        $results        = [];
 
         foreach ( $rows as $row ) {
+            $id             = isset( $row->ID )             ? $row->ID              : $row->term_id;
+            $name           = isset( $row->post_title )     ? $row->post_title      : $row->name;
+
+            if ( $query_type == 'sku' ) {
+                $sku            = get_post_meta( $id, '_sku', true );
+                $name           = "{$sku} | {$name}";
+            }
+
             $results[] = [
-                'id'    => isset( $row->ID ) ? $row->ID : $row->term_id,
-                'name'  => ( $query_type == 'sku' ? get_post_meta( $row->ID, '_sku', true ) . ' | ' : '' ) . ( isset( $row->post_title ) ? $row->post_title : $row->name )
+                'id'    => $id,
+                'name'  => $name
             ];
         }
 
-        wp_send_json([
-            'results' => $results
-        ]);
+        wp_send_json( [
+            'results'   => $results
+        ] );
     }
 
 }

@@ -7,11 +7,11 @@ $ms_verticle_align          = ms_get_meta( $ms_post_ID, 'ms_verticle_align', 'st
 
 <style>
 
-#my-slider-<?php echo $ms_post_ID ?> {
+#my-slider-<?php echo esc_html( $ms_post_ID ) ?> {
     
     .ms-slide-wrapper {
-        justify-content: <?php echo $ms_verticle_align ?>;
-        align-items: <?php echo $ms_horizontal_align ?>;
+        justify-content: <?php echo esc_html( $ms_verticle_align ) ?>;
+        align-items: <?php echo esc_html( $ms_horizontal_align ) ?>;
     }
 }
 

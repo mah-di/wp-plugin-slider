@@ -5,8 +5,6 @@ $ms_ID                      = get_the_ID();
 $ms_query_type              = get_post_meta( $ms_ID, 'ms_query_type', true );
 $ms_query                   = get_post_meta( $ms_ID, 'ms_query', true );
 
-$ms_tags                    = ms_get_all_tags();
-
 $ms_post_type               = get_post_meta( $ms_ID, 'ms_post_type', true );
 $ms_feature_img_size        = get_post_meta( $ms_ID, 'ms_feature_img_size', true );
 $ms_feature_img_ratio       = get_post_meta( $ms_ID, 'ms_feature_img_ratio', true );
@@ -159,6 +157,8 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             <span>Load Content Using</span>
             <div>
                 <div class="switch-field">
+                    <input type="hidden" id="ms_ajax_nonce" value="<?php echo wp_create_nonce( 'ms-ajax-nonce' ); ?>">
+
                     <div class="ms-scoped-field d-none ms-post-field">
                         <input name="ms_query_type" id="ms_query_type_post_cat" type="radio"
                                 value="category"
@@ -563,7 +563,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         min="8"
                         step="1"
-                        value="<?php if( ! empty( $ms_nav_fs ) ) { echo $ms_nav_fs; } ?>"
+                        value="<?php if( ! empty( $ms_nav_fs ) ) { echo esc_html( $ms_nav_fs ); } ?>"
                         name="ms_nav_fs"
                     />
                 </div>
@@ -618,7 +618,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         min="0"
                         max="50"
-                        value="<?php if( ! empty( $ms_nav_radius ) ) { echo $ms_nav_radius; } ?>"
+                        value="<?php if( ! empty( $ms_nav_radius ) ) { echo esc_html( $ms_nav_radius ); } ?>"
                         step="1"
                         name="ms_nav_radius"
                     />
@@ -629,7 +629,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_nav_color ) ) { echo $ms_nav_color; } ?>"
+                        value="<?php if( ! empty( $ms_nav_color ) ) { echo esc_html( $ms_nav_color ); } ?>"
                         name="ms_nav_color"
                     />
                 </div>
@@ -639,7 +639,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_nav_bg_color ) ) { echo $ms_nav_bg_color; } ?>"
+                        value="<?php if( ! empty( $ms_nav_bg_color ) ) { echo esc_html( $ms_nav_bg_color ); } ?>"
                         name="ms_nav_bg_color"
                         data-alpha-enabled="true"
                     />
@@ -650,7 +650,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_nav_bg_hover_color ) ) { echo $ms_nav_bg_hover_color; } ?>"
+                        value="<?php if( ! empty( $ms_nav_bg_hover_color ) ) { echo esc_html( $ms_nav_bg_hover_color ); } ?>"
                         name="ms_nav_bg_hover_color"
                         data-alpha-enabled="true"
                     />
@@ -836,7 +836,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if ( ! empty( $ms_dot_color ) ) { echo $ms_dot_color; } ?>"
+                        value="<?php if ( ! empty( $ms_dot_color ) ) { echo esc_html( $ms_dot_color ); } ?>"
                         name="ms_dot_color"
                     />
                 </div>
@@ -846,7 +846,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_dot_active_color ) ) { echo $ms_dot_active_color; } ?>"
+                        value="<?php if( ! empty( $ms_dot_active_color ) ) { echo esc_html( $ms_dot_active_color ); } ?>"
                         name="ms_dot_active_color"
                     />
                 </div>
@@ -886,7 +886,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 placeholder="Number of items to load"
                 min="0"
                 max="20"
-                value="<?php if( ! empty( $ms_items_to_show ) ) { echo $ms_items_to_show; } ?>"
+                value="<?php if( ! empty( $ms_items_to_show ) ) { echo esc_html( $ms_items_to_show ); } ?>"
                 step="1"
                 name="ms_items_to_show"
             />
@@ -910,7 +910,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         placeholder="Number of items to display at a time on screens >= 1440px"
                         min="1"
                         max="20"
-                        value="<?php if( ! empty( $ms_items_to_display_xl ) ) { echo $ms_items_to_display_xl; } ?>"
+                        value="<?php if( ! empty( $ms_items_to_display_xl ) ) { echo esc_html( $ms_items_to_display_xl ); } ?>"
                         step="1"
                         name="ms_items_to_display_xl"
                     />
@@ -930,7 +930,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         placeholder="Number of items to display at a time on screens 1024px - 1440px"
                         min="1"
                         max="20"
-                        value="<?php if( ! empty( $ms_items_to_display_lg ) ) { echo $ms_items_to_display_lg; } ?>"
+                        value="<?php if( ! empty( $ms_items_to_display_lg ) ) { echo esc_html( $ms_items_to_display_lg ); } ?>"
                         step="1"
                         name="ms_items_to_display_lg"
                     />
@@ -950,7 +950,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         placeholder="Number of items to display at a time on screens 640px - 1024px"
                         min="1"
                         max="20"
-                        value="<?php if( ! empty( $ms_items_to_display_md ) ) { echo $ms_items_to_display_md; } ?>"
+                        value="<?php if( ! empty( $ms_items_to_display_md ) ) { echo esc_html( $ms_items_to_display_md ); } ?>"
                         step="1"
                         name="ms_items_to_display_md"
                     />
@@ -970,7 +970,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         placeholder="Number of items to display at a time on screens < 640px"
                         min="1"
                         max="20"
-                        value="<?php if( ! empty( $ms_items_to_display_sm ) ) { echo $ms_items_to_display_sm; } ?>"
+                        value="<?php if( ! empty( $ms_items_to_display_sm ) ) { echo esc_html( $ms_items_to_display_sm ); } ?>"
                         step="1"
                         name="ms_items_to_display_sm"
                     />
@@ -1491,7 +1491,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 class="field"
                 type="number"
                 placeholder="Distance between items in pixels"
-                value="<?php if( ! empty( $ms_margin_right ) ) { echo $ms_margin_right; } ?>"
+                value="<?php if( ! empty( $ms_margin_right ) ) { echo esc_html( $ms_margin_right ); } ?>"
                 step="1"
                 name="ms_margin_right"
             />
@@ -1503,7 +1503,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 class="ms-color-picker"
                 type="text"
                 placeholder="Background color of the slides"
-                value="<?php if( ! empty( $ms_bg_color ) ) { echo $ms_bg_color; } ?>"
+                value="<?php if( ! empty( $ms_bg_color ) ) { echo esc_html( $ms_bg_color ); } ?>"
                 name="ms_bg_color"
             />
         </div>
@@ -1516,7 +1516,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 placeholder="Minimum height of the slides"
                 min="0"
                 step="5"
-                value="<?php if( ! empty( $ms_min_height ) ) { echo $ms_min_height; } ?>"
+                value="<?php if( ! empty( $ms_min_height ) ) { echo esc_html( $ms_min_height ); } ?>"
                 name="ms_min_height"
             />
         </div>
@@ -1633,7 +1633,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         class="field"
                         type="number"
                         placeholder="Display duration of slides in milliseconds"
-                        value="<?php if( ! empty( $ms_autoplay_timeout ) ) { echo $ms_autoplay_timeout; } ?>"
+                        value="<?php if( ! empty( $ms_autoplay_timeout ) ) { echo esc_html( $ms_autoplay_timeout ); } ?>"
                         step="100"
                         name="ms_autoplay_timeout"
                     />
@@ -1645,7 +1645,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         class="field"
                         type="number"
                         placeholder="Duration of moving to the next slide in milliseconds"
-                        value="<?php if( ! empty( $ms_autoplay_speed ) ) { echo $ms_autoplay_speed; } ?>"
+                        value="<?php if( ! empty( $ms_autoplay_speed ) ) { echo esc_html( $ms_autoplay_speed ); } ?>"
                         step="100"
                         name="ms_autoplay_speed"
                     />
@@ -1688,7 +1688,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Title font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_title_fs ) ) { echo $ms_title_fs; } ?>"
+                        value="<?php if( ! empty( $ms_title_fs ) ) { echo esc_html( $ms_title_fs ); } ?>"
                         step="1"
                         name="ms_title_fs"
                     />
@@ -1742,7 +1742,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_title_color ) ) { echo $ms_title_color; } ?>"
+                        value="<?php if( ! empty( $ms_title_color ) ) { echo esc_html( $ms_title_color ); } ?>"
                         name="ms_title_color"
                     />
                 </div>
@@ -1778,7 +1778,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_comment_icon_color ) ) { echo $ms_comment_icon_color; } ?>"
+                        value="<?php if( ! empty( $ms_comment_icon_color ) ) { echo esc_html( $ms_comment_icon_color ); } ?>"
                         name="ms_comment_icon_color"
                     />
                 </div>
@@ -1790,7 +1790,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Comment count font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_comment_fs ) ) { echo $ms_comment_fs; } ?>"
+                        value="<?php if( ! empty( $ms_comment_fs ) ) { echo esc_html( $ms_comment_fs ); } ?>"
                         step="1"
                         name="ms_comment_fs"
                     />
@@ -1844,7 +1844,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_comment_color ) ) { echo $ms_comment_color; } ?>"
+                        value="<?php if( ! empty( $ms_comment_color ) ) { echo esc_html( $ms_comment_color ); } ?>"
                         name="ms_comment_color"
                     />
                 </div>
@@ -1880,7 +1880,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_category_icon_color ) ) { echo $ms_category_icon_color; } ?>"
+                        value="<?php if( ! empty( $ms_category_icon_color ) ) { echo esc_html( $ms_category_icon_color ); } ?>"
                         name="ms_category_icon_color"
                     />
                 </div>
@@ -1892,7 +1892,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Category font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_category_fs ) ) { echo $ms_category_fs; } ?>"
+                        value="<?php if( ! empty( $ms_category_fs ) ) { echo esc_html( $ms_category_fs ); } ?>"
                         step="1"
                         name="ms_category_fs"
                     />
@@ -1946,7 +1946,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_category_color ) ) { echo $ms_category_color; } ?>"
+                        value="<?php if( ! empty( $ms_category_color ) ) { echo esc_html( $ms_category_color ); } ?>"
                         name="ms_category_color"
                     />
                 </div>
@@ -1956,7 +1956,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_category_bg_color ) ) { echo $ms_category_bg_color; } ?>"
+                        value="<?php if( ! empty( $ms_category_bg_color ) ) { echo esc_html( $ms_category_bg_color ); } ?>"
                         name="ms_category_bg_color"
                     />
                 </div>
@@ -1994,7 +1994,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Tags font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_tag_fs ) ) { echo $ms_tag_fs; } ?>"
+                        value="<?php if( ! empty( $ms_tag_fs ) ) { echo esc_html( $ms_tag_fs ); } ?>"
                         step="1"
                         name="ms_tag_fs"
                     />
@@ -2048,7 +2048,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_tag_icon_color ) ) { echo $ms_tag_icon_color; } ?>"
+                        value="<?php if( ! empty( $ms_tag_icon_color ) ) { echo esc_html( $ms_tag_icon_color ); } ?>"
                         name="ms_tag_icon_color"
                     />
                 </div>
@@ -2058,7 +2058,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_tag_color ) ) { echo $ms_tag_color; } ?>"
+                        value="<?php if( ! empty( $ms_tag_color ) ) { echo esc_html( $ms_tag_color ); } ?>"
                         name="ms_tag_color"
                     />
                 </div>
@@ -2068,7 +2068,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_tag_bg_color ) ) { echo $ms_tag_bg_color; } ?>"
+                        value="<?php if( ! empty( $ms_tag_bg_color ) ) { echo esc_html( $ms_tag_bg_color ); } ?>"
                         name="ms_tag_bg_color"
                     />
                 </div>
@@ -2106,7 +2106,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Excerpt length"
                         min="1"
-                        value="<?php if( ! empty( $ms_excerpt_length ) ) { echo $ms_excerpt_length; } ?>"
+                        value="<?php if( ! empty( $ms_excerpt_length ) ) { echo esc_html( $ms_excerpt_length ); } ?>"
                         step="1"
                         name="ms_excerpt_length"
                     />
@@ -2118,7 +2118,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         class="field"
                         type="text"
                         placeholder="Read More"
-                        value="<?php if( ! empty( $ms_read_more_text ) ) { echo $ms_read_more_text; } ?>"
+                        value="<?php if( ! empty( $ms_read_more_text ) ) { echo esc_html( $ms_read_more_text ); } ?>"
                         name="ms_read_more_text"
                     />
                 </div>
@@ -2130,7 +2130,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Excerpt font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_excerpt_fs ) ) { echo $ms_excerpt_fs; } ?>"
+                        value="<?php if( ! empty( $ms_excerpt_fs ) ) { echo esc_html( $ms_excerpt_fs ); } ?>"
                         step="1"
                         name="ms_excerpt_fs"
                     />
@@ -2184,7 +2184,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_excerpt_color ) ) { echo $ms_excerpt_color; } ?>"
+                        value="<?php if( ! empty( $ms_excerpt_color ) ) { echo esc_html( $ms_excerpt_color ); } ?>"
                         name="ms_excerpt_color"
                     />
                 </div>
@@ -2194,7 +2194,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_read_more_color ) ) { echo $ms_read_more_color; } ?>"
+                        value="<?php if( ! empty( $ms_read_more_color ) ) { echo esc_html( $ms_read_more_color ); } ?>"
                         name="ms_read_more_color"
                     />
                 </div>
@@ -2251,7 +2251,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Author font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_author_fs ) ) { echo $ms_author_fs; } ?>"
+                        value="<?php if( ! empty( $ms_author_fs ) ) { echo esc_html( $ms_author_fs ); } ?>"
                         step="1"
                         name="ms_author_fs"
                     />
@@ -2305,7 +2305,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_author_color ) ) { echo $ms_author_color; } ?>"
+                        value="<?php if( ! empty( $ms_author_color ) ) { echo esc_html( $ms_author_color ); } ?>"
                         name="ms_author_color"
                     />
                 </div>
@@ -2343,7 +2343,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Date font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_date_fs ) ) { echo $ms_date_fs; } ?>"
+                        value="<?php if( ! empty( $ms_date_fs ) ) { echo esc_html( $ms_date_fs ); } ?>"
                         step="1"
                         name="ms_date_fs"
                     />
@@ -2397,7 +2397,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_date_color ) ) { echo $ms_date_color; } ?>"
+                        value="<?php if( ! empty( $ms_date_color ) ) { echo esc_html( $ms_date_color ); } ?>"
                         name="ms_date_color"
                     />
                 </div>
@@ -2416,7 +2416,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Stock status font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_stock_fs ) ) { echo $ms_stock_fs; } ?>"
+                        value="<?php if( ! empty( $ms_stock_fs ) ) { echo esc_html( $ms_stock_fs ); } ?>"
                         step="1"
                         name="ms_stock_fs"
                     />
@@ -2470,7 +2470,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_stock_color ) ) { echo $ms_stock_color; } ?>"
+                        value="<?php if( ! empty( $ms_stock_color ) ) { echo esc_html( $ms_stock_color ); } ?>"
                         name="ms_stock_color"
                     />
                 </div>
@@ -2489,7 +2489,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Sales count font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_sales_fs ) ) { echo $ms_sales_fs; } ?>"
+                        value="<?php if( ! empty( $ms_sales_fs ) ) { echo esc_html( $ms_sales_fs ); } ?>"
                         step="1"
                         name="ms_sales_fs"
                     />
@@ -2543,7 +2543,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_sales_color ) ) { echo $ms_sales_color; } ?>"
+                        value="<?php if( ! empty( $ms_sales_color ) ) { echo esc_html( $ms_sales_color ); } ?>"
                         name="ms_sales_color"
                     />
                 </div>
@@ -2562,7 +2562,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Rating font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_review_fs ) ) { echo $ms_review_fs; } ?>"
+                        value="<?php if( ! empty( $ms_review_fs ) ) { echo esc_html( $ms_review_fs ); } ?>"
                         step="1"
                         name="ms_review_fs"
                     />
@@ -2616,7 +2616,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_review_color ) ) { echo $ms_review_color; } ?>"
+                        value="<?php if( ! empty( $ms_review_color ) ) { echo esc_html( $ms_review_color ); } ?>"
                         name="ms_review_color"
                     />
                 </div>
@@ -2635,7 +2635,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Active price font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_active_price_fs ) ) { echo $ms_active_price_fs; } ?>"
+                        value="<?php if( ! empty( $ms_active_price_fs ) ) { echo esc_html( $ms_active_price_fs ); } ?>"
                         step="1"
                         name="ms_active_price_fs"
                     />
@@ -2689,7 +2689,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_active_price_color ) ) { echo $ms_active_price_color; } ?>"
+                        value="<?php if( ! empty( $ms_active_price_color ) ) { echo esc_html( $ms_active_price_color ); } ?>"
                         name="ms_active_price_color"
                     />
                 </div>
@@ -2701,7 +2701,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Previous price font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_prev_price_fs ) ) { echo $ms_prev_price_fs; } ?>"
+                        value="<?php if( ! empty( $ms_prev_price_fs ) ) { echo esc_html( $ms_prev_price_fs ); } ?>"
                         step="1"
                         name="ms_prev_price_fs"
                     />
@@ -2755,7 +2755,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_prev_price_color ) ) { echo $ms_prev_price_color; } ?>"
+                        value="<?php if( ! empty( $ms_prev_price_color ) ) { echo esc_html( $ms_prev_price_color ); } ?>"
                         name="ms_prev_price_color"
                     />
                 </div>
@@ -2774,7 +2774,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Cart button font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_woo_button_fs ) ) { echo $ms_woo_button_fs; } ?>"
+                        value="<?php if( ! empty( $ms_woo_button_fs ) ) { echo esc_html( $ms_woo_button_fs ); } ?>"
                         step="1"
                         name="ms_woo_button_fs"
                     />
@@ -2828,7 +2828,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_woo_button_color ) ) { echo $ms_woo_button_color; } ?>"
+                        value="<?php if( ! empty( $ms_woo_button_color ) ) { echo esc_html( $ms_woo_button_color ); } ?>"
                         name="ms_woo_button_color"
                     />
                 </div>
@@ -2838,7 +2838,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_woo_button_bg_color ) ) { echo $ms_woo_button_bg_color; } ?>"
+                        value="<?php if( ! empty( $ms_woo_button_bg_color ) ) { echo esc_html( $ms_woo_button_bg_color ); } ?>"
                         name="ms_woo_button_bg_color"
                     />
                 </div>
@@ -2917,13 +2917,15 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         // making ajax request to fetch data
         function makeAjax( query, type, queryType, callback, isLoad = false ) {
             let postType = $('#ms_post_type').val()
+            let nonce = $('#ms_ajax_nonce').val()
 
             let data = {
                 action: 'custom_search',
                 postType: postType,
                 type: type,
                 queryType: queryType,
-                query: query
+                query: query,
+                security: nonce
             }
 
             $.ajax({
@@ -2985,7 +2987,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         if (queryType && queryType.length) {
             $('#ms_query').selectize({...selectizeData});
 
-            let query = '<?php echo $ms_query ?>'
+            let query = '<?php echo esc_html( $ms_query ) ?>'
 
             if ( query && query.length ) {
 

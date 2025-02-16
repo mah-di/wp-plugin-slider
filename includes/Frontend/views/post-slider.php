@@ -17,18 +17,21 @@ if ( $posts->have_posts() ):
 
 ?>
 <div
-    id="my-slider-<?php echo $ms_post_ID ?>"
+    id="my-slider-<?php echo esc_html( $ms_post_ID ) ?>"
     class="owl-carousel owl-theme"
 >
 
     <?php while ( $posts->have_posts() ): $posts->the_post() ?>
 
     <div class="ms-card">
+        <?php if ( has_post_thumbnail() ) : ?>
         <div class="ms-card-header">
-            <?php if ( has_post_thumbnail() ) { the_post_thumbnail( $ms_feature_img_size ); } ?>
+            <?php the_post_thumbnail( $ms_feature_img_size ) ?>
         </div>
+        <?php endif ?>
+
         <div class="ms-card-body">
-            
+
             <?php if ( $ms_show_category == 'show' ): ?>
             <div class="ms-cat-wrapper">
                 <span class="ms-cat-heading ms-cat-icon">
@@ -38,11 +41,11 @@ if ( $posts->have_posts() ):
                 <?php
                 $post_ID = get_the_ID();
 
-                $cats = ms_get_the_category( $post_ID, $ms_post_type );
+                $cats = ms_get_the_terms( $post_ID, 'category' );
                 foreach ( $cats as $cat ): ?>
                 
-                    <a href="<?php echo esc_url( get_category_link( $cat ) ); ?>" class="ms-cat">
-                        <?php echo $cat->name; ?>
+                    <a href="<?php echo esc_url( get_category_link( $cat ) ) ?>" class="ms-cat">
+                        <?php echo esc_html( $cat->name ) ?>
                     </a>
                 
                 <?php endforeach; ?>
@@ -53,8 +56,9 @@ if ( $posts->have_posts() ):
             <div class="ms-tag-wrapper">
 
                 <?php
+                $post_ID = get_the_ID();
 
-                $tags = ms_get_the_tags( $post_ID, $ms_post_type );
+                $tags = ms_get_the_terms( $post_ID, 'post_tag' );
 
                 if ( $tags ) :
                 ?>
@@ -67,8 +71,8 @@ if ( $posts->have_posts() ):
 
                     foreach ( $tags as $tag ): ?>
                     
-                        <a href="<?php echo esc_url( get_category_link( $tag ) ); ?>" class="ms-tag">
-                            <?php echo $tag->name; ?>
+                        <a href="<?php echo esc_url( get_category_link( $tag ) ) ?>" class="ms-tag">
+                            <?php echo esc_html( $tag->name ) ?>
                         </a>
                 
                     <?php
@@ -87,7 +91,7 @@ if ( $posts->have_posts() ):
 
                 <span class="ms-comment">
 
-                    <?php echo get_comments_number(); ?>
+                    <?php echo esc_html( get_comments_number() ); ?>
 
                 </span>
 
@@ -122,7 +126,7 @@ if ( $posts->have_posts() ):
                     $last_name = get_the_author_meta( 'last_name', $author_ID );
 
                     if ( ! empty( $first_name ) || ! empty( $last_name ) ):
-                        echo "{$first_name} {$last_name}";
+                        echo esc_html( "{$first_name} {$last_name}" );
                     else:
                         the_author();
                     endif;

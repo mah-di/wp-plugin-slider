@@ -12,7 +12,7 @@ final class My_Slider_Post_Type
         $labels = [
             'name'               => esc_html__( 'My Slider', 'my-slider' ),
             'singular_name'      => esc_html__( 'My Slider', 'my-slider' ),
-            'add_new'            => esc_html__( 'Add New','my-slider' ),
+            'add_new'            => esc_html__( 'Add New', 'my-slider' ),
             'add_new_item'       => esc_html__( 'Add New Slider', 'my-slider' ),
             'edit_item'          => esc_html__( 'Edit Slider', 'my-slider' ),
             'new_item'           => esc_html__( 'New Slider', 'my-slider' ),

@@ -1,11 +1,14 @@
 <?php
 
-$ms_items_to_display_xl                 = ms_get_meta( $ms_post_ID, 'ms_items_to_display_xl', 4 );
+$default_min_xl                         = $ms_post_type == 'product' ? 4 : 1;
+$ms_items_to_display_xl                 = ms_get_meta( $ms_post_ID, 'ms_items_to_display_xl', $default_min_xl );
 
-$ms_min_lg                              = $ms_items_to_display_xl < 3 ? $ms_items_to_display_xl : 3;
+$default_min_lg                         = $ms_post_type == 'product' ? 3 : 1;
+$ms_min_lg                              = $ms_items_to_display_xl < 3 ? $ms_items_to_display_xl : $default_min_lg;
 $ms_items_to_display_lg                 = ms_get_meta( $ms_post_ID, 'ms_items_to_display_lg', $ms_min_lg );
 
-$ms_min_md                              = $ms_items_to_display_lg < 2 ? $ms_items_to_display_lg : 2;
+$default_min_md                         = $ms_post_type == 'product' ? 2 : 1;
+$ms_min_md                              = $ms_items_to_display_lg < 2 ? $ms_items_to_display_lg : $default_min_md;
 $ms_items_to_display_md                 = ms_get_meta( $ms_post_ID, 'ms_items_to_display_md', $ms_min_md );
 
 $ms_items_to_display_sm                 = ms_get_meta( $ms_post_ID, 'ms_items_to_display_sm', 1 );
@@ -36,52 +39,52 @@ jQuery(document).ready(function($) {
             responsive: {
                 0: {
                     items: <?php echo absint( $ms_items_to_display_sm ) ?>,
-                    nav: <?php echo $ms_show_nav_sm ?>,
-                    dots: <?php echo $ms_show_dots_sm ?>,
+                    nav: <?php echo esc_html( $ms_show_nav_sm ) ?>,
+                    dots: <?php echo esc_html( $ms_show_dots_sm ) ?>,
                 },
                 640: {
                     items: <?php echo absint( $ms_items_to_display_md ) ?>,
-                    nav: <?php echo $ms_show_nav ?>,
-                    dots: <?php echo $ms_show_dots ?>,
+                    nav: <?php echo esc_html( $ms_show_nav ) ?>,
+                    dots: <?php echo esc_html( $ms_show_dots ) ?>,
                 },
                 1024: {
                     items: <?php echo absint( $ms_items_to_display_lg ) ?>,
-                    nav: <?php echo $ms_show_nav ?>,
-                    dots: <?php echo $ms_show_dots ?>,
+                    nav: <?php echo esc_html( $ms_show_nav ) ?>,
+                    dots: <?php echo esc_html( $ms_show_dots ) ?>,
                 },
                 1440: {
                     items: <?php echo absint( $ms_items_to_display_xl ) ?>,
-                    nav: <?php echo $ms_show_nav ?>,
-                    dots: <?php echo $ms_show_dots ?>,
+                    nav: <?php echo esc_html( $ms_show_nav ) ?>,
+                    dots: <?php echo esc_html( $ms_show_dots ) ?>,
                 }
             },
             margin: <?php echo absint( $ms_margin_right ) ?>,
-            loop: <?php echo $ms_loop ?>,
-            center: <?php echo $ms_center ?>,
+            loop: <?php echo esc_html( $ms_loop ) ?>,
+            center: <?php echo esc_html( $ms_center ) ?>,
             navText: ['<span>‹</span>', '<span>›</span>'],
-            dotsEach: <?php echo $ms_show_dots_foreach ?>,
-            autoplay: <?php echo $ms_autoplay ?>,
+            dotsEach: <?php echo esc_html( $ms_show_dots_foreach ) ?>,
+            autoplay: <?php echo esc_html( $ms_autoplay ) ?>,
             autoplayTimeout: <?php echo absint( $ms_autoplay_timeout ) ?>,
-            autoplayHoverPause: <?php echo $ms_autoplay_hover_pause ?>,
+            autoplayHoverPause: <?php echo esc_html( $ms_autoplay_hover_pause ) ?>,
             smartSpeed: <?php echo absint( $ms_autoplay_speed ) == 0 ? 'false' : absint( $ms_autoplay_speed ) ?>
         };
 
         <?php if( $ms_animation_exit ): ?>
-        options.animateOut = '<?php echo $ms_animation_exit ?> ms-animate';
+        options.animateOut = '<?php echo esc_html( $ms_animation_exit ) ?> ms-animate';
         <?php endif ?>
 
         <?php if( $ms_animation_entrance ): ?>
-        options.animateIn = '<?php echo $ms_animation_entrance ?> ms-animate ms-animate-in';
+        options.animateIn = '<?php echo esc_html( $ms_animation_entrance ) ?> ms-animate ms-animate-in';
         <?php endif ?>
 
-        const owl = $('#my-slider-<?php echo $ms_post_ID ?>');
+        const owl = $('#my-slider-<?php echo esc_html( $ms_post_ID ) ?>');
 
         owl.owlCarousel('destroy');
 
         owl.owlCarousel( options );
     }
 
-    $(window).on('load resize ms.slider.<?php echo $ms_post_ID ?>.width.set', loadCarousel);
+    $(window).on('load resize ms.slider.<?php echo esc_html( $ms_post_ID ) ?>.width.set', loadCarousel);
 
 });
 </script>
