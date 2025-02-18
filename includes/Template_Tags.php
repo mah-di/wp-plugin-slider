@@ -30,7 +30,8 @@ function ms_get_terms( $taxonomy )
     return $terms;
 }
 
-function ms_get_the_terms( $post_ID = false, $taxonomy ) {
+function ms_get_the_terms( $post_ID = false, $taxonomy )
+{
 	$terms = get_the_terms( $post_ID, $taxonomy );
 
     if ( ! $terms || is_wp_error( $terms ) )

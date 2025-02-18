@@ -111,19 +111,22 @@
     height: 100%;
 }
 
-.ms-cat-wrapper,
-.ms-tag-wrapper,
-.ms-comment-wrapper {
+.ms-meta-wrapper {
     margin-bottom: 8px;
     display: flex;
     align-items: center;
     justify-content: start;
-    gap: 10px;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-.ms-cat-heading,
-.ms-tag-heading {
-    font-size: 10px;
+.ms-cat-wrapper,
+.ms-date-wrapper,
+.ms-comment-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
 }
 
 .ms-cat,
@@ -148,6 +151,12 @@
 .ms-title a {
     margin: 0 0 15px !important;
     text-decoration: none !important;
+}
+
+.ms-author-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .ms-stock-status {

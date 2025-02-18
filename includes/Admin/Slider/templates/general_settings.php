@@ -43,20 +43,22 @@ $ms_autoplay_hover_pause    = get_post_meta( $ms_ID, 'ms_autoplay_hover_pause', 
 $ms_autoplay_speed          = get_post_meta( $ms_ID, 'ms_autoplay_speed', true );
 
 $ms_bg_color                = get_post_meta( $ms_ID, 'ms_bg_color', true );
+$ms_meta_fs                 = get_post_meta( $ms_ID, 'ms_meta_fs', true );
 $ms_comment_icon_color      = get_post_meta( $ms_ID, 'ms_comment_icon_color', true );
-$ms_comment_fs              = get_post_meta( $ms_ID, 'ms_comment_fs', true );
 $ms_comment_fw              = get_post_meta( $ms_ID, 'ms_comment_fw', true );
 $ms_comment_color           = get_post_meta( $ms_ID, 'ms_comment_color', true );
 $ms_category_icon_color     = get_post_meta( $ms_ID, 'ms_category_icon_color', true );
-$ms_category_fs             = get_post_meta( $ms_ID, 'ms_category_fs', true );
 $ms_category_fw             = get_post_meta( $ms_ID, 'ms_category_fw', true );
 $ms_category_color          = get_post_meta( $ms_ID, 'ms_category_color', true );
 $ms_category_bg_color       = get_post_meta( $ms_ID, 'ms_category_bg_color', true );
-$ms_tag_icon_color          = get_post_meta( $ms_ID, 'ms_tag_icon_color', true );
-$ms_tag_fs                  = get_post_meta( $ms_ID, 'ms_tag_fs', true );
-$ms_tag_fw                  = get_post_meta( $ms_ID, 'ms_tag_fw', true );
-$ms_tag_color               = get_post_meta( $ms_ID, 'ms_tag_color', true );
-$ms_tag_bg_color            = get_post_meta( $ms_ID, 'ms_tag_bg_color', true );
+$ms_date_icon_color         = get_post_meta( $ms_ID, 'ms_date_icon_color', true );
+$ms_date_fw                 = get_post_meta( $ms_ID, 'ms_date_fw', true );
+$ms_date_color              = get_post_meta( $ms_ID, 'ms_date_color', true );
+// $ms_tag_icon_color          = get_post_meta( $ms_ID, 'ms_tag_icon_color', true );
+// $ms_tag_fs                  = get_post_meta( $ms_ID, 'ms_tag_fs', true );
+// $ms_tag_fw                  = get_post_meta( $ms_ID, 'ms_tag_fw', true );
+// $ms_tag_color               = get_post_meta( $ms_ID, 'ms_tag_color', true );
+// $ms_tag_bg_color            = get_post_meta( $ms_ID, 'ms_tag_bg_color', true );
 $ms_title_fs                = get_post_meta( $ms_ID, 'ms_title_fs', true );
 $ms_title_fw                = get_post_meta( $ms_ID, 'ms_title_fw', true );
 $ms_title_color             = get_post_meta( $ms_ID, 'ms_title_color', true );
@@ -67,9 +69,6 @@ $ms_read_more_color         = get_post_meta( $ms_ID, 'ms_read_more_color', true 
 $ms_author_fs               = get_post_meta( $ms_ID, 'ms_author_fs', true );
 $ms_author_fw               = get_post_meta( $ms_ID, 'ms_author_fw', true );
 $ms_author_color            = get_post_meta( $ms_ID, 'ms_author_color', true );
-$ms_date_fs                 = get_post_meta( $ms_ID, 'ms_date_fs', true );
-$ms_date_fw                 = get_post_meta( $ms_ID, 'ms_date_fw', true );
-$ms_date_color              = get_post_meta( $ms_ID, 'ms_date_color', true );
 
 $ms_sales_fs                = get_post_meta( $ms_ID, 'ms_sales_fs', true );
 $ms_sales_fw                = get_post_meta( $ms_ID, 'ms_sales_fw', true );
@@ -1751,6 +1750,19 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
 
         <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+            <span>Meta Font Size</span>
+            <input
+                class="field"
+                type="number"
+                placeholder="Post meta font size"
+                min="6"
+                value="<?php if( ! empty( $ms_metat_fs ) ) { echo esc_html( $ms_meta_fs ); } ?>"
+                step="1"
+                name="ms_meta_fs"
+            />
+        </div>
+
+        <div class="field-wrapper ms-post-field ms-scoped-field d-none">
             <span>Comment Count</span>
             <div>
                 <span class="switch radio-switch fixed-width-lg">
@@ -1780,19 +1792,6 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="text"
                         value="<?php if( ! empty( $ms_comment_icon_color ) ) { echo esc_html( $ms_comment_icon_color ); } ?>"
                         name="ms_comment_icon_color"
-                    />
-                </div>
-    
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
-                    <span>Font Size</span>
-                    <input
-                        class="field"
-                        type="number"
-                        placeholder="Comment count font size"
-                        min="6"
-                        value="<?php if( ! empty( $ms_comment_fs ) ) { echo esc_html( $ms_comment_fs ); } ?>"
-                        step="1"
-                        name="ms_comment_fs"
                     />
                 </div>
     
@@ -1886,19 +1885,6 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 </div>
     
                 <div class="field-wrapper ms-post-field ms-scoped-field d-none">
-                    <span>Font Size</span>
-                    <input
-                        class="field"
-                        type="number"
-                        placeholder="Category font size"
-                        min="6"
-                        value="<?php if( ! empty( $ms_category_fs ) ) { echo esc_html( $ms_category_fs ); } ?>"
-                        step="1"
-                        name="ms_category_fs"
-                    />
-                </div>
-    
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
                     <span>Font Weight</span>
                     <select
                         class="field"
@@ -1965,17 +1951,106 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
         </div>
 
         <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+            <span>Date</span>
+            <div>
+                <span class="switch radio-switch fixed-width-lg">
+                    <input name="ms_show_date" id="ms_show_date_on" type="radio"
+                        value="show"
+                        <?php if ( ! empty( $ms_show_date ) && $ms_show_date == 'show' ) { echo 'checked'; } ?>
+                    >
+                    <label for="ms_show_date_on" class="radioCheck">Show</label>
+                    <input name="ms_show_date" id="ms_show_date_off" type="radio"
+                        value="hide"
+                        <?php if ( ! empty( $ms_show_date ) && $ms_show_date == 'hide' ) { echo 'checked'; } ?>
+                    >
+                    <label for="ms_show_date_off" class="radioCheck">Hide</label>
+                    <a class="slide-button btn"></a>
+                </span>
+            </div>
+        </div>
+
+        <div class="field-wrapper mt-20 ms-post-field ms-scoped-field d-none" id="ms_date_settings">
+            <span></span>
+            <div class="field-group">
+
+                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                    <span>Icon Color</span>
+                    <input
+                        class="ms-color-picker"
+                        type="text"
+                        value="<?php if( ! empty( $ms_date_icon_color ) ) { echo esc_html( $ms_date_icon_color ); } ?>"
+                        name="ms_date_icon_color"
+                    />
+                </div>
+
+                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                    <span>Font Weight</span>
+                    <select
+                        class="field"
+                        name="ms_date_fw"
+                    >
+                        <option
+                            class="d-none"
+                            value="" 
+                        >
+                            Select An Option
+                        </option>
+
+                        <option
+                            value="200"
+                            <?php if ( ! empty( $ms_date_fw ) && $ms_date_fw == '200' ) { echo 'selected'; } ?>
+                        >
+                            Thin
+                        </option>
+    
+                        <option
+                            value="500"
+                            <?php if ( ! empty( $ms_date_fw ) && $ms_date_fw == '500' ) { echo 'selected'; } ?>
+                        >
+                            Medium
+                        </option>
+    
+                        <option
+                            value="700"
+                            <?php if ( ! empty( $ms_date_fw ) && $ms_date_fw == '700' ) { echo 'selected'; } ?>
+                        >
+                            Bold
+                        </option>
+    
+                        <option
+                            value="1000"
+                            <?php if ( ! empty( $ms_date_fw ) && $ms_date_fw == '1000' ) { echo 'selected'; } ?>
+                        >
+                            Bolder
+                        </option>
+                    </select>
+                </div>
+
+                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                    <span>Color</span>
+                    <input
+                        class="ms-color-picker"
+                        type="text"
+                        value="<?php if( ! empty( $ms_date_color ) ) { echo esc_html( $ms_date_color ); } ?>"
+                        name="ms_date_color"
+                    />
+                </div>
+
+            </div>
+        </div>
+
+        <!-- <div class="field-wrapper ms-post-field ms-scoped-field d-none">
             <span>Tags</span>
             <div>
                 <span class="switch radio-switch fixed-width-lg">
                     <input name="ms_show_tags" id="ms_show_tags_on" type="radio"
                         value="show"
-                        <?php if ( ! empty( $ms_show_tags ) && $ms_show_tags == 'show' ) { echo 'checked'; } ?>
+                        <?php // if ( ! empty( $ms_show_tags ) && $ms_show_tags == 'show' ) { echo 'checked'; } ?>
                     >
                     <label for="ms_show_tags_on" class="radioCheck">Show</label>
                     <input name="ms_show_tags" id="ms_show_tags_off" type="radio"
                         value="hide"
-                        <?php if ( ! empty( $ms_show_tags ) && $ms_show_tags == 'hide' ) { echo 'checked'; } ?>
+                        <?php // if ( ! empty( $ms_show_tags ) && $ms_show_tags == 'hide' ) { echo 'checked'; } ?>
                     >
                     <label for="ms_show_tags_off" class="radioCheck">Hide</label>
                     <a class="slide-button btn"></a>
@@ -1994,7 +2069,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Tags font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_tag_fs ) ) { echo esc_html( $ms_tag_fs ); } ?>"
+                        value="<?php // if( ! empty( $ms_tag_fs ) ) { echo esc_html( $ms_tag_fs ); } ?>"
                         step="1"
                         name="ms_tag_fs"
                     />
@@ -2015,28 +2090,28 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="200"
-                            <?php if ( ! empty( $ms_tag_fw ) && $ms_tag_fw == '200' ) { echo 'selected'; } ?>
+                            <?php // if ( ! empty( $ms_tag_fw ) && $ms_tag_fw == '200' ) { echo 'selected'; } ?>
                         >
                             Thin
                         </option>
     
                         <option
                             value="500"
-                            <?php if ( ! empty( $ms_tag_fw ) && $ms_tag_fw == '500' ) { echo 'selected'; } ?>
+                            <?php // if ( ! empty( $ms_tag_fw ) && $ms_tag_fw == '500' ) { echo 'selected'; } ?>
                         >
                             Medium
                         </option>
     
                         <option
                             value="700"
-                            <?php if ( ! empty( $ms_tag_fw ) && $ms_tag_fw == '700' ) { echo 'selected'; } ?>
+                            <?php // if ( ! empty( $ms_tag_fw ) && $ms_tag_fw == '700' ) { echo 'selected'; } ?>
                         >
                             Bold
                         </option>
     
                         <option
                             value="1000"
-                            <?php if ( ! empty( $ms_tag_fw ) && $ms_tag_fw == '1000' ) { echo 'selected'; } ?>
+                            <?php // if ( ! empty( $ms_tag_fw ) && $ms_tag_fw == '1000' ) { echo 'selected'; } ?>
                         >
                             Bolder
                         </option>
@@ -2048,7 +2123,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_tag_icon_color ) ) { echo esc_html( $ms_tag_icon_color ); } ?>"
+                        value="<?php // if( ! empty( $ms_tag_icon_color ) ) { echo esc_html( $ms_tag_icon_color ); } ?>"
                         name="ms_tag_icon_color"
                     />
                 </div>
@@ -2058,7 +2133,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_tag_color ) ) { echo esc_html( $ms_tag_color ); } ?>"
+                        value="<?php // if( ! empty( $ms_tag_color ) ) { echo esc_html( $ms_tag_color ); } ?>"
                         name="ms_tag_color"
                     />
                 </div>
@@ -2068,13 +2143,13 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <input
                         class="ms-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_tag_bg_color ) ) { echo esc_html( $ms_tag_bg_color ); } ?>"
+                        value="<?php // if( ! empty( $ms_tag_bg_color ) ) { echo esc_html( $ms_tag_bg_color ); } ?>"
                         name="ms_tag_bg_color"
                     />
                 </div>
     
             </div>
-        </div>
+        </div> -->
 
         <div class="field-wrapper ms-post-field ms-scoped-field d-none">
             <span>Excerpt</span>
@@ -2307,98 +2382,6 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="text"
                         value="<?php if( ! empty( $ms_author_color ) ) { echo esc_html( $ms_author_color ); } ?>"
                         name="ms_author_color"
-                    />
-                </div>
-    
-            </div>
-        </div>
-
-        <div class="field-wrapper ms-post-field ms-scoped-field d-none">
-            <span>Date</span>
-            <div>
-                <span class="switch radio-switch fixed-width-lg">
-                    <input name="ms_show_date" id="ms_show_date_on" type="radio"
-                        value="show"
-                        <?php if ( ! empty( $ms_show_date ) && $ms_show_date == 'show' ) { echo 'checked'; } ?>
-                    >
-                    <label for="ms_show_date_on" class="radioCheck">Show</label>
-                    <input name="ms_show_date" id="ms_show_date_off" type="radio"
-                        value="hide"
-                        <?php if ( ! empty( $ms_show_date ) && $ms_show_date == 'hide' ) { echo 'checked'; } ?>
-                    >
-                    <label for="ms_show_date_off" class="radioCheck">Hide</label>
-                    <a class="slide-button btn"></a>
-                </span>
-            </div>
-        </div>
-
-        <div class="field-wrapper mt-20 ms-post-field ms-scoped-field d-none" id="ms_date_settings">
-            <span></span>
-            <div class="field-group">
-    
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
-                    <span>Font Size</span>
-                    <input
-                        class="field"
-                        type="number"
-                        placeholder="Date font size"
-                        min="6"
-                        value="<?php if( ! empty( $ms_date_fs ) ) { echo esc_html( $ms_date_fs ); } ?>"
-                        step="1"
-                        name="ms_date_fs"
-                    />
-                </div>
-    
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
-                    <span>Font Weight</span>
-                    <select
-                        class="field"
-                        name="ms_date_fw"
-                    >
-                        <option
-                            class="d-none"
-                            value="" 
-                        >
-                            Select An Option
-                        </option>
-
-                        <option
-                            value="200"
-                            <?php if ( ! empty( $ms_date_fw ) && $ms_date_fw == '200' ) { echo 'selected'; } ?>
-                        >
-                            Thin
-                        </option>
-    
-                        <option
-                            value="500"
-                            <?php if ( ! empty( $ms_date_fw ) && $ms_date_fw == '500' ) { echo 'selected'; } ?>
-                        >
-                            Medium
-                        </option>
-    
-                        <option
-                            value="700"
-                            <?php if ( ! empty( $ms_date_fw ) && $ms_date_fw == '700' ) { echo 'selected'; } ?>
-                        >
-                            Bold
-                        </option>
-    
-                        <option
-                            value="1000"
-                            <?php if ( ! empty( $ms_date_fw ) && $ms_date_fw == '1000' ) { echo 'selected'; } ?>
-                        >
-                            Bolder
-                        </option>
-                    </select>
-                </div>
-    
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
-                    <span>Color</span>
-                    <input
-                        class="ms-color-picker"
-                        type="text"
-                        value="<?php if( ! empty( $ms_date_color ) ) { echo esc_html( $ms_date_color ); } ?>"
-                        name="ms_date_color"
                     />
                 </div>
     
