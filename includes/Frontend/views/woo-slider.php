@@ -62,7 +62,7 @@ if ( $posts->have_posts() ):
                 No Reviews Yet
                 <?php else: ?>
 
-                <?php echo wc_get_rating_html( $ms_rating ) ?>
+                <?php echo wp_kses_post( wc_get_rating_html( $ms_rating ) ) ?>
                 (<?php echo esc_html( $ms_review_count ) ?>)
 
                 <?php endif; ?>
@@ -73,7 +73,7 @@ if ( $posts->have_posts() ):
             <div class="ms-pricing">
                 <?php if ( $fixed_price ) : ?>
 
-                    <span class="ms-price-main"><?php echo $fixed_price ?></span>
+                    <span class="ms-price-main"><?php echo wp_kses_post( $fixed_price ) ?></span>
 
                 <?php elseif ( $product->is_type( 'variable' ) ) : ?>
 
@@ -85,8 +85,8 @@ if ( $posts->have_posts() ):
 
                 <?php else: ?>
 
-                    <span class="ms-price-main"><?php echo $sale_price ?></span>
-                    <del class="ms-price-strike"><?php echo $regular_price ?></del>
+                    <span class="ms-price-main"><?php echo wp_kses_post( $sale_price ) ?></span>
+                    <del class="ms-price-strike"><?php echo wp_kses_post( $regular_price ) ?></del>
 
                 <?php endif ?>
             </div>

@@ -36,7 +36,7 @@ if ( $posts->have_posts() ):
         >
             <?php
                 $content = get_the_content();
-                echo do_blocks( $content );
+                echo wp_kses_post( do_blocks( $content ) );
             ?>
         </div>
     </div>

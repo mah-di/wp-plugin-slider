@@ -30,6 +30,7 @@ class Handle_Search
 
     private function search_handler( $post_type, $query_type )
     {
+        // phpcs:ignore WordPress.Security.NonceVerification.Missing
         $search_query   = isset( $_POST[ 'query' ] )            ? sanitize_text_field( wp_unslash( $_POST[ 'query' ] ) )          : '';
 
         if ( $query_type == 'id' && ( empty( $search_query ) || strlen( $search_query ) < 3 ) ) {
@@ -55,16 +56,18 @@ class Handle_Search
             $args[ 'meta_query' ]   = [ [
                     'key'           => '_sku',
                     'value'         => $search_query,
-                    'compare'       => 'LIKE'
+                    'compare'       => 'EXISTS'
                 ] ];
 
             unset( $args[ 's' ] );
 
         } elseif ( $query_type == 'featured' ) {
+            $featured = get_term_by( 'name', 'featured', 'product_visibility' );
+
             $args[ 'tax_query' ]   = [ [
                     'taxonomy' => 'product_visibility',
-                    'field'    => 'name',
-                    'terms'    => 'featured',
+                    'field'    => 'term_id',
+                    'terms'    => $featured->term_id,
                     'operator' => 'IN'
                 ] ];
 
@@ -74,8 +77,9 @@ class Handle_Search
         } elseif ( in_array( $query_type, [ 'top_rated', 'best_selling' ] ) ) {
             $meta_key           = ( $query_type == 'top_rated' )            ? '_wc_average_rating'         : 'total_sales';
 
-            $args[ 'meta_key' ] = $meta_key;
-            $args[ 'orderby' ]  = 'meta_value_num';
+            $args[ 'orderby' ]  = [
+                'meta_value_num' => 'DESC'
+            ];
 
             $args[ 'meta_query' ] = [ [
                 'key'           => $meta_key,
@@ -132,6 +136,7 @@ class Handle_Search
 
     private function query_handler( $post_type, $query_type )
     {
+        // phpcs:ignore WordPress.Security.NonceVerification.Missing
         $query          = isset( $_POST[ 'query' ] )             ? sanitize_text_field( wp_unslash( $_POST[ 'query' ] ) )          : '';
 
         $query_IDs      = explode( ',', $query );

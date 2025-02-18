@@ -14,7 +14,7 @@ function ms_the_excerpt( $word_count = 30, $read_more_text = 'Read More' )
         esc_html( $read_more_text )
     );
 
-    echo esc_html( $trimmed_excerpt ) . $read_more_link;
+    echo esc_html( $trimmed_excerpt ) . wp_kses_post( $read_more_link );
 }
 
 function ms_get_terms( $taxonomy )

@@ -51,10 +51,12 @@ final class Frontend
             }
 
             if ( $ms_query_type == 'featured' && empty( $ms_query ) ) {
+                $featured = get_term_by( 'name', 'featured', 'product_visibility' );
+
                 $args[ 'tax_query' ]    = [ [
                     'taxonomy'              => 'product_visibility',
                     'field'                 => 'name',
-                    'terms'                 => 'featured',
+                    'terms'                 => $featured->term_id,
                     'operator'              => 'IN'
                 ] ];
 
@@ -68,8 +70,9 @@ final class Frontend
             if ( in_array( $ms_query_type, [ 'top_rated', 'best_selling' ] ) ) {
                 $meta_key = ( $ms_query_type == 'top_rated' ) ? '_wc_average_rating' : 'total_sales';
 
-                $args[ 'meta_key' ]     = $meta_key;
-                $args[ 'orderby' ]      = 'meta_value_num';
+                $args[ 'orderby' ]      = [
+                    'meta_value_num' => 'DESC'
+                ];
 
                 if ( empty( $ms_query ) ) {
                     $args[ 'meta_query' ] = [ [

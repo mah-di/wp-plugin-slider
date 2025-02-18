@@ -157,7 +157,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             <span>Load Content Using</span>
             <div>
                 <div class="switch-field">
-                    <input type="hidden" id="ms_ajax_nonce" value="<?php echo wp_create_nonce( 'ms-ajax-nonce' ); ?>">
+                    <input type="hidden" id="ms_ajax_nonce" value="<?php echo esc_html( wp_create_nonce( 'ms-ajax-nonce' ) ) ?>">
 
                     <div class="ms-scoped-field d-none ms-post-field">
                         <input name="ms_query_type" id="ms_query_type_post_cat" type="radio"
@@ -2933,14 +2933,14 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 type: 'POST',
                 dataType: 'json',
                 data: data,
-                success: function (response) {console.log(response.results)
+                success: function (response) {
                     callback(response.results);
                 },
                 error: function () {
                     if (isLoad) {
                         callback();
                     } else {
-                        console.log("Failed to fetch data")
+                        console.log("Failed to fetch My Slider data")
                     }
                 }
             });

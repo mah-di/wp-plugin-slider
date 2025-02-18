@@ -131,8 +131,10 @@ final class Meta_Boxes
 
     private function set_post_ID()
     {
+        // phpcs:disable WordPress.Security.NonceVerification.Missing
         if ( ! empty( $_POST[ 'post_ID' ] ) )
             $this->post_ID = absint( $_POST[ 'post_ID' ] );
+        // phpcs:enable
     }
 
     public function meta_save( $post_id )
@@ -195,8 +197,9 @@ final class Meta_Boxes
 
         if ( isset( $_POST[ 'ms_query' ] ) ) {
             if ( is_array( $_POST[ 'ms_query' ] ) ) {
+                // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
                 $unslashed_array = array_map( 'wp_unslash', $_POST[ 'ms_query' ] );
-                $sanitized_array = array_map( 'sanitize_text_field', $unslashed_array );
+                $sanitized_array = array_map( 'absint', $unslashed_array );
 
                 $query = implode( ',', $sanitized_array );
 
@@ -214,6 +217,7 @@ final class Meta_Boxes
 
     private function save_meta( $meta_key, $meta_value_type )
     {
+        // phpcs:disable WordPress.Security.NonceVerification.Missing
         if ( ! isset( $_POST[ $meta_key ] ) || $_POST[ $meta_key ] === '' )
             return;
 
@@ -224,6 +228,7 @@ final class Meta_Boxes
 
         if ( $meta_value_type === 'int' )
             $this->save_int_meta( $meta_key, $meta_value );
+        // phpcs:enable
     }
 
     private function save_text_meta( $meta_key, $meta_value )
