@@ -57,21 +57,24 @@ jQuery(document).ready(function ($) {
         }
     ]
 
-    function toggleNavSettings(name, target) {
+    function toggleOptionSettings(name, target) {
         let isShowSettings = $(`input[name=${name}]:checked`).val()
         let settings = $(target)
+        let defaultView = settings.data('default')
+
+        settings.hide()
 
         if (['true', 'show'].includes(isShowSettings))
             settings.show()
 
-        if (['false', 'hide'].includes(isShowSettings))
-            settings.hide()
+        if (!isShowSettings && defaultView == 'show')
+            settings.show()
     }
 
-    $(window).on('load', () => optionsToggleMapper.forEach(optionsToggler => toggleNavSettings(optionsToggler.name, optionsToggler.target)))
+    $(window).on('load', () => optionsToggleMapper.forEach(optionsToggler => toggleOptionSettings(optionsToggler.name, optionsToggler.target)))
 
     optionsToggleMapper.forEach(optionsToggler => {
-        $(`input[name=${optionsToggler.name}]`).on('change', () => toggleNavSettings(optionsToggler.name, optionsToggler.target))
+        $(`input[name=${optionsToggler.name}]`).on('change', () => toggleOptionSettings(optionsToggler.name, optionsToggler.target))
     })
 
     $('#ms_animation_entrance').selectize({ placeholder: "Select An Option" })

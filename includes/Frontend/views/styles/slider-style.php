@@ -10,7 +10,7 @@ $ms_nav_position                            = ms_get_meta( $ms_post_ID, 'ms_nav_
 $ms_nav_position_sm                         = ms_get_meta( $ms_post_ID, 'ms_nav_position_sm', $ms_nav_position );
 [ $ms_nav_vrt_aln_sm, $ms_nav_hrz_aln_sm ]  = explode( '-', $ms_nav_position_sm );
 
-$ms_nav_color                               = ms_get_meta( $ms_post_ID, 'ms_nav_color', '#333333' );
+$ms_nav_color                               = ms_get_meta( $ms_post_ID, 'ms_nav_color', '#fefefe' );
 $ms_nav_radius                              = ms_get_meta( $ms_post_ID, 'ms_nav_radius', '2' );
 $ms_nav_fs                                  = ms_get_meta( $ms_post_ID, 'ms_nav_fs', '24' );
 $ms_nav_fw                                  = ms_get_meta( $ms_post_ID, 'ms_nav_fw', '500' );
