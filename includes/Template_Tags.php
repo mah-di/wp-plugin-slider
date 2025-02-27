@@ -1,6 +1,6 @@
 <?php
 
-function ms_the_excerpt( $word_count = 30, $read_more_text = 'Read More' )
+function cs_the_excerpt( $word_count = 30, $read_more_text = 'Read More' )
 {
     global $post;
 
@@ -9,7 +9,7 @@ function ms_the_excerpt( $word_count = 30, $read_more_text = 'Read More' )
     $trimmed_excerpt = wp_trim_words( $excerpt, $word_count );
 
     $read_more_link = sprintf(
-        ' <a href="%s" class="ms-read-more">%s</a>',
+        ' <a href="%s" class="cs-read-more">%s</a>',
         esc_url( get_permalink( $post ) ),
         esc_html( $read_more_text )
     );
@@ -17,7 +17,7 @@ function ms_the_excerpt( $word_count = 30, $read_more_text = 'Read More' )
     echo esc_html( $trimmed_excerpt ) . wp_kses_post( $read_more_link );
 }
 
-function ms_get_terms( $taxonomy )
+function cs_get_terms( $taxonomy )
 {
     $terms = get_terms( [
         'taxonomy'      => $taxonomy,
@@ -30,7 +30,7 @@ function ms_get_terms( $taxonomy )
     return $terms;
 }
 
-function ms_get_the_terms( $post_ID = false, $taxonomy )
+function cs_get_the_terms( $post_ID = false, $taxonomy )
 {
 	$terms = get_the_terms( $post_ID, $taxonomy );
 
@@ -40,7 +40,7 @@ function ms_get_the_terms( $post_ID = false, $taxonomy )
     return $terms;
 }
 
-function ms_get_meta( int $post_ID, string $meta_key, int|string $default_val = '' )
+function cs_get_meta( int $post_ID, string $meta_key, int|string $default_val = '' )
 {
     $val = get_post_meta( $post_ID, $meta_key, true );
 

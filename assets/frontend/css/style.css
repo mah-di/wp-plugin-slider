@@ -30,10 +30,6 @@
     width: 50px !important;
     height: 50px !important;
     border: none !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
     cursor: pointer !important;
     transition: all 0.3s ease !important;
     z-index: 10 !important;
@@ -59,7 +55,7 @@
     transition: all 0.3s ease !important;
 }
 
-.ms-card {
+.cs-card {
     display: flex !important;
     flex-direction: column !important;
     margin: 0 !important;
@@ -68,7 +64,7 @@
     overflow: hidden;
 }
 
-.ms-slide-wrapper {
+.cs-slide-wrapper {
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -77,22 +73,22 @@
     flex-direction: column !important;
 }
 
-.ms-slide-wrapper > .alignfull,
-.ms-slide-wrapper > .alignwide {
+.cs-slide-wrapper > .alignfull,
+.cs-slide-wrapper > .alignwide {
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
 
-.ms-slide-wrapper > *:not(.alignwide):not(.alignfull) {
+.cs-slide-wrapper > *:not(.alignwide):not(.alignfull) {
     padding: 0 4%;
 }
 
-.ms-card-header {
+.cs-card-header {
     width: 100%;
     position: relative;
 }
 
-.ms-card-header img {
+.cs-card-header img {
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
@@ -102,7 +98,7 @@
     object-fit: cover !important;
 }
 
-.ms-card-body {
+.cs-card-body {
     flex: 1;
     display: flex !important;
     flex-direction: column !important;
@@ -111,7 +107,7 @@
     height: 100%;
 }
 
-.ms-meta-wrapper {
+.cs-meta-wrapper {
     margin-bottom: 8px;
     display: flex;
     align-items: center;
@@ -120,17 +116,17 @@
     flex-wrap: wrap;
 }
 
-.ms-cat-wrapper,
-.ms-date-wrapper,
-.ms-comment-wrapper {
+.cs-cat-wrapper,
+.cs-date-wrapper,
+.cs-comment-wrapper {
     display: flex;
     align-items: center;
     justify-content: start;
     gap: 10px;
 }
 
-.ms-cat,
-.ms-tag {
+.cs-cat,
+.cs-tag {
     border-radius: 50px;
     font-size: 12px;
     margin: 0 2px;
@@ -142,24 +138,24 @@
     text-decoration: none !important;
 }
 
-.ms-card-body p {
+.cs-card-body p {
     font-size: 13px;
     margin: 0 0 40px;
 }
 
-.ms-title,
-.ms-title a {
+.cs-title,
+.cs-title a {
     margin: 0 0 15px !important;
     text-decoration: none !important;
 }
 
-.ms-author-wrapper {
+.cs-author-wrapper {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.ms-stock-status {
+.cs-stock-status {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -170,21 +166,21 @@
     border-radius: 2px;
 }
 
-.ms-stock-status:hover {
+.cs-stock-status:hover {
     background-color: #fcfcfc !important;
 }
 
-.ms-review {
+.cs-review {
     display: flex !important;
     align-items: center !important;
     gap: 10px !important;
 }
 
-.ms-review .star-rating {
+.cs-review .star-rating {
     margin: 0 !important;
 }
 
-.ms-pricing {
+.cs-pricing {
     margin-top: 10px;
     display: flex;
     gap: 10px;
@@ -192,11 +188,11 @@
     align-items: center;
 }
 
-.ms-add-to-cart {
+.cs-add-to-cart {
     width: 100%;
 }
 
-.ms-add-to-cart a {
+.cs-add-to-cart a {
     text-decoration: none !important;
     margin-top: 10px !important;
     display: block !important;
@@ -208,15 +204,15 @@
     line-height: 1.5 !important;
 }
 
-.ms-add-to-cart a.added {
+.cs-add-to-cart a.added {
     display: none !important;
 }
 
-.ms-author {
+.cs-author {
     margin: 0;
 }
 
-.ms-author-img img {
+.cs-author-img img {
     height: 24px !important;
     width: 24px !important;
     border-radius: 50% !important;

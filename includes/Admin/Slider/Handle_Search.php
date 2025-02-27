@@ -14,7 +14,7 @@ class Handle_Search
 
         $nonce          = sanitize_text_field( wp_unslash( $_POST[ 'security' ] ) );
 
-        if ( ! wp_verify_nonce( $nonce, 'ms-ajax-nonce' ) )
+        if ( ! wp_verify_nonce( $nonce, 'cs-ajax-nonce' ) )
             return;
 
         $type           = isset( $_POST[ 'type' ] )             ? sanitize_text_field( wp_unslash( $_POST[ 'type' ] ) )           : '';
@@ -49,8 +49,8 @@ class Handle_Search
 
         $taxes = null;
 
-        if ( in_array( $query_type, [ 'category', 'product_cat', 'post_tag', 'product_tag', 'my_slide_tag' ] ) ) {
-            $taxes = ms_get_terms( $query_type );
+        if ( in_array( $query_type, [ 'category', 'product_cat', 'post_tag', 'product_tag', 'commerce_slide_tag' ] ) ) {
+            $taxes = cs_get_terms( $query_type );
 
         } elseif ( $query_type == 'sku' ) {
             $args[ 'meta_query' ]   = [ [
@@ -141,7 +141,7 @@ class Handle_Search
 
         $query_IDs      = explode( ',', $query );
 
-        if ( in_array( $query_type, [ 'category', 'product_cat', 'post_tag', 'product_tag', 'my_slide_tag' ] ) ) {
+        if ( in_array( $query_type, [ 'category', 'product_cat', 'post_tag', 'product_tag', 'commerce_slide_tag' ] ) ) {
             $rows = get_terms([
                 'taxonomy'  => $query_type,
                 'include'   => $query_IDs

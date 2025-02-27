@@ -1,113 +1,113 @@
 <?php
 
-$ms_feature_img_ratio       = trim( ms_get_meta( $ms_post_ID, 'ms_feature_img_ratio', '16:9' ) );
-[ $ms_width, $ms_height ]   = explode( ':', $ms_feature_img_ratio );
-$ms_aspect_ratio            = ( absint( $ms_height ) / absint( $ms_width ) ) * 100;
+$cs_feature_img_ratio       = trim( cs_get_meta( $cs_post_ID, 'cs_feature_img_ratio', '16:9' ) );
+[ $cs_width, $cs_height ]   = explode( ':', $cs_feature_img_ratio );
+$cs_aspect_ratio            = ( absint( $cs_height ) / absint( $cs_width ) ) * 100;
 
-$ms_meta_fs                 = ms_get_meta( $ms_post_ID, 'ms_meta_fs', 12 );
-$ms_comment_fw              = ms_get_meta( $ms_post_ID, 'ms_comment_fw', 500 );
-$ms_comment_icon_color      = ms_get_meta( $ms_post_ID, 'ms_comment_icon_color', '#333333' );
-$ms_comment_color           = ms_get_meta( $ms_post_ID, 'ms_comment_color', '#333333' );
-$ms_category_icon_color     = ms_get_meta( $ms_post_ID, 'ms_category_icon_color', '#333333' );
-$ms_category_fw             = ms_get_meta( $ms_post_ID, 'ms_category_fw', 500 );
-$ms_category_color          = ms_get_meta( $ms_post_ID, 'ms_category_color', '#333333' );
-$ms_category_bg_color       = ms_get_meta( $ms_post_ID, 'ms_category_bg_color', '#eeeeee' );
-$ms_date_icon_color         = ms_get_meta( $ms_post_ID, 'ms_date_icon_color', '#333333' );
-$ms_date_fw                 = ms_get_meta( $ms_post_ID, 'ms_date_fw', 500 );
-$ms_date_color              = ms_get_meta( $ms_post_ID, 'ms_date_color', '#333333' );
-$ms_title_fs                = ms_get_meta( $ms_post_ID, 'ms_title_fs', 18 );
-$ms_title_fw                = ms_get_meta( $ms_post_ID, 'ms_title_fw', 700 );
-$ms_title_color             = ms_get_meta( $ms_post_ID, 'ms_title_color', '#000000' );
-$ms_excerpt_fs              = ms_get_meta( $ms_post_ID, 'ms_excerpt_fs', 12 );
-$ms_excerpt_fw              = ms_get_meta( $ms_post_ID, 'ms_excerpt_fw', 500 );
-$ms_excerpt_color           = ms_get_meta( $ms_post_ID, 'ms_excerpt_color', '#111111' );
-$ms_read_more_color         = ms_get_meta( $ms_post_ID, 'ms_read_more_color', '#333333' );
-$ms_author_fs               = ms_get_meta( $ms_post_ID, 'ms_author_fs', 12 );
-$ms_author_fw               = ms_get_meta( $ms_post_ID, 'ms_author_fw', 500 );
-$ms_author_color            = ms_get_meta( $ms_post_ID, 'ms_author_color', '#333333' );
+$cs_meta_fs                 = cs_get_meta( $cs_post_ID, 'cs_meta_fs', 12 );
+$cs_comment_fw              = cs_get_meta( $cs_post_ID, 'cs_comment_fw', 500 );
+$cs_comment_icon_color      = cs_get_meta( $cs_post_ID, 'cs_comment_icon_color', '#333333' );
+$cs_comment_color           = cs_get_meta( $cs_post_ID, 'cs_comment_color', '#333333' );
+$cs_category_icon_color     = cs_get_meta( $cs_post_ID, 'cs_category_icon_color', '#333333' );
+$cs_category_fw             = cs_get_meta( $cs_post_ID, 'cs_category_fw', 500 );
+$cs_category_color          = cs_get_meta( $cs_post_ID, 'cs_category_color', '#333333' );
+$cs_category_bg_color       = cs_get_meta( $cs_post_ID, 'cs_category_bg_color', '#eeeeee' );
+$cs_date_icon_color         = cs_get_meta( $cs_post_ID, 'cs_date_icon_color', '#333333' );
+$cs_date_fw                 = cs_get_meta( $cs_post_ID, 'cs_date_fw', 500 );
+$cs_date_color              = cs_get_meta( $cs_post_ID, 'cs_date_color', '#333333' );
+$cs_title_fs                = cs_get_meta( $cs_post_ID, 'cs_title_fs', 18 );
+$cs_title_fw                = cs_get_meta( $cs_post_ID, 'cs_title_fw', 700 );
+$cs_title_color             = cs_get_meta( $cs_post_ID, 'cs_title_color', '#000000' );
+$cs_excerpt_fs              = cs_get_meta( $cs_post_ID, 'cs_excerpt_fs', 12 );
+$cs_excerpt_fw              = cs_get_meta( $cs_post_ID, 'cs_excerpt_fw', 500 );
+$cs_excerpt_color           = cs_get_meta( $cs_post_ID, 'cs_excerpt_color', '#111111' );
+$cs_read_more_color         = cs_get_meta( $cs_post_ID, 'cs_read_more_color', '#333333' );
+$cs_author_fs               = cs_get_meta( $cs_post_ID, 'cs_author_fs', 12 );
+$cs_author_fw               = cs_get_meta( $cs_post_ID, 'cs_author_fw', 500 );
+$cs_author_color            = cs_get_meta( $cs_post_ID, 'cs_author_color', '#333333' );
 
-$ms_min_height              = ms_get_meta( $ms_post_ID, 'ms_min_height', 'auto' );
-$ms_horizontal_align        = ms_get_meta( $ms_post_ID, 'ms_horizontal_align', 'baseline' );
-$ms_verticle_align          = ms_get_meta( $ms_post_ID, 'ms_verticle_align', 'start' );
+$cs_min_height              = cs_get_meta( $cs_post_ID, 'cs_min_height', 'auto' );
+$cs_horizontal_align        = cs_get_meta( $cs_post_ID, 'cs_horizontal_align', 'baseline' );
+$cs_verticle_align          = cs_get_meta( $cs_post_ID, 'cs_verticle_align', 'start' );
 
 ?>
 
 <style>
 
-#my-slider-<?php echo esc_html( $ms_post_ID ) ?> {
-    .ms-card-header {
-        padding-top: <?php echo esc_html( "{$ms_aspect_ratio}%" ) ?> !important;
+#commerce-slider-<?php echo esc_html( $cs_post_ID ) ?> {
+    .cs-card-header {
+        padding-top: <?php echo esc_html( "{$cs_aspect_ratio}%" ) ?> !important;
     }
-    .ms-card {
-        min-height: <?php echo esc_html( "{$ms_min_height}px" ) ?> !important;
-    }
-
-    .ms-card-body {
-        justify-content: <?php echo esc_html( $ms_verticle_align ) ?>;
-        align-items: <?php echo esc_html( $ms_horizontal_align ) ?>;
+    .cs-card {
+        min-height: <?php echo esc_html( "{$cs_min_height}px" ) ?> !important;
     }
 
-    .ms-card-body > * {
-        text-align: <?php echo esc_html( $ms_horizontal_align == 'baseline' ? 'start' : $ms_horizontal_align ) ?>;
+    .cs-card-body {
+        justify-content: <?php echo esc_html( $cs_verticle_align ) ?>;
+        align-items: <?php echo esc_html( $cs_horizontal_align ) ?>;
     }
 
-    .ms-comment-icon {
-        fill: <?php echo esc_html( $ms_comment_icon_color ) ?> !important;
-        height: <?php echo absint( $ms_meta_fs ) * 1.5 ?>px !important;
-        width: <?php echo absint( $ms_meta_fs ) * 1.5 ?>px !important;
+    .cs-card-body > * {
+        text-align: <?php echo esc_html( $cs_horizontal_align == 'baseline' ? 'start' : $cs_horizontal_align ) ?>;
     }
 
-    .ms-comment {
-        color: <?php echo esc_html( $ms_comment_color ) ?> !important;
-        font-size: <?php echo esc_html( "{$ms_meta_fs}px" ) ?> !important;
-        font-weight: <?php echo esc_html( $ms_comment_fw ) ?> !important;
+    .cs-comment-icon {
+        fill: <?php echo esc_html( $cs_comment_icon_color ) ?> !important;
+        height: <?php echo absint( $cs_meta_fs ) * 1.5 ?>px !important;
+        width: <?php echo absint( $cs_meta_fs ) * 1.5 ?>px !important;
     }
 
-    .ms-cat-icon {
-        fill: <?php echo esc_html( $ms_category_icon_color ) ?> !important;
-        height: <?php echo absint( $ms_meta_fs ) * 1.5 ?>px !important;
-        width: <?php echo absint( $ms_meta_fs ) * 1.5 ?>px !important;
+    .cs-comment {
+        color: <?php echo esc_html( $cs_comment_color ) ?> !important;
+        font-size: <?php echo esc_html( "{$cs_meta_fs}px" ) ?> !important;
+        font-weight: <?php echo esc_html( $cs_comment_fw ) ?> !important;
     }
 
-    .ms-cat {
-        color: <?php echo esc_html( $ms_category_color ) ?> !important;
-        background-color: <?php echo esc_html( $ms_category_bg_color ) ?> !important;
-        font-size: <?php echo esc_html( "{$ms_meta_fs}px" ) ?> !important;
-        font-weight: <?php echo esc_html( $ms_category_fw ) ?> !important;
+    .cs-cat-icon {
+        fill: <?php echo esc_html( $cs_category_icon_color ) ?> !important;
+        height: <?php echo absint( $cs_meta_fs ) * 1.5 ?>px !important;
+        width: <?php echo absint( $cs_meta_fs ) * 1.5 ?>px !important;
     }
 
-    .ms-date-icon {
-        fill: <?php echo esc_html( $ms_date_icon_color ) ?> !important;
-        height: <?php echo absint( $ms_meta_fs ) * 1.5 ?>px !important;
-        width: <?php echo absint( $ms_meta_fs ) * 1.5 ?>px !important;
+    .cs-cat {
+        color: <?php echo esc_html( $cs_category_color ) ?> !important;
+        background-color: <?php echo esc_html( $cs_category_bg_color ) ?> !important;
+        font-size: <?php echo esc_html( "{$cs_meta_fs}px" ) ?> !important;
+        font-weight: <?php echo esc_html( $cs_category_fw ) ?> !important;
     }
 
-    .ms-date {
-        color: <?php echo esc_html( $ms_date_color ) ?> !important;
-        font-size: <?php echo esc_html( "{$ms_meta_fs}px" ) ?> !important;
-        font-weight: <?php echo esc_html( $ms_date_fw ) ?> !important;
+    .cs-date-icon {
+        fill: <?php echo esc_html( $cs_date_icon_color ) ?> !important;
+        height: <?php echo absint( $cs_meta_fs ) * 1.5 ?>px !important;
+        width: <?php echo absint( $cs_meta_fs ) * 1.5 ?>px !important;
     }
 
-    .ms-title {
-        color: <?php echo esc_html( $ms_title_color ) ?> !important;
-        font-size: <?php echo esc_html( "{$ms_title_fs}px" ) ?> !important;
-        font-weight: <?php echo esc_html( $ms_title_fw ) ?> !important;
+    .cs-date {
+        color: <?php echo esc_html( $cs_date_color ) ?> !important;
+        font-size: <?php echo esc_html( "{$cs_meta_fs}px" ) ?> !important;
+        font-weight: <?php echo esc_html( $cs_date_fw ) ?> !important;
     }
 
-    .ms-excerpt {
-        color: <?php echo esc_html( $ms_excerpt_color ) ?> !important;
-        font-size: <?php echo esc_html( "{$ms_excerpt_fs}px" ) ?> !important;
-        font-weight: <?php echo esc_html( $ms_excerpt_fw ) ?> !important;
+    .cs-title {
+        color: <?php echo esc_html( $cs_title_color ) ?> !important;
+        font-size: <?php echo esc_html( "{$cs_title_fs}px" ) ?> !important;
+        font-weight: <?php echo esc_html( $cs_title_fw ) ?> !important;
     }
 
-    .ms-read-more {
-        color: <?php echo esc_html( $ms_read_more_color ) ?> !important;
+    .cs-excerpt {
+        color: <?php echo esc_html( $cs_excerpt_color ) ?> !important;
+        font-size: <?php echo esc_html( "{$cs_excerpt_fs}px" ) ?> !important;
+        font-weight: <?php echo esc_html( $cs_excerpt_fw ) ?> !important;
     }
 
-    .ms-author {
-        color: <?php echo esc_html( $ms_author_color ) ?> !important;
-        font-size: <?php echo esc_html( "{$ms_author_fs}px" ) ?> !important;
-        font-weight: <?php echo esc_html( $ms_author_fw ) ?> !important;
+    .cs-read-more {
+        color: <?php echo esc_html( $cs_read_more_color ) ?> !important;
+    }
+
+    .cs-author {
+        color: <?php echo esc_html( $cs_author_color ) ?> !important;
+        font-size: <?php echo esc_html( "{$cs_author_fs}px" ) ?> !important;
+        font-weight: <?php echo esc_html( $cs_author_fw ) ?> !important;
     }
 }
 

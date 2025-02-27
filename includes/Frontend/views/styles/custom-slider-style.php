@@ -1,17 +1,17 @@
 <?php
 
-$ms_horizontal_align        = ms_get_meta( $ms_post_ID, 'ms_horizontal_align', 'baseline' );
-$ms_verticle_align          = ms_get_meta( $ms_post_ID, 'ms_verticle_align', 'start' );
+$cs_horizontal_align        = cs_get_meta( $cs_post_ID, 'cs_horizontal_align', 'baseline' );
+$cs_verticle_align          = cs_get_meta( $cs_post_ID, 'cs_verticle_align', 'start' );
 
 ?>
 
 <style>
 
-#my-slider-<?php echo esc_html( $ms_post_ID ) ?> {
+#commerce-slider-<?php echo esc_html( $cs_post_ID ) ?> {
     
-    .ms-slide-wrapper {
-        justify-content: <?php echo esc_html( $ms_verticle_align ) ?>;
-        align-items: <?php echo esc_html( $ms_horizontal_align ) ?>;
+    .cs-slide-wrapper {
+        justify-content: <?php echo esc_html( $cs_verticle_align ) ?>;
+        align-items: <?php echo esc_html( $cs_horizontal_align ) ?>;
     }
 }
 

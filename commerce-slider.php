@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name:			    My Slider
+ * Plugin Name:			    Commerce Slider
  * Plugin URI:  			https://github.com/mah-di/wp-plugin-slider
  * Description: 			This plugin allows you to showcase your blog posts in a beautiful slider with multiple options, It is responsive ready so it will work perfectly on different devices like mobile and iPad.
  * Version:     			1.0.0
@@ -11,14 +11,14 @@
  * Author URI:  			https://github.com/mah-di
  * License: 				GPLv2 or later
  * License URI: 			https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: 			my-slider
+ * Text Domain: 			commerce-slider
  * Domain Path:  		    /languages
 */
 
-final class My_Slider
+final class Commerce_Slider
 {
     private $plugin_version, $plugin_url, $plugin_path;
-    private $shortcode_prefix = 'my-slider';
+    private $shortcode_prefix = 'commerce-slider';
 
     public function __construct() {
         $this->plugin_version = microtime();
@@ -27,24 +27,24 @@ final class My_Slider
 
         $this->define_constants();
 
-        require_once MS_PATH . '/includes/Dependencies/Dependencies.php';
+        require_once CS_PATH . '/includes/Dependencies/Dependencies.php';
 
-        require_once MS_PATH . '/includes/Template_Tags.php';
+        require_once CS_PATH . '/includes/Template_Tags.php';
 
         if ( is_admin() )
-            require_once MS_PATH . '/includes/Admin/Admin.php';
+            require_once CS_PATH . '/includes/Admin/Admin.php';
 
         else
-            require_once MS_PATH . '/includes/Frontend/Frontend.php';
+            require_once CS_PATH . '/includes/Frontend/Frontend.php';
 
     }
 
     private function define_constants() {
-        define('MS_VERSION', $this->plugin_version);
-        define('MS_URL', $this->plugin_url);
-        define('MS_PATH', $this->plugin_path);
-        define('MS_SHORTCODE_PREFIX', $this->shortcode_prefix);
+        define('CS_VERSION', $this->plugin_version);
+        define('CS_URL', $this->plugin_url);
+        define('CS_PATH', $this->plugin_path);
+        define('CS_SHORTCODE_PREFIX', $this->shortcode_prefix);
     }
 }
 
-new My_Slider();
+new Commerce_Slider();

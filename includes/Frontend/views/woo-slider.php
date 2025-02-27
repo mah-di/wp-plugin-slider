@@ -1,6 +1,6 @@
 <?php
 
-$ms_feature_img_size = ms_get_meta( $ms_post_ID, 'ms_feature_img_size', 'medium_large' );
+$cs_feature_img_size = cs_get_meta( $cs_post_ID, 'cs_feature_img_size', 'medium_large' );
 
 $posts = new WP_Query( $args );
 
@@ -8,7 +8,7 @@ if ( $posts->have_posts() ):
 
 ?>
 <div
-    id="my-slider-<?php echo esc_html( $ms_post_ID ) ?>"
+    id="commerce-slider-<?php echo esc_html( $cs_post_ID ) ?>"
     class="owl-carousel owl-theme"
 >
 
@@ -18,10 +18,10 @@ if ( $posts->have_posts() ):
 
         global $product;
 
-        $ms_sales_count             = $product->get_total_sales() == 0 ? 'No Sales Yet' : $product->get_total_sales() . ' Sold';
-        $ms_review_count            = $product->get_review_count();
-        $ms_rating                  = $product->get_average_rating();
-        $ms_stock_status            = $product->is_in_stock() ? 'In Stock' : ( $product->is_on_backorder() ? 'On Back-Order' : 'Out of Stock' );
+        $cs_sales_count             = $product->get_total_sales() == 0 ? 'No Sales Yet' : $product->get_total_sales() . ' Sold';
+        $cs_review_count            = $product->get_review_count();
+        $cs_rating                  = $product->get_average_rating();
+        $cs_stock_status            = $product->is_in_stock() ? 'In Stock' : ( $product->is_on_backorder() ? 'On Back-Order' : 'Out of Stock' );
 
         if ( $product->is_type( 'variable' ) ) {
             $min_price_raw          = $product->get_variation_price( 'min', true );
@@ -42,42 +42,42 @@ if ( $posts->have_posts() ):
         }
     ?>
 
-    <div class="ms-card">
+    <div class="cs-card">
         <?php if ( has_post_thumbnail() ) : ?>
-        <div class="ms-card-header">
-            <?php the_post_thumbnail( $ms_feature_img_size ) ?>
+        <div class="cs-card-header">
+            <?php the_post_thumbnail( $cs_feature_img_size ) ?>
         </div>
         <?php endif ?>
 
-        <div class="ms-card-body">
-            <h4 class="ms-title">
+        <div class="cs-card-body">
+            <h4 class="cs-title">
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </h4>
 
-            <div class="ms-total-sales">
-                <?php echo esc_html( $ms_sales_count ) ?>
+            <div class="cs-total-sales">
+                <?php echo esc_html( $cs_sales_count ) ?>
             </div>
-            <div class="ms-review">
-                <?php if ( $ms_review_count == 0 ): ?>
+            <div class="cs-review">
+                <?php if ( $cs_review_count == 0 ): ?>
                 No Reviews Yet
                 <?php else: ?>
 
-                <?php echo wp_kses_post( wc_get_rating_html( $ms_rating ) ) ?>
-                (<?php echo esc_html( $ms_review_count ) ?>)
+                <?php echo wp_kses_post( wc_get_rating_html( $cs_rating ) ) ?>
+                (<?php echo esc_html( $cs_review_count ) ?>)
 
                 <?php endif; ?>
             </div>
-            <div class="ms-stock-status">
-                <span><?php echo esc_html( $ms_stock_status ) ?></span>
+            <div class="cs-stock-status">
+                <span><?php echo esc_html( $cs_stock_status ) ?></span>
             </div>
-            <div class="ms-pricing">
+            <div class="cs-pricing">
                 <?php if ( $fixed_price ) : ?>
 
-                    <span class="ms-price-main"><?php echo wp_kses_post( $fixed_price ) ?></span>
+                    <span class="cs-price-main"><?php echo wp_kses_post( $fixed_price ) ?></span>
 
                 <?php elseif ( $product->is_type( 'variable' ) ) : ?>
 
-                    <span class="ms-price-main">
+                    <span class="cs-price-main">
                         <?php echo esc_html( $min_price ) ?>
                         -&nbsp;
                         <?php echo esc_html( $max_price ) ?>
@@ -85,12 +85,12 @@ if ( $posts->have_posts() ):
 
                 <?php else: ?>
 
-                    <span class="ms-price-main"><?php echo wp_kses_post( $sale_price ) ?></span>
-                    <del class="ms-price-strike"><?php echo wp_kses_post( $regular_price ) ?></del>
+                    <span class="cs-price-main"><?php echo wp_kses_post( $sale_price ) ?></span>
+                    <del class="cs-price-strike"><?php echo wp_kses_post( $regular_price ) ?></del>
 
                 <?php endif ?>
             </div>
-            <div class="ms-add-to-cart">
+            <div class="cs-add-to-cart">
                 <?php echo esc_html( woocommerce_template_loop_add_to_cart() ) ?>
             </div>
         </div>

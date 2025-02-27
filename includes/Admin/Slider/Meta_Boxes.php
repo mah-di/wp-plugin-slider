@@ -5,97 +5,97 @@ final class Meta_Boxes
     private $post_ID;
 
     private $optional_post_meta = [
-        'ms_items_to_show'                          => 'int',
-        'ms_items_to_display_sm'                    => 'int',
-        'ms_items_to_display_md'                    => 'int',
-        'ms_items_to_display_lg'                    => 'int',
-        'ms_items_to_display_xl'                    => 'int',
-        'ms_animation_entrance'                     => 'text',
-        'ms_animation_exit'                         => 'text',
-        'ms_feature_img_size'                       => 'text',
-        'ms_feature_img_ratio'                      => 'text',
-        'ms_order'                                  => 'text',
-        'ms_show_comments'                          => 'text',
-        'ms_show_category'                          => 'text',
-        'ms_show_tags'                              => 'text',
-        'ms_show_excerpt'                           => 'text',
-        'ms_excerpt_length'                         => 'text',
-        'ms_read_more_text'                         => 'text',
-        'ms_show_author'                            => 'text',
-        'ms_show_avatar'                            => 'text',
-        'ms_show_date'                              => 'text',
-        'ms_margin_right'                           => 'int',
-        'ms_loop'                                   => 'text',
-        'ms_center'                                 => 'text',
-        'ms_show_nav'                               => 'text',
-        'ms_show_nav_sm'                            => 'text',
-        'ms_nav_position'                           => 'text',
-        'ms_nav_position_sm'                        => 'text',
-        'ms_nav_radius'                             => 'int',
-        'ms_show_dots'                              => 'text',
-        'ms_show_dots_sm'                           => 'text',
-        'ms_show_dots_foreach'                      => 'text',
-        'ms_autoplay'                               => 'text',
-        'ms_autoplay_timeout'                       => 'int',
-        'ms_autoplay_hover_pause'                   => 'text',
-        'ms_autoplay_speed'                         => 'int',
-        'ms_bg_color'                               => 'text',
-        'ms_comment_icon_color'                     => 'text',
-        'ms_meta_fs'                                => 'int',
-        'ms_comment_fw'                             => 'int',
-        'ms_comment_color'                          => 'text',
-        'ms_category_icon_color'                    => 'text',
-        'ms_category_fw'                            => 'int',
-        'ms_category_color'                         => 'text',
-        'ms_category_bg_color'                      => 'text',
-        'ms_date_icon_color'                        => 'text',
-        'ms_date_fw'                                => 'int',
-        'ms_date_color'                             => 'text',
-        // 'ms_tag_icon_color'                         => 'text',
-        // 'ms_tag_fs'                                 => 'int',
-        // 'ms_tag_fw'                                 => 'int',
-        // 'ms_tag_color'                              => 'text',
-        // 'ms_tag_bg_color'                           => 'text',
-        'ms_title_fs'                               => 'int',
-        'ms_title_fw'                               => 'int',
-        'ms_title_color'                            => 'text',
-        'ms_excerpt_fs'                             => 'int',
-        'ms_excerpt_fw'                             => 'int',
-        'ms_excerpt_color'                          => 'text',
-        'ms_read_more_color'                        => 'text',
-        'ms_author_fs'                              => 'int',
-        'ms_author_fw'                              => 'int',
-        'ms_author_color'                           => 'text',
-        'ms_stock_fs'                               => 'int',
-        'ms_stock_fw'                               => 'int',
-        'ms_stock_color'                            => 'text',
-        'ms_sales_fs'                               => 'int',
-        'ms_sales_fw'                               => 'int',
-        'ms_sales_color'                            => 'text',
-        'ms_review_fs'                              => 'int',
-        'ms_review_fw'                              => 'int',
-        'ms_review_color'                           => 'text',
-        'ms_active_price_fs'                        => 'int',
-        'ms_active_price_fw'                        => 'int',
-        'ms_active_price_color'                     => 'text',
-        'ms_prev_price_fs'                          => 'int',
-        'ms_prev_price_fw'                          => 'int',
-        'ms_prev_price_color'                       => 'text',
-        'ms_woo_button_fs'                          => 'int',
-        'ms_woo_button_fw'                          => 'int',
-        'ms_woo_button_color'                       => 'text',
-        'ms_woo_button_bg_color'                    => 'text',
-        'ms_min_height'                             => 'int',
-        'ms_horizontal_align'                       => 'text',
-        'ms_verticle_align'                         => 'text',
-        'ms_nav_bg_color'                           => 'text',
-        'ms_nav_bg_hover_color'                     => 'text',
-        'ms_nav_color'                              => 'text',
-        'ms_nav_fs'                                 => 'int',
-        'ms_nav_fw'                                 => 'int',
-        'ms_dot_shape'                              => 'text',
-        'ms_dot_color'                              => 'text',
-        'ms_dot_active_color'                       => 'text'
+        'cs_items_to_show'                          => 'int',
+        'cs_items_to_display_sm'                    => 'int',
+        'cs_items_to_display_md'                    => 'int',
+        'cs_items_to_display_lg'                    => 'int',
+        'cs_items_to_display_xl'                    => 'int',
+        'cs_animation_entrance'                     => 'text',
+        'cs_animation_exit'                         => 'text',
+        'cs_feature_img_size'                       => 'text',
+        'cs_feature_img_ratio'                      => 'text',
+        'cs_order'                                  => 'text',
+        'cs_show_comments'                          => 'text',
+        'cs_show_category'                          => 'text',
+        'cs_show_tags'                              => 'text',
+        'cs_show_excerpt'                           => 'text',
+        'cs_excerpt_length'                         => 'text',
+        'cs_read_more_text'                         => 'text',
+        'cs_show_author'                            => 'text',
+        'cs_show_avatar'                            => 'text',
+        'cs_show_date'                              => 'text',
+        'cs_margin_right'                           => 'int',
+        'cs_loop'                                   => 'text',
+        'cs_center'                                 => 'text',
+        'cs_show_nav'                               => 'text',
+        'cs_show_nav_sm'                            => 'text',
+        'cs_nav_position'                           => 'text',
+        'cs_nav_position_sm'                        => 'text',
+        'cs_nav_radius'                             => 'int',
+        'cs_show_dots'                              => 'text',
+        'cs_show_dots_sm'                           => 'text',
+        'cs_show_dots_foreach'                      => 'text',
+        'cs_autoplay'                               => 'text',
+        'cs_autoplay_timeout'                       => 'int',
+        'cs_autoplay_hover_pause'                   => 'text',
+        'cs_autoplay_speed'                         => 'int',
+        'cs_bg_color'                               => 'text',
+        'cs_comment_icon_color'                     => 'text',
+        'cs_meta_fs'                                => 'int',
+        'cs_comment_fw'                             => 'int',
+        'cs_comment_color'                          => 'text',
+        'cs_category_icon_color'                    => 'text',
+        'cs_category_fw'                            => 'int',
+        'cs_category_color'                         => 'text',
+        'cs_category_bg_color'                      => 'text',
+        'cs_date_icon_color'                        => 'text',
+        'cs_date_fw'                                => 'int',
+        'cs_date_color'                             => 'text',
+        // 'cs_tag_icon_color'                         => 'text',
+        // 'cs_tag_fs'                                 => 'int',
+        // 'cs_tag_fw'                                 => 'int',
+        // 'cs_tag_color'                              => 'text',
+        // 'cs_tag_bg_color'                           => 'text',
+        'cs_title_fs'                               => 'int',
+        'cs_title_fw'                               => 'int',
+        'cs_title_color'                            => 'text',
+        'cs_excerpt_fs'                             => 'int',
+        'cs_excerpt_fw'                             => 'int',
+        'cs_excerpt_color'                          => 'text',
+        'cs_read_more_color'                        => 'text',
+        'cs_author_fs'                              => 'int',
+        'cs_author_fw'                              => 'int',
+        'cs_author_color'                           => 'text',
+        'cs_stock_fs'                               => 'int',
+        'cs_stock_fw'                               => 'int',
+        'cs_stock_color'                            => 'text',
+        'cs_sales_fs'                               => 'int',
+        'cs_sales_fw'                               => 'int',
+        'cs_sales_color'                            => 'text',
+        'cs_review_fs'                              => 'int',
+        'cs_review_fw'                              => 'int',
+        'cs_review_color'                           => 'text',
+        'cs_active_price_fs'                        => 'int',
+        'cs_active_price_fw'                        => 'int',
+        'cs_active_price_color'                     => 'text',
+        'cs_prev_price_fs'                          => 'int',
+        'cs_prev_price_fw'                          => 'int',
+        'cs_prev_price_color'                       => 'text',
+        'cs_woo_button_fs'                          => 'int',
+        'cs_woo_button_fw'                          => 'int',
+        'cs_woo_button_color'                       => 'text',
+        'cs_woo_button_bg_color'                    => 'text',
+        'cs_min_height'                             => 'int',
+        'cs_horizontal_align'                       => 'text',
+        'cs_verticle_align'                         => 'text',
+        'cs_nav_bg_color'                           => 'text',
+        'cs_nav_bg_hover_color'                     => 'text',
+        'cs_nav_color'                              => 'text',
+        'cs_nav_fs'                                 => 'int',
+        'cs_nav_fw'                                 => 'int',
+        'cs_dot_shape'                              => 'text',
+        'cs_dot_color'                              => 'text',
+        'cs_dot_active_color'                       => 'text'
     ];
 
     public function __construct()
@@ -109,8 +109,8 @@ final class Meta_Boxes
 
     public function add_meta_boxes()
     {
-        add_meta_box( 'post_meta_panel_id', 'Manage Slider', [ $this, 'post_meta_panel' ], 'my_slider', 'normal', 'high' );
-        add_meta_box( 'shortcode_panel_id', 'Shortcode', [ $this, 'shortcode_panel' ], 'my_slider', 'side', 'low' );
+        add_meta_box( 'post_meta_panel_id', 'Manage Slider', [ $this, 'post_meta_panel' ], 'commerce_slider', 'normal', 'high' );
+        add_meta_box( 'shortcode_panel_id', 'Shortcode', [ $this, 'shortcode_panel' ], 'commerce_slider', 'side', 'low' );
     }
 
     public function post_meta_panel()
@@ -125,7 +125,7 @@ final class Meta_Boxes
 
     public function add_nonce_field()
     {
-        wp_nonce_field( 'ms_meta_save_nonce', 'ms_nonce' );
+        wp_nonce_field( 'cs_meta_save_nonce', 'cs_nonce' );
     }
 
     private function set_post_ID()
@@ -151,13 +151,13 @@ final class Meta_Boxes
             return;
 
         // return if nonce is not set
-        if ( ! isset( $_POST[ 'ms_nonce' ] ) )
+        if ( ! isset( $_POST[ 'cs_nonce' ] ) )
             return;
 
-        $ms_nonce = sanitize_text_field( wp_unslash( $_POST[ 'ms_nonce' ] ) );
+        $cs_nonce = sanitize_text_field( wp_unslash( $_POST[ 'cs_nonce' ] ) );
 
         // return if nonce is invalid
-        if ( ! wp_verify_nonce( $ms_nonce, 'ms_meta_save_nonce' ) )
+        if ( ! wp_verify_nonce( $cs_nonce, 'cs_meta_save_nonce' ) )
             return;
 
         // return if user does not have edit permissions
@@ -174,40 +174,40 @@ final class Meta_Boxes
 
         $post_type = get_post_type( $post_ID );
 
-        // return if post type is not my_slider
-        if ( $post_type != 'my_slider' )
+        // return if post type is not commerce_slider
+        if ( $post_type != 'commerce_slider' )
             return;
 
-        // return if "ms_post_type" is empty or set to "product" when WooCommerce isn't active
-        if ( empty( $_POST[ 'ms_post_type' ] ) || ( $_POST[ 'ms_post_type' ] == 'product' && ! MS_WC_IS_ACTIVE ) )
+        // return if "cs_post_type" is empty or set to "product" when WooCommerce isn't active
+        if ( empty( $_POST[ 'cs_post_type' ] ) || ( $_POST[ 'cs_post_type' ] == 'product' && ! CS_WC_IS_ACTIVE ) )
             return;
 
-        $post_type = sanitize_text_field( wp_unslash( $_POST[ 'ms_post_type' ] ) );
-        $this->save_text_meta( 'ms_post_type', $post_type );
+        $post_type = sanitize_text_field( wp_unslash( $_POST[ 'cs_post_type' ] ) );
+        $this->save_text_meta( 'cs_post_type', $post_type );
 
         $query_type = '';
 
-        if ( isset( $_POST[ 'ms_query_type' ] ) )
-            $query_type = sanitize_text_field( wp_unslash( $_POST[ 'ms_query_type' ] ) );
+        if ( isset( $_POST[ 'cs_query_type' ] ) )
+            $query_type = sanitize_text_field( wp_unslash( $_POST[ 'cs_query_type' ] ) );
 
-        $this->save_text_meta( 'ms_query_type', $query_type );
+        $this->save_text_meta( 'cs_query_type', $query_type );
 
         $query = '';
 
-        if ( isset( $_POST[ 'ms_query' ] ) ) {
-            if ( is_array( $_POST[ 'ms_query' ] ) ) {
+        if ( isset( $_POST[ 'cs_query' ] ) ) {
+            if ( is_array( $_POST[ 'cs_query' ] ) ) {
                 // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-                $unslashed_array = array_map( 'wp_unslash', $_POST[ 'ms_query' ] );
+                $unslashed_array = array_map( 'wp_unslash', $_POST[ 'cs_query' ] );
                 $sanitized_array = array_map( 'absint', $unslashed_array );
 
                 $query = implode( ',', $sanitized_array );
 
-            } elseif ( is_string( $_POST[ 'ms_query' ] ) ) {
-                $query = sanitize_text_field( wp_unslash( $_POST[ 'ms_query' ] ) );
+            } elseif ( is_string( $_POST[ 'cs_query' ] ) ) {
+                $query = sanitize_text_field( wp_unslash( $_POST[ 'cs_query' ] ) );
             }
         }
 
-        $this->save_text_meta( 'ms_query', $query );
+        $this->save_text_meta( 'cs_query', $query );
 
         foreach( $this->optional_post_meta as $meta_key => $meta_value_type )
             $this->save_meta( $meta_key, $meta_value_type );

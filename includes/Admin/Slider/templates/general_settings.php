@@ -1,108 +1,108 @@
 <?php
 
-$ms_ID                      = get_the_ID();
+$cs_ID                      = get_the_ID();
 
-$ms_query_type              = get_post_meta( $ms_ID, 'ms_query_type', true );
-$ms_query                   = get_post_meta( $ms_ID, 'ms_query', true );
+$cs_query_type              = get_post_meta( $cs_ID, 'cs_query_type', true );
+$cs_query                   = get_post_meta( $cs_ID, 'cs_query', true );
 
-$ms_post_type               = get_post_meta( $ms_ID, 'ms_post_type', true );
-$ms_feature_img_size        = get_post_meta( $ms_ID, 'ms_feature_img_size', true );
-$ms_feature_img_ratio       = get_post_meta( $ms_ID, 'ms_feature_img_ratio', true );
-$ms_items_to_show           = get_post_meta( $ms_ID, 'ms_items_to_show', true );
-$ms_items_to_display_sm     = get_post_meta( $ms_ID, 'ms_items_to_display_sm', true );
-$ms_items_to_display_md     = get_post_meta( $ms_ID, 'ms_items_to_display_md', true );
-$ms_items_to_display_lg     = get_post_meta( $ms_ID, 'ms_items_to_display_lg', true );
-$ms_items_to_display_xl     = get_post_meta( $ms_ID, 'ms_items_to_display_xl', true );
-$ms_animation_entrance      = get_post_meta( $ms_ID, 'ms_animation_entrance', true );
-$ms_animation_exit          = get_post_meta( $ms_ID, 'ms_animation_exit', true );
-$ms_order                   = get_post_meta( $ms_ID, 'ms_order', true );
-$ms_show_comments           = get_post_meta( $ms_ID, 'ms_show_comments', true );
-$ms_show_category           = get_post_meta( $ms_ID, 'ms_show_category', true );
-$ms_show_tags               = get_post_meta( $ms_ID, 'ms_show_tags', true );
-$ms_show_excerpt            = get_post_meta( $ms_ID, 'ms_show_excerpt', true );
-$ms_excerpt_length          = get_post_meta( $ms_ID, 'ms_excerpt_length', true );
-$ms_read_more_text          = get_post_meta( $ms_ID, 'ms_read_more_text', true );
-$ms_show_author             = get_post_meta( $ms_ID, 'ms_show_author', true );
-$ms_show_avatar             = get_post_meta( $ms_ID, 'ms_show_avatar', true );
-$ms_show_date               = get_post_meta( $ms_ID, 'ms_show_date', true );
+$cs_post_type               = get_post_meta( $cs_ID, 'cs_post_type', true );
+$cs_feature_img_size        = get_post_meta( $cs_ID, 'cs_feature_img_size', true );
+$cs_feature_img_ratio       = get_post_meta( $cs_ID, 'cs_feature_img_ratio', true );
+$cs_items_to_show           = get_post_meta( $cs_ID, 'cs_items_to_show', true );
+$cs_items_to_display_sm     = get_post_meta( $cs_ID, 'cs_items_to_display_sm', true );
+$cs_items_to_display_md     = get_post_meta( $cs_ID, 'cs_items_to_display_md', true );
+$cs_items_to_display_lg     = get_post_meta( $cs_ID, 'cs_items_to_display_lg', true );
+$cs_items_to_display_xl     = get_post_meta( $cs_ID, 'cs_items_to_display_xl', true );
+$cs_animation_entrance      = get_post_meta( $cs_ID, 'cs_animation_entrance', true );
+$cs_animation_exit          = get_post_meta( $cs_ID, 'cs_animation_exit', true );
+$cs_order                   = get_post_meta( $cs_ID, 'cs_order', true );
+$cs_show_comments           = get_post_meta( $cs_ID, 'cs_show_comments', true );
+$cs_show_category           = get_post_meta( $cs_ID, 'cs_show_category', true );
+$cs_show_tags               = get_post_meta( $cs_ID, 'cs_show_tags', true );
+$cs_show_excerpt            = get_post_meta( $cs_ID, 'cs_show_excerpt', true );
+$cs_excerpt_length          = get_post_meta( $cs_ID, 'cs_excerpt_length', true );
+$cs_read_more_text          = get_post_meta( $cs_ID, 'cs_read_more_text', true );
+$cs_show_author             = get_post_meta( $cs_ID, 'cs_show_author', true );
+$cs_show_avatar             = get_post_meta( $cs_ID, 'cs_show_avatar', true );
+$cs_show_date               = get_post_meta( $cs_ID, 'cs_show_date', true );
 
-$ms_margin_right            = get_post_meta( $ms_ID, 'ms_margin_right', true );
-$ms_loop                    = get_post_meta( $ms_ID, 'ms_loop', true );
-$ms_center                  = get_post_meta( $ms_ID, 'ms_center', true );
-$ms_show_nav                = get_post_meta( $ms_ID, 'ms_show_nav', true );
-$ms_show_nav_sm             = get_post_meta( $ms_ID, 'ms_show_nav_sm', true );
-$ms_nav_position            = get_post_meta( $ms_ID, 'ms_nav_position', true );
-$ms_nav_position_sm         = get_post_meta( $ms_ID, 'ms_nav_position_sm', true );
-$ms_nav_radius              = get_post_meta( $ms_ID, 'ms_nav_radius', true );
-$ms_show_dots               = get_post_meta( $ms_ID, 'ms_show_dots', true );
-$ms_show_dots_sm            = get_post_meta( $ms_ID, 'ms_show_dots_sm', true );
-$ms_show_dots_foreach       = get_post_meta( $ms_ID, 'ms_show_dots_foreach', true );
-$ms_autoplay                = get_post_meta( $ms_ID, 'ms_autoplay', true );
-$ms_autoplay_timeout        = get_post_meta( $ms_ID, 'ms_autoplay_timeout', true );
-$ms_autoplay_hover_pause    = get_post_meta( $ms_ID, 'ms_autoplay_hover_pause', true );
-$ms_autoplay_speed          = get_post_meta( $ms_ID, 'ms_autoplay_speed', true );
+$cs_margin_right            = get_post_meta( $cs_ID, 'cs_margin_right', true );
+$cs_loop                    = get_post_meta( $cs_ID, 'cs_loop', true );
+$cs_center                  = get_post_meta( $cs_ID, 'cs_center', true );
+$cs_show_nav                = get_post_meta( $cs_ID, 'cs_show_nav', true );
+$cs_show_nav_sm             = get_post_meta( $cs_ID, 'cs_show_nav_sm', true );
+$cs_nav_position            = get_post_meta( $cs_ID, 'cs_nav_position', true );
+$cs_nav_position_sm         = get_post_meta( $cs_ID, 'cs_nav_position_sm', true );
+$cs_nav_radius              = get_post_meta( $cs_ID, 'cs_nav_radius', true );
+$cs_show_dots               = get_post_meta( $cs_ID, 'cs_show_dots', true );
+$cs_show_dots_sm            = get_post_meta( $cs_ID, 'cs_show_dots_sm', true );
+$cs_show_dots_foreach       = get_post_meta( $cs_ID, 'cs_show_dots_foreach', true );
+$cs_autoplay                = get_post_meta( $cs_ID, 'cs_autoplay', true );
+$cs_autoplay_timeout        = get_post_meta( $cs_ID, 'cs_autoplay_timeout', true );
+$cs_autoplay_hover_pause    = get_post_meta( $cs_ID, 'cs_autoplay_hover_pause', true );
+$cs_autoplay_speed          = get_post_meta( $cs_ID, 'cs_autoplay_speed', true );
 
-$ms_bg_color                = get_post_meta( $ms_ID, 'ms_bg_color', true );
-$ms_meta_fs                 = get_post_meta( $ms_ID, 'ms_meta_fs', true );
-$ms_comment_icon_color      = get_post_meta( $ms_ID, 'ms_comment_icon_color', true );
-$ms_comment_fw              = get_post_meta( $ms_ID, 'ms_comment_fw', true );
-$ms_comment_color           = get_post_meta( $ms_ID, 'ms_comment_color', true );
-$ms_category_icon_color     = get_post_meta( $ms_ID, 'ms_category_icon_color', true );
-$ms_category_fw             = get_post_meta( $ms_ID, 'ms_category_fw', true );
-$ms_category_color          = get_post_meta( $ms_ID, 'ms_category_color', true );
-$ms_category_bg_color       = get_post_meta( $ms_ID, 'ms_category_bg_color', true );
-$ms_date_icon_color         = get_post_meta( $ms_ID, 'ms_date_icon_color', true );
-$ms_date_fw                 = get_post_meta( $ms_ID, 'ms_date_fw', true );
-$ms_date_color              = get_post_meta( $ms_ID, 'ms_date_color', true );
-// $ms_tag_icon_color          = get_post_meta( $ms_ID, 'ms_tag_icon_color', true );
-// $ms_tag_fs                  = get_post_meta( $ms_ID, 'ms_tag_fs', true );
-// $ms_tag_fw                  = get_post_meta( $ms_ID, 'ms_tag_fw', true );
-// $ms_tag_color               = get_post_meta( $ms_ID, 'ms_tag_color', true );
-// $ms_tag_bg_color            = get_post_meta( $ms_ID, 'ms_tag_bg_color', true );
-$ms_title_fs                = get_post_meta( $ms_ID, 'ms_title_fs', true );
-$ms_title_fw                = get_post_meta( $ms_ID, 'ms_title_fw', true );
-$ms_title_color             = get_post_meta( $ms_ID, 'ms_title_color', true );
-$ms_excerpt_fs              = get_post_meta( $ms_ID, 'ms_excerpt_fs', true );
-$ms_excerpt_fw              = get_post_meta( $ms_ID, 'ms_excerpt_fw', true );
-$ms_excerpt_color           = get_post_meta( $ms_ID, 'ms_excerpt_color', true );
-$ms_read_more_color         = get_post_meta( $ms_ID, 'ms_read_more_color', true );
-$ms_author_fs               = get_post_meta( $ms_ID, 'ms_author_fs', true );
-$ms_author_fw               = get_post_meta( $ms_ID, 'ms_author_fw', true );
-$ms_author_color            = get_post_meta( $ms_ID, 'ms_author_color', true );
+$cs_bg_color                = get_post_meta( $cs_ID, 'cs_bg_color', true );
+$cs_meta_fs                 = get_post_meta( $cs_ID, 'cs_meta_fs', true );
+$cs_comment_icon_color      = get_post_meta( $cs_ID, 'cs_comment_icon_color', true );
+$cs_comment_fw              = get_post_meta( $cs_ID, 'cs_comment_fw', true );
+$cs_comment_color           = get_post_meta( $cs_ID, 'cs_comment_color', true );
+$cs_category_icon_color     = get_post_meta( $cs_ID, 'cs_category_icon_color', true );
+$cs_category_fw             = get_post_meta( $cs_ID, 'cs_category_fw', true );
+$cs_category_color          = get_post_meta( $cs_ID, 'cs_category_color', true );
+$cs_category_bg_color       = get_post_meta( $cs_ID, 'cs_category_bg_color', true );
+$cs_date_icon_color         = get_post_meta( $cs_ID, 'cs_date_icon_color', true );
+$cs_date_fw                 = get_post_meta( $cs_ID, 'cs_date_fw', true );
+$cs_date_color              = get_post_meta( $cs_ID, 'cs_date_color', true );
+// $cs_tag_icon_color          = get_post_meta( $cs_ID, 'cs_tag_icon_color', true );
+// $cs_tag_fs                  = get_post_meta( $cs_ID, 'cs_tag_fs', true );
+// $cs_tag_fw                  = get_post_meta( $cs_ID, 'cs_tag_fw', true );
+// $cs_tag_color               = get_post_meta( $cs_ID, 'cs_tag_color', true );
+// $cs_tag_bg_color            = get_post_meta( $cs_ID, 'cs_tag_bg_color', true );
+$cs_title_fs                = get_post_meta( $cs_ID, 'cs_title_fs', true );
+$cs_title_fw                = get_post_meta( $cs_ID, 'cs_title_fw', true );
+$cs_title_color             = get_post_meta( $cs_ID, 'cs_title_color', true );
+$cs_excerpt_fs              = get_post_meta( $cs_ID, 'cs_excerpt_fs', true );
+$cs_excerpt_fw              = get_post_meta( $cs_ID, 'cs_excerpt_fw', true );
+$cs_excerpt_color           = get_post_meta( $cs_ID, 'cs_excerpt_color', true );
+$cs_read_more_color         = get_post_meta( $cs_ID, 'cs_read_more_color', true );
+$cs_author_fs               = get_post_meta( $cs_ID, 'cs_author_fs', true );
+$cs_author_fw               = get_post_meta( $cs_ID, 'cs_author_fw', true );
+$cs_author_color            = get_post_meta( $cs_ID, 'cs_author_color', true );
 
-$ms_sales_fs                = get_post_meta( $ms_ID, 'ms_sales_fs', true );
-$ms_sales_fw                = get_post_meta( $ms_ID, 'ms_sales_fw', true );
-$ms_sales_color             = get_post_meta( $ms_ID, 'ms_sales_color', true );
-$ms_review_fs               = get_post_meta( $ms_ID, 'ms_review_fs', true );
-$ms_review_fw               = get_post_meta( $ms_ID, 'ms_review_fw', true );
-$ms_review_color            = get_post_meta( $ms_ID, 'ms_review_color', true );
-$ms_stock_fs                = get_post_meta( $ms_ID, 'ms_stock_fs', true );
-$ms_stock_fw                = get_post_meta( $ms_ID, 'ms_stock_fw', true );
-$ms_stock_color             = get_post_meta( $ms_ID, 'ms_stock_color', true );
-$ms_active_price_fs         = get_post_meta( $ms_ID, 'ms_active_price_fs', true );
-$ms_active_price_fw         = get_post_meta( $ms_ID, 'ms_active_price_fw', true );
-$ms_active_price_color      = get_post_meta( $ms_ID, 'ms_active_price_color', true );
-$ms_prev_price_fs           = get_post_meta( $ms_ID, 'ms_prev_price_fs', true );
-$ms_prev_price_fw           = get_post_meta( $ms_ID, 'ms_prev_price_fw', true );
-$ms_prev_price_color        = get_post_meta( $ms_ID, 'ms_prev_price_color', true );
-$ms_woo_button_fs           = get_post_meta( $ms_ID, 'ms_woo_button_fs', true );
-$ms_woo_button_fw           = get_post_meta( $ms_ID, 'ms_woo_button_fw', true );
-$ms_woo_button_color        = get_post_meta( $ms_ID, 'ms_woo_button_color', true );
-$ms_woo_button_bg_color     = get_post_meta( $ms_ID, 'ms_woo_button_bg_color', true );
+$cs_sales_fs                = get_post_meta( $cs_ID, 'cs_sales_fs', true );
+$cs_sales_fw                = get_post_meta( $cs_ID, 'cs_sales_fw', true );
+$cs_sales_color             = get_post_meta( $cs_ID, 'cs_sales_color', true );
+$cs_review_fs               = get_post_meta( $cs_ID, 'cs_review_fs', true );
+$cs_review_fw               = get_post_meta( $cs_ID, 'cs_review_fw', true );
+$cs_review_color            = get_post_meta( $cs_ID, 'cs_review_color', true );
+$cs_stock_fs                = get_post_meta( $cs_ID, 'cs_stock_fs', true );
+$cs_stock_fw                = get_post_meta( $cs_ID, 'cs_stock_fw', true );
+$cs_stock_color             = get_post_meta( $cs_ID, 'cs_stock_color', true );
+$cs_active_price_fs         = get_post_meta( $cs_ID, 'cs_active_price_fs', true );
+$cs_active_price_fw         = get_post_meta( $cs_ID, 'cs_active_price_fw', true );
+$cs_active_price_color      = get_post_meta( $cs_ID, 'cs_active_price_color', true );
+$cs_prev_price_fs           = get_post_meta( $cs_ID, 'cs_prev_price_fs', true );
+$cs_prev_price_fw           = get_post_meta( $cs_ID, 'cs_prev_price_fw', true );
+$cs_prev_price_color        = get_post_meta( $cs_ID, 'cs_prev_price_color', true );
+$cs_woo_button_fs           = get_post_meta( $cs_ID, 'cs_woo_button_fs', true );
+$cs_woo_button_fw           = get_post_meta( $cs_ID, 'cs_woo_button_fw', true );
+$cs_woo_button_color        = get_post_meta( $cs_ID, 'cs_woo_button_color', true );
+$cs_woo_button_bg_color     = get_post_meta( $cs_ID, 'cs_woo_button_bg_color', true );
 
-$ms_min_height              = get_post_meta( $ms_ID, 'ms_min_height', true );
-$ms_horizontal_align        = get_post_meta( $ms_ID, 'ms_horizontal_align', true );
-$ms_verticle_align          = get_post_meta( $ms_ID, 'ms_verticle_align', true );
+$cs_min_height              = get_post_meta( $cs_ID, 'cs_min_height', true );
+$cs_horizontal_align        = get_post_meta( $cs_ID, 'cs_horizontal_align', true );
+$cs_verticle_align          = get_post_meta( $cs_ID, 'cs_verticle_align', true );
 
-$ms_nav_bg_color            = get_post_meta( $ms_ID, 'ms_nav_bg_color', true );
-$ms_nav_bg_hover_color      = get_post_meta( $ms_ID, 'ms_nav_bg_hover_color', true );
-$ms_nav_color               = get_post_meta( $ms_ID, 'ms_nav_color', true );
-$ms_nav_fs                  = get_post_meta( $ms_ID, 'ms_nav_fs', true );
-$ms_nav_fw                  = get_post_meta( $ms_ID, 'ms_nav_fw', true );
+$cs_nav_bg_color            = get_post_meta( $cs_ID, 'cs_nav_bg_color', true );
+$cs_nav_bg_hover_color      = get_post_meta( $cs_ID, 'cs_nav_bg_hover_color', true );
+$cs_nav_color               = get_post_meta( $cs_ID, 'cs_nav_color', true );
+$cs_nav_fs                  = get_post_meta( $cs_ID, 'cs_nav_fs', true );
+$cs_nav_fw                  = get_post_meta( $cs_ID, 'cs_nav_fw', true );
 
-$ms_dot_shape               = get_post_meta( $ms_ID, 'ms_dot_shape', true );
-$ms_dot_color               = get_post_meta( $ms_ID, 'ms_dot_color', true );
-$ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true );
+$cs_dot_shape               = get_post_meta( $cs_ID, 'cs_dot_shape', true );
+$cs_dot_color               = get_post_meta( $cs_ID, 'cs_dot_color', true );
+$cs_dot_active_color        = get_post_meta( $cs_ID, 'cs_dot_active_color', true );
 
 ?>
 
@@ -130,26 +130,26 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 <br>
                 <small>Select the slider type</small>
             </div>
-            <select class="field" id="ms_post_type" name="ms_post_type">
+            <select class="field" id="cs_post_type" name="cs_post_type">
                 <option
                     value="post"
-                    <?php echo ( empty( $ms_post_type ) || $ms_post_type == 'post' ) ? 'selected' : '' ?>
+                    <?php echo ( empty( $cs_post_type ) || $cs_post_type == 'post' ) ? 'selected' : '' ?>
                 >
                     Blog Post Slider
                 </option>
 
-                <?php if ( MS_WC_IS_ACTIVE ) : ?>
+                <?php if ( CS_WC_IS_ACTIVE ) : ?>
                 <option
                     value="product"
-                    <?php echo ( ! empty( $ms_post_type ) && $ms_post_type == 'product' ) ? 'selected' : '' ?>
+                    <?php echo ( ! empty( $cs_post_type ) && $cs_post_type == 'product' ) ? 'selected' : '' ?>
                 >
                     Woo Commerce Product Slider
                 </option>
                 <?php endif ?>
 
                 <option
-                    value="my_slide"
-                    <?php echo ( ! empty( $ms_post_type ) && $ms_post_type == 'my_slide' ) ? 'selected' : '' ?>
+                    value="commerce_slide"
+                    <?php echo ( ! empty( $cs_post_type ) && $cs_post_type == 'commerce_slide' ) ? 'selected' : '' ?>
                 >
                     Custom Slider
                 </option>
@@ -164,113 +164,113 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div>
                 <div class="switch-field">
-                    <input type="hidden" id="ms_ajax_nonce" value="<?php echo esc_html( wp_create_nonce( 'ms-ajax-nonce' ) ) ?>">
+                    <input type="hidden" id="cs_ajax_nonce" value="<?php echo esc_html( wp_create_nonce( 'cs-ajax-nonce' ) ) ?>">
 
-                    <div class="ms-scoped-field d-none ms-post-field">
-                        <input name="ms_query_type" id="ms_query_type_post_cat" type="radio"
+                    <div class="cs-scoped-field d-none cs-post-field">
+                        <input name="cs_query_type" id="cs_query_type_post_cat" type="radio"
                                 value="category"
-                                <?php if ( $ms_query_type == 'category' ) { echo 'checked'; } ?>
+                                <?php if ( $cs_query_type == 'category' ) { echo 'checked'; } ?>
                             >
-                            <label for="ms_query_type_post_cat">Category</label>
+                            <label for="cs_query_type_post_cat">Category</label>
                     </div>
 
-                    <div class="ms-scoped-field d-none ms-product-field">
-                        <input name="ms_query_type" id="ms_query_type_product_cat" type="radio"
+                    <div class="cs-scoped-field d-none cs-product-field">
+                        <input name="cs_query_type" id="cs_query_type_product_cat" type="radio"
                                 value="product_cat"
-                                <?php if ( $ms_query_type == 'product_cat' ) { echo 'checked'; } ?>
+                                <?php if ( $cs_query_type == 'product_cat' ) { echo 'checked'; } ?>
                             >
-                            <label for="ms_query_type_product_cat">Category</label>
+                            <label for="cs_query_type_product_cat">Category</label>
                     </div>
 
-                    <div class="ms-scoped-field d-none ms-post-field">
-                        <input name="ms_query_type" id="ms_query_type_post_tag" type="radio"
+                    <div class="cs-scoped-field d-none cs-post-field">
+                        <input name="cs_query_type" id="cs_query_type_post_tag" type="radio"
                             value="post_tag"
-                            <?php if ( $ms_query_type == 'post_tag' ) { echo 'checked'; } ?>
+                            <?php if ( $cs_query_type == 'post_tag' ) { echo 'checked'; } ?>
                         >
-                        <label for="ms_query_type_post_tag">Tag</label>
+                        <label for="cs_query_type_post_tag">Tag</label>
                     </div>
 
-                    <div class="ms-scoped-field d-none ms-product-field">
-                        <input name="ms_query_type" id="ms_query_type_product_tag" type="radio"
+                    <div class="cs-scoped-field d-none cs-product-field">
+                        <input name="cs_query_type" id="cs_query_type_product_tag" type="radio"
                             value="product_tag"
-                            <?php if ( $ms_query_type == 'product_tag' ) { echo 'checked'; } ?>
+                            <?php if ( $cs_query_type == 'product_tag' ) { echo 'checked'; } ?>
                         >
-                        <label for="ms_query_type_product_tag">Tag</label>
+                        <label for="cs_query_type_product_tag">Tag</label>
                     </div>
 
-                    <div class="ms-scoped-field d-none ms-my-slide-field">
-                        <input name="ms_query_type" id="ms_query_type_my_slide_tag" type="radio"
-                            value="my_slide_tag"
-                            <?php if ( $ms_query_type == 'my_slide_tag' ) { echo 'checked'; } ?>
+                    <div class="cs-scoped-field d-none cs-commerce-slide-field">
+                        <input name="cs_query_type" id="cs_query_type_commerce_slide_tag" type="radio"
+                            value="commerce_slide_tag"
+                            <?php if ( $cs_query_type == 'commerce_slide_tag' ) { echo 'checked'; } ?>
                         >
-                        <label for="ms_query_type_my_slide_tag">Slide Group</label>
+                        <label for="cs_query_type_commerce_slide_tag">Slide Group</label>
                     </div>
 
                     <div class="">
-                        <input name="ms_query_type" id="ms_query_type_id" type="radio"
+                        <input name="cs_query_type" id="cs_query_type_id" type="radio"
                             value="id"
-                            <?php if ( $ms_query_type == 'id' ) { echo 'checked'; } ?>
+                            <?php if ( $cs_query_type == 'id' ) { echo 'checked'; } ?>
                         >
-                        <label for="ms_query_type_id">Name</label>
+                        <label for="cs_query_type_id">Name</label>
                     </div>
 
-                    <div class="ms-scoped-field d-none ms-product-field">
-                        <input name="ms_query_type" id="ms_query_type_sku" type="radio"
+                    <div class="cs-scoped-field d-none cs-product-field">
+                        <input name="cs_query_type" id="cs_query_type_sku" type="radio"
                             value="sku"
-                            <?php if ( $ms_query_type == 'sku' ) { echo 'checked'; } ?>
+                            <?php if ( $cs_query_type == 'sku' ) { echo 'checked'; } ?>
                         >
-                        <label for="ms_query_type_sku">SKU</label>
+                        <label for="cs_query_type_sku">SKU</label>
                     </div>
 
-                    <div class="ms-scoped-field d-none ms-product-field">
-                        <input name="ms_query_type" id="ms_query_type_latest" type="radio"
+                    <div class="cs-scoped-field d-none cs-product-field">
+                        <input name="cs_query_type" id="cs_query_type_latest" type="radio"
                             value="latest"
-                            <?php if ( $ms_query_type == 'latest' ) { echo 'checked'; } ?>
+                            <?php if ( $cs_query_type == 'latest' ) { echo 'checked'; } ?>
                         >
-                        <label for="ms_query_type_latest">Latest Products</label>
+                        <label for="cs_query_type_latest">Latest Products</label>
                     </div>
 
-                    <div class="ms-scoped-field d-none ms-product-field">
-                        <input name="ms_query_type" id="ms_query_type_featured" type="radio"
+                    <div class="cs-scoped-field d-none cs-product-field">
+                        <input name="cs_query_type" id="cs_query_type_featured" type="radio"
                             value="featured"
-                            <?php if ( $ms_query_type == 'featured' ) { echo 'checked'; } ?>
+                            <?php if ( $cs_query_type == 'featured' ) { echo 'checked'; } ?>
                         >
-                        <label for="ms_query_type_featured">Featured Products</label>
+                        <label for="cs_query_type_featured">Featured Products</label>
                     </div>
 
-                    <div class="ms-scoped-field d-none ms-product-field">
-                        <input name="ms_query_type" id="ms_query_type_onsale" type="radio"
+                    <div class="cs-scoped-field d-none cs-product-field">
+                        <input name="cs_query_type" id="cs_query_type_onsale" type="radio"
                             value="onsale"
-                            <?php if ( $ms_query_type == 'onsale' ) { echo 'checked'; } ?>
+                            <?php if ( $cs_query_type == 'onsale' ) { echo 'checked'; } ?>
                         >
-                        <label for="ms_query_type_onsale">On-Sale Products</label>
+                        <label for="cs_query_type_onsale">On-Sale Products</label>
                     </div>
 
-                    <div class="ms-scoped-field d-none ms-product-field">
-                        <input name="ms_query_type" id="ms_query_type_top_rated" type="radio"
+                    <div class="cs-scoped-field d-none cs-product-field">
+                        <input name="cs_query_type" id="cs_query_type_top_rated" type="radio"
                             value="top_rated"
-                            <?php if ( $ms_query_type == 'top_rated' ) { echo 'checked'; } ?>
+                            <?php if ( $cs_query_type == 'top_rated' ) { echo 'checked'; } ?>
                         >
-                        <label for="ms_query_type_top_rated">Top-Rated Products</label>
+                        <label for="cs_query_type_top_rated">Top-Rated Products</label>
                     </div>
 
-                    <div class="ms-scoped-field d-none ms-product-field">
-                        <input name="ms_query_type" id="ms_query_type_best_selling" type="radio"
+                    <div class="cs-scoped-field d-none cs-product-field">
+                        <input name="cs_query_type" id="cs_query_type_best_selling" type="radio"
                             value="best_selling"
-                            <?php if ( $ms_query_type == 'best_selling' ) { echo 'checked'; } ?>
+                            <?php if ( $cs_query_type == 'best_selling' ) { echo 'checked'; } ?>
                         >
-                        <label for="ms_query_type_best_selling">Best Selling Products</label>
+                        <label for="cs_query_type_best_selling">Best Selling Products</label>
                     </div>
                     <a class="slide-button btn"></a>
                 </div>
             </div>
         </div>
 
-        <div class="field-wrapper d-none" id="ms_query_wrapper">
+        <div class="field-wrapper d-none" id="cs_query_wrapper">
             <div>
                 <span>Select Contents</span>
             </div>
-            <select name="ms_query[]" id="ms_query" multiple="multiple"></select>
+            <select name="cs_query[]" id="cs_query" multiple="multiple"></select>
         </div>
 
         <div class="field-wrapper">
@@ -279,7 +279,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 <br>
                 <small>Select the feature image size to load</small>
             </div>
-            <select class="field" id="ms_feature_img_size" name="ms_feature_img_size">
+            <select class="field" id="cs_feature_img_size" name="cs_feature_img_size">
                 <option
                     class="d-none"
                     value="" 
@@ -289,51 +289,51 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                 <option
                     value="thumbnail"
-                    <?php if($ms_feature_img_size == "thumbnail") { echo "selected"; } ?> 
+                    <?php if($cs_feature_img_size == "thumbnail") { echo "selected"; } ?> 
                 >
-                    <?php echo esc_html__('Thumbnail - 150 x 150','my-slider');?>
+                    <?php echo esc_html__('Thumbnail - 150 x 150','commerce-slider');?>
                 </option>
 
                 <option
                     value="medium"
-                    <?php if($ms_feature_img_size == "medium") { echo "selected"; } ?>
+                    <?php if($cs_feature_img_size == "medium") { echo "selected"; } ?>
                 >
-                    <?php echo esc_html__('Medium - 300 x 300','my-slider');?>
+                    <?php echo esc_html__('Medium - 300 x 300','commerce-slider');?>
                 </option>
 
                 <option
                     value="medium_large"
-                    <?php if($ms_feature_img_size == "medium_large") { echo "selected"; } ?> 
+                    <?php if($cs_feature_img_size == "medium_large") { echo "selected"; } ?> 
                 >
-                    <?php echo esc_html__('Medium Large - 768 x 768','my-slider');?>
+                    <?php echo esc_html__('Medium Large - 768 x 768','commerce-slider');?>
                 </option>
 
                 <option
                     value="large"
-                    <?php if($ms_feature_img_size == "large") { echo "selected"; } ?>
+                    <?php if($cs_feature_img_size == "large") { echo "selected"; } ?>
                 >
-                    <?php echo esc_html__('Large - 1024 x 1024','my-slider');?>
+                    <?php echo esc_html__('Large - 1024 x 1024','commerce-slider');?>
                 </option>
 
                 <option
                     value="1536x1536"
-                    <?php if($ms_feature_img_size == "1536x1536") { echo "selected"; } ?>
+                    <?php if($cs_feature_img_size == "1536x1536") { echo "selected"; } ?>
                 >
-                    <?php echo esc_html__('1536x1536 - 1536 x 1536','my-slider');?>
+                    <?php echo esc_html__('1536x1536 - 1536 x 1536','commerce-slider');?>
                 </option>
 
                 <option
                     value="2048x2048"
-                    <?php if($ms_feature_img_size == "2048x2048") { echo "selected"; } ?>
+                    <?php if($cs_feature_img_size == "2048x2048") { echo "selected"; } ?>
                 >
-                    <?php echo esc_html__('2048x2048 - 2048 x 2048','my-slider');?>
+                    <?php echo esc_html__('2048x2048 - 2048 x 2048','commerce-slider');?>
                 </option>
 
                 <option
                     value="full"
-                    <?php if($ms_feature_img_size == "full") { echo "selected"; } ?>
+                    <?php if($cs_feature_img_size == "full") { echo "selected"; } ?>
                 >
-                    <?php echo esc_html__('Full','my-slider');?>
+                    <?php echo esc_html__('Full','commerce-slider');?>
                 </option>
 
             </select>
@@ -343,7 +343,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             <div>
                 <span>Feature Image Aspect Ratio</span>
             </div>
-            <select class="field" id="ms_feature_img_ratio" name="ms_feature_img_ratio">
+            <select class="field" id="cs_feature_img_ratio" name="cs_feature_img_ratio">
                 <option
                     class="d-none"
                     value="" 
@@ -353,51 +353,51 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                 <option
                     value="1:1"
-                    <?php if($ms_feature_img_ratio == "1:1") { echo "selected"; } ?> 
+                    <?php if($cs_feature_img_ratio == "1:1") { echo "selected"; } ?> 
                 >
-                    <?php echo esc_html__('1:1 - Sqaure','my-slider');?>
+                    <?php echo esc_html__('1:1 - Sqaure','commerce-slider');?>
                 </option>
 
                 <option
                     value="4:3"
-                    <?php if($ms_feature_img_ratio == "4:3") { echo "selected"; } ?>
+                    <?php if($cs_feature_img_ratio == "4:3") { echo "selected"; } ?>
                 >
-                    <?php echo esc_html__('4:3 - Standard Landscape','my-slider');?>
+                    <?php echo esc_html__('4:3 - Standard Landscape','commerce-slider');?>
                 </option>
 
                 <option
                     value="3:2"
-                    <?php if($ms_feature_img_ratio == "3:2") { echo "selected"; } ?> 
+                    <?php if($cs_feature_img_ratio == "3:2") { echo "selected"; } ?> 
                 >
-                    <?php echo esc_html__('3:2 - Photography','my-slider');?>
+                    <?php echo esc_html__('3:2 - Photography','commerce-slider');?>
                 </option>
 
                 <option
                     value="16:9"
-                    <?php if($ms_feature_img_ratio == "16:9") { echo "selected"; } ?>
+                    <?php if($cs_feature_img_ratio == "16:9") { echo "selected"; } ?>
                 >
-                    <?php echo esc_html__('16:9 - Widescreen','my-slider');?>
+                    <?php echo esc_html__('16:9 - Widescreen','commerce-slider');?>
                 </option>
 
                 <option
                     value="2:1"
-                    <?php if($ms_feature_img_ratio == "2:1") { echo "selected"; } ?>
+                    <?php if($cs_feature_img_ratio == "2:1") { echo "selected"; } ?>
                 >
-                    <?php echo esc_html__('2:1 - Panorama','my-slider');?>
+                    <?php echo esc_html__('2:1 - Panorama','commerce-slider');?>
                 </option>
                 
                 <option
                     value="3:4"
-                    <?php if($ms_feature_img_ratio == "3:4") { echo "selected"; } ?>
+                    <?php if($cs_feature_img_ratio == "3:4") { echo "selected"; } ?>
                 >
-                    <?php echo esc_html__('3:4 - Portrait','my-slider');?>
+                    <?php echo esc_html__('3:4 - Portrait','commerce-slider');?>
                 </option>
 
                 <option
                     value="4:5"
-                    <?php if($ms_feature_img_ratio == "4:5") { echo "selected"; } ?>
+                    <?php if($cs_feature_img_ratio == "4:5") { echo "selected"; } ?>
                 >
-                    <?php echo esc_html__('4:5 - Social Portrait','my-slider');?>
+                    <?php echo esc_html__('4:5 - Social Portrait','commerce-slider');?>
                 </option>
 
             </select>
@@ -411,7 +411,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 <br>
                 <small>Default is Descending Order</small>
             </div>
-            <select class="field" name="ms_order">
+            <select class="field" name="cs_order">
                 <option
                     class="d-none"
                     value=""
@@ -421,14 +421,14 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                 <option
                     value="ASC"
-                    <?php echo ( ! empty( $ms_order ) && $ms_order == 'ASC' ) ? 'selected' : '' ?>
+                    <?php echo ( ! empty( $cs_order ) && $cs_order == 'ASC' ) ? 'selected' : '' ?>
                 >
                     Ascending Order
                 </option>
 
                 <option
                     value="DESC"
-                    <?php echo ( ! empty( $ms_order ) && $ms_order == 'DESC' ) ? 'selected' : '' ?>
+                    <?php echo ( ! empty( $cs_order ) && $cs_order == 'DESC' ) ? 'selected' : '' ?>
                 >
                     Descending Order
                 </option>
@@ -443,16 +443,16 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div>
                 <span class="switch radio-switch fixed-width-lg">
-                    <input name="ms_loop" id="ms_loop_on" type="radio"
+                    <input name="cs_loop" id="cs_loop_on" type="radio"
                         value="true"
-                        <?php if ( $ms_loop == 'true' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_loop == 'true' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_loop_on" class="radioCheck">Yes</label>
-                    <input name="ms_loop" id="ms_loop_off" type="radio"
+                    <label for="cs_loop_on" class="radioCheck">Yes</label>
+                    <input name="cs_loop" id="cs_loop_off" type="radio"
                         value="false"
-                        <?php if ( $ms_loop == 'false' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_loop == 'false' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_loop_off" class="radioCheck">No</label>
+                    <label for="cs_loop_off" class="radioCheck">No</label>
                     <a class="slide-button btn"></a>
                 </span>
             </div>
@@ -468,16 +468,16 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div>
                 <span class="switch radio-switch fixed-width-lg">
-                    <input name="ms_center" id="ms_center_on" type="radio"
+                    <input name="cs_center" id="cs_center_on" type="radio"
                         value="true"
-                        <?php if ( $ms_center == 'true' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_center == 'true' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_center_on" class="radioCheck">Yes</label>
-                    <input name="ms_center" id="ms_center_off" type="radio"
+                    <label for="cs_center_on" class="radioCheck">Yes</label>
+                    <input name="cs_center" id="cs_center_off" type="radio"
                         value="false"
-                        <?php if ( $ms_center == 'false' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_center == 'false' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_center_off" class="radioCheck">No</label>
+                    <label for="cs_center_off" class="radioCheck">No</label>
                     <a class="slide-button btn"></a>
                 </span>
             </div>
@@ -493,22 +493,22 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div>
                 <span class="switch radio-switch fixed-width-lg">
-                    <input name="ms_show_nav" id="ms_show_nav_on" type="radio"
+                    <input name="cs_show_nav" id="cs_show_nav_on" type="radio"
                         value="true"
-                        <?php if ( $ms_show_nav == 'true' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_show_nav == 'true' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_nav_on" class="radioCheck">Show</label>
-                    <input name="ms_show_nav" id="ms_show_nav_off" type="radio"
+                    <label for="cs_show_nav_on" class="radioCheck">Show</label>
+                    <input name="cs_show_nav" id="cs_show_nav_off" type="radio"
                         value="false"
-                        <?php if ( $ms_show_nav == 'false' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_show_nav == 'false' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_nav_off" class="radioCheck">Hide</label>
+                    <label for="cs_show_nav_off" class="radioCheck">Hide</label>
                     <a class="slide-button btn"></a>
                 </span>
             </div>
         </div>
     
-        <div class="field-wrapper mt-20" id="ms_nav_settings">
+        <div class="field-wrapper mt-20" id="cs_nav_settings">
             <span>Navigation Settings</span>
             <div class="field-group">
                 <div class="field-wrapper">
@@ -517,7 +517,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         <br>
                         <small>Position of the nav buttons. Default - Middle</small>
                     </div>
-                    <select class="field" id="ms_nav_position" name="ms_nav_position">
+                    <select class="field" id="cs_nav_position" name="cs_nav_position">
                         <option
                             class="d-none"
                             value="" 
@@ -527,65 +527,65 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="top-wide"
-                            <?php if($ms_nav_position == "top-wide") { echo "selected"; } ?> 
+                            <?php if($cs_nav_position == "top-wide") { echo "selected"; } ?> 
                         >
-                            <?php echo esc_html__('Top','my-slider');?>
+                            <?php echo esc_html__('Top','commerce-slider');?>
                         </option>
         
                         <option
                             value="top-left"
-                            <?php if($ms_nav_position == "top-left") { echo "selected"; } ?> 
+                            <?php if($cs_nav_position == "top-left") { echo "selected"; } ?> 
                         >
-                            <?php echo esc_html__('Top Left','my-slider');?>
+                            <?php echo esc_html__('Top Left','commerce-slider');?>
                         </option>
         
                         <option
                             value="top-right"
-                            <?php if($ms_nav_position == "top-right") { echo "selected"; } ?> 
+                            <?php if($cs_nav_position == "top-right") { echo "selected"; } ?> 
                         >
-                            <?php echo esc_html__('Top Right','my-slider');?>
+                            <?php echo esc_html__('Top Right','commerce-slider');?>
                         </option>
         
                         <option
                             value="top-center"
-                            <?php if($ms_nav_position == "top-center") { echo "selected"; } ?> 
+                            <?php if($cs_nav_position == "top-center") { echo "selected"; } ?> 
                         >
-                            <?php echo esc_html__('Top Center','my-slider');?>
+                            <?php echo esc_html__('Top Center','commerce-slider');?>
                         </option>
         
                         <option
                             value="middle-wide"
-                            <?php if($ms_nav_position == "middle-wide") { echo "selected"; } ?> 
+                            <?php if($cs_nav_position == "middle-wide") { echo "selected"; } ?> 
                         >
-                            <?php echo esc_html__('Middle','my-slider');?>
+                            <?php echo esc_html__('Middle','commerce-slider');?>
                         </option>
         
                         <option
                             value="bottom-wide"
-                            <?php if($ms_nav_position == "bottom-wide") { echo "selected"; } ?> 
+                            <?php if($cs_nav_position == "bottom-wide") { echo "selected"; } ?> 
                         >
-                            <?php echo esc_html__('Bottom','my-slider');?>
+                            <?php echo esc_html__('Bottom','commerce-slider');?>
                         </option>
         
                         <option
                             value="bottom-left"
-                            <?php if($ms_nav_position == "bottom-left") { echo "selected"; } ?> 
+                            <?php if($cs_nav_position == "bottom-left") { echo "selected"; } ?> 
                         >
-                            <?php echo esc_html__('Bottom Left','my-slider');?>
+                            <?php echo esc_html__('Bottom Left','commerce-slider');?>
                         </option>
         
                         <option
                             value="bottom-right"
-                            <?php if($ms_nav_position == "bottom-right") { echo "selected"; } ?> 
+                            <?php if($cs_nav_position == "bottom-right") { echo "selected"; } ?> 
                         >
-                            <?php echo esc_html__('Bottom Right','my-slider');?>
+                            <?php echo esc_html__('Bottom Right','commerce-slider');?>
                         </option>
         
                         <option
                             value="bottom-center"
-                            <?php if($ms_nav_position == "bottom-center") { echo "selected"; } ?> 
+                            <?php if($cs_nav_position == "bottom-center") { echo "selected"; } ?> 
                         >
-                            <?php echo esc_html__('Bottom Center','my-slider');?>
+                            <?php echo esc_html__('Bottom Center','commerce-slider');?>
                         </option>
         
                     </select>
@@ -602,8 +602,8 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         min="8"
                         step="1"
-                        value="<?php if( ! empty( $ms_nav_fs ) ) { echo esc_html( $ms_nav_fs ); } ?>"
-                        name="ms_nav_fs"
+                        value="<?php if( ! empty( $cs_nav_fs ) ) { echo esc_html( $cs_nav_fs ); } ?>"
+                        name="cs_nav_fs"
                     />
                 </div>
     
@@ -615,7 +615,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <select
                         class="field"
-                        name="ms_nav_fw"
+                        name="cs_nav_fw"
                     >
                         <option
                             class="d-none"
@@ -626,28 +626,28 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="200"
-                            <?php if ( ! empty( $ms_nav_fw ) && $ms_nav_fw == '200' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_nav_fw ) && $cs_nav_fw == '200' ) { echo 'selected'; } ?>
                         >
                             Thin
                         </option>
     
                         <option
                             value="500"
-                            <?php if ( ! empty( $ms_nav_fw ) && $ms_nav_fw == '500' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_nav_fw ) && $cs_nav_fw == '500' ) { echo 'selected'; } ?>
                         >
                             Medium
                         </option>
     
                         <option
                             value="700"
-                            <?php if ( ! empty( $ms_nav_fw ) && $ms_nav_fw == '700' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_nav_fw ) && $cs_nav_fw == '700' ) { echo 'selected'; } ?>
                         >
                             Bold
                         </option>
     
                         <option
                             value="1000"
-                            <?php if ( ! empty( $ms_nav_fw ) && $ms_nav_fw == '1000' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_nav_fw ) && $cs_nav_fw == '1000' ) { echo 'selected'; } ?>
                         >
                             Bolder
                         </option>
@@ -665,9 +665,9 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         min="0"
                         max="50"
-                        value="<?php if( ! empty( $ms_nav_radius ) ) { echo esc_html( $ms_nav_radius ); } ?>"
+                        value="<?php if( ! empty( $cs_nav_radius ) ) { echo esc_html( $cs_nav_radius ); } ?>"
                         step="1"
-                        name="ms_nav_radius"
+                        name="cs_nav_radius"
                     />
                 </div>
     
@@ -678,10 +678,10 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         <small>Nav button color. Default - "#FEFEFE"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_nav_color ) ) { echo esc_html( $ms_nav_color ); } ?>"
-                        name="ms_nav_color"
+                        value="<?php if( ! empty( $cs_nav_color ) ) { echo esc_html( $cs_nav_color ); } ?>"
+                        name="cs_nav_color"
                     />
                 </div>
     
@@ -692,10 +692,10 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         <small>Nav button background color. Default - rgba(0, 0, 0, 0.2)</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_nav_bg_color ) ) { echo esc_html( $ms_nav_bg_color ); } ?>"
-                        name="ms_nav_bg_color"
+                        value="<?php if( ! empty( $cs_nav_bg_color ) ) { echo esc_html( $cs_nav_bg_color ); } ?>"
+                        name="cs_nav_bg_color"
                         data-alpha-enabled="true"
                     />
                 </div>
@@ -707,10 +707,10 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         <small>Nav button background color on mouse over. Default - rgba(0, 0, 0, 0.5)</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_nav_bg_hover_color ) ) { echo esc_html( $ms_nav_bg_hover_color ); } ?>"
-                        name="ms_nav_bg_hover_color"
+                        value="<?php if( ! empty( $cs_nav_bg_hover_color ) ) { echo esc_html( $cs_nav_bg_hover_color ); } ?>"
+                        name="cs_nav_bg_hover_color"
                         data-alpha-enabled="true"
                     />
                 </div>
@@ -727,28 +727,28 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div>
                 <span class="switch radio-switch fixed-width-lg">
-                    <input name="ms_show_nav_sm" id="ms_show_nav_sm_on" type="radio"
+                    <input name="cs_show_nav_sm" id="cs_show_nav_sm_on" type="radio"
                         value="true"
-                        <?php if ( $ms_show_nav_sm == 'true' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_show_nav_sm == 'true' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_nav_sm_on" class="radioCheck">Show</label>
-                    <input name="ms_show_nav_sm" id="ms_show_nav_sm_off" type="radio"
+                    <label for="cs_show_nav_sm_on" class="radioCheck">Show</label>
+                    <input name="cs_show_nav_sm" id="cs_show_nav_sm_off" type="radio"
                         value="false"
-                        <?php if ( $ms_show_nav_sm == 'false' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_show_nav_sm == 'false' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_nav_sm_off" class="radioCheck">Hide</label>
+                    <label for="cs_show_nav_sm_off" class="radioCheck">Hide</label>
                     <a class="slide-button btn"></a>
                 </span>
             </div>
         </div>
 
-        <div class="field-wrapper d-none" id="ms_nav_position_sm">
+        <div class="field-wrapper d-none" id="cs_nav_position_sm">
             <div>
                 <span>Position On Small Devices</span>
                 <br>
                 <small>Nav position on small devices.</small>
             </div>
-            <select class="field" id="ms_nav_position_sm" name="ms_nav_position_sm">
+            <select class="field" id="cs_nav_position_sm" name="cs_nav_position_sm">
                 <option
                     class="d-none"
                     value=""
@@ -758,65 +758,65 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                 <option
                     value="top-wide"
-                    <?php if($ms_nav_position_sm == "top-wide") { echo "selected"; } ?> 
+                    <?php if($cs_nav_position_sm == "top-wide") { echo "selected"; } ?> 
                 >
-                    <?php echo esc_html__('Top','my-slider');?>
+                    <?php echo esc_html__('Top','commerce-slider');?>
                 </option>
 
                 <option
                     value="top-left"
-                    <?php if($ms_nav_position_sm == "top-left") { echo "selected"; } ?> 
+                    <?php if($cs_nav_position_sm == "top-left") { echo "selected"; } ?> 
                 >
-                    <?php echo esc_html__('Top Left','my-slider');?>
+                    <?php echo esc_html__('Top Left','commerce-slider');?>
                 </option>
 
                 <option
                     value="top-right"
-                    <?php if($ms_nav_position_sm == "top-right") { echo "selected"; } ?> 
+                    <?php if($cs_nav_position_sm == "top-right") { echo "selected"; } ?> 
                 >
-                    <?php echo esc_html__('Top Right','my-slider');?>
+                    <?php echo esc_html__('Top Right','commerce-slider');?>
                 </option>
 
                 <option
                     value="top-center"
-                    <?php if($ms_nav_position_sm == "top-center") { echo "selected"; } ?> 
+                    <?php if($cs_nav_position_sm == "top-center") { echo "selected"; } ?> 
                 >
-                    <?php echo esc_html__('Top Center','my-slider');?>
+                    <?php echo esc_html__('Top Center','commerce-slider');?>
                 </option>
 
                 <option
                     value="middle-wide"
-                    <?php if($ms_nav_position_sm == "middle-wide") { echo "selected"; } ?> 
+                    <?php if($cs_nav_position_sm == "middle-wide") { echo "selected"; } ?> 
                 >
-                    <?php echo esc_html__('Middle','my-slider');?>
+                    <?php echo esc_html__('Middle','commerce-slider');?>
                 </option>
 
                 <option
                     value="bottom-wide"
-                    <?php if($ms_nav_position_sm == "bottom-wide") { echo "selected"; } ?> 
+                    <?php if($cs_nav_position_sm == "bottom-wide") { echo "selected"; } ?> 
                 >
-                    <?php echo esc_html__('Bottom','my-slider');?>
+                    <?php echo esc_html__('Bottom','commerce-slider');?>
                 </option>
 
                 <option
                     value="bottom-left"
-                    <?php if($ms_nav_position_sm == "bottom-left") { echo "selected"; } ?> 
+                    <?php if($cs_nav_position_sm == "bottom-left") { echo "selected"; } ?> 
                 >
-                    <?php echo esc_html__('Bottom Left','my-slider');?>
+                    <?php echo esc_html__('Bottom Left','commerce-slider');?>
                 </option>
 
                 <option
                     value="bottom-right"
-                    <?php if($ms_nav_position_sm == "bottom-right") { echo "selected"; } ?> 
+                    <?php if($cs_nav_position_sm == "bottom-right") { echo "selected"; } ?> 
                 >
-                    <?php echo esc_html__('Bottom Right','my-slider');?>
+                    <?php echo esc_html__('Bottom Right','commerce-slider');?>
                 </option>
 
                 <option
                     value="bottom-center"
-                    <?php if($ms_nav_position_sm == "bottom-center") { echo "selected"; } ?> 
+                    <?php if($cs_nav_position_sm == "bottom-center") { echo "selected"; } ?> 
                 >
-                    <?php echo esc_html__('Bottom Center','my-slider');?>
+                    <?php echo esc_html__('Bottom Center','commerce-slider');?>
                 </option>
 
             </select>
@@ -832,22 +832,22 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div>
                 <span class="switch radio-switch fixed-width-lg">
-                    <input name="ms_show_dots" id="ms_show_dots_on" type="radio"
+                    <input name="cs_show_dots" id="cs_show_dots_on" type="radio"
                         value="true"
-                        <?php if ( $ms_show_dots == 'true' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_show_dots == 'true' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_dots_on" class="radioCheck">Show</label>
-                    <input name="ms_show_dots" id="ms_show_dots_off" type="radio"
+                    <label for="cs_show_dots_on" class="radioCheck">Show</label>
+                    <input name="cs_show_dots" id="cs_show_dots_off" type="radio"
                         value="false"
-                        <?php if ( $ms_show_dots == 'false' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_show_dots == 'false' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_dots_off" class="radioCheck">Hide</label>
+                    <label for="cs_show_dots_off" class="radioCheck">Hide</label>
                     <a class="slide-button btn"></a>
                 </span>
             </div>
         </div>
     
-        <div class="field-wrapper mt-20" id="ms_dots_settings">
+        <div class="field-wrapper mt-20" id="cs_dots_settings">
             <span>Dots Settings</span>
             <div class="field-group">
 
@@ -859,16 +859,16 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <div>
                         <span class="switch radio-switch fixed-width-lg">
-                            <input name="ms_show_dots_foreach" id="ms_show_dots_foreach_on" type="radio"
+                            <input name="cs_show_dots_foreach" id="cs_show_dots_foreach_on" type="radio"
                                 value="true"
-                                <?php if ( $ms_show_dots_foreach == 'true' ) { echo 'checked'; } ?>
+                                <?php if ( $cs_show_dots_foreach == 'true' ) { echo 'checked'; } ?>
                             >
-                            <label for="ms_show_dots_foreach_on" class="radioCheck">Yes</label>
-                            <input name="ms_show_dots_foreach" id="ms_show_dots_foreach_off" type="radio"
+                            <label for="cs_show_dots_foreach_on" class="radioCheck">Yes</label>
+                            <input name="cs_show_dots_foreach" id="cs_show_dots_foreach_off" type="radio"
                                 value="false"
-                                <?php if ( $ms_show_dots_foreach == 'false' ) { echo 'checked'; } ?>
+                                <?php if ( $cs_show_dots_foreach == 'false' ) { echo 'checked'; } ?>
                             >
-                            <label for="ms_show_dots_foreach_off" class="radioCheck">No</label>
+                            <label for="cs_show_dots_foreach_off" class="radioCheck">No</label>
                             <a class="slide-button btn"></a>
                         </span>
                     </div>
@@ -882,7 +882,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <select
                         class="field"
-                        name="ms_dot_shape"
+                        name="cs_dot_shape"
                     >
                         <option
                             class="d-none"
@@ -893,21 +893,21 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="round"
-                            <?php if ( ! empty( $ms_dot_shape ) && $ms_dot_shape == 'round' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_dot_shape ) && $cs_dot_shape == 'round' ) { echo 'selected'; } ?>
                         >
                             Round
                         </option>
     
                         <option
                             value="bar"
-                            <?php if ( ! empty( $ms_dot_shape ) && $ms_dot_shape == 'bar' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_dot_shape ) && $cs_dot_shape == 'bar' ) { echo 'selected'; } ?>
                         >
                             Bar
                         </option>
     
                         <option
                             value="pill"
-                            <?php if ( ! empty( $ms_dot_shape ) && $ms_dot_shape == 'pill' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_dot_shape ) && $cs_dot_shape == 'pill' ) { echo 'selected'; } ?>
                         >
                             Pill
                         </option>
@@ -921,10 +921,10 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         <small>Dot color. Default - "#DDDDDD"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if ( ! empty( $ms_dot_color ) ) { echo esc_html( $ms_dot_color ); } ?>"
-                        name="ms_dot_color"
+                        value="<?php if ( ! empty( $cs_dot_color ) ) { echo esc_html( $cs_dot_color ); } ?>"
+                        name="cs_dot_color"
                     />
                 </div>
     
@@ -935,10 +935,10 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         <small>Active dot color. Default - "#4A4A4A"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_dot_active_color ) ) { echo esc_html( $ms_dot_active_color ); } ?>"
-                        name="ms_dot_active_color"
+                        value="<?php if( ! empty( $cs_dot_active_color ) ) { echo esc_html( $cs_dot_active_color ); } ?>"
+                        name="cs_dot_active_color"
                     />
                 </div>
     
@@ -955,16 +955,16 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div>
                 <span class="switch radio-switch fixed-width-lg">
-                    <input name="ms_show_dots_sm" id="ms_show_dots_sm_on" type="radio"
+                    <input name="cs_show_dots_sm" id="cs_show_dots_sm_on" type="radio"
                         value="true"
-                        <?php if ( $ms_show_dots_sm == 'true' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_show_dots_sm == 'true' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_dots_sm_on" class="radioCheck">Show</label>
-                    <input name="ms_show_dots_sm" id="ms_show_dots_sm_off" type="radio"
+                    <label for="cs_show_dots_sm_on" class="radioCheck">Show</label>
+                    <input name="cs_show_dots_sm" id="cs_show_dots_sm_off" type="radio"
                         value="false"
-                        <?php if ( $ms_show_dots_sm == 'false' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_show_dots_sm == 'false' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_dots_sm_off" class="radioCheck">Hide</label>
+                    <label for="cs_show_dots_sm_off" class="radioCheck">Hide</label>
                     <a class="slide-button btn"></a>
                 </span>
             </div>
@@ -987,9 +987,9 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 placeholder="Number of items to load"
                 min="0"
                 max="20"
-                value="<?php if( ! empty( $ms_items_to_show ) ) { echo esc_html( $ms_items_to_show ); } ?>"
+                value="<?php if( ! empty( $cs_items_to_show ) ) { echo esc_html( $cs_items_to_show ); } ?>"
                 step="1"
-                name="ms_items_to_show"
+                name="cs_items_to_show"
             />
         </div>
 
@@ -1005,8 +1005,8 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <div>
                         <span>Larger Screens</span>
                         <br>
-                        <small class="ms-product-field ms-scoped-field d-none">Screen size larger than 1440px. Default 4</small>
-                        <small class="ms-post-field ms-my-slide-field ms-scoped-field d-none">Screen size larger than 1440px. Default 1</small>
+                        <small class="cs-product-field cs-scoped-field d-none">Screen size larger than 1440px. Default 4</small>
+                        <small class="cs-post-field cs-commerce-slide-field cs-scoped-field d-none">Screen size larger than 1440px. Default 1</small>
                     </div>
                     <input
                         class="field"
@@ -1014,9 +1014,9 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         placeholder="Number of items to display at a time on screens >= 1440px"
                         min="1"
                         max="20"
-                        value="<?php if( ! empty( $ms_items_to_display_xl ) ) { echo esc_html( $ms_items_to_display_xl ); } ?>"
+                        value="<?php if( ! empty( $cs_items_to_display_xl ) ) { echo esc_html( $cs_items_to_display_xl ); } ?>"
                         step="1"
-                        name="ms_items_to_display_xl"
+                        name="cs_items_to_display_xl"
                     />
                 </div>
 
@@ -1024,8 +1024,8 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <div>
                         <span>Large Screens</span>
                         <br>
-                        <small class="ms-product-field ms-scoped-field d-none">Screen size 1024px - 1440px. Default 3</small>
-                        <small class="ms-post-field ms-my-slide-field ms-scoped-field d-none">Screen size 1024px - 1440px. Default 1</small>
+                        <small class="cs-product-field cs-scoped-field d-none">Screen size 1024px - 1440px. Default 3</small>
+                        <small class="cs-post-field cs-commerce-slide-field cs-scoped-field d-none">Screen size 1024px - 1440px. Default 1</small>
                     </div>
                     <input
                         class="field"
@@ -1033,9 +1033,9 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         placeholder="Number of items to display at a time on screens 1024px - 1440px"
                         min="1"
                         max="20"
-                        value="<?php if( ! empty( $ms_items_to_display_lg ) ) { echo esc_html( $ms_items_to_display_lg ); } ?>"
+                        value="<?php if( ! empty( $cs_items_to_display_lg ) ) { echo esc_html( $cs_items_to_display_lg ); } ?>"
                         step="1"
-                        name="ms_items_to_display_lg"
+                        name="cs_items_to_display_lg"
                     />
                 </div>
 
@@ -1043,8 +1043,8 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <div>
                         <span>Medium Screens</span>
                         <br>
-                        <small class="ms-product-field ms-scoped-field d-none">Screen size 640px - 1024px. Default 2</small>
-                        <small class="ms-post-field ms-my-slide-field ms-scoped-field d-none">Screen size 640px - 1024px. Default 1</small>
+                        <small class="cs-product-field cs-scoped-field d-none">Screen size 640px - 1024px. Default 2</small>
+                        <small class="cs-post-field cs-commerce-slide-field cs-scoped-field d-none">Screen size 640px - 1024px. Default 1</small>
                     </div>
                     <input
                         class="field"
@@ -1052,9 +1052,9 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         placeholder="Number of items to display at a time on screens 640px - 1024px"
                         min="1"
                         max="20"
-                        value="<?php if( ! empty( $ms_items_to_display_md ) ) { echo esc_html( $ms_items_to_display_md ); } ?>"
+                        value="<?php if( ! empty( $cs_items_to_display_md ) ) { echo esc_html( $cs_items_to_display_md ); } ?>"
                         step="1"
-                        name="ms_items_to_display_md"
+                        name="cs_items_to_display_md"
                     />
                 </div>
 
@@ -1062,8 +1062,8 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     <div>
                         <span>Small Screens</span>
                         <br>
-                        <small class="ms-product-field ms-scoped-field d-none">Smaller size than 640px. Default 1</small>
-                        <small class="ms-post-field ms-my-slide-field ms-scoped-field d-none">Smaller size than 640px. Default 1</small>
+                        <small class="cs-product-field cs-scoped-field d-none">Smaller size than 640px. Default 1</small>
+                        <small class="cs-post-field cs-commerce-slide-field cs-scoped-field d-none">Smaller size than 640px. Default 1</small>
                     </div>
                     <input
                         class="field"
@@ -1071,9 +1071,9 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         placeholder="Number of items to display at a time on screens < 640px"
                         min="1"
                         max="20"
-                        value="<?php if( ! empty( $ms_items_to_display_sm ) ) { echo esc_html( $ms_items_to_display_sm ); } ?>"
+                        value="<?php if( ! empty( $cs_items_to_display_sm ) ) { echo esc_html( $cs_items_to_display_sm ); } ?>"
                         step="1"
-                        name="ms_items_to_display_sm"
+                        name="cs_items_to_display_sm"
                     />
                 </div>
 
@@ -1085,8 +1085,8 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 <span>Slide Entrance Animation</span>
             </div>
             <select
-                id="ms_animation_entrance"
-                name="ms_animation_entrance"
+                id="cs_animation_entrance"
+                name="cs_animation_entrance"
             >
                 <option
                     class="d-none"
@@ -1097,238 +1097,238 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                 <option
                     value="animate__slideInRight"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__slideInRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__slideInRight' ) { echo 'selected'; } ?>
                 >
                     Slide Right
                 </option>
 
                 <option
                     value="animate__slideInLeft"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__slideInLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__slideInLeft' ) { echo 'selected'; } ?>
                 >
                     Slide Left
                 </option>
 
                 <option
                     value="animate__slideInDown"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__slideInDown' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__slideInDown' ) { echo 'selected'; } ?>
                 >
                     Slide Down
                 </option>
 
                 <option
                     value="animate__slideInUp"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__slideInUp' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__slideInUp' ) { echo 'selected'; } ?>
                 >
                     Slide Up
                 </option>
 
                 <option
                     value="animate__fadeIn"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__fadeIn' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__fadeIn' ) { echo 'selected'; } ?>
                     >
                     Fade In
                 </option>
 
                 <option
                     value="animate__fadeInLeft"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__fadeInLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__fadeInLeft' ) { echo 'selected'; } ?>
                     >
                     Fade Left
                 </option>
 
                 <option
                     value="animate__fadeInRight"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__fadeInRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__fadeInRight' ) { echo 'selected'; } ?>
                     >
                     Fade Right
                 </option>
 
                 <option
                     value="animate__fadeInUp"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__fadeInUp' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__fadeInUp' ) { echo 'selected'; } ?>
                     >
                     Fade Up
                 </option>
 
                 <option
                     value="animate__fadeInDown"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__fadeInDown' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__fadeInDown' ) { echo 'selected'; } ?>
                     >
                     Fade Down
                 </option>
 
                 <option
                     value="animate__zoomIn"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__zoomIn' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__zoomIn' ) { echo 'selected'; } ?>
                 >
                     Zoom In
                 </option>
 
                 <option
                     value="animate__zoomInLeft"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__zoomInLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__zoomInLeft' ) { echo 'selected'; } ?>
                 >
                     Zoom Left
                 </option>
 
                 <option
                     value="animate__zoomInRight"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__zoomInRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__zoomInRight' ) { echo 'selected'; } ?>
                 >
                     Zoom Right
                 </option>
 
                 <option
                     value="animate__zoomInUp"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__zoomInUp' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__zoomInUp' ) { echo 'selected'; } ?>
                 >
                     Zoom Up
                 </option>
 
                 <option
                     value="animate__zoomInDown"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__zoomInDown' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__zoomInDown' ) { echo 'selected'; } ?>
                 >
                     Zoom Down
                 </option>
 
                 <option
                     value="animate__bounceInLeft"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__bounceInLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__bounceInLeft' ) { echo 'selected'; } ?>
                 >
                     Bounce Left
                 </option>
 
                 <option
                     value="animate__bounceInRight"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__bounceInRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__bounceInRight' ) { echo 'selected'; } ?>
                 >
                     Bounce Right
                 </option>
 
                 <option
                     value="animate__bounceInUp"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__bounceInUp' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__bounceInUp' ) { echo 'selected'; } ?>
                 >
                     Bounce Up
                 </option>
 
                 <option
                     value="animate__bounceInDown"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__bounceInDown' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__bounceInDown' ) { echo 'selected'; } ?>
                 >
                     Bounce Down
                 </option>
 
                 <option
                     value="animate__backInLeft"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__backInLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__backInLeft' ) { echo 'selected'; } ?>
                 >
                     Back Left
                 </option>
 
                 <option
                     value="animate__backInRight"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__backInRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__backInRight' ) { echo 'selected'; } ?>
                 >
                     Back Right
                 </option>
 
                 <option
                     value="animate__backInUp"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__backInUp' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__backInUp' ) { echo 'selected'; } ?>
                 >
                     Back Up
                 </option>
 
                 <option
                     value="animate__backInDown"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__backInDown' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__backInDown' ) { echo 'selected'; } ?>
                 >
                     Back Down
                 </option>
 
                 <option
                     value="animate__rotateIn"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__rotateIn' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__rotateIn' ) { echo 'selected'; } ?>
                 >
                     Rotate
                 </option>
 
                 <option
                     value="animate__rotateInUpLeft"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__rotateInUpLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__rotateInUpLeft' ) { echo 'selected'; } ?>
                 >
                     Rotate Up From Left
                 </option>
 
                 <option
                     value="animate__rotateInUpRight"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__rotateInUpRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__rotateInUpRight' ) { echo 'selected'; } ?>
                 >
                     Rotate Up From Right
                 </option>
 
                 <option
                     value="animate__rotateInDownLeft"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__rotateInDownLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__rotateInDownLeft' ) { echo 'selected'; } ?>
                 >
                     Rotate Down From Left
                 </option>
 
                 <option
                     value="animate__rotateInDownRight"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__rotateInDownRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__rotateInDownRight' ) { echo 'selected'; } ?>
                 >
                     Rotate Down From Right
                 </option>
 
                 <option
                     value="animate__flipIn"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__flipIn' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__flipIn' ) { echo 'selected'; } ?>
                 >
                     Flip
                 </option>
 
                 <option
                     value="animate__flipInX"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__flipInX' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__flipInX' ) { echo 'selected'; } ?>
                 >
                     Flip Horizontaly
                 </option>
 
                 <option
                     value="animate__flipInY"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__flipInY' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__flipInY' ) { echo 'selected'; } ?>
                 >
                     Flip Verticaly
                 </option>
 
                 <option
                     value="animate__lightSpeedInLeft"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__lightSpeedInLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__lightSpeedInLeft' ) { echo 'selected'; } ?>
                 >
                     Lightspeed Left
                 </option>
 
                 <option
                     value="animate__lightSpeedInRight"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__lightSpeedInRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__lightSpeedInRight' ) { echo 'selected'; } ?>
                 >
                     Lightspeed Right
                 </option>
 
                 <option
                     value="animate__rollIn"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__rollIn' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__rollIn' ) { echo 'selected'; } ?>
                 >
                     Roll In
                 </option>
 
                 <option
                     value="animate__jackInTheBox"
-                    <?php if ( ! empty( $ms_animation_entrance ) && $ms_animation_entrance == 'animate__jackInTheBox' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_entrance ) && $cs_animation_entrance == 'animate__jackInTheBox' ) { echo 'selected'; } ?>
                 >
                 Jack In The Box
                 </option>
@@ -1340,8 +1340,8 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 <span>Slide Exit Animation</span>
             </div>
             <select
-                id="ms_animation_exit"
-                name="ms_animation_exit"
+                id="cs_animation_exit"
+                name="cs_animation_exit"
             >
                 <option
                     class="d-none"
@@ -1352,238 +1352,238 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                 <option
                     value="animate__slideOutRight"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__slideOutRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__slideOutRight' ) { echo 'selected'; } ?>
                 >
                     Slide Right
                 </option>
 
                 <option
                     value="animate__slideOutLeft"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__slideOutLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__slideOutLeft' ) { echo 'selected'; } ?>
                 >
                     Slide Left
                 </option>
 
                 <option
                     value="animate__slideOutDown"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__slideOutDown' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__slideOutDown' ) { echo 'selected'; } ?>
                 >
                     Slide Down
                 </option>
 
                 <option
                     value="animate__slideOutUp"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__slideOutUp' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__slideOutUp' ) { echo 'selected'; } ?>
                 >
                     Slide Up
                 </option>
 
                 <option
                     value="animate__fadeOut"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__fadeOut' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__fadeOut' ) { echo 'selected'; } ?>
                     >
                     Fade Out
                 </option>
 
                 <option
                     value="animate__fadeOutLeft"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__fadeOutLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__fadeOutLeft' ) { echo 'selected'; } ?>
                     >
                     Fade Left
                 </option>
 
                 <option
                     value="animate__fadeOutRight"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__fadeOutRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__fadeOutRight' ) { echo 'selected'; } ?>
                     >
                     Fade Right
                 </option>
 
                 <option
                     value="animate__fadeOutUp"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__fadeOutUp' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__fadeOutUp' ) { echo 'selected'; } ?>
                     >
                     Fade Up
                 </option>
 
                 <option
                     value="animate__fadeOutDown"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__fadeOutDown' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__fadeOutDown' ) { echo 'selected'; } ?>
                     >
                     Fade Down
                 </option>
 
                 <option
                     value="animate__zoomOut"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__zoomOut' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__zoomOut' ) { echo 'selected'; } ?>
                 >
                     Zoom Out
                 </option>
 
                 <option
                     value="animate__zoomOutLeft"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__zoomOutLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__zoomOutLeft' ) { echo 'selected'; } ?>
                 >
                     Zoom Left
                 </option>
 
                 <option
                     value="animate__zoomOutRight"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__zoomOutRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__zoomOutRight' ) { echo 'selected'; } ?>
                 >
                     Zoom Right
                 </option>
 
                 <option
                     value="animate__zoomOutUp"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__zoomOutUp' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__zoomOutUp' ) { echo 'selected'; } ?>
                 >
                     Zoom Up
                 </option>
 
                 <option
                     value="animate__zoomOutDown"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__zoomOutDown' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__zoomOutDown' ) { echo 'selected'; } ?>
                 >
                     Zoom Down
                 </option>
 
                 <option
                     value="animate__bounceOutLeft"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__bounceOutLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__bounceOutLeft' ) { echo 'selected'; } ?>
                 >
                     Bounce Left
                 </option>
 
                 <option
                     value="animate__bounceOutRight"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__bounceOutRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__bounceOutRight' ) { echo 'selected'; } ?>
                 >
                     Bounce Right
                 </option>
 
                 <option
                     value="animate__bounceOutUp"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__bounceOutUp' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__bounceOutUp' ) { echo 'selected'; } ?>
                 >
                     Bounce Up
                 </option>
 
                 <option
                     value="animate__bounceOutDown"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__bounceOutDown' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__bounceOutDown' ) { echo 'selected'; } ?>
                 >
                     Bounce Down
                 </option>
 
                 <option
                     value="animate__backOutLeft"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__backOutLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__backOutLeft' ) { echo 'selected'; } ?>
                 >
                     Back Left
                 </option>
 
                 <option
                     value="animate__backOutRight"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__backOutRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__backOutRight' ) { echo 'selected'; } ?>
                 >
                     Back Right
                 </option>
 
                 <option
                     value="animate__backOutUp"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__backOutUp' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__backOutUp' ) { echo 'selected'; } ?>
                 >
                     Back Up
                 </option>
 
                 <option
                     value="animate__backOutDown"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__backOutDown' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__backOutDown' ) { echo 'selected'; } ?>
                 >
                     Back Down
                 </option>
 
                 <option
                     value="animate__rotateOut"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__rotateOut' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__rotateOut' ) { echo 'selected'; } ?>
                 >
                     Rotate
                 </option>
 
                 <option
                     value="animate__rotateOutUpLeft"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__rotateOutUpLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__rotateOutUpLeft' ) { echo 'selected'; } ?>
                 >
                     Rotate Up From Left
                 </option>
 
                 <option
                     value="animate__rotateOutUpRight"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__rotateOutUpRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__rotateOutUpRight' ) { echo 'selected'; } ?>
                 >
                     Rotate Up From Right
                 </option>
 
                 <option
                     value="animate__rotateOutDownLeft"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__rotateOutDownLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__rotateOutDownLeft' ) { echo 'selected'; } ?>
                 >
                     Rotate Down From Left
                 </option>
 
                 <option
                     value="animate__rotateOutDownRight"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__rotateOutDownRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__rotateOutDownRight' ) { echo 'selected'; } ?>
                 >
                     Rotate Down From Right
                 </option>
 
                 <option
                     value="animate__flipOut"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__flipOut' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__flipOut' ) { echo 'selected'; } ?>
                 >
                     Flip
                 </option>
 
                 <option
                     value="animate__flipOutX"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__flipOutX' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__flipOutX' ) { echo 'selected'; } ?>
                 >
                     Flip Horizontaly
                 </option>
 
                 <option
                     value="animate__flipOutY"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__flipOutY' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__flipOutY' ) { echo 'selected'; } ?>
                 >
                     Flip Verticaly
                 </option>
 
                 <option
                     value="animate__lightSpeedOutLeft"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__lightSpeedOutLeft' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__lightSpeedOutLeft' ) { echo 'selected'; } ?>
                 >
                     Lightspeed Left
                 </option>
 
                 <option
                     value="animate__lightSpeedOutRight"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__lightSpeedOutRight' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__lightSpeedOutRight' ) { echo 'selected'; } ?>
                 >
                     Lightspeed Right
                 </option>
 
                 <option
                     value="animate__rollOut"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__rollOut' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__rollOut' ) { echo 'selected'; } ?>
                 >
                     Roll Out
                 </option>
 
                 <option
                     value="animate__hinge"
-                    <?php if ( ! empty( $ms_animation_exit ) && $ms_animation_exit == 'animate__hinge' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_animation_exit ) && $cs_animation_exit == 'animate__hinge' ) { echo 'selected'; } ?>
                 >
                     Hinge
                 </option>
@@ -1600,9 +1600,9 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 class="field"
                 type="number"
                 placeholder="Distance between items in pixels"
-                value="<?php if( ! empty( $ms_margin_right ) ) { echo esc_html( $ms_margin_right ); } ?>"
+                value="<?php if( ! empty( $cs_margin_right ) ) { echo esc_html( $cs_margin_right ); } ?>"
                 step="1"
-                name="ms_margin_right"
+                name="cs_margin_right"
             />
         </div>
         
@@ -1613,11 +1613,11 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 <small>Background color of the slides. Default - "#FFFFFF"</small>
             </div>
             <input
-                class="ms-color-picker"
+                class="cs-color-picker"
                 type="text"
                 placeholder="Background color of the slides"
-                value="<?php if( ! empty( $ms_bg_color ) ) { echo esc_html( $ms_bg_color ); } ?>"
-                name="ms_bg_color"
+                value="<?php if( ! empty( $cs_bg_color ) ) { echo esc_html( $cs_bg_color ); } ?>"
+                name="cs_bg_color"
             />
         </div>
 
@@ -1633,8 +1633,8 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 placeholder="Minimum height of the slides"
                 min="0"
                 step="5"
-                value="<?php if( ! empty( $ms_min_height ) ) { echo esc_html( $ms_min_height ); } ?>"
-                name="ms_min_height"
+                value="<?php if( ! empty( $cs_min_height ) ) { echo esc_html( $cs_min_height ); } ?>"
+                name="cs_min_height"
             />
         </div>
 
@@ -1646,7 +1646,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <select
                 class="field"
-                name="ms_horizontal_align"
+                name="cs_horizontal_align"
             >
                 <option
                     class="d-none"
@@ -1657,21 +1657,21 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                 <option
                     value="baseline"
-                    <?php if ( ! empty( $ms_horizontal_align ) && $ms_horizontal_align == 'baseline' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_horizontal_align ) && $cs_horizontal_align == 'baseline' ) { echo 'selected'; } ?>
                 >
                     Left
                 </option>
 
                 <option
                     value="center"
-                    <?php if ( ! empty( $ms_horizontal_align ) && $ms_horizontal_align == 'center' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_horizontal_align ) && $cs_horizontal_align == 'center' ) { echo 'selected'; } ?>
                     >
                     Center
                 </option>
 
                 <option
                     value="end"
-                    <?php if ( ! empty( $ms_horizontal_align ) && $ms_horizontal_align == 'end' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_horizontal_align ) && $cs_horizontal_align == 'end' ) { echo 'selected'; } ?>
                 >
                     Right
                 </option>
@@ -1686,7 +1686,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <select
                 class="field"
-                name="ms_verticle_align"
+                name="cs_verticle_align"
             >
                 <option
                     class="d-none"
@@ -1697,28 +1697,28 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             
                 <option
                     value="start"
-                    <?php if ( ! empty( $ms_verticle_align ) && $ms_verticle_align == 'start' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_verticle_align ) && $cs_verticle_align == 'start' ) { echo 'selected'; } ?>
                 >
                     Top
                 </option>
 
                 <option
                     value="center"
-                    <?php if ( ! empty( $ms_verticle_align ) && $ms_verticle_align == 'center' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_verticle_align ) && $cs_verticle_align == 'center' ) { echo 'selected'; } ?>
                     >
                     Center
                 </option>
 
                 <option
                     value="end"
-                    <?php if ( ! empty( $ms_verticle_align ) && $ms_verticle_align == 'end' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_verticle_align ) && $cs_verticle_align == 'end' ) { echo 'selected'; } ?>
                 >
                     Bottom
                 </option>
 
                 <option
                     value="space-between"
-                    <?php if ( ! empty( $ms_verticle_align ) && $ms_verticle_align == 'space-between' ) { echo 'selected'; } ?>
+                    <?php if ( ! empty( $cs_verticle_align ) && $cs_verticle_align == 'space-between' ) { echo 'selected'; } ?>
                 >
                     Fit Container
                 </option>
@@ -1738,22 +1738,22 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div>
                 <span class="switch radio-switch fixed-width-lg">
-                    <input name="ms_autoplay" id="ms_autoplay_on" type="radio"
+                    <input name="cs_autoplay" id="cs_autoplay_on" type="radio"
                         value="true"
-                        <?php if ( $ms_autoplay == 'true' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_autoplay == 'true' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_autoplay_on" class="radioCheck">On</label>
-                    <input name="ms_autoplay" id="ms_autoplay_off" type="radio"
+                    <label for="cs_autoplay_on" class="radioCheck">On</label>
+                    <input name="cs_autoplay" id="cs_autoplay_off" type="radio"
                         value="false"
-                        <?php if ( $ms_autoplay == 'false' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_autoplay == 'false' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_autoplay_off" class="radioCheck">Off</label>
+                    <label for="cs_autoplay_off" class="radioCheck">Off</label>
                     <a class="slide-button btn"></a>
                 </span>
             </div>
         </div>
 
-        <div class="field-wrapper mt-20" id="ms_autoplay_settings">
+        <div class="field-wrapper mt-20" id="cs_autoplay_settings">
             <span></span>
             <div class="field-group">
                 <div class="field-wrapper">
@@ -1766,9 +1766,9 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         class="field"
                         type="number"
                         placeholder="Display duration of slides in milliseconds"
-                        value="<?php if( ! empty( $ms_autoplay_timeout ) ) { echo esc_html( $ms_autoplay_timeout ); } ?>"
+                        value="<?php if( ! empty( $cs_autoplay_timeout ) ) { echo esc_html( $cs_autoplay_timeout ); } ?>"
                         step="100"
-                        name="ms_autoplay_timeout"
+                        name="cs_autoplay_timeout"
                     />
                 </div>
             
@@ -1782,9 +1782,9 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         class="field"
                         type="number"
                         placeholder="Duration of moving to the next slide in milliseconds"
-                        value="<?php if( ! empty( $ms_autoplay_speed ) ) { echo esc_html( $ms_autoplay_speed ); } ?>"
+                        value="<?php if( ! empty( $cs_autoplay_speed ) ) { echo esc_html( $cs_autoplay_speed ); } ?>"
                         step="100"
-                        name="ms_autoplay_speed"
+                        name="cs_autoplay_speed"
                     />
                 </div>
             
@@ -1796,16 +1796,16 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <div>
                         <span class="switch radio-switch fixed-width-lg">
-                            <input name="ms_autoplay_hover_pause" id="ms_autoplay_hover_pause_on" type="radio"
+                            <input name="cs_autoplay_hover_pause" id="cs_autoplay_hover_pause_on" type="radio"
                                 value="true"
-                                <?php if ( $ms_autoplay_hover_pause == 'true' ) { echo 'checked'; } ?>
+                                <?php if ( $cs_autoplay_hover_pause == 'true' ) { echo 'checked'; } ?>
                             >
-                            <label for="ms_autoplay_hover_pause_on" class="radioCheck">Yes</label>
-                            <input name="ms_autoplay_hover_pause" id="ms_autoplay_hover_pause_off" type="radio"
+                            <label for="cs_autoplay_hover_pause_on" class="radioCheck">Yes</label>
+                            <input name="cs_autoplay_hover_pause" id="cs_autoplay_hover_pause_off" type="radio"
                                 value="false"
-                                <?php if ( $ms_autoplay_hover_pause == 'false' ) { echo 'checked'; } ?>
+                                <?php if ( $cs_autoplay_hover_pause == 'false' ) { echo 'checked'; } ?>
                             >
-                            <label for="ms_autoplay_hover_pause_off" class="radioCheck">No</label>
+                            <label for="cs_autoplay_hover_pause_off" class="radioCheck">No</label>
                             <a class="slide-button btn"></a>
                         </span>
                     </div>
@@ -1818,7 +1818,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
     <!-- Content & Typography Tab -->
     <div id="tab-4" class="tab-content">
 
-        <div class="field-wrapper ms-product-field ms-post-field ms-scoped-field d-none">
+        <div class="field-wrapper cs-product-field cs-post-field cs-scoped-field d-none">
             <div>
                 <span>Title</span>
                 <br>
@@ -1826,7 +1826,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div class="field-group">
 
-                <div class="field-wrapper ms-product-field ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Font Size</span>
                         <br>
@@ -1837,13 +1837,13 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Title font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_title_fs ) ) { echo esc_html( $ms_title_fs ); } ?>"
+                        value="<?php if( ! empty( $cs_title_fs ) ) { echo esc_html( $cs_title_fs ); } ?>"
                         step="1"
-                        name="ms_title_fs"
+                        name="cs_title_fs"
                     />
                 </div>
 
-                <div class="field-wrapper ms-product-field ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Font Weight</span>
                         <br>
@@ -1851,7 +1851,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <select
                         class="field"
-                        name="ms_title_fw"
+                        name="cs_title_fw"
                     >
                         <option
                             class="d-none"
@@ -1862,52 +1862,52 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="200"
-                            <?php if ( ! empty( $ms_title_fw ) && $ms_title_fw == '200' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_title_fw ) && $cs_title_fw == '200' ) { echo 'selected'; } ?>
                         >
                             Thin
                         </option>
 
                         <option
                             value="500"
-                            <?php if ( ! empty( $ms_title_fw ) && $ms_title_fw == '500' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_title_fw ) && $cs_title_fw == '500' ) { echo 'selected'; } ?>
                         >
                             Medium
                         </option>
 
                         <option
                             value="700"
-                            <?php if ( ! empty( $ms_title_fw ) && $ms_title_fw == '700' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_title_fw ) && $cs_title_fw == '700' ) { echo 'selected'; } ?>
                         >
                             Bold
                         </option>
 
                         <option
                             value="1000"
-                            <?php if ( ! empty( $ms_title_fw ) && $ms_title_fw == '1000' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_title_fw ) && $cs_title_fw == '1000' ) { echo 'selected'; } ?>
                         >
                             Bolder
                         </option>
                     </select>
                 </div>
 
-                <div class="field-wrapper ms-product-field ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Color</span>
                         <br>
                         <small>Default Black</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_title_color ) ) { echo esc_html( $ms_title_color ); } ?>"
-                        name="ms_title_color"
+                        value="<?php if( ! empty( $cs_title_color ) ) { echo esc_html( $cs_title_color ); } ?>"
+                        name="cs_title_color"
                     />
                 </div>
 
             </div>
         </div>
 
-        <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+        <div class="field-wrapper cs-post-field cs-scoped-field d-none">
             <div>
                 <span>Meta Font Size</span>
                 <br>
@@ -1918,13 +1918,13 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 type="number"
                 placeholder="Post meta font size"
                 min="6"
-                value="<?php if( ! empty( $ms_metat_fs ) ) { echo esc_html( $ms_meta_fs ); } ?>"
+                value="<?php if( ! empty( $cs_metat_fs ) ) { echo esc_html( $cs_meta_fs ); } ?>"
                 step="1"
-                name="ms_meta_fs"
+                name="cs_meta_fs"
             />
         </div>
 
-        <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+        <div class="field-wrapper cs-post-field cs-scoped-field d-none">
             <div>
                 <span>Comment Count</span>
                 <br>
@@ -1932,40 +1932,40 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div>
                 <span class="switch radio-switch fixed-width-lg">
-                    <input name="ms_show_comments" id="ms_show_comments_on" type="radio"
+                    <input name="cs_show_comments" id="cs_show_comments_on" type="radio"
                         value="show"
-                        <?php if ( $ms_show_comments == 'show' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_show_comments == 'show' ) { echo 'checked'; } ?>
                     />
-                    <label for="ms_show_comments_on" class="radioCheck">Show</label>
-                    <input name="ms_show_comments" id="ms_show_comments_off" type="radio"
+                    <label for="cs_show_comments_on" class="radioCheck">Show</label>
+                    <input name="cs_show_comments" id="cs_show_comments_off" type="radio"
                         value="hide"
-                        <?php if ( $ms_show_comments == 'hide' ) { echo 'checked'; } ?>
+                        <?php if ( $cs_show_comments == 'hide' ) { echo 'checked'; } ?>
                     />
-                    <label for="ms_show_comments_off" class="radioCheck">Hide</label>
+                    <label for="cs_show_comments_off" class="radioCheck">Hide</label>
                     <a class="slide-button btn"></a>
                 </span>
             </div>
         </div>
 
-        <div class="field-wrapper mt-20 ms-post-field ms-scoped-field d-none" id="ms_comment_settings" data-default="show">
+        <div class="field-wrapper mt-20 cs-post-field cs-scoped-field d-none" id="cs_comment_settings" data-default="show">
             <span></span>
             <div class="field-group">
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Icon Color</span>
                         <br>
                         <small>Comment count icon color. Default #333333</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_comment_icon_color ) ) { echo esc_html( $ms_comment_icon_color ); } ?>"
-                        name="ms_comment_icon_color"
+                        value="<?php if( ! empty( $cs_comment_icon_color ) ) { echo esc_html( $cs_comment_icon_color ); } ?>"
+                        name="cs_comment_icon_color"
                     />
                 </div>
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Font Weight</span>
                         <br>
@@ -1973,7 +1973,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <select
                         class="field"
-                        name="ms_comment_fw"
+                        name="cs_comment_fw"
                     >
                         <option
                             class="d-none"
@@ -1984,52 +1984,52 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="200"
-                            <?php if ( ! empty( $ms_comment_fw ) && $ms_comment_fw == '200' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_comment_fw ) && $cs_comment_fw == '200' ) { echo 'selected'; } ?>
                         >
                             Thin
                         </option>
     
                         <option
                             value="500"
-                            <?php if ( ! empty( $ms_comment_fw ) && $ms_comment_fw == '500' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_comment_fw ) && $cs_comment_fw == '500' ) { echo 'selected'; } ?>
                         >
                             Medium
                         </option>
     
                         <option
                             value="700"
-                            <?php if ( ! empty( $ms_comment_fw ) && $ms_comment_fw == '700' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_comment_fw ) && $cs_comment_fw == '700' ) { echo 'selected'; } ?>
                         >
                             Bold
                         </option>
     
                         <option
                             value="1000"
-                            <?php if ( ! empty( $ms_comment_fw ) && $ms_comment_fw == '1000' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_comment_fw ) && $cs_comment_fw == '1000' ) { echo 'selected'; } ?>
                         >
                             Bolder
                         </option>
                     </select>
                 </div>
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Color</span>
                         <br>
                         <small>Default #333333</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_comment_color ) ) { echo esc_html( $ms_comment_color ); } ?>"
-                        name="ms_comment_color"
+                        value="<?php if( ! empty( $cs_comment_color ) ) { echo esc_html( $cs_comment_color ); } ?>"
+                        name="cs_comment_color"
                     />
                 </div>
     
             </div>
         </div>
 
-        <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+        <div class="field-wrapper cs-post-field cs-scoped-field d-none">
             <div>
                 <span>Category</span>
                 <br>
@@ -2037,40 +2037,40 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div>
                 <span class="switch radio-switch fixed-width-lg">
-                    <input name="ms_show_category" id="ms_show_category_on" type="radio"
+                    <input name="cs_show_category" id="cs_show_category_on" type="radio"
                         value="show"
-                        <?php if ( ! empty( $ms_show_category ) && $ms_show_category == 'show' ) { echo 'checked'; } ?>
+                        <?php if ( ! empty( $cs_show_category ) && $cs_show_category == 'show' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_category_on" class="radioCheck">Show</label>
-                    <input name="ms_show_category" id="ms_show_category_off" type="radio"
+                    <label for="cs_show_category_on" class="radioCheck">Show</label>
+                    <input name="cs_show_category" id="cs_show_category_off" type="radio"
                         value="hide"
-                        <?php if ( ! empty( $ms_show_category ) && $ms_show_category == 'hide' ) { echo 'checked'; } ?>
+                        <?php if ( ! empty( $cs_show_category ) && $cs_show_category == 'hide' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_category_off" class="radioCheck">Hide</label>
+                    <label for="cs_show_category_off" class="radioCheck">Hide</label>
                     <a class="slide-button btn"></a>
                 </span>
             </div>
         </div>
 
-        <div class="field-wrapper mt-20 ms-post-field ms-scoped-field d-none" id="ms_category_settings">
+        <div class="field-wrapper mt-20 cs-post-field cs-scoped-field d-none" id="cs_category_settings">
             <span></span>
             <div class="field-group">
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Icon Color</span>
                         <br>
                         <small>Category icon color. Default - "#333333"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_category_icon_color ) ) { echo esc_html( $ms_category_icon_color ); } ?>"
-                        name="ms_category_icon_color"
+                        value="<?php if( ! empty( $cs_category_icon_color ) ) { echo esc_html( $cs_category_icon_color ); } ?>"
+                        name="cs_category_icon_color"
                     />
                 </div>
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Font Weight</span>
                         <br>
@@ -2078,7 +2078,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <select
                         class="field"
-                        name="ms_category_fw"
+                        name="cs_category_fw"
                     >
                         <option
                             class="d-none"
@@ -2089,66 +2089,66 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="200"
-                            <?php if ( ! empty( $ms_category_fw ) && $ms_category_fw == '200' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_category_fw ) && $cs_category_fw == '200' ) { echo 'selected'; } ?>
                         >
                             Thin
                         </option>
     
                         <option
                             value="500"
-                            <?php if ( ! empty( $ms_category_fw ) && $ms_category_fw == '500' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_category_fw ) && $cs_category_fw == '500' ) { echo 'selected'; } ?>
                         >
                             Medium
                         </option>
     
                         <option
                             value="700"
-                            <?php if ( ! empty( $ms_category_fw ) && $ms_category_fw == '700' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_category_fw ) && $cs_category_fw == '700' ) { echo 'selected'; } ?>
                         >
                             Bold
                         </option>
     
                         <option
                             value="1000"
-                            <?php if ( ! empty( $ms_category_fw ) && $ms_category_fw == '1000' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_category_fw ) && $cs_category_fw == '1000' ) { echo 'selected'; } ?>
                         >
                             Bolder
                         </option>
                     </select>
                 </div>
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Color</span>
                         <br>
                         <small>Category color. Default - "#333333"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_category_color ) ) { echo esc_html( $ms_category_color ); } ?>"
-                        name="ms_category_color"
+                        value="<?php if( ! empty( $cs_category_color ) ) { echo esc_html( $cs_category_color ); } ?>"
+                        name="cs_category_color"
                     />
                 </div>
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Background Color</span>
                         <br>
                         <small>Category background color. Default - "#EEEEEE"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_category_bg_color ) ) { echo esc_html( $ms_category_bg_color ); } ?>"
-                        name="ms_category_bg_color"
+                        value="<?php if( ! empty( $cs_category_bg_color ) ) { echo esc_html( $cs_category_bg_color ); } ?>"
+                        name="cs_category_bg_color"
                     />
                 </div>
     
             </div>
         </div>
 
-        <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+        <div class="field-wrapper cs-post-field cs-scoped-field d-none">
             <div>
                 <span>Date</span>
                 <br>
@@ -2156,40 +2156,40 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div>
                 <span class="switch radio-switch fixed-width-lg">
-                    <input name="ms_show_date" id="ms_show_date_on" type="radio"
+                    <input name="cs_show_date" id="cs_show_date_on" type="radio"
                         value="show"
-                        <?php if ( ! empty( $ms_show_date ) && $ms_show_date == 'show' ) { echo 'checked'; } ?>
+                        <?php if ( ! empty( $cs_show_date ) && $cs_show_date == 'show' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_date_on" class="radioCheck">Show</label>
-                    <input name="ms_show_date" id="ms_show_date_off" type="radio"
+                    <label for="cs_show_date_on" class="radioCheck">Show</label>
+                    <input name="cs_show_date" id="cs_show_date_off" type="radio"
                         value="hide"
-                        <?php if ( ! empty( $ms_show_date ) && $ms_show_date == 'hide' ) { echo 'checked'; } ?>
+                        <?php if ( ! empty( $cs_show_date ) && $cs_show_date == 'hide' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_date_off" class="radioCheck">Hide</label>
+                    <label for="cs_show_date_off" class="radioCheck">Hide</label>
                     <a class="slide-button btn"></a>
                 </span>
             </div>
         </div>
 
-        <div class="field-wrapper mt-20 ms-post-field ms-scoped-field d-none" id="ms_date_settings">
+        <div class="field-wrapper mt-20 cs-post-field cs-scoped-field d-none" id="cs_date_settings">
             <span></span>
             <div class="field-group">
 
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Icon Color</span>
                         <br>
                         <small>Date icon color. Default - "#333333"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_date_icon_color ) ) { echo esc_html( $ms_date_icon_color ); } ?>"
-                        name="ms_date_icon_color"
+                        value="<?php if( ! empty( $cs_date_icon_color ) ) { echo esc_html( $cs_date_icon_color ); } ?>"
+                        name="cs_date_icon_color"
                     />
                 </div>
 
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Font Weight</span>
                         <br>
@@ -2197,7 +2197,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <select
                         class="field"
-                        name="ms_date_fw"
+                        name="cs_date_fw"
                     >
                         <option
                             class="d-none"
@@ -2208,92 +2208,92 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="200"
-                            <?php if ( ! empty( $ms_date_fw ) && $ms_date_fw == '200' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_date_fw ) && $cs_date_fw == '200' ) { echo 'selected'; } ?>
                         >
                             Thin
                         </option>
     
                         <option
                             value="500"
-                            <?php if ( ! empty( $ms_date_fw ) && $ms_date_fw == '500' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_date_fw ) && $cs_date_fw == '500' ) { echo 'selected'; } ?>
                         >
                             Medium
                         </option>
     
                         <option
                             value="700"
-                            <?php if ( ! empty( $ms_date_fw ) && $ms_date_fw == '700' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_date_fw ) && $cs_date_fw == '700' ) { echo 'selected'; } ?>
                         >
                             Bold
                         </option>
     
                         <option
                             value="1000"
-                            <?php if ( ! empty( $ms_date_fw ) && $ms_date_fw == '1000' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_date_fw ) && $cs_date_fw == '1000' ) { echo 'selected'; } ?>
                         >
                             Bolder
                         </option>
                     </select>
                 </div>
 
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Color</span>
                         <br>
                         <small>Date color. Default - "#333333"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_date_color ) ) { echo esc_html( $ms_date_color ); } ?>"
-                        name="ms_date_color"
+                        value="<?php if( ! empty( $cs_date_color ) ) { echo esc_html( $cs_date_color ); } ?>"
+                        name="cs_date_color"
                     />
                 </div>
 
             </div>
         </div>
 
-        <!-- <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+        <!-- <div class="field-wrapper cs-post-field cs-scoped-field d-none">
             <span>Tags</span>
             <div>
                 <span class="switch radio-switch fixed-width-lg">
-                    <input name="ms_show_tags" id="ms_show_tags_on" type="radio"
+                    <input name="cs_show_tags" id="cs_show_tags_on" type="radio"
                         value="show"
-                        <?php // if ( ! empty( $ms_show_tags ) && $ms_show_tags == 'show' ) { echo 'checked'; } ?>
+                        <?php // if ( ! empty( $cs_show_tags ) && $cs_show_tags == 'show' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_tags_on" class="radioCheck">Show</label>
-                    <input name="ms_show_tags" id="ms_show_tags_off" type="radio"
+                    <label for="cs_show_tags_on" class="radioCheck">Show</label>
+                    <input name="cs_show_tags" id="cs_show_tags_off" type="radio"
                         value="hide"
-                        <?php // if ( ! empty( $ms_show_tags ) && $ms_show_tags == 'hide' ) { echo 'checked'; } ?>
+                        <?php // if ( ! empty( $cs_show_tags ) && $cs_show_tags == 'hide' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_tags_off" class="radioCheck">Hide</label>
+                    <label for="cs_show_tags_off" class="radioCheck">Hide</label>
                     <a class="slide-button btn"></a>
                 </span>
             </div>
         </div>
 
-        <div class="field-wrapper mt-20 ms-post-field ms-scoped-field d-none" id="ms_tag_settings">
+        <div class="field-wrapper mt-20 cs-post-field cs-scoped-field d-none" id="cs_tag_settings">
             <span></span>
             <div class="field-group">
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <span>Font Size</span>
                     <input
                         class="field"
                         type="number"
                         placeholder="Tags font size"
                         min="6"
-                        value="<?php // if( ! empty( $ms_tag_fs ) ) { echo esc_html( $ms_tag_fs ); } ?>"
+                        value="<?php // if( ! empty( $cs_tag_fs ) ) { echo esc_html( $cs_tag_fs ); } ?>"
                         step="1"
-                        name="ms_tag_fs"
+                        name="cs_tag_fs"
                     />
                 </div>
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <span>Font Weight</span>
                     <select
                         class="field"
-                        name="ms_tag_fw"
+                        name="cs_tag_fw"
                     >
                         <option
                             class="d-none"
@@ -2304,68 +2304,68 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="200"
-                            <?php // if ( ! empty( $ms_tag_fw ) && $ms_tag_fw == '200' ) { echo 'selected'; } ?>
+                            <?php // if ( ! empty( $cs_tag_fw ) && $cs_tag_fw == '200' ) { echo 'selected'; } ?>
                         >
                             Thin
                         </option>
     
                         <option
                             value="500"
-                            <?php // if ( ! empty( $ms_tag_fw ) && $ms_tag_fw == '500' ) { echo 'selected'; } ?>
+                            <?php // if ( ! empty( $cs_tag_fw ) && $cs_tag_fw == '500' ) { echo 'selected'; } ?>
                         >
                             Medium
                         </option>
     
                         <option
                             value="700"
-                            <?php // if ( ! empty( $ms_tag_fw ) && $ms_tag_fw == '700' ) { echo 'selected'; } ?>
+                            <?php // if ( ! empty( $cs_tag_fw ) && $cs_tag_fw == '700' ) { echo 'selected'; } ?>
                         >
                             Bold
                         </option>
     
                         <option
                             value="1000"
-                            <?php // if ( ! empty( $ms_tag_fw ) && $ms_tag_fw == '1000' ) { echo 'selected'; } ?>
+                            <?php // if ( ! empty( $cs_tag_fw ) && $cs_tag_fw == '1000' ) { echo 'selected'; } ?>
                         >
                             Bolder
                         </option>
                     </select>
                 </div>
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <span>Icon Color</span>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php // if( ! empty( $ms_tag_icon_color ) ) { echo esc_html( $ms_tag_icon_color ); } ?>"
-                        name="ms_tag_icon_color"
+                        value="<?php // if( ! empty( $cs_tag_icon_color ) ) { echo esc_html( $cs_tag_icon_color ); } ?>"
+                        name="cs_tag_icon_color"
                     />
                 </div>
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <span>Color</span>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php // if( ! empty( $ms_tag_color ) ) { echo esc_html( $ms_tag_color ); } ?>"
-                        name="ms_tag_color"
+                        value="<?php // if( ! empty( $cs_tag_color ) ) { echo esc_html( $cs_tag_color ); } ?>"
+                        name="cs_tag_color"
                     />
                 </div>
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <span>Background Color</span>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php // if( ! empty( $ms_tag_bg_color ) ) { echo esc_html( $ms_tag_bg_color ); } ?>"
-                        name="ms_tag_bg_color"
+                        value="<?php // if( ! empty( $cs_tag_bg_color ) ) { echo esc_html( $cs_tag_bg_color ); } ?>"
+                        name="cs_tag_bg_color"
                     />
                 </div>
     
             </div>
         </div> -->
 
-        <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+        <div class="field-wrapper cs-post-field cs-scoped-field d-none">
             <div>
                 <span>Excerpt</span>
                 <br>
@@ -2373,26 +2373,26 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div>
                 <span class="switch radio-switch fixed-width-lg">
-                    <input name="ms_show_excerpt" id="ms_show_excerpt_on" type="radio"
+                    <input name="cs_show_excerpt" id="cs_show_excerpt_on" type="radio"
                         value="show"
-                        <?php if ( ! empty( $ms_show_excerpt ) && $ms_show_excerpt == 'show' ) { echo 'checked'; } ?>
+                        <?php if ( ! empty( $cs_show_excerpt ) && $cs_show_excerpt == 'show' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_excerpt_on" class="radioCheck">Show</label>
-                    <input name="ms_show_excerpt" id="ms_show_excerpt_off" type="radio"
+                    <label for="cs_show_excerpt_on" class="radioCheck">Show</label>
+                    <input name="cs_show_excerpt" id="cs_show_excerpt_off" type="radio"
                         value="hide"
-                        <?php if ( ! empty( $ms_show_excerpt ) && $ms_show_excerpt == 'hide' ) { echo 'checked'; } ?>
+                        <?php if ( ! empty( $cs_show_excerpt ) && $cs_show_excerpt == 'hide' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_excerpt_off" class="radioCheck">Hide</label>
+                    <label for="cs_show_excerpt_off" class="radioCheck">Hide</label>
                     <a class="slide-button btn"></a>
                 </span>
             </div>
         </div>
 
-        <div class="field-wrapper mt-20 ms-post-field ms-scoped-field d-none" id="ms_excerpt_settings">
+        <div class="field-wrapper mt-20 cs-post-field cs-scoped-field d-none" id="cs_excerpt_settings">
             <span></span>
             <div class="field-group">
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Length</span>
                         <br>
@@ -2403,13 +2403,13 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Excerpt length"
                         min="1"
-                        value="<?php if( ! empty( $ms_excerpt_length ) ) { echo esc_html( $ms_excerpt_length ); } ?>"
+                        value="<?php if( ! empty( $cs_excerpt_length ) ) { echo esc_html( $cs_excerpt_length ); } ?>"
                         step="1"
-                        name="ms_excerpt_length"
+                        name="cs_excerpt_length"
                     />
                 </div>
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Read More Text</span>
                         <br>
@@ -2419,12 +2419,12 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         class="field"
                         type="text"
                         placeholder="Read More"
-                        value="<?php if( ! empty( $ms_read_more_text ) ) { echo esc_html( $ms_read_more_text ); } ?>"
-                        name="ms_read_more_text"
+                        value="<?php if( ! empty( $cs_read_more_text ) ) { echo esc_html( $cs_read_more_text ); } ?>"
+                        name="cs_read_more_text"
                     />
                 </div>
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Font Size</span>
                         <br>
@@ -2435,13 +2435,13 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Excerpt font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_excerpt_fs ) ) { echo esc_html( $ms_excerpt_fs ); } ?>"
+                        value="<?php if( ! empty( $cs_excerpt_fs ) ) { echo esc_html( $cs_excerpt_fs ); } ?>"
                         step="1"
-                        name="ms_excerpt_fs"
+                        name="cs_excerpt_fs"
                     />
                 </div>
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Font Weight</span>
                         <br>
@@ -2449,7 +2449,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <select
                         class="field"
-                        name="ms_excerpt_fw"
+                        name="cs_excerpt_fw"
                     >
                         <option
                             class="d-none"
@@ -2460,66 +2460,66 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="200"
-                            <?php if ( ! empty( $ms_excerpt_fw ) && $ms_excerpt_fw == '200' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_excerpt_fw ) && $cs_excerpt_fw == '200' ) { echo 'selected'; } ?>
                         >
                             Thin
                         </option>
     
                         <option
                             value="500"
-                            <?php if ( ! empty( $ms_excerpt_fw ) && $ms_excerpt_fw == '500' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_excerpt_fw ) && $cs_excerpt_fw == '500' ) { echo 'selected'; } ?>
                         >
                             Medium
                         </option>
     
                         <option
                             value="700"
-                            <?php if ( ! empty( $ms_excerpt_fw ) && $ms_excerpt_fw == '700' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_excerpt_fw ) && $cs_excerpt_fw == '700' ) { echo 'selected'; } ?>
                         >
                             Bold
                         </option>
     
                         <option
                             value="1000"
-                            <?php if ( ! empty( $ms_excerpt_fw ) && $ms_excerpt_fw == '1000' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_excerpt_fw ) && $cs_excerpt_fw == '1000' ) { echo 'selected'; } ?>
                         >
                             Bolder
                         </option>
                     </select>
                 </div>
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Color</span>
                         <br>
                         <small>Excerpt color. Default - "#111111"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_excerpt_color ) ) { echo esc_html( $ms_excerpt_color ); } ?>"
-                        name="ms_excerpt_color"
+                        value="<?php if( ! empty( $cs_excerpt_color ) ) { echo esc_html( $cs_excerpt_color ); } ?>"
+                        name="cs_excerpt_color"
                     />
                 </div>
     
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Read More Text Color</span>
                         <br>
                         <small>Default - "#333333"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_read_more_color ) ) { echo esc_html( $ms_read_more_color ); } ?>"
-                        name="ms_read_more_color"
+                        value="<?php if( ! empty( $cs_read_more_color ) ) { echo esc_html( $cs_read_more_color ); } ?>"
+                        name="cs_read_more_color"
                     />
                 </div>
     
             </div>
         </div>
 
-        <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+        <div class="field-wrapper cs-post-field cs-scoped-field d-none">
             <div>
                 <span>Author</span>
                 <br>
@@ -2527,26 +2527,26 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div>
                 <span class="switch radio-switch fixed-width-lg">
-                    <input name="ms_show_author" id="ms_show_author_on" type="radio"
+                    <input name="cs_show_author" id="cs_show_author_on" type="radio"
                         value="show"
-                        <?php if ( ! empty( $ms_show_author ) && $ms_show_author == 'show' ) { echo 'checked'; } ?>
+                        <?php if ( ! empty( $cs_show_author ) && $cs_show_author == 'show' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_author_on" class="radioCheck">Show</label>
-                    <input name="ms_show_author" id="ms_show_author_off" type="radio"
+                    <label for="cs_show_author_on" class="radioCheck">Show</label>
+                    <input name="cs_show_author" id="cs_show_author_off" type="radio"
                         value="hide"
-                        <?php if ( ! empty( $ms_show_author ) && $ms_show_author == 'hide' ) { echo 'checked'; } ?>
+                        <?php if ( ! empty( $cs_show_author ) && $cs_show_author == 'hide' ) { echo 'checked'; } ?>
                     >
-                    <label for="ms_show_author_off" class="radioCheck">Hide</label>
+                    <label for="cs_show_author_off" class="radioCheck">Hide</label>
                     <a class="slide-button btn"></a>
                 </span>
             </div>
         </div>
 
-        <div class="field-wrapper mt-20 ms-post-field ms-scoped-field d-none" id="ms_author_settings">
+        <div class="field-wrapper mt-20 cs-post-field cs-scoped-field d-none" id="cs_author_settings">
             <span></span>
             <div class="field-group">
 
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Avatar</span>
                         <br>
@@ -2554,22 +2554,22 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <div>
                         <span class="switch radio-switch fixed-width-lg">
-                            <input name="ms_show_avatar" id="ms_show_avatar_on" type="radio"
+                            <input name="cs_show_avatar" id="cs_show_avatar_on" type="radio"
                                 value="show"
-                                <?php if ( ! empty( $ms_show_avatar ) && $ms_show_avatar == 'show' ) { echo 'checked'; } ?>
+                                <?php if ( ! empty( $cs_show_avatar ) && $cs_show_avatar == 'show' ) { echo 'checked'; } ?>
                             >
-                            <label for="ms_show_avatar_on" class="radioCheck">Show</label>
-                            <input name="ms_show_avatar" id="ms_show_avatar_off" type="radio"
+                            <label for="cs_show_avatar_on" class="radioCheck">Show</label>
+                            <input name="cs_show_avatar" id="cs_show_avatar_off" type="radio"
                                 value="hide"
-                                <?php if ( ! empty( $ms_show_avatar ) && $ms_show_avatar == 'hide' ) { echo 'checked'; } ?>
+                                <?php if ( ! empty( $cs_show_avatar ) && $cs_show_avatar == 'hide' ) { echo 'checked'; } ?>
                             >
-                            <label for="ms_show_avatar_off" class="radioCheck">Hide</label>
+                            <label for="cs_show_avatar_off" class="radioCheck">Hide</label>
                             <a class="slide-button btn"></a>
                         </span>
                     </div>
                 </div>
 
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Font Size</span>
                         <br>
@@ -2580,13 +2580,13 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Author font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_author_fs ) ) { echo esc_html( $ms_author_fs ); } ?>"
+                        value="<?php if( ! empty( $cs_author_fs ) ) { echo esc_html( $cs_author_fs ); } ?>"
                         step="1"
-                        name="ms_author_fs"
+                        name="cs_author_fs"
                     />
                 </div>
 
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Font Weight</span>
                         <br>
@@ -2594,7 +2594,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <select
                         class="field"
-                        name="ms_author_fw"
+                        name="cs_author_fw"
                     >
                         <option
                             class="d-none"
@@ -2605,52 +2605,52 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="200"
-                            <?php if ( ! empty( $ms_author_fw ) && $ms_author_fw == '200' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_author_fw ) && $cs_author_fw == '200' ) { echo 'selected'; } ?>
                         >
                             Thin
                         </option>
     
                         <option
                             value="500"
-                            <?php if ( ! empty( $ms_author_fw ) && $ms_author_fw == '500' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_author_fw ) && $cs_author_fw == '500' ) { echo 'selected'; } ?>
                         >
                             Medium
                         </option>
     
                         <option
                             value="700"
-                            <?php if ( ! empty( $ms_author_fw ) && $ms_author_fw == '700' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_author_fw ) && $cs_author_fw == '700' ) { echo 'selected'; } ?>
                         >
                             Bold
                         </option>
     
                         <option
                             value="1000"
-                            <?php if ( ! empty( $ms_author_fw ) && $ms_author_fw == '1000' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_author_fw ) && $cs_author_fw == '1000' ) { echo 'selected'; } ?>
                         >
                             Bolder
                         </option>
                     </select>
                 </div>
 
-                <div class="field-wrapper ms-post-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-post-field cs-scoped-field d-none">
                     <div>
                         <span>Color</span>
                         <br>
                         <small>Author text color. Default - "#333333"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_author_color ) ) { echo esc_html( $ms_author_color ); } ?>"
-                        name="ms_author_color"
+                        value="<?php if( ! empty( $cs_author_color ) ) { echo esc_html( $cs_author_color ); } ?>"
+                        name="cs_author_color"
                     />
                 </div>
 
             </div>
         </div>
 
-        <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+        <div class="field-wrapper cs-product-field cs-scoped-field d-none">
             <div>
                 <span>Stock Status</span>
                 <br>
@@ -2658,7 +2658,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div class="field-group">
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Font Size</span>
                         <br>
@@ -2669,13 +2669,13 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Stock status font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_stock_fs ) ) { echo esc_html( $ms_stock_fs ); } ?>"
+                        value="<?php if( ! empty( $cs_stock_fs ) ) { echo esc_html( $cs_stock_fs ); } ?>"
                         step="1"
-                        name="ms_stock_fs"
+                        name="cs_stock_fs"
                     />
                 </div>
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Font Weight</span>
                         <br>
@@ -2683,7 +2683,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <select
                         class="field"
-                        name="ms_stock_fw"
+                        name="cs_stock_fw"
                     >
                         <option
                             class="d-none"
@@ -2694,52 +2694,52 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="200"
-                            <?php if ( ! empty( $ms_stock_fw ) && $ms_stock_fw == '200' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_stock_fw ) && $cs_stock_fw == '200' ) { echo 'selected'; } ?>
                         >
                             Thin
                         </option>
     
                         <option
                             value="500"
-                            <?php if ( ! empty( $ms_stock_fw ) && $ms_stock_fw == '500' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_stock_fw ) && $cs_stock_fw == '500' ) { echo 'selected'; } ?>
                         >
                             Medium
                         </option>
     
                         <option
                             value="700"
-                            <?php if ( ! empty( $ms_stock_fw ) && $ms_stock_fw == '700' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_stock_fw ) && $cs_stock_fw == '700' ) { echo 'selected'; } ?>
                         >
                             Bold
                         </option>
     
                         <option
                             value="1000"
-                            <?php if ( ! empty( $ms_stock_fw ) && $ms_stock_fw == '1000' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_stock_fw ) && $cs_stock_fw == '1000' ) { echo 'selected'; } ?>
                         >
                             Bolder
                         </option>
                     </select>
                 </div>
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Color</span>
                         <br>
                         <small>Default - "#EA8A35"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_stock_color ) ) { echo esc_html( $ms_stock_color ); } ?>"
-                        name="ms_stock_color"
+                        value="<?php if( ! empty( $cs_stock_color ) ) { echo esc_html( $cs_stock_color ); } ?>"
+                        name="cs_stock_color"
                     />
                 </div>
     
             </div>
         </div>
 
-        <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+        <div class="field-wrapper cs-product-field cs-scoped-field d-none">
             <div>
                 <span>Sales Count</span>
                 <br>
@@ -2747,7 +2747,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div class="field-group">
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Font Size</span>
                         <br>
@@ -2758,13 +2758,13 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Sales count font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_sales_fs ) ) { echo esc_html( $ms_sales_fs ); } ?>"
+                        value="<?php if( ! empty( $cs_sales_fs ) ) { echo esc_html( $cs_sales_fs ); } ?>"
                         step="1"
-                        name="ms_sales_fs"
+                        name="cs_sales_fs"
                     />
                 </div>
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Font Weight</span>
                         <br>
@@ -2772,7 +2772,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <select
                         class="field"
-                        name="ms_sales_fw"
+                        name="cs_sales_fw"
                     >
                         <option
                             class="d-none"
@@ -2783,52 +2783,52 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="200"
-                            <?php if ( ! empty( $ms_sales_fw ) && $ms_sales_fw == '200' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_sales_fw ) && $cs_sales_fw == '200' ) { echo 'selected'; } ?>
                         >
                             Thin
                         </option>
     
                         <option
                             value="500"
-                            <?php if ( ! empty( $ms_sales_fw ) && $ms_sales_fw == '500' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_sales_fw ) && $cs_sales_fw == '500' ) { echo 'selected'; } ?>
                         >
                             Medium
                         </option>
     
                         <option
                             value="700"
-                            <?php if ( ! empty( $ms_sales_fw ) && $ms_sales_fw == '700' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_sales_fw ) && $cs_sales_fw == '700' ) { echo 'selected'; } ?>
                         >
                             Bold
                         </option>
     
                         <option
                             value="1000"
-                            <?php if ( ! empty( $ms_sales_fw ) && $ms_sales_fw == '1000' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_sales_fw ) && $cs_sales_fw == '1000' ) { echo 'selected'; } ?>
                         >
                             Bolder
                         </option>
                     </select>
                 </div>
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Color</span>
                         <br>
                         <small>Default - "#333333"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_sales_color ) ) { echo esc_html( $ms_sales_color ); } ?>"
-                        name="ms_sales_color"
+                        value="<?php if( ! empty( $cs_sales_color ) ) { echo esc_html( $cs_sales_color ); } ?>"
+                        name="cs_sales_color"
                     />
                 </div>
     
             </div>
         </div>
 
-        <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+        <div class="field-wrapper cs-product-field cs-scoped-field d-none">
             <div>
                 <span>Rating Star</span>
                 <br>
@@ -2836,7 +2836,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div class="field-group">
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Font Size</span>
                         <br>
@@ -2847,13 +2847,13 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Rating font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_review_fs ) ) { echo esc_html( $ms_review_fs ); } ?>"
+                        value="<?php if( ! empty( $cs_review_fs ) ) { echo esc_html( $cs_review_fs ); } ?>"
                         step="1"
-                        name="ms_review_fs"
+                        name="cs_review_fs"
                     />
                 </div>
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Font Weight</span>
                         <br>
@@ -2861,7 +2861,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <select
                         class="field"
-                        name="ms_review_fw"
+                        name="cs_review_fw"
                     >
                         <option
                             class="d-none"
@@ -2872,52 +2872,52 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="200"
-                            <?php if ( ! empty( $ms_review_fw ) && $ms_review_fw == '200' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_review_fw ) && $cs_review_fw == '200' ) { echo 'selected'; } ?>
                         >
                             Thin
                         </option>
     
                         <option
                             value="500"
-                            <?php if ( ! empty( $ms_review_fw ) && $ms_review_fw == '500' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_review_fw ) && $cs_review_fw == '500' ) { echo 'selected'; } ?>
                         >
                             Medium
                         </option>
     
                         <option
                             value="700"
-                            <?php if ( ! empty( $ms_review_fw ) && $ms_review_fw == '700' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_review_fw ) && $cs_review_fw == '700' ) { echo 'selected'; } ?>
                         >
                             Bold
                         </option>
     
                         <option
                             value="1000"
-                            <?php if ( ! empty( $ms_review_fw ) && $ms_review_fw == '1000' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_review_fw ) && $cs_review_fw == '1000' ) { echo 'selected'; } ?>
                         >
                             Bolder
                         </option>
                     </select>
                 </div>
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Color</span>
                         <br>
                         <small>Default - "#EA8A35"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_review_color ) ) { echo esc_html( $ms_review_color ); } ?>"
-                        name="ms_review_color"
+                        value="<?php if( ! empty( $cs_review_color ) ) { echo esc_html( $cs_review_color ); } ?>"
+                        name="cs_review_color"
                     />
                 </div>
     
             </div>
         </div>
 
-        <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+        <div class="field-wrapper cs-product-field cs-scoped-field d-none">
             <div>
                 <span>Pricing</span>
                 <br>
@@ -2925,7 +2925,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div class="field-group">
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Active Font Size</span>
                         <br>
@@ -2936,13 +2936,13 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Active price font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_active_price_fs ) ) { echo esc_html( $ms_active_price_fs ); } ?>"
+                        value="<?php if( ! empty( $cs_active_price_fs ) ) { echo esc_html( $cs_active_price_fs ); } ?>"
                         step="1"
-                        name="ms_active_price_fs"
+                        name="cs_active_price_fs"
                     />
                 </div>
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Active Font Weight</span>
                         <br>
@@ -2950,7 +2950,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <select
                         class="field"
-                        name="ms_active_price_fw"
+                        name="cs_active_price_fw"
                     >
                         <option
                             class="d-none"
@@ -2961,49 +2961,49 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="200"
-                            <?php if ( ! empty( $ms_active_price_fw ) && $ms_active_price_fw == '200' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_active_price_fw ) && $cs_active_price_fw == '200' ) { echo 'selected'; } ?>
                         >
                             Thin
                         </option>
     
                         <option
                             value="500"
-                            <?php if ( ! empty( $ms_active_price_fw ) && $ms_active_price_fw == '500' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_active_price_fw ) && $cs_active_price_fw == '500' ) { echo 'selected'; } ?>
                         >
                             Medium
                         </option>
     
                         <option
                             value="700"
-                            <?php if ( ! empty( $ms_active_price_fw ) && $ms_active_price_fw == '700' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_active_price_fw ) && $cs_active_price_fw == '700' ) { echo 'selected'; } ?>
                         >
                             Bold
                         </option>
     
                         <option
                             value="1000"
-                            <?php if ( ! empty( $ms_active_price_fw ) && $ms_active_price_fw == '1000' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_active_price_fw ) && $cs_active_price_fw == '1000' ) { echo 'selected'; } ?>
                         >
                             Bolder
                         </option>
                     </select>
                 </div>
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Active Color</span>
                         <br>
                         <small>Default - "#EA8A35"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_active_price_color ) ) { echo esc_html( $ms_active_price_color ); } ?>"
-                        name="ms_active_price_color"
+                        value="<?php if( ! empty( $cs_active_price_color ) ) { echo esc_html( $cs_active_price_color ); } ?>"
+                        name="cs_active_price_color"
                     />
                 </div>
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Previous Font Size</span>
                         <br>
@@ -3014,13 +3014,13 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Previous price font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_prev_price_fs ) ) { echo esc_html( $ms_prev_price_fs ); } ?>"
+                        value="<?php if( ! empty( $cs_prev_price_fs ) ) { echo esc_html( $cs_prev_price_fs ); } ?>"
                         step="1"
-                        name="ms_prev_price_fs"
+                        name="cs_prev_price_fs"
                     />
                 </div>
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Previous Font Weight</span>
                         <br>
@@ -3028,7 +3028,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <select
                         class="field"
-                        name="ms_prev_price_fw"
+                        name="cs_prev_price_fw"
                     >
                         <option
                             class="d-none"
@@ -3039,52 +3039,52 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="200"
-                            <?php if ( ! empty( $ms_prev_price_fw ) && $ms_prev_price_fw == '200' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_prev_price_fw ) && $cs_prev_price_fw == '200' ) { echo 'selected'; } ?>
                         >
                             Thin
                         </option>
     
                         <option
                             value="500"
-                            <?php if ( ! empty( $ms_prev_price_fw ) && $ms_prev_price_fw == '500' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_prev_price_fw ) && $cs_prev_price_fw == '500' ) { echo 'selected'; } ?>
                         >
                             Medium
                         </option>
     
                         <option
                             value="700"
-                            <?php if ( ! empty( $ms_prev_price_fw ) && $ms_prev_price_fw == '700' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_prev_price_fw ) && $cs_prev_price_fw == '700' ) { echo 'selected'; } ?>
                         >
                             Bold
                         </option>
     
                         <option
                             value="1000"
-                            <?php if ( ! empty( $ms_prev_price_fw ) && $ms_prev_price_fw == '1000' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_prev_price_fw ) && $cs_prev_price_fw == '1000' ) { echo 'selected'; } ?>
                         >
                             Bolder
                         </option>
                     </select>
                 </div>
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Previous Color</span>
                         <br>
                         <small>Default - "#333333"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_prev_price_color ) ) { echo esc_html( $ms_prev_price_color ); } ?>"
-                        name="ms_prev_price_color"
+                        value="<?php if( ! empty( $cs_prev_price_color ) ) { echo esc_html( $cs_prev_price_color ); } ?>"
+                        name="cs_prev_price_color"
                     />
                 </div>
     
             </div>
         </div>
 
-        <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+        <div class="field-wrapper cs-product-field cs-scoped-field d-none">
             <div>
                 <span>Cart Button</span>
                 <br>
@@ -3092,7 +3092,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
             </div>
             <div class="field-group">
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Font Size</span>
                         <br>
@@ -3103,13 +3103,13 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                         type="number"
                         placeholder="Cart button font size"
                         min="6"
-                        value="<?php if( ! empty( $ms_woo_button_fs ) ) { echo esc_html( $ms_woo_button_fs ); } ?>"
+                        value="<?php if( ! empty( $cs_woo_button_fs ) ) { echo esc_html( $cs_woo_button_fs ); } ?>"
                         step="1"
-                        name="ms_woo_button_fs"
+                        name="cs_woo_button_fs"
                     />
                 </div>
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Font Weight</span>
                         <br>
@@ -3117,7 +3117,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     </div>
                     <select
                         class="field"
-                        name="ms_woo_button_fw"
+                        name="cs_woo_button_fw"
                     >
                         <option
                             class="d-none"
@@ -3128,59 +3128,59 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
                         <option
                             value="200"
-                            <?php if ( ! empty( $ms_woo_button_fw ) && $ms_woo_button_fw == '200' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_woo_button_fw ) && $cs_woo_button_fw == '200' ) { echo 'selected'; } ?>
                         >
                             Thin
                         </option>
     
                         <option
                             value="500"
-                            <?php if ( ! empty( $ms_woo_button_fw ) && $ms_woo_button_fw == '500' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_woo_button_fw ) && $cs_woo_button_fw == '500' ) { echo 'selected'; } ?>
                         >
                             Medium
                         </option>
     
                         <option
                             value="700"
-                            <?php if ( ! empty( $ms_woo_button_fw ) && $ms_woo_button_fw == '700' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_woo_button_fw ) && $cs_woo_button_fw == '700' ) { echo 'selected'; } ?>
                         >
                             Bold
                         </option>
     
                         <option
                             value="1000"
-                            <?php if ( ! empty( $ms_woo_button_fw ) && $ms_woo_button_fw == '1000' ) { echo 'selected'; } ?>
+                            <?php if ( ! empty( $cs_woo_button_fw ) && $cs_woo_button_fw == '1000' ) { echo 'selected'; } ?>
                         >
                             Bolder
                         </option>
                     </select>
                 </div>
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Color</span>
                         <br>
                         <small>Default - "#EA8A35"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_woo_button_color ) ) { echo esc_html( $ms_woo_button_color ); } ?>"
-                        name="ms_woo_button_color"
+                        value="<?php if( ! empty( $cs_woo_button_color ) ) { echo esc_html( $cs_woo_button_color ); } ?>"
+                        name="cs_woo_button_color"
                     />
                 </div>
     
-                <div class="field-wrapper ms-product-field ms-scoped-field d-none">
+                <div class="field-wrapper cs-product-field cs-scoped-field d-none">
                     <div>
                         <span>Background Color</span>
                         <br>
                         <small>Default - "#FFFFFF"</small>
                     </div>
                     <input
-                        class="ms-color-picker"
+                        class="cs-color-picker"
                         type="text"
-                        value="<?php if( ! empty( $ms_woo_button_bg_color ) ) { echo esc_html( $ms_woo_button_bg_color ); } ?>"
-                        name="ms_woo_button_bg_color"
+                        value="<?php if( ! empty( $cs_woo_button_bg_color ) ) { echo esc_html( $cs_woo_button_bg_color ); } ?>"
+                        name="cs_woo_button_bg_color"
                     />
                 </div>
     
@@ -3196,7 +3196,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
         // destroy the selectize object for re-initialization on query type selection
         function resetSelectizeData() {
-            let selectizeElem = $('#ms_query')[0].selectize
+            let selectizeElem = $('#cs_query')[0].selectize
 
             if ( selectizeElem ) {
                 selectizeElem.destroy()
@@ -3205,28 +3205,28 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
         // render fields according to the selected post type
         function manageFieldRendering() {
-            let postType = $('#ms_post_type').val()
+            let postType = $('#cs_post_type').val()
 
-            $('.ms-scoped-field').addClass('d-none')
+            $('.cs-scoped-field').addClass('d-none')
 
             if ( postType == 'post' ) {
-                $('.ms-post-field').removeClass('d-none')
+                $('.cs-post-field').removeClass('d-none')
             }
 
             if ( postType == 'product' ) {
-                $('.ms-product-field').removeClass('d-none')
+                $('.cs-product-field').removeClass('d-none')
             }
 
-            if ( postType == 'my_slide' ) {
-                $('.ms-my-slide-field').removeClass('d-none')
+            if ( postType == 'commerce_slide' ) {
+                $('.cs-commerce-slide-field').removeClass('d-none')
             }
         }
 
         // function to run when key is pressed in the selectize search field
         function runOnLoad(query, callback) {
-            let queryType = $('input[name=ms_query_type]:checked').val();
+            let queryType = $('input[name=cs_query_type]:checked').val();
 
-            let restrictedTypes = ['category', 'product_cat', 'post_tag', 'product_tag', 'my_slide_tag']
+            let restrictedTypes = ['category', 'product_cat', 'post_tag', 'product_tag', 'commerce_slide_tag']
 
             if ( restrictedTypes.includes(queryType) ) {
                 return callback()
@@ -3241,13 +3241,13 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
         // function to run on selectize initialization
         function runOnInitialize() {
-            let queryType = $('input[name=ms_query_type]:checked').val();
+            let queryType = $('input[name=cs_query_type]:checked').val();
 
             if (['id', 'sku'].includes(queryType)) {
                 return
             }
 
-            var selectizeElem = $('#ms_query')[0].selectize;
+            var selectizeElem = $('#cs_query')[0].selectize;
 
             makeAjax('', 'fetch_search', queryType, (res) => {
                 selectizeElem.addOption(res);
@@ -3257,8 +3257,8 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
         // making ajax request to fetch data
         function makeAjax( query, type, queryType, callback, isLoad = false ) {
-            let postType = $('#ms_post_type').val()
-            let nonce = $('#ms_ajax_nonce').val()
+            let postType = $('#cs_post_type').val()
+            let nonce = $('#cs_ajax_nonce').val()
 
             let data = {
                 action: 'custom_search',
@@ -3281,7 +3281,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                     if (isLoad) {
                         callback();
                     } else {
-                        console.log("Failed to fetch My Slider data")
+                        console.log("Failed to fetch Commerce Slider data")
                     }
                 }
             });
@@ -3301,39 +3301,39 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
 
         // after changing the post type render only the selected post type related fields
         // as well as destroy the query selectize object if previously initialized
-        $('#ms_post_type').on('afterChange', () => {
-            $('input[name="ms_query_type"]:checked').prop('checked', false);
+        $('#cs_post_type').on('afterChange', () => {
+            $('input[name="cs_query_type"]:checked').prop('checked', false);
             resetSelectizeData()
             manageFieldRendering()
 
-            $('#ms_query_wrapper').addClass('d-none')
+            $('#cs_query_wrapper').addClass('d-none')
         })
 
         // render the post type related fields on page load
         manageFieldRendering()
 
         // on query type change, re-initialize the selectize object and make it visible if it wasn't 
-        $(document).on('change', 'input[name=ms_query_type]', () => {
+        $(document).on('change', 'input[name=cs_query_type]', () => {
             resetSelectizeData()
 
-            $('#ms_query').selectize({...selectizeData});
+            $('#cs_query').selectize({...selectizeData});
 
-            $('#ms_query_wrapper').removeClass('d-none')
+            $('#cs_query_wrapper').removeClass('d-none')
         })
 
-        let queryType = $('input[name=ms_query_type]:checked').val()
+        let queryType = $('input[name=cs_query_type]:checked').val()
 
         // strictly for post edit page, signalled by the existing query type value on page load.
         // initialize the selectize object and fetch and populated it with the saved data on the database
         if (queryType && queryType.length) {
-            $('#ms_query').selectize({...selectizeData});
+            $('#cs_query').selectize({...selectizeData});
 
-            let query = '<?php echo esc_html( $ms_query ) ?>'
+            let query = '<?php echo esc_html( $cs_query ) ?>'
 
             if ( query && query.length ) {
 
                 makeAjax(query, 'fetch_query', queryType, (res) => {
-                    let selectizeElem = $('#ms_query')[0].selectize
+                    let selectizeElem = $('#cs_query')[0].selectize
         
                     selectizeElem.addOption(res)
                     selectizeElem.refreshOptions(false)
@@ -3343,7 +3343,7 @@ $ms_dot_active_color        = get_post_meta( $ms_ID, 'ms_dot_active_color', true
                 })
             }
 
-            $('#ms_query_wrapper').removeClass('d-none')
+            $('#cs_query_wrapper').removeClass('d-none')
         }
 
     })

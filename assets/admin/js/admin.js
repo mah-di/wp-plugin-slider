@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
-    let currentValue = $('#ms_post_type').val();
+    let currentValue = $('#cs_post_type').val();
 
-    $('#ms_post_type').on('change', function () {
+    $('#cs_post_type').on('change', function () {
         let newValue = $(this).val();
 
         let isConfirmed = confirm("Are you sure you want to change the post type?");
@@ -16,44 +16,44 @@ jQuery(document).ready(function ($) {
 
     const optionsToggleMapper = [
         {
-            name: "ms_show_nav",
-            target: "#ms_nav_settings"
+            name: "cs_show_nav",
+            target: "#cs_nav_settings"
         },
         {
-            name: "ms_show_nav_sm",
-            target: "#ms_nav_position_sm"
+            name: "cs_show_nav_sm",
+            target: "#cs_nav_position_sm"
         },
         {
-            name: "ms_show_dots",
-            target: "#ms_dots_settings"
+            name: "cs_show_dots",
+            target: "#cs_dots_settings"
         },
         {
-            name: "ms_autoplay",
-            target: "#ms_autoplay_settings"
+            name: "cs_autoplay",
+            target: "#cs_autoplay_settings"
         },
         {
-            name: "ms_show_comments",
-            target: "#ms_comment_settings"
+            name: "cs_show_comments",
+            target: "#cs_comment_settings"
         },
         {
-            name: "ms_show_category",
-            target: "#ms_category_settings"
+            name: "cs_show_category",
+            target: "#cs_category_settings"
         },
         {
-            name: "ms_show_tags",
-            target: "#ms_tag_settings"
+            name: "cs_show_tags",
+            target: "#cs_tag_settings"
         },
         {
-            name: "ms_show_excerpt",
-            target: "#ms_excerpt_settings"
+            name: "cs_show_excerpt",
+            target: "#cs_excerpt_settings"
         },
         {
-            name: "ms_show_author",
-            target: "#ms_author_settings"
+            name: "cs_show_author",
+            target: "#cs_author_settings"
         },
         {
-            name: "ms_show_date",
-            target: "#ms_date_settings"
+            name: "cs_show_date",
+            target: "#cs_date_settings"
         }
     ]
 
@@ -77,6 +77,6 @@ jQuery(document).ready(function ($) {
         $(`input[name=${optionsToggler.name}]`).on('change', () => toggleOptionSettings(optionsToggler.name, optionsToggler.target))
     })
 
-    $('#ms_animation_entrance').selectize({ placeholder: "Select An Option" })
-    $('#ms_animation_exit').selectize({ placeholder: "Select An Option" })
+    $('#cs_animation_entrance').selectize({ placeholder: "Select An Option" })
+    $('#cs_animation_exit').selectize({ placeholder: "Select An Option" })
 });

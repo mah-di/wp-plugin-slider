@@ -18,7 +18,7 @@ final class Dependencies
         if ( class_exists( 'WooCommerce' ) )
             $is_active = true;
 
-        define( 'MS_WC_IS_ACTIVE', $is_active );
+        define( 'CS_WC_IS_ACTIVE', $is_active );
     }
 }
 

@@ -1,9 +1,9 @@
 <?php
 
-$ms_prefix = MS_SHORTCODE_PREFIX;
-$ms_id = get_the_ID();
+$cs_prefix = CS_SHORTCODE_PREFIX;
+$cs_id = get_the_ID();
 
-$ms_shortcode = "[{$ms_prefix} id={$ms_id}]";
+$cs_shortcode = "[{$cs_prefix} id={$cs_id}]";
 
 ?>
 
@@ -16,6 +16,6 @@ $ms_shortcode = "[{$ms_prefix} id={$ms_id}]";
         id="shortcode"
         type="text"
         readonly
-        value="<?php echo esc_html( $ms_shortcode ); ?>"
+        value="<?php echo esc_html( $cs_shortcode ); ?>"
     />
 </div>
